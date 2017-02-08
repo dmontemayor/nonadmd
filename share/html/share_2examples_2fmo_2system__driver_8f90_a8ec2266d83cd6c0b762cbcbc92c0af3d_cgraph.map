@@ -1,0 +1,6 @@
+<map id="main" name="main">
+<area shape="rect" id="node3" href="$classerrorlog.html#a32bbf87dd265de25bd10ea31d95b751d" title="errorlog::openlog" alt="" coords="106,5,228,33"/>
+<area shape="rect" id="node9" href="$classerrorlog.html#af9219c790b58905faca7f5695515325d" title="errorlog::closelog" alt="" coords="105,57,228,85"/>
+<area shape="rect" id="node5" href="$classfilemanager.html#aa389048ef7c9eb9afdac7ce1dcc691b2" title="filemanager::newunit" alt="" coords="277,5,422,33"/>
+<area shape="rect" id="node7" href="$classwallclock.html#ac691a026a7b92c6cd971e86d0449d42b" title="wallclock::timearray" alt="" coords="281,57,418,85"/>
+</map>

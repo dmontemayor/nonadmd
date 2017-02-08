@@ -1,0 +1,5 @@
+<map id="molreader::refresh_buffer" name="molreader::refresh_buffer">
+<area shape="rect" id="node3" href="$classmolreader.html#a38a3903d901bc5e0b318bcc0dfd1b3ff" title="Initialize PDB file for parsing." alt="" coords="189,5,337,33"/>
+<area shape="rect" id="node5" href="$classmolreader.html#af85c66302e278af03e0cc94dc42e662e" title="Rewind an initialized PDB file for parsing." alt="" coords="184,57,342,85"/>
+<area shape="rect" id="node7" href="$classmolreader.html#ac7b950f165e89b12ccc8fff1c0f3bae9" title="molreader::advance\l_buffer" alt="" coords="193,109,332,153"/>
+</map>

@@ -1,0 +1,39 @@
+2 Please enter the number of quantum states.
+0. Please enter an energy origin.
+f Use default diabatic energy settings [zero engergy for all states]? (T/F)
+0. Enter diabatic state            1 energy.
+-.4 Enter diabatic state coupling energy for states           1           2
+0. Enter diabatic state            2 energy.
+t Use default initial density settings [only state 1 populated]? (T/F)
+'Ohmic_specden.jw' Please enter a specden file.
+100 Please enter the number of bath particles.
+t Use default particle mass settings [all unit masses]? (T/F)
+t Use default particle charge settings [no charged particles]? (T/F)
+1 Please enter the number of phase-space dimensions.
+t Use default phase-space domain and boundary condition settings [Qmin=-1.0, Qmax=1.0, no PBC]? (T/F)
+t Use default phase-space settings [obsolete just enter T]? (T/F)
+
+3.158E5 Enter bath temperature in Kelvin.
+t Would you prefer an initial canonical nuclear distribution [default assumes classical subsystem is initially in thermal equilibrium]?(T/F)
+t Would you prefer a Wigner transormed forcefield phase-space distribution [default distribution is classical]?(T/F)
+1 Enter the number of isolated baths.
+
+F Use default mode to state mapping
+T Couple all states to all modes
+
+0.13  Please enter reorganization energy for state 1.
+0.13  Please enter reorganization energy for state 2.
+
+F   Use default qhat eigen states
+1.  Enter qhat eigen states for state 1.
+-1. Enter qhat eigen states for state 2.
+
+
+1000    Enter total number of trajectories.
+15.0    Enter total runtime.
+1E-2    Enter nuclear time step.
+5E-4    Enter electronic time step.
+1E-1    Enter output time step.
+10 Enter time interval in wallclock seconds between Restart files.
+0. Coupling threashold(Off-diagonal elements with absolute energy less than will not be propagated).
+15.0    Enter short time approx.

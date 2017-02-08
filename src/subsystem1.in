@@ -1,0 +1,14 @@
+!---------------------------------------------------
+!> \brief
+!! Generic subsys Class
+!! \details
+!! Can assume any derived subsys type
+!! \authors
+!! Daniel Montemayor
+!<---------------------------------------------------
+module subsys_class
+  use type_kinds
+  use filemanager
+  use ErrorLog
+  use string
+  use hprim_class

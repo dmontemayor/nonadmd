@@ -1,0 +1,118 @@
+Standards
+1. When object is saved the first line of the save file contains the type of the object.
+2. Saved object files contain one attribute(variable,array,character,etc.) per line. Arrays and matricies are always saved with nested loop implicit write statements. Indeces of the matrix or array are incremented starting with the last index in the inner most loop. For example obj(i,j,k) would be saved like so write(unit,*)(((obj(i,j,k),k=1,nk),j=1,nj),i=1,ni).
+3. Theories should only interface with the system through the primitive objects of the quantum, classical, and coupling subsystems (system%hs, system%hb, and system%hc respectively).
+4. Observables should also only access the primitive subsystem objects.
+5. SAVE operation should recursively save primatives with appended file suffix
+	* All object save files must have the object type texted on the first line.
+	* Type kinds and string lengths must be used for all variables. See 'Type Kinds' for details.
+	* Objects should have the following methods:
+|=================================================================================|
+|                           G L O B A L   M E T H O D S                           | 
+|=================================================================================|
+| OBJ || NEW | KILL | UPDATE | DISPLAY | SAVE | CHECK | RESAMPLE | RUN | OBSERVE ||
+|-----||-----|------|--------|---------|------|-------|----------|-----|---------||
+| qs  ||  *  |  *   |   *    |   *     |  *   |   *   |    *     |     |         ||
+| cs  ||  *  |  *   |   *    |   *     |  *   |   *   |    *     |     |         ||
+| cp  ||  *  |  *   |   *    |   *     |  *   |   *   |    *     |     |         ||
+| prop||  *  |  *   |        |   *     |  *   |   *   |          |  *  |         ||
+| spec||     |      |        |         |      |       |          |     |    *    ||
+|=================================================================================|
+6. CHECK is performed: at the end of NEW and RESAMPLE; at the begining of KILL, DISPLAY, and SAVE; never on UPDATE.
+
+Type Kinds found in 'utils.f90'
+     integers: byte, short, long
+     floating point: single, double
+     string lengths: char, title, path, comment
+
+Error Handling
+      There are 3 types of information the Developer may pass to the User during runtime. 1) NOTES are essentially runtime comments usually displayed for debuging (or comedic) purposes and typically do not announce possible problems with the quality of program execution. 2) WARNINGS, on the other hand, do announce possible problems with the runtime quality. WARNINGS typically do not stop the programm, unless dictated by the User, rather WARNINGS recover from runtime issues as best they can (better said as best the Developer can). Usually the Developer will state how the program will recover from the WARNING. 3) ERRORS are irrecoverable runtime issues and will stop the program. The Developer may suggest things the User can do to avoid the ERROR.
+      Runtime ERRORS, WARNINGS, and NOTES are recorded by default in 'RunTime.log' with a default verbosity setting Level=1. The User change the output file and verbosity setting using the 'setupLog' subroutine (usage: call setupLog(file=filename,level=[0:4]) ). The Verbosity level affects which type messages will get recorded in the log file and also which type of messages will stop the program:
+|=============================================================|
+|         V E R B O S I T Y   L E V E L   E F F E C T S       |
+|=============================================================|
+||       ||     ERRORS    ||     WARNINGS  ||      NOTES     ||
+|| Level || RECORD | STOP || RECORD | STOP || RECORD | STOP  ||
+||-------||--------|------||--------|------||--------|-------||
+||   0   ||   *    |  *   ||        |      ||        |       ||
+||   1   ||   *    |  *   ||   *    |      ||        |       ||
+||   2   ||   *    |  *   ||   *    |      ||   *    |       ||
+||   3   ||   *    |  *   ||   *    |  *   ||   *    |       ||
+||   4   ||   *    |  *   ||   *    |  *   ||   *    |   *   ||
+|=============================================================|
+
+Subroutine openlog
+	   Purpose: opens runtime log
+	   Usage: call openlog(file=filename,level=N)
+	   	  where 'filename' is a string containg the file address and verbosity level 'N' is an integer between 0-4.
+
+Subroutine closelog
+	   Purpose: closes runtime log
+	   Usage: call closelog()
+
+Subrountine Note
+	    Purpose: displays a message to user (if verbosity level permits)
+	    Usage: call Note(msg)
+	    	   where 'msg' is a string comment to user.
+
+Subroutine Warn
+	   Purpose: displays a Warning message to user (if verbosity level permits). Stops program (if verbosity level dictates) 
+	   Usage: call Warn(msg,[recover])
+	   	  where 'msg' is a string describing the possible error and 'recover' is an optional string comment completing the statement 'program will recover by...'
+
+Subroutine Stop
+	   Purpose: displays an Error message to user and stops programm.
+	   Usage: call Stop(msg,[suggest])
+	   	  where 'msg' is a string descrbing the error and 'suggest' is an optional string comment offering the user possible directions to avoid the error in the future.
+
+Subroutine Prompt
+	   Purpose: displays an message to user (always displays).
+	   Usage: call Prompt(msg)
+	    	  where 'msg' is a string comment to user.
+
+Subroutine Report
+	   Purpose: Interprets error codes generated by CHECK() function. Does nothing if errorcode is 0 otherwize will display standard message and stop. 
+	   Usage: call Report(errorcode)
+	   	 where 'errorcode' is a standardized error code of type integer for the most common type of errors, and warnings. Where possible subroutines return a standardized error code describing the success/fail condition of the call.
+
+|===================================================================================|
+|                          Error Codes as of July 21 2011                           |
+|===================================================================================|
+|Code |            Message            | Intent                                      |
+|-----|-------------------------------|---------------------------------------------|
+| 0   | <no message>                  | No Error or Warning.                        |
+| 1   | PC LOAD LETTER                | Used when the cause of an error is unknown  |
+|     |                               |  to Devloper and thus can provide no usefull|
+|     |                               |  information to the User as to how to solve |
+|     |                               |  the issue. 	                            |
+| 100 | Failed object check           | Problem with Object and will cause STOP.    |
+| 200 | File not found                | Cannot find file and will cause STOP.       |
+|===================================================================================|
+
+Function Check
+	 Usage: call check([file,object])
+	 where only one of the possible inputs is passed. The function returns integer 0 if the check is succesful, integer 100 if failed object checks, and integer 200 if failed file check. When 'file'(name of a file) is passed the function checks if file exists. When an object like hs, hb, hc, qs, cs, cp, or any derived subsystem is passed the function checks that all attributes of the object are properlly initiated and have valid values.
+
+
+===Creating a derived subsystem ===
+
+Overview:
+Use template DerivedSubsystemTemplate.f90 (found in the src/ directory) for all derived subsystem types. Don't overwirte this file. Create a copy fo the template file and rename it with the same name of your derived subsystem type. Use the commented examples provided in the file to help you. When done filling out the template add the name of your derived subsystem to the appropriate list of derived subsystems in the etc/ directory.
+
+Example: Create a derived quantum subsystem called 'myqs'.
+
+1) Go to the source directory of the distribution
+
+   $ cd src/
+
+2) Make a copy of the template and save as myqs.f90
+
+   $ cp DerivedSubsystemTemplate.f90 myqs.f90
+ 
+3) Open your copy of the template (myqs.f90) and replace all instances of 'DerivedSubsystemTemplate' with 'myqs'. The idea is that your derived quantum subsystem 'myqs' will be stored in its own class, hence this file is actually a module. Encapsulating your derived quantum subsystem 'myqs' in a module means that it will be available to the generic quantum subsystem (qs) used by all subroutines and functions in this application. You don't need to worry about the generic quantnum subsystem source file; it will be automatically be written next time you build the application.
+
+4) Follow the examples provided in your file to help you fill out your derived subsystem class. Although not strictly neccessary, try to fill out the CHECK function as best you can to help catch runtime bugs.
+
+5) When you are satisfied writting your derived quantum subsystem, save the file of course now go ahead and append the name of your derived quantum subsystem 'myqs' to the list of known derived quantum subsystem classes found in etc/qsmods (just type 'myqs' on the last line of the file). Typically each subsystem module (class) will contain only one type (in this example 'myqs' is the only type of the myqs_class). Sometimes more than one type can be defined in the class when one has related types that share methods. Nevertheless, because each class may have multiple types, each unique type must also be appended to the list of known quantum subsystem types. In this case you just type 'myqs' on the last line of the file etc/qstypes like we did for the qsmods file.
+
+6) You're done! You now hold the esteemed title of Developer! Add your name to the AUTHORS file if you wish. Now when a user creates a new Experiment (described in the User's manuall) they should be able to initiate the generic quantum subsystem (qs) of type='myqs'. Let's just pray your code is bug free and no one knows your email address.

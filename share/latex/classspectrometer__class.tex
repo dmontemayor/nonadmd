@@ -1,0 +1,302 @@
+\hypertarget{classspectrometer__class}{\section{spectrometer\-\_\-class Module Reference}
+\label{classspectrometer__class}\index{spectrometer\-\_\-class@{spectrometer\-\_\-class}}
+}
+
+
+Spectrometric functionality.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacespectrometer__class_1_1check}{check}
+\begin{DoxyCompactList}\small\item\em Function that checks the spectrum type. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacespectrometer__class_1_1display}{display}
+\begin{DoxyCompactList}\small\item\em Display the spectrum type. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacespectrometer__class_1_1kill}{kill}
+\begin{DoxyCompactList}\small\item\em Destroys the spectrum type. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacespectrometer__class_1_1observe}{observe}
+\begin{DoxyCompactList}\small\item\em Measures the Hamiltonian. \end{DoxyCompactList}\item 
+type \hyperlink{structspectrometer__class_1_1spectrum}{spectrum}
+\begin{DoxyCompactList}\small\item\em Standard spectrum type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classspectrometer__class_a068171434fa75613677e6357291df1fe}{get\-\_\-spectrum} (this, qs, cs, cp, Emin, Emax, npt, type, tol, samples, file, pdb, psf, psfx, atm\-\_\-select, dipole\-\_\-to, dipole\-\_\-from, dipole\-\_\-center)
+\begin{DoxyCompactList}\small\item\em General call to compute verious spectra. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classspectrometer__class_aabaa46560b8ea49cd16b6c11a8a2fe65}{spectrum\-\_\-kill} (this)
+\begin{DoxyCompactList}\small\item\em nullifies spectrum pointer \end{DoxyCompactList}\item 
+integer(short) function \hyperlink{classspectrometer__class_a94382eb7e533e6a74dd79200ca0e38ed}{spectrum\-\_\-check} (this)
+\begin{DoxyCompactList}\small\item\em Checks spectrum type \end{DoxyCompactList}\item 
+subroutine \hyperlink{classspectrometer__class_a3f9fc6096d581c5a7094174b47898d10}{display\-\_\-spectrum} (this)
+\item 
+subroutine \hyperlink{classspectrometer__class_ad2c4936524c8702e1c4e53a54a043f31}{get\-\_\-abspectrum} (this, qs, cs, cp, tol, samples, file)
+\begin{DoxyCompactList}\small\item\em Computes absorption spectrum using groundstate to adiabatic state transition dipole. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classspectrometer__class_af1fc802879075c7e5e42ef4baac69445}{get\-\_\-abpdbspectrum} (this, qs, file, pdb, psf, psfx, atm\-\_\-select, dipole\-\_\-to, dipole\-\_\-from, dipole\-\_\-center)
+\begin{DoxyCompactList}\small\item\em Computes Absorption spectrum using a pdb trajectory and a defined transition dipole. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer(long), parameter \hyperlink{classspectrometer__class_a5564f6a94902c50fefd03dd3f5ec4e47}{killint}
+\begin{DoxyCompactList}\small\item\em Machine limit of integer values. Used to exit out of non-\/converging loops. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Spectrometric functionality. 
+
+A spectrum type is defined here. The spectrum type is the standard output of the associated methods with perform various spectrocopic mesurements of the total Hamiltonian or subsystems. \begin{DoxyAuthor}{Author}
+Daniel Montemayor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2011 
+\end{DoxyDate}
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classspectrometer__class_a3f9fc6096d581c5a7094174b47898d10}{\index{spectrometer\-\_\-class@{spectrometer\-\_\-class}!display\-\_\-spectrum@{display\-\_\-spectrum}}
+\index{display\-\_\-spectrum@{display\-\_\-spectrum}!spectrometer_class@{spectrometer\-\_\-class}}
+\subsubsection[{display\-\_\-spectrum}]{\setlength{\rightskip}{0pt plus 5cm}subroutine spectrometer\-\_\-class\-::display\-\_\-spectrum (
+\begin{DoxyParamCaption}
+\item[{type({\bf spectrum}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classspectrometer__class_a3f9fc6096d581c5a7094174b47898d10}
+\hypertarget{classspectrometer__class_af1fc802879075c7e5e42ef4baac69445}{\index{spectrometer\-\_\-class@{spectrometer\-\_\-class}!get\-\_\-abpdbspectrum@{get\-\_\-abpdbspectrum}}
+\index{get\-\_\-abpdbspectrum@{get\-\_\-abpdbspectrum}!spectrometer_class@{spectrometer\-\_\-class}}
+\subsubsection[{get\-\_\-abpdbspectrum}]{\setlength{\rightskip}{0pt plus 5cm}subroutine spectrometer\-\_\-class\-::get\-\_\-abpdbspectrum (
+\begin{DoxyParamCaption}
+\item[{type({\bf spectrum}), intent(inout)}]{this, }
+\item[{type(quantum), intent(inout), target}]{qs, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file, }
+\item[{character$\ast$($\ast$), intent(in)}]{pdb, }
+\item[{character$\ast$($\ast$), intent(in)}]{psf, }
+\item[{character$\ast$($\ast$), intent(in)}]{psfx, }
+\item[{type(atom), dimension(\-:), intent(in)}]{atm\-\_\-select, }
+\item[{type(atom), dimension(\-:), intent(in)}]{dipole\-\_\-to, }
+\item[{type(atom), dimension(\-:), intent(in)}]{dipole\-\_\-from, }
+\item[{type(atom), dimension(\-:), intent(in)}]{dipole\-\_\-center}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classspectrometer__class_af1fc802879075c7e5e42ef4baac69445}
+
+
+Computes Absorption spectrum using a pdb trajectory and a defined transition dipole. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em this} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000007}{Todo}]
+\begin{DoxyItemize}
+\item Use psfx to define transition charges.
+\item Add params section. 
+\end{DoxyItemize}\end{DoxyRefDesc}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classspectrometer__class_af1fc802879075c7e5e42ef4baac69445_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classspectrometer__class_ad2c4936524c8702e1c4e53a54a043f31}{\index{spectrometer\-\_\-class@{spectrometer\-\_\-class}!get\-\_\-abspectrum@{get\-\_\-abspectrum}}
+\index{get\-\_\-abspectrum@{get\-\_\-abspectrum}!spectrometer_class@{spectrometer\-\_\-class}}
+\subsubsection[{get\-\_\-abspectrum}]{\setlength{\rightskip}{0pt plus 5cm}subroutine spectrometer\-\_\-class\-::get\-\_\-abspectrum (
+\begin{DoxyParamCaption}
+\item[{type({\bf spectrum}), intent(inout)}]{this, }
+\item[{type(quantum), intent(inout), target}]{qs, }
+\item[{type(classical), intent(inout), optional}]{cs, }
+\item[{type(coupling), intent(inout), optional}]{cp, }
+\item[{real(double), intent(in), optional}]{tol, }
+\item[{integer(long), intent(in), optional}]{samples, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classspectrometer__class_ad2c4936524c8702e1c4e53a54a043f31}
+
+
+Computes absorption spectrum using groundstate to adiabatic state transition dipole. 
+
+Requires a quantum subsystem described in terms of transistion dipole moments. N points in spectrum with energy domain from Emin to Emax. Integrate over thermal realizations to compute spectrum. Recompute spectrum with twice as many thermal realizations. Keep doubling number of realizations until sum of difference in spectrum to previous spectrum points squared is less than some tolerance tol. 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em inout\mbox{]}} & this spectrum type, it is overwritten with the spectroscopic measurement on return. \\
+\hline
+ & {\em inout\mbox{]}} & qs general quantum subsystem to be measured. \\
+\hline
+ & {\em inout\mbox{]}} & cs general classical subsystem to be measured. \\
+\hline
+ & {\em inout\mbox{]}} & cp general coupling term to be measured. \\
+\hline
+\mbox{\tt in}  & {\em samples} & minimum number of measurements to make before convergance protocols take effect. Guarantees good statistics. \\
+\hline
+\mbox{\tt in}  & {\em tol} & $ R^2 $ difference between successive measurements. Used to determine spectrum convergance. \\
+\hline
+\mbox{\tt in}  & {\em file} & name of file to output spectrum on return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]
+\begin{DoxyItemize}
+\item Add method to check if quantum subsystem is supported.
+\item Rewrite details section and add brief comment. 
+\end{DoxyItemize}\end{DoxyRefDesc}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classspectrometer__class_ad2c4936524c8702e1c4e53a54a043f31_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classspectrometer__class_ad2c4936524c8702e1c4e53a54a043f31_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classspectrometer__class_a068171434fa75613677e6357291df1fe}{\index{spectrometer\-\_\-class@{spectrometer\-\_\-class}!get\-\_\-spectrum@{get\-\_\-spectrum}}
+\index{get\-\_\-spectrum@{get\-\_\-spectrum}!spectrometer_class@{spectrometer\-\_\-class}}
+\subsubsection[{get\-\_\-spectrum}]{\setlength{\rightskip}{0pt plus 5cm}subroutine spectrometer\-\_\-class\-::get\-\_\-spectrum (
+\begin{DoxyParamCaption}
+\item[{type({\bf spectrum}), intent(inout)}]{this, }
+\item[{type(quantum), intent(inout), target}]{qs, }
+\item[{type(classical), intent(inout), optional, target}]{cs, }
+\item[{type(coupling), intent(inout), optional, target}]{cp, }
+\item[{real(double), intent(in)}]{Emin, }
+\item[{real(double), intent(in)}]{Emax, }
+\item[{integer(long), intent(in)}]{npt, }
+\item[{character(len=$\ast$), intent(in)}]{type, }
+\item[{real(double), intent(in), optional}]{tol, }
+\item[{integer(long), intent(in), optional}]{samples, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{pdb, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{psf, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{psfx, }
+\item[{type(atom), dimension(\-:), intent(in), optional}]{atm\-\_\-select, }
+\item[{type(atom), dimension(\-:), intent(in), optional}]{dipole\-\_\-to, }
+\item[{type(atom), dimension(\-:), intent(in), optional}]{dipole\-\_\-from, }
+\item[{type(atom), dimension(\-:), intent(in), optional}]{dipole\-\_\-center}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classspectrometer__class_a068171434fa75613677e6357291df1fe}
+
+
+General call to compute verious spectra. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em inout\mbox{]}} & this spectrum type, it is overwritten with the spectroscopic measurement on return. \\
+\hline
+ & {\em inout\mbox{]}} & qs general quantum subsystem to be measured. \\
+\hline
+ & {\em inout\mbox{]}} & cs general classical subsystem to be measured. \\
+\hline
+ & {\em inout\mbox{]}} & cp general coupling term to be measured. \\
+\hline
+\mbox{\tt in}  & {\em npt} & number of points in the frequency domain. \\
+\hline
+\mbox{\tt in}  & {\em Emin} & minimum value of frequncy domain. \\
+\hline
+\mbox{\tt in}  & {\em Emax} & maximum value of the frequency domain. \\
+\hline
+\mbox{\tt in}  & {\em type} & string containing the type of the spectroscopic measurement. Options are 'A\-B' and 'A\-B\-P\-D\-B'. \\
+\hline
+\mbox{\tt in}  & {\em samples} & minimum number of measurements to make before convergance protocols take effect. Guarantees good statistics. \\
+\hline
+\mbox{\tt in}  & {\em tol} & $ R^2 $ difference between successive measurements. Used to determine spectrum convergance. \\
+\hline
+\mbox{\tt in}  & {\em file} & name of file to output spectrum on return. \\
+\hline
+\mbox{\tt in}  & {\em pdb} & name of input pdb file. \\
+\hline
+\mbox{\tt in}  & {\em psf} & name of input psf file. \\
+\hline
+\mbox{\tt in}  & {\em psfx} & name of psf file containing excited state charges. \\
+\hline
+\mbox{\tt in}  & {\em atm\-\_\-select} & atom type used to determine a subset of atoms. \\
+\hline
+\mbox{\tt in}  & {\em dipole\-\_\-to} & atom type specifing direction a dipole points to. \\
+\hline
+\mbox{\tt in}  & {\em dipole\-\_\-from} & atom type specifing direction a dipole points from. \\
+\hline
+\mbox{\tt in}  & {\em dipole\-\_\-center} & atom type specifing the origin of a dipole. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classspectrometer__class_a068171434fa75613677e6357291df1fe_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classspectrometer__class_a94382eb7e533e6a74dd79200ca0e38ed}{\index{spectrometer\-\_\-class@{spectrometer\-\_\-class}!spectrum\-\_\-check@{spectrum\-\_\-check}}
+\index{spectrum\-\_\-check@{spectrum\-\_\-check}!spectrometer_class@{spectrometer\-\_\-class}}
+\subsubsection[{spectrum\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}integer(short) function spectrometer\-\_\-class\-::spectrum\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{type({\bf spectrum}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classspectrometer__class_a94382eb7e533e6a74dd79200ca0e38ed}
+
+
+Checks spectrum type 
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classspectrometer__class_a94382eb7e533e6a74dd79200ca0e38ed_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classspectrometer__class_aabaa46560b8ea49cd16b6c11a8a2fe65}{\index{spectrometer\-\_\-class@{spectrometer\-\_\-class}!spectrum\-\_\-kill@{spectrum\-\_\-kill}}
+\index{spectrum\-\_\-kill@{spectrum\-\_\-kill}!spectrometer_class@{spectrometer\-\_\-class}}
+\subsubsection[{spectrum\-\_\-kill}]{\setlength{\rightskip}{0pt plus 5cm}subroutine spectrometer\-\_\-class\-::spectrum\-\_\-kill (
+\begin{DoxyParamCaption}
+\item[{type({\bf spectrum}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classspectrometer__class_aabaa46560b8ea49cd16b6c11a8a2fe65}
+
+
+nullifies spectrum pointer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}inout\mbox{]}} & this spectrum type \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classspectrometer__class_a5564f6a94902c50fefd03dd3f5ec4e47}{\index{spectrometer\-\_\-class@{spectrometer\-\_\-class}!killint@{killint}}
+\index{killint@{killint}!spectrometer_class@{spectrometer\-\_\-class}}
+\subsubsection[{killint}]{\setlength{\rightskip}{0pt plus 5cm}integer(long), parameter spectrometer\-\_\-class\-::killint\hspace{0.3cm}{\ttfamily [private]}}}\label{classspectrometer__class_a5564f6a94902c50fefd03dd3f5ec4e47}
+
+
+Machine limit of integer values. Used to exit out of non-\/converging loops. 
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{spectrometer_8f90}{spectrometer.\-f90}\end{DoxyCompactItemize}

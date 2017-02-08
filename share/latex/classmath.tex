@@ -1,0 +1,175 @@
+\hypertarget{classmath}{\section{math Module Reference}
+\label{classmath}\index{math@{math}}
+}
+
+
+Definition of mathematical constants and operators.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+real(double) function, \\*
+dimension(n, n), public \hyperlink{classmath_a43efec08acf55747fa1e14085858aade}{iden} (N)
+\begin{DoxyCompactList}\small\item\em identity matrix \end{DoxyCompactList}\item 
+real(double) function, public \hyperlink{classmath_a9f8f22c01066f03fe5900edb63b56c89}{trace} (A)
+\begin{DoxyCompactList}\small\item\em trace of a complex matrix \end{DoxyCompactList}\item 
+real(double) function, public \hyperlink{classmath_a864984937cf0f3b7bdbc9b652b84445d}{cnorm} (A)
+\begin{DoxyCompactList}\small\item\em Entrywise p-\/norm of a complex square matrix with p=1. \end{DoxyCompactList}\item 
+real(double) function, public \hyperlink{classmath_a2830cb5393b6e6a8baa8d072c73ce8a9}{fnorm} (A, p)
+\begin{DoxyCompactList}\small\item\em Entrywise p-\/norm of a complex matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real(double), parameter \hyperlink{classmath_aa2f838077707f6cdb0c8a0ec69719690}{pi}
+\item 
+real(double), parameter \hyperlink{classmath_aeb6d7ed6a20444e26f024b34eaa4c4f7}{twopi}
+\item 
+real(double), parameter \hyperlink{classmath_a83cddb754967ada1a15217d10ed9c24b}{fourpi}
+\item 
+real(double), parameter \hyperlink{classmath_a99d72d3bce2cadc8630d10ee09aaa3ea}{halfpi}
+\item 
+complex(double), parameter \hyperlink{classmath_ae0354610846d49064ea0336f19d5bf3f}{eye}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition of mathematical constants and operators. 
+
+\begin{DoxyAuthor}{Authors}
+Author\-: Daniel Montemayor 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000008}{Todo}]
+\begin{DoxyItemize}
+\item Add cross and dot product operators 
+\end{DoxyItemize}\end{DoxyRefDesc}
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmath_a864984937cf0f3b7bdbc9b652b84445d}{\index{math@{math}!cnorm@{cnorm}}
+\index{cnorm@{cnorm}!math@{math}}
+\subsubsection[{cnorm}]{\setlength{\rightskip}{0pt plus 5cm}real(double) function, public math\-::cnorm (
+\begin{DoxyParamCaption}
+\item[{complex(double), dimension(\-:,\-:), intent(in)}]{A}
+\end{DoxyParamCaption}
+)}}\label{classmath_a864984937cf0f3b7bdbc9b652b84445d}
+
+
+Entrywise p-\/norm of a complex square matrix with p=1. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em A} & matrix $<$ \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classmath_a864984937cf0f3b7bdbc9b652b84445d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmath_a2830cb5393b6e6a8baa8d072c73ce8a9}{\index{math@{math}!fnorm@{fnorm}}
+\index{fnorm@{fnorm}!math@{math}}
+\subsubsection[{fnorm}]{\setlength{\rightskip}{0pt plus 5cm}real(double) function, public math\-::fnorm (
+\begin{DoxyParamCaption}
+\item[{complex(double), dimension(\-:,\-:), intent(in)}]{A, }
+\item[{integer(long), intent(in), optional}]{p}
+\end{DoxyParamCaption}
+)}}\label{classmath_a2830cb5393b6e6a8baa8d072c73ce8a9}
+
+
+Entrywise p-\/norm of a complex matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em A} & matrix \\
+\hline
+\mbox{\tt in}  & {\em p} & optional p-\/norm integer default\-: p=2 Frobinius normalization $<$ \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmath_a43efec08acf55747fa1e14085858aade}{\index{math@{math}!iden@{iden}}
+\index{iden@{iden}!math@{math}}
+\subsubsection[{iden}]{\setlength{\rightskip}{0pt plus 5cm}real(double) function, dimension(n,n), public math\-::iden (
+\begin{DoxyParamCaption}
+\item[{integer(long), intent(in)}]{N}
+\end{DoxyParamCaption}
+)}}\label{classmath_a43efec08acf55747fa1e14085858aade}
+
+
+identity matrix 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em N} & size of matrix $<$ \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classmath_a43efec08acf55747fa1e14085858aade_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmath_a9f8f22c01066f03fe5900edb63b56c89}{\index{math@{math}!trace@{trace}}
+\index{trace@{trace}!math@{math}}
+\subsubsection[{trace}]{\setlength{\rightskip}{0pt plus 5cm}real(double) function, public math\-::trace (
+\begin{DoxyParamCaption}
+\item[{complex(double), dimension(\-:,\-:), intent(in)}]{A}
+\end{DoxyParamCaption}
+)}}\label{classmath_a9f8f22c01066f03fe5900edb63b56c89}
+
+
+trace of a complex matrix 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em A} & matrix $<$ \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classmath_a9f8f22c01066f03fe5900edb63b56c89_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmath_ae0354610846d49064ea0336f19d5bf3f}{\index{math@{math}!eye@{eye}}
+\index{eye@{eye}!math@{math}}
+\subsubsection[{eye}]{\setlength{\rightskip}{0pt plus 5cm}complex(double), parameter math\-::eye}}\label{classmath_ae0354610846d49064ea0336f19d5bf3f}
+\hypertarget{classmath_a83cddb754967ada1a15217d10ed9c24b}{\index{math@{math}!fourpi@{fourpi}}
+\index{fourpi@{fourpi}!math@{math}}
+\subsubsection[{fourpi}]{\setlength{\rightskip}{0pt plus 5cm}real(double), parameter math\-::fourpi}}\label{classmath_a83cddb754967ada1a15217d10ed9c24b}
+\hypertarget{classmath_a99d72d3bce2cadc8630d10ee09aaa3ea}{\index{math@{math}!halfpi@{halfpi}}
+\index{halfpi@{halfpi}!math@{math}}
+\subsubsection[{halfpi}]{\setlength{\rightskip}{0pt plus 5cm}real(double), parameter math\-::halfpi}}\label{classmath_a99d72d3bce2cadc8630d10ee09aaa3ea}
+\hypertarget{classmath_aa2f838077707f6cdb0c8a0ec69719690}{\index{math@{math}!pi@{pi}}
+\index{pi@{pi}!math@{math}}
+\subsubsection[{pi}]{\setlength{\rightskip}{0pt plus 5cm}real(double), parameter math\-::pi}}\label{classmath_aa2f838077707f6cdb0c8a0ec69719690}
+\hypertarget{classmath_aeb6d7ed6a20444e26f024b34eaa4c4f7}{\index{math@{math}!twopi@{twopi}}
+\index{twopi@{twopi}!math@{math}}
+\subsubsection[{twopi}]{\setlength{\rightskip}{0pt plus 5cm}real(double), parameter math\-::twopi}}\label{classmath_aeb6d7ed6a20444e26f024b34eaa4c4f7}
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{utils_8f90}{utils.\-f90}\end{DoxyCompactItemize}

@@ -1,0 +1,151 @@
+\hypertarget{classcoupling__class}{\section{coupling\-\_\-class Module Reference}
+\label{classcoupling__class}\index{coupling\-\_\-class@{coupling\-\_\-class}}
+}
+
+
+Generic coupling Class.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacecoupling__class_1_1check}{check}
+\item 
+type \hyperlink{structcoupling__class_1_1coupling}{coupling}
+\item 
+interface \hyperlink{interfacecoupling__class_1_1display}{display}
+\item 
+interface \hyperlink{interfacecoupling__class_1_1kill}{kill}
+\item 
+interface \hyperlink{interfacecoupling__class_1_1new}{new}
+\item 
+interface \hyperlink{interfacecoupling__class_1_1resample}{resample}
+\item 
+interface \hyperlink{interfacecoupling__class_1_1save}{save}
+\item 
+interface \hyperlink{interfacecoupling__class_1_1update}{update}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classcoupling__class_a5fa07e475bf96111bc76820037fc26a4}{coupling\-\_\-new} (this, qs, cs, type, file)
+\item 
+subroutine \hyperlink{classcoupling__class_a774339d5b87453601c0664a199df7823}{coupling\-\_\-kill} (this)
+\item 
+subroutine \hyperlink{classcoupling__class_a034f9e137631afdb03a75cc32bf1956d}{coupling\-\_\-update} (this)
+\item 
+subroutine \hyperlink{classcoupling__class_ad26da11333ea64f68c25250a35287a51}{coupling\-\_\-resample} (this)
+\item 
+subroutine \hyperlink{classcoupling__class_a543d9a76307b2c60048d8f390fb40859}{coupling\-\_\-display} (this, msg)
+\item 
+subroutine \hyperlink{classcoupling__class_af46ffcc2d49425d21e248f173b5377bd}{coupling\-\_\-save} (this, file)
+\item 
+integer(short) function \hyperlink{classcoupling__class_a41b687a0ad543c445aa29923c229e39d}{coupling\-\_\-check} (this)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic coupling Class. 
+
+Can assume any derived coupling type \begin{DoxyAuthor}{Authors}
+Daniel Montemayor 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classcoupling__class_a41b687a0ad543c445aa29923c229e39d}{\index{coupling\-\_\-class@{coupling\-\_\-class}!coupling\-\_\-check@{coupling\-\_\-check}}
+\index{coupling\-\_\-check@{coupling\-\_\-check}!coupling_class@{coupling\-\_\-class}}
+\subsubsection[{coupling\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}integer(short) function coupling\-\_\-class\-::coupling\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{type({\bf coupling}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classcoupling__class_a41b687a0ad543c445aa29923c229e39d}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcoupling__class_a41b687a0ad543c445aa29923c229e39d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcoupling__class_a543d9a76307b2c60048d8f390fb40859}{\index{coupling\-\_\-class@{coupling\-\_\-class}!coupling\-\_\-display@{coupling\-\_\-display}}
+\index{coupling\-\_\-display@{coupling\-\_\-display}!coupling_class@{coupling\-\_\-class}}
+\subsubsection[{coupling\-\_\-display}]{\setlength{\rightskip}{0pt plus 5cm}subroutine coupling\-\_\-class\-::coupling\-\_\-display (
+\begin{DoxyParamCaption}
+\item[{type({\bf coupling}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classcoupling__class_a543d9a76307b2c60048d8f390fb40859}
+\hypertarget{classcoupling__class_a774339d5b87453601c0664a199df7823}{\index{coupling\-\_\-class@{coupling\-\_\-class}!coupling\-\_\-kill@{coupling\-\_\-kill}}
+\index{coupling\-\_\-kill@{coupling\-\_\-kill}!coupling_class@{coupling\-\_\-class}}
+\subsubsection[{coupling\-\_\-kill}]{\setlength{\rightskip}{0pt plus 5cm}subroutine coupling\-\_\-class\-::coupling\-\_\-kill (
+\begin{DoxyParamCaption}
+\item[{type({\bf coupling}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classcoupling__class_a774339d5b87453601c0664a199df7823}
+\hypertarget{classcoupling__class_a5fa07e475bf96111bc76820037fc26a4}{\index{coupling\-\_\-class@{coupling\-\_\-class}!coupling\-\_\-new@{coupling\-\_\-new}}
+\index{coupling\-\_\-new@{coupling\-\_\-new}!coupling_class@{coupling\-\_\-class}}
+\subsubsection[{coupling\-\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}subroutine coupling\-\_\-class\-::coupling\-\_\-new (
+\begin{DoxyParamCaption}
+\item[{type({\bf coupling}), intent(inout), target}]{this, }
+\item[{type(quantum), intent(inout), target}]{qs, }
+\item[{type(classical), intent(inout), target}]{cs, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{type, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classcoupling__class_a5fa07e475bf96111bc76820037fc26a4}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcoupling__class_a5fa07e475bf96111bc76820037fc26a4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcoupling__class_ad26da11333ea64f68c25250a35287a51}{\index{coupling\-\_\-class@{coupling\-\_\-class}!coupling\-\_\-resample@{coupling\-\_\-resample}}
+\index{coupling\-\_\-resample@{coupling\-\_\-resample}!coupling_class@{coupling\-\_\-class}}
+\subsubsection[{coupling\-\_\-resample}]{\setlength{\rightskip}{0pt plus 5cm}subroutine coupling\-\_\-class\-::coupling\-\_\-resample (
+\begin{DoxyParamCaption}
+\item[{type({\bf coupling}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classcoupling__class_ad26da11333ea64f68c25250a35287a51}
+\hypertarget{classcoupling__class_af46ffcc2d49425d21e248f173b5377bd}{\index{coupling\-\_\-class@{coupling\-\_\-class}!coupling\-\_\-save@{coupling\-\_\-save}}
+\index{coupling\-\_\-save@{coupling\-\_\-save}!coupling_class@{coupling\-\_\-class}}
+\subsubsection[{coupling\-\_\-save}]{\setlength{\rightskip}{0pt plus 5cm}subroutine coupling\-\_\-class\-::coupling\-\_\-save (
+\begin{DoxyParamCaption}
+\item[{type({\bf coupling}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in)}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classcoupling__class_af46ffcc2d49425d21e248f173b5377bd}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcoupling__class_af46ffcc2d49425d21e248f173b5377bd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcoupling__class_a034f9e137631afdb03a75cc32bf1956d}{\index{coupling\-\_\-class@{coupling\-\_\-class}!coupling\-\_\-update@{coupling\-\_\-update}}
+\index{coupling\-\_\-update@{coupling\-\_\-update}!coupling_class@{coupling\-\_\-class}}
+\subsubsection[{coupling\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}subroutine coupling\-\_\-class\-::coupling\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{type({\bf coupling}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classcoupling__class_a034f9e137631afdb03a75cc32bf1956d}
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{coupling_8f90}{coupling.\-f90}\end{DoxyCompactItemize}

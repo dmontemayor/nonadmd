@@ -1,0 +1,223 @@
+\hypertarget{classtemplate__class}{\section{template\-\_\-class Module Reference}
+\label{classtemplate__class}\index{template\-\_\-class@{template\-\_\-class}}
+}
+
+
+Derived Subsystem Template.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacetemplate__class_1_1check}{check}
+\begin{DoxyCompactList}\small\item\em Checks that the T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacetemplate__class_1_1display}{display}
+\begin{DoxyCompactList}\small\item\em Displays the current state of the T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacetemplate__class_1_1kill}{kill}
+\begin{DoxyCompactList}\small\item\em Destroys the T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacetemplate__class_1_1new}{new}
+\begin{DoxyCompactList}\small\item\em Creates the T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacetemplate__class_1_1resample}{resample}
+\begin{DoxyCompactList}\small\item\em Reinitializes the T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacetemplate__class_1_1save}{save}
+\begin{DoxyCompactList}\small\item\em Saves the current state of the T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\item 
+type \hyperlink{structtemplate__class_1_1template}{template}
+\item 
+interface \hyperlink{interfacetemplate__class_1_1update}{update}
+\begin{DoxyCompactList}\small\item\em Recaluclates the T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classtemplate__class_afada03bed94ed0e30fc64e11fdc5d129}{template\-\_\-init} (this, file)
+\begin{DoxyCompactList}\small\item\em Creates and initializes the T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classtemplate__class_a366839a54d53b1b42596fcb6979c49e3}{template\-\_\-kill} (this)
+\begin{DoxyCompactList}\small\item\em Destroys the T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classtemplate__class_ab9e51260f15fea473f62d16c07329252}{template\-\_\-update} (this)
+\begin{DoxyCompactList}\small\item\em Computes the current state of T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classtemplate__class_ad296ef0f288e19f326fd85ec615223cf}{template\-\_\-resample} (this)
+\begin{DoxyCompactList}\small\item\em Re-\/initiallizes the T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classtemplate__class_a35aadd43e518eec1e9fab596d018441c}{template\-\_\-save} (this, file)
+\begin{DoxyCompactList}\small\item\em Saves the current state of the T\-E\-M\-P\-L\-A\-T\-E object to file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classtemplate__class_abce4d2dbf856d00e563f5bb628c446cd}{template\-\_\-display} (this, msg)
+\begin{DoxyCompactList}\small\item\em Checks the T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\item 
+integer(short) function \hyperlink{classtemplate__class_a61fa7b21db4be16f8d32b67df5b9463c}{template\-\_\-check} (this)
+\begin{DoxyCompactList}\small\item\em Displays the T\-E\-M\-P\-L\-A\-T\-E object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Derived Subsystem Template. 
+
+Use this template to help you start building a derived quantum, classical, or coupling subsystem. Replace any instance of {\itshape primitive} with {\itshape hs}, {\itshape hb}, or {\itshape hc} for your derived quantum, classical or coupling subsystem respectively. Do not remove the {\itshape new}, {\itshape display}, {\itshape save}, {\itshape update}, {\itshape resample}, {\itshape kill}, and {\itshape check} subroutines and functions. These methods must be there for your derived subsystem to integrate properly with the application. You can leave these methods blank if you dont want those particular funcitionalities, although, this is not advised. Follow the examples commented in the source code to define the various attributes of your derived subsystem. D\-O N\-O\-T O\-V\-E\-R\-W\-R\-I\-T\-E T\-H\-I\-S F\-I\-L\-E. Make a copy and title it {\itshape myderivedsusbsystem.\-f90} where 'myderivedsubsystem' is your choice one-\/word title for your derived subsystem. Finally, Replace instances of the string 'T\-E\-M\-P\-L\-A\-T\-E' in this template with the same one-\/word title 'myderivedsubsystem' you chose. 
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classtemplate__class_a61fa7b21db4be16f8d32b67df5b9463c}{\index{template\-\_\-class@{template\-\_\-class}!template\-\_\-check@{template\-\_\-check}}
+\index{template\-\_\-check@{template\-\_\-check}!template_class@{template\-\_\-class}}
+\subsubsection[{template\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}integer(short) function template\-\_\-class\-::template\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{type({\bf template}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtemplate__class_a61fa7b21db4be16f8d32b67df5b9463c}
+
+
+Displays the T\-E\-M\-P\-L\-A\-T\-E object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em this} & is the T\-E\-M\-P\-L\-A\-T\-E object to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing if all checks pass or 1 and a warn for the first failed check. 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+Will exit after first failed check. 
+\end{DoxyRemark}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtemplate__class_a61fa7b21db4be16f8d32b67df5b9463c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classtemplate__class_abce4d2dbf856d00e563f5bb628c446cd}{\index{template\-\_\-class@{template\-\_\-class}!template\-\_\-display@{template\-\_\-display}}
+\index{template\-\_\-display@{template\-\_\-display}!template_class@{template\-\_\-class}}
+\subsubsection[{template\-\_\-display}]{\setlength{\rightskip}{0pt plus 5cm}subroutine template\-\_\-class\-::template\-\_\-display (
+\begin{DoxyParamCaption}
+\item[{type({\bf template}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtemplate__class_abce4d2dbf856d00e563f5bb628c446cd}
+
+
+Checks the T\-E\-M\-P\-L\-A\-T\-E object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em this} & is the T\-E\-M\-P\-L\-A\-T\-E object to be updated. \\
+\hline
+\mbox{\tt in}  & {\em msg} & is an optional string message to preface the displayed object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classtemplate__class_afada03bed94ed0e30fc64e11fdc5d129}{\index{template\-\_\-class@{template\-\_\-class}!template\-\_\-init@{template\-\_\-init}}
+\index{template\-\_\-init@{template\-\_\-init}!template_class@{template\-\_\-class}}
+\subsubsection[{template\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine template\-\_\-class\-::template\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{type({\bf template}), intent(inout)}]{this, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtemplate__class_afada03bed94ed0e30fc64e11fdc5d129}
+
+
+Creates and initializes the T\-E\-M\-P\-L\-A\-T\-E object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em this} & is the T\-E\-M\-P\-L\-A\-T\-E object to be initialized. \\
+\hline
+\mbox{\tt in}  & {\em file} & is an optional string containing the name of a previously saved T\-E\-M\-P\-L\-A\-T\-E file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+If no input file is provided the user must manually initialize T\-H\-I\-S using stout. 
+\end{DoxyRemark}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtemplate__class_afada03bed94ed0e30fc64e11fdc5d129_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classtemplate__class_a366839a54d53b1b42596fcb6979c49e3}{\index{template\-\_\-class@{template\-\_\-class}!template\-\_\-kill@{template\-\_\-kill}}
+\index{template\-\_\-kill@{template\-\_\-kill}!template_class@{template\-\_\-class}}
+\subsubsection[{template\-\_\-kill}]{\setlength{\rightskip}{0pt plus 5cm}subroutine template\-\_\-class\-::template\-\_\-kill (
+\begin{DoxyParamCaption}
+\item[{type({\bf template}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtemplate__class_a366839a54d53b1b42596fcb6979c49e3}
+
+
+Destroys the T\-E\-M\-P\-L\-A\-T\-E object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em this} & is the T\-E\-M\-P\-L\-A\-T\-E object to be destroyed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classtemplate__class_ad296ef0f288e19f326fd85ec615223cf}{\index{template\-\_\-class@{template\-\_\-class}!template\-\_\-resample@{template\-\_\-resample}}
+\index{template\-\_\-resample@{template\-\_\-resample}!template_class@{template\-\_\-class}}
+\subsubsection[{template\-\_\-resample}]{\setlength{\rightskip}{0pt plus 5cm}subroutine template\-\_\-class\-::template\-\_\-resample (
+\begin{DoxyParamCaption}
+\item[{type({\bf template}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtemplate__class_ad296ef0f288e19f326fd85ec615223cf}
+
+
+Re-\/initiallizes the T\-E\-M\-P\-L\-A\-T\-E object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em this} & is the T\-E\-M\-P\-L\-A\-T\-E object to be re-\/initialized. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classtemplate__class_a35aadd43e518eec1e9fab596d018441c}{\index{template\-\_\-class@{template\-\_\-class}!template\-\_\-save@{template\-\_\-save}}
+\index{template\-\_\-save@{template\-\_\-save}!template_class@{template\-\_\-class}}
+\subsubsection[{template\-\_\-save}]{\setlength{\rightskip}{0pt plus 5cm}subroutine template\-\_\-class\-::template\-\_\-save (
+\begin{DoxyParamCaption}
+\item[{type({\bf template}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in)}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtemplate__class_a35aadd43e518eec1e9fab596d018441c}
+
+
+Saves the current state of the T\-E\-M\-P\-L\-A\-T\-E object to file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em this} & is the T\-E\-M\-P\-L\-A\-T\-E object to be updated. \\
+\hline
+\mbox{\tt in}  & {\em file} & is a string containing the location of the save file. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtemplate__class_a35aadd43e518eec1e9fab596d018441c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classtemplate__class_ab9e51260f15fea473f62d16c07329252}{\index{template\-\_\-class@{template\-\_\-class}!template\-\_\-update@{template\-\_\-update}}
+\index{template\-\_\-update@{template\-\_\-update}!template_class@{template\-\_\-class}}
+\subsubsection[{template\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}subroutine template\-\_\-class\-::template\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{type({\bf template}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtemplate__class_ab9e51260f15fea473f62d16c07329252}
+
+
+Computes the current state of T\-E\-M\-P\-L\-A\-T\-E object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em this} & is the T\-E\-M\-P\-L\-A\-T\-E object to be updated. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_t_e_m_p_l_a_t_e_8f90}{T\-E\-M\-P\-L\-A\-T\-E.\-f90}\end{DoxyCompactItemize}

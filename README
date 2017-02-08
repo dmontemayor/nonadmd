@@ -1,0 +1,114 @@
+===============================================================================
+--------------------    Application Requirements    ---------------------------
+
+         - Linux operating system
+F90      - Fortran compiler
+fpp      - Fortran preprocessing
+MPI      - Parallel Computing library and location passed as flags into configure script
+MKL      - Intel Linear Algebra package in particular, library and location passed as flags into configure script
+autoconf - GNU configuration tool (look up autotools)
+automake - Also part of autotools package
+
+This application is distributed under the GNU Build System
+http://www.gnu.org/
+http://www.gnu.org/software/autoconf/
+http://www.gnu.org/software/automake/ 
+http://www.lrde.epita.fr/~adl/autotools.html
+http://en.wikipedia.org/wiki/GNU_build_system
+
+===============================================================================
+-------------------------       Summary        --------------------------------
+
+In this project we develop our non-adiabtic quantum mechanics application 'NonAdMD' currently in alpha. The primary objective is to establish the project's API, supply functionality supporting non-adiabatic dynamics of electronic quantum sub-systems, and develop functionality for linear spectroscopy. Secondary objectives include: supporting vibrational quantum subsystems, supporting non-linear spectroscopy, and providing examples.
+
+===============================================================================
+------------------------      Quick Start       -------------------------------
+Skip the INSTALL file!
+
+The thing to keep in mind is that this project is arranged so that the user can create multiple 'experiments' or executables while having only one copy of the source code. All the source code can be found in the src/ directory while the executables are built separately (anywhere on your machine!). But, before we can build an experiment we're going to need to configure this software so that it runs on your machine. Usually this process is a nightmare and often machine specific. Fortunately, the GNU build system's autotools does it all for you. Make sure autotools is installed. If not type: (sudo apt-get install autotools). Autotools is usually installed on most Linux machines. To configure with autotools simply type:
+
+    $ aclocal
+    $ autoheader
+    $ automake
+    $ autoconf
+
+NOTE: Unless stated explicity assume we are in the distribution directory (i.e. the directory this 'README' file and the 'src/' directory should be in). Also, since I don't know what you called this directory, I'll just label it 'dist/' from now on. Substitute where apporopriate.
+
+If all goes well, some new files will now appear, chief among these are the configure script 'configure' and the 'Makefile.in' file that will be used later to compile the program. Next, let's choose a location on your machine you would like have this experiment built, preferably outside of this distribution directory to keep things neat. Give your experiment a name, create a directory and enter into it.
+
+    $ mkdir ../myfirstexp
+    $ cd ../myfirstexp
+
+To build this experiment call the configure script we generated earlier from inside the myfirstexp/ directory. Here is a template:
+
+    $ LDFLAGS="-L<mkl_path> -l<mkl_package> -l<mkl_package>" ../dist/configure --prefix=$PWD
+
+For example I use (runs on stokes.ichec.ie as of 11-Feb-2013):
+
+    $ LDFLAGS="-L$MKLROOT/lib/em64t -lmkl_intel_lp64 -lmkl_sequential -lmkl_lapack -lmkl_core" ../dist/configure --prefix=$PWD
+
+All that stuff in quotes after LDFLAGS you'll need to edit for yourself. They tell the compiler where to find the Intel MKL library. Add the path to your MKL library after the '-L' flag with no space between them and add the individual mkl libraries preceeded by the '-l' flag. The, '--prefix=$PWD' is very important, be sure you include this after the configure script call. The script should configure the application to run in serial mode. In the future you may wish to run the application in a parallel computing setting. Simply include FCFLAGS="-D MPI" along with the LDFLAGS="..." and add -lmpi to the LDFLAGS= string like this:
+
+    $ FCFLAGS="-D MPI" LDFLAGS="-lmpi -L$<mkl_path> -l<mkl_package(s)>" ../dist/configure --prefix=$PWD
+
+The application should now be ready to install. You should find a brand new Makefile made just for you in myfirstexp/. To install type:
+
+    $ make install 
+
+You should be done! In myfirstexp/ you should find a bin/ directory. The executable is in here. Go ahead and run from the myfirstexp/ directory the file in the bin/ directory now.
+
+    $ bin/App
+
+ What happened? I know, cruel joke. The executable is completely blank and should do nothing other than open and close an experiment. The details of the experiment I leave to you. Edit the system_driver.f90 file in the experiment source directory myfirstexp/src/ to start creating your own experiment. You can also find some examples in the distribution share directory dist/share/. Overwrite the system_driver.f90 in myfirstexp/src/ directory with one of these examples and re-install and run the new experiment like this:
+
+    $ cp ../dist/share/examples/<example_system>/system_driver.f90 ./src/system_driver.f90
+    $ make install
+    $ bin/App
+
+The application will now prompt you to enter several things manually. You can try to make some numbers up but probably you'll just end up with a ton of warnings and errors shouted at you by the application. Don't worry. I've provided input files for each example. Just copy all the files in the example_system, move the driver 'system_driver.f90 to your experiment's source directory 'myfirstexp/src/', re-compile, and finally run the example with the supplied input file 'App.in'.
+
+    $ cp ../dist/share/examples/<example_system>/* ./
+    $ mv system_driver.f90 src/
+    $ make install
+    $ bin/App < App.in
+
+Enjoy!
+
+===============================================================================
+-------------------------       Checklist        ------------------------------
+none(unstarted) -> rough(unreadable) -> first(readable draft) -> revised(second draft) -> final(confirmed)
+-------------------------------------------------------------------------------
+1. Hamiltonian: H=hs+hb+hc
+	a. Primitives                                 (API-revised, DOC-first)
+	b. Derived subsystems
+	   1. electronic quantum subsystem            (API-revised, DOC-first)
+           2. vibrational quantum subsystem           (API-none, DOC-none)
+	   3. harmonic classical subsystem            (API-revised, DOC-first)
+	   4. bilinear coupling                       (API-revised, DOC-first)
+	c. Dynamic dispatching and general subsystems (API-revised, DOC-first)
+2. Propagators: Interface with general subsystems     (API-revised, DOC-first)
+3. Spectroscopy:
+	a. Linear Spectroscopy: Direct observation of Hamiltonian (API-first, DOC-rough)
+	b. Non-Linear Spectroscopy: Using Propagators to recover dynamic Hamiltonian response (API-rough, DOC-none)
+	c. Solvent response: Parsing pdf trajectory (API-first, DOC-rough)
+4. Examples:
+	a. Electronic quantum sub-system problems
+	   1. Spin Boson (API-none, DOC-none)
+	   2. FMO
+	      i.  PLDM 8 state model                     (API-first, DOC-rough)
+	      ii. Compute inhomogeneous spectral density (API-first, DOC-rough)
+	   3. LHII
+	      i.   PLDM JS model                            (API-none, DOC-none)
+	      ii.  Compute linear absorption our LHII model (API-none, DOC-none)
+	      iii. Compute CD spectrum                      (API-none, DOC-none)
+	b. Vibrational quantum sub-system problems
+	   1. Tully           (API-none, DOC-none)
+	   2. I2 in Kr        (API-none, DOC-none)
+	   3. H2 in C02       (API-none, DOC-none)
+	   4. 3HydroxyFlavone (API-none, DOC-none)
+	c. Computing 3rd order non-linear spectra (API-none, DOC-none)
+5. Creating Derived sub-systems (API-first, DOC-rough)
+5. Unit Tests and Diagnostics: (API-rough, DOC-none)
+-------------------------------------------------------------------------------
+Author:
+Daniel Montemayor, 11 Feb 2013

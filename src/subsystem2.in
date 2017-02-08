@@ -1,0 +1,9 @@
+  implicit none
+  private
+  public::subsys
+  public::new,kill,update,resample,display,save,check
+  type subsys
+     logical::initialized=.false.
+     type(hprim),pointer::hprim
+     type(hprim)::primitive
+     character(len=title)::type=''

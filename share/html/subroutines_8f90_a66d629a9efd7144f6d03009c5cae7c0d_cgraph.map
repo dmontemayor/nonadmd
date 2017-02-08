@@ -1,0 +1,14 @@
+<map id="praxisfit" name="praxisfit">
+<area shape="rect" id="node3" href="$src_2system__driver_8f90.html#aa2135d8f316dac80d3d2ba872771b95b" title="f" alt="" coords="619,225,658,253"/>
+<area shape="rect" id="node7" href="$praxis_8f.html#af91941b7f0c3ddb787c772ca565e1855" title="PRAXIS RETURNS THE MINIMUM OF THE FUNCTION F(X,N) OF N VARIABLES USING THE PRINCIPAL AXIS METHOD..." alt="" coords="121,223,178,251"/>
+<area shape="rect" id="node5" href="$classfilemanager.html#aa389048ef7c9eb9afdac7ce1dcc691b2" title="filemanager::newunit" alt="" coords="706,225,851,253"/>
+<area shape="rect" id="node10" href="$praxis_8f.html#ad17dd523e058957564e309fed67cfa20" title="min" alt="" coords="440,301,483,329"/>
+<area shape="rect" id="node16" href="$praxis_8f.html#a08308a29605c2abb57b179777553e9e1" title="Praxis&#39; random number generator." alt="" coords="229,94,277,122"/>
+<area shape="rect" id="node18" href="$praxis_8f.html#ac10ca39b9214d2a1ff4701ab237bf2a9" title="print" alt="" coords="336,301,384,329"/>
+<area shape="rect" id="node21" href="$praxis_8f.html#a45854e864f31f82eb39cae6a2882c883" title="vcprnt" alt="" coords="331,353,389,381"/>
+<area shape="rect" id="node24" href="$praxis_8f.html#a0527d011f50eb026ac3ceea522e0ca5a" title="QUAD LOOKS FOR THE MINIMUM OF F ALONG A CURVE DEFINED BY Q0,Q1,X." alt="" coords="335,146,385,174"/>
+<area shape="rect" id="node28" href="$praxis_8f.html#ac6663bade5f6b02f5bc8c05767d38027" title="maprnt" alt="" coords="329,405,391,433"/>
+<area shape="rect" id="node31" href="$praxis_8f.html#a4deca9e8eeda59dc7ea99e26c38d4a6d" title="AN IMPROVED VERSION OF MINFIT (SEE GOLUB AND REINSCH, 1969) RESTRICTED TO SQUARE AB." alt="" coords="227,453,280,481"/>
+<area shape="rect" id="node35" href="$praxis_8f.html#a462bf29e7634caebf340f472d7b13bd0" title="sort" alt="" coords="232,146,275,174"/>
+<area shape="rect" id="node13" href="$praxis_8f.html#a8e1d4a20be8141e78ebb31fd1dc876dd" title="FLIN IS THE FUNCTION OF ONE REAL VARIABLE L THAT IS MINIMIZED BY THE SUBROUTINE MIN." alt="" coords="531,250,570,278"/>
+</map>

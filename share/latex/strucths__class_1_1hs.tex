@@ -1,0 +1,97 @@
+\hypertarget{strucths__class_1_1hs}{\section{hs\-\_\-class\-:\-:hs Type Reference}
+\label{strucths__class_1_1hs}\index{hs\-\_\-class\-::hs@{hs\-\_\-class\-::hs}}
+}
+
+
+Quantum subsystem primitive type.  
+
+
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+logical \hyperlink{strucths__class_1_1hs_a39ff1ef8fc5a20f97973d4947d518c5f}{initialized}
+\begin{DoxyCompactList}\small\item\em true if hs type has been properly initialized \end{DoxyCompactList}\item 
+integer(long) \hyperlink{strucths__class_1_1hs_acb57246378a120bd330012dae9a3ff38}{nstate}
+\begin{DoxyCompactList}\small\item\em defines the number of quantum states. \end{DoxyCompactList}\item 
+real(double) \hyperlink{strucths__class_1_1hs_aa0f4d851a33f1d195d2b6b9334cdb5d5}{eg}
+\begin{DoxyCompactList}\small\item\em is the energy origin often defined to be the ground state energy. \end{DoxyCompactList}\item 
+real(double) \hyperlink{strucths__class_1_1hs_a45c5cb902e23547a231a25fcd34cc621}{tol}
+\begin{DoxyCompactList}\small\item\em is a vestigial parameter to be removed in later versions. \end{DoxyCompactList}\item 
+real(double), dimension(\-:,\-:), \\*
+pointer \hyperlink{strucths__class_1_1hs_a18f6eb65a6edae047d41c8aa5a3d9d09}{diabat}
+\begin{DoxyCompactList}\small\item\em is an Nx\-N matrix containing the elements of the quantum subsystem hamiltonian in the native diabatic basis. \end{DoxyCompactList}\item 
+complex(double), dimension(\-:,\-:), \\*
+pointer \hyperlink{strucths__class_1_1hs_aac60f7bc14df6c4a5a1363c70b69b2db}{eigenvec}
+\begin{DoxyCompactList}\small\item\em is an Nx\-N matrix containing along its columns the expansion coefficients that transform the diabatic basis into the eigen state basis of the quantum subsystem hamiltonian \end{DoxyCompactList}\item 
+real(double), dimension(\-:), pointer \hyperlink{strucths__class_1_1hs_ae978013c998c123a7430209fa2797511}{eigenval}
+\begin{DoxyCompactList}\small\item\em is array of length N containing the eigen vaules of the eigen states. \end{DoxyCompactList}\item 
+complex(double), dimension(\-:,\-:), \\*
+pointer \hyperlink{strucths__class_1_1hs_ad8d40ef9d0cb7af5e9d889f2ec05225d}{den}
+\begin{DoxyCompactList}\small\item\em is an Nx\-N matrix containing the reduced density matrix of the total Hamiltonian. It describes the current state of the quantum subsystem in the diabatic basis \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Quantum subsystem primitive type. 
+
+\subsection{Member Data Documentation}
+\hypertarget{strucths__class_1_1hs_ad8d40ef9d0cb7af5e9d889f2ec05225d}{\index{hs\-\_\-class\-::hs@{hs\-\_\-class\-::hs}!den@{den}}
+\index{den@{den}!hs_class::hs@{hs\-\_\-class\-::hs}}
+\subsubsection[{den}]{\setlength{\rightskip}{0pt plus 5cm}complex(double), dimension(\-:,\-:), pointer hs\-\_\-class\-::hs\-::den\hspace{0.3cm}{\ttfamily [private]}}}\label{strucths__class_1_1hs_ad8d40ef9d0cb7af5e9d889f2ec05225d}
+
+
+is an Nx\-N matrix containing the reduced density matrix of the total Hamiltonian. It describes the current state of the quantum subsystem in the diabatic basis 
+
+\hypertarget{strucths__class_1_1hs_a18f6eb65a6edae047d41c8aa5a3d9d09}{\index{hs\-\_\-class\-::hs@{hs\-\_\-class\-::hs}!diabat@{diabat}}
+\index{diabat@{diabat}!hs_class::hs@{hs\-\_\-class\-::hs}}
+\subsubsection[{diabat}]{\setlength{\rightskip}{0pt plus 5cm}real(double), dimension(\-:,\-:), pointer hs\-\_\-class\-::hs\-::diabat\hspace{0.3cm}{\ttfamily [private]}}}\label{strucths__class_1_1hs_a18f6eb65a6edae047d41c8aa5a3d9d09}
+
+
+is an Nx\-N matrix containing the elements of the quantum subsystem hamiltonian in the native diabatic basis. 
+
+\hypertarget{strucths__class_1_1hs_aa0f4d851a33f1d195d2b6b9334cdb5d5}{\index{hs\-\_\-class\-::hs@{hs\-\_\-class\-::hs}!eg@{eg}}
+\index{eg@{eg}!hs_class::hs@{hs\-\_\-class\-::hs}}
+\subsubsection[{eg}]{\setlength{\rightskip}{0pt plus 5cm}real(double) hs\-\_\-class\-::hs\-::eg\hspace{0.3cm}{\ttfamily [private]}}}\label{strucths__class_1_1hs_aa0f4d851a33f1d195d2b6b9334cdb5d5}
+
+
+is the energy origin often defined to be the ground state energy. 
+
+\hypertarget{strucths__class_1_1hs_ae978013c998c123a7430209fa2797511}{\index{hs\-\_\-class\-::hs@{hs\-\_\-class\-::hs}!eigenval@{eigenval}}
+\index{eigenval@{eigenval}!hs_class::hs@{hs\-\_\-class\-::hs}}
+\subsubsection[{eigenval}]{\setlength{\rightskip}{0pt plus 5cm}real(double), dimension(\-:), pointer hs\-\_\-class\-::hs\-::eigenval\hspace{0.3cm}{\ttfamily [private]}}}\label{strucths__class_1_1hs_ae978013c998c123a7430209fa2797511}
+
+
+is array of length N containing the eigen vaules of the eigen states. 
+
+\hypertarget{strucths__class_1_1hs_aac60f7bc14df6c4a5a1363c70b69b2db}{\index{hs\-\_\-class\-::hs@{hs\-\_\-class\-::hs}!eigenvec@{eigenvec}}
+\index{eigenvec@{eigenvec}!hs_class::hs@{hs\-\_\-class\-::hs}}
+\subsubsection[{eigenvec}]{\setlength{\rightskip}{0pt plus 5cm}complex(double), dimension(\-:,\-:), pointer hs\-\_\-class\-::hs\-::eigenvec\hspace{0.3cm}{\ttfamily [private]}}}\label{strucths__class_1_1hs_aac60f7bc14df6c4a5a1363c70b69b2db}
+
+
+is an Nx\-N matrix containing along its columns the expansion coefficients that transform the diabatic basis into the eigen state basis of the quantum subsystem hamiltonian 
+
+\hypertarget{strucths__class_1_1hs_a39ff1ef8fc5a20f97973d4947d518c5f}{\index{hs\-\_\-class\-::hs@{hs\-\_\-class\-::hs}!initialized@{initialized}}
+\index{initialized@{initialized}!hs_class::hs@{hs\-\_\-class\-::hs}}
+\subsubsection[{initialized}]{\setlength{\rightskip}{0pt plus 5cm}logical hs\-\_\-class\-::hs\-::initialized\hspace{0.3cm}{\ttfamily [private]}}}\label{strucths__class_1_1hs_a39ff1ef8fc5a20f97973d4947d518c5f}
+
+
+true if hs type has been properly initialized 
+
+\hypertarget{strucths__class_1_1hs_acb57246378a120bd330012dae9a3ff38}{\index{hs\-\_\-class\-::hs@{hs\-\_\-class\-::hs}!nstate@{nstate}}
+\index{nstate@{nstate}!hs_class::hs@{hs\-\_\-class\-::hs}}
+\subsubsection[{nstate}]{\setlength{\rightskip}{0pt plus 5cm}integer(long) hs\-\_\-class\-::hs\-::nstate\hspace{0.3cm}{\ttfamily [private]}}}\label{strucths__class_1_1hs_acb57246378a120bd330012dae9a3ff38}
+
+
+defines the number of quantum states. 
+
+\hypertarget{strucths__class_1_1hs_a45c5cb902e23547a231a25fcd34cc621}{\index{hs\-\_\-class\-::hs@{hs\-\_\-class\-::hs}!tol@{tol}}
+\index{tol@{tol}!hs_class::hs@{hs\-\_\-class\-::hs}}
+\subsubsection[{tol}]{\setlength{\rightskip}{0pt plus 5cm}real(double) hs\-\_\-class\-::hs\-::tol\hspace{0.3cm}{\ttfamily [private]}}}\label{strucths__class_1_1hs_a45c5cb902e23547a231a25fcd34cc621}
+
+
+is a vestigial parameter to be removed in later versions. 
+
+
+
+The documentation for this type was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{hs_8f90}{hs.\-f90}\end{DoxyCompactItemize}

@@ -1,0 +1,10 @@
+<map id="min" name="min">
+<area shape="rect" id="node3" href="$praxis_8f.html#af91941b7f0c3ddb787c772ca565e1855" title="PRAXIS RETURNS THE MINIMUM OF THE FUNCTION F(X,N) OF N VARIABLES USING THE PRINCIPAL AXIS METHOD..." alt="" coords="310,107,367,135"/>
+<area shape="rect" id="node9" href="$praxis_8f.html#a0527d011f50eb026ac3ceea522e0ca5a" title="QUAD LOOKS FOR THE MINIMUM OF F ALONG A CURVE DEFINED BY Q0,Q1,X." alt="" coords="209,28,260,56"/>
+<area shape="rect" id="node12" href="$praxis_8f.html#ac10ca39b9214d2a1ff4701ab237bf2a9" title="print" alt="" coords="211,80,258,108"/>
+<area shape="rect" id="node15" href="$praxis_8f.html#a45854e864f31f82eb39cae6a2882c883" title="vcprnt" alt="" coords="99,132,157,160"/>
+<area shape="rect" id="node18" href="$praxis_8f.html#ac6663bade5f6b02f5bc8c05767d38027" title="maprnt" alt="" coords="97,184,159,212"/>
+<area shape="rect" id="node5" href="$subroutines_8f90.html#a66d629a9efd7144f6d03009c5cae7c0d" title="praxisfit" alt="" coords="416,107,483,135"/>
+<area shape="rect" id="node7" href="$src_2system__driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Main loop of Program!" alt="" coords="531,107,581,135"/>
+<area shape="rect" id="node21" href="$praxis_8f.html#a4deca9e8eeda59dc7ea99e26c38d4a6d" title="AN IMPROVED VERSION OF MINFIT (SEE GOLUB AND REINSCH, 1969) RESTRICTED TO SQUARE AB." alt="" coords="208,235,261,263"/>
+</map>

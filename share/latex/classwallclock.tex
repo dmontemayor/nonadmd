@@ -1,0 +1,102 @@
+\hypertarget{classwallclock}{\section{wallclock Module Reference}
+\label{classwallclock}\index{wallclock@{wallclock}}
+}
+
+
+Timming Module.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+character(len=8) function, public \hyperlink{classwallclock_aac2bc47e557d4981f481295bd687dd50}{date} ()
+\item 
+character(len=10) function, public \hyperlink{classwallclock_a3efb3d12447df7568e0b22b3cd4ed60d}{time} ()
+\item 
+character(len=5) function, public \hyperlink{classwallclock_ac6bdcdd3cf7fc38f4c738862e2a82dac}{zone} ()
+\item 
+integer(long) function, \\*
+dimension(8), public \hyperlink{classwallclock_ac691a026a7b92c6cd971e86d0449d42b}{timearray} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+character(len=8) \hyperlink{classwallclock_a0922e57a4f1a99af864f31246c132d4c}{d}
+\item 
+character(len=10) \hyperlink{classwallclock_a8a94eeecb39db73f1c36c9b00a95c9f7}{t}
+\item 
+character(len=5) \hyperlink{classwallclock_a47a8e5d4efccd0142b0587c873dad88b}{z}
+\item 
+integer(long), dimension(8) \hyperlink{classwallclock_a634d56ca30b98ea804c6d33a0a635ec0}{a}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Timming Module. 
+
+Supplies the software with a standard method of computing wall clock time in units of mils, sec, hours or even days. \begin{DoxyAuthor}{Authors}
+Author\-: Daniel Montemayor 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classwallclock_aac2bc47e557d4981f481295bd687dd50}{\index{wallclock@{wallclock}!date@{date}}
+\index{date@{date}!wallclock@{wallclock}}
+\subsubsection[{date}]{\setlength{\rightskip}{0pt plus 5cm}character(len=8) function, public wallclock\-::date (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classwallclock_aac2bc47e557d4981f481295bd687dd50}
+\hypertarget{classwallclock_a3efb3d12447df7568e0b22b3cd4ed60d}{\index{wallclock@{wallclock}!time@{time}}
+\index{time@{time}!wallclock@{wallclock}}
+\subsubsection[{time}]{\setlength{\rightskip}{0pt plus 5cm}character(len=10) function, public wallclock\-::time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classwallclock_a3efb3d12447df7568e0b22b3cd4ed60d}
+\hypertarget{classwallclock_ac691a026a7b92c6cd971e86d0449d42b}{\index{wallclock@{wallclock}!timearray@{timearray}}
+\index{timearray@{timearray}!wallclock@{wallclock}}
+\subsubsection[{timearray}]{\setlength{\rightskip}{0pt plus 5cm}integer(long) function, dimension(8), public wallclock\-::timearray (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classwallclock_ac691a026a7b92c6cd971e86d0449d42b}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classwallclock_ac691a026a7b92c6cd971e86d0449d42b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classwallclock_ac6bdcdd3cf7fc38f4c738862e2a82dac}{\index{wallclock@{wallclock}!zone@{zone}}
+\index{zone@{zone}!wallclock@{wallclock}}
+\subsubsection[{zone}]{\setlength{\rightskip}{0pt plus 5cm}character(len=5) function, public wallclock\-::zone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classwallclock_ac6bdcdd3cf7fc38f4c738862e2a82dac}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classwallclock_a634d56ca30b98ea804c6d33a0a635ec0}{\index{wallclock@{wallclock}!a@{a}}
+\index{a@{a}!wallclock@{wallclock}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}integer(long), dimension(8) wallclock\-::a\hspace{0.3cm}{\ttfamily [private]}}}\label{classwallclock_a634d56ca30b98ea804c6d33a0a635ec0}
+\hypertarget{classwallclock_a0922e57a4f1a99af864f31246c132d4c}{\index{wallclock@{wallclock}!d@{d}}
+\index{d@{d}!wallclock@{wallclock}}
+\subsubsection[{d}]{\setlength{\rightskip}{0pt plus 5cm}character(len=8) wallclock\-::d\hspace{0.3cm}{\ttfamily [private]}}}\label{classwallclock_a0922e57a4f1a99af864f31246c132d4c}
+\hypertarget{classwallclock_a8a94eeecb39db73f1c36c9b00a95c9f7}{\index{wallclock@{wallclock}!t@{t}}
+\index{t@{t}!wallclock@{wallclock}}
+\subsubsection[{t}]{\setlength{\rightskip}{0pt plus 5cm}character(len=10) wallclock\-::t\hspace{0.3cm}{\ttfamily [private]}}}\label{classwallclock_a8a94eeecb39db73f1c36c9b00a95c9f7}
+\hypertarget{classwallclock_a47a8e5d4efccd0142b0587c873dad88b}{\index{wallclock@{wallclock}!z@{z}}
+\index{z@{z}!wallclock@{wallclock}}
+\subsubsection[{z}]{\setlength{\rightskip}{0pt plus 5cm}character(len=5) wallclock\-::z\hspace{0.3cm}{\ttfamily [private]}}}\label{classwallclock_a47a8e5d4efccd0142b0587c873dad88b}
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{utils_8f90}{utils.\-f90}\end{DoxyCompactItemize}

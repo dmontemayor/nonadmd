@@ -1,0 +1,152 @@
+Non\-Ad\-M\-D uses 7 major commands to interface with the generic subsystem these are titled\-: N\-E\-W, K\-I\-L\-L, U\-P\-D\-A\-T\-E, R\-E\-S\-A\-M\-P\-L\-E, D\-I\-S\-P\-L\-A\-Y, S\-A\-V\-E, and C\-H\-E\-C\-K. All these commands are called with a similar F\-O\-R\-T\-R\-A\-N syntax\par
+ \par
+ call C\-O\-M\-M\-A\-N\-D(generic\-\_\-subsystem,\mbox{[}options\mbox{]})\par
+ \par
+ where 'C\-O\-M\-M\-A\-N\-D' is one of the 7 commands above, 'generic\-\_\-subsystem' is the name of a generic subsystem (types qs, cs, or cp), and 'options' are ,you guessed it, some optional paramters listed below. For convenience we will refer to generic subsystems as G\-S from now on. With that said, let look at each of these commands.\par
+ \hypertarget{_interface_New}{}\section{New}\label{_interface_New}
+Creates a G\-S and tells the G\-S to behave like a particular derived type. For example the command\-:\par
+ \par
+ call New(cs,type='harmonicbath')\par
+ \par
+ will prepare the generic classical subsystem (cs) in a form that will cause it to behave like a bath of harmonic oscillators. 'harmonicbath' is a name of a derived classical subsystem type, more on derived subsystems later. One can also prepare the G\-S from a previously saved file containing the derived subsystem like so\-:\par
+ \par
+ call New(cs,file='a\-\_\-harmonicbath\-\_\-file')\par
+ \par
+ The same format applies for a generic quantum subsystem (qs), however, when initiating a generic coupling term (cp) the user must also provide the generic quantum and classical subsystems which are to be linked like so\-:\par
+ \par
+ call New(cp,qs,cs,type='derived\-\_\-coupling\-\_\-type')\par
+ \par
+ The quantum and classical G\-Ss must also be provided when initiating from a file.\par
+ \par
+ call New(cp,qs,cs,file='a\-\_\-derived\-\_\-coupling\-\_\-file')\par
+ \par
+ Normally the compiler assumes that the second entry (qs) is the generic quantum subsystem and the third (cs) is the generic classical subsystem but you can explicitly define these two like we have for the 'file' and 'type' parameters like so\-:\par
+ \par
+ call New(cp,qs=myqs,cs=mycs,file='a\-\_\-derived\-\_\-coupling\-\_\-file')\par
+ or\par
+ call New(cp,cs=mycs,qs=myqs,file='a\-\_\-derived\-\_\-coupling\-\_\-file')\par
+ or even\par
+ call New(cp,file='a\-\_\-derived\-\_\-coupling\-\_\-file',qs=mysq,cs=mycs)\par
+ \par
+ Notice that the order does not matter when one explicitly defines the parameters.\par
+ \hypertarget{_interface_SAVE}{}\section{S\-A\-V\-E}\label{_interface_SAVE}
+Creates a save file of your G\-S for you to use later with a N\-E\-W command. The syntax is as follows\-:\par
+ \par
+ call Save(cs,file='a\-\_\-harmonicbath\-\_\-file')\par
+ \par
+ The title of the file is of course your choice but often it is useful to have some information of the derived type somewhere in the title. You can use this saved file to create copies of your G\-S. This application by convention appends a type name suffix to all automatically generated save files. Automatically gernerated files are used by the application for bookeeping. For example, if you title your G\-S 'my\-G\-S' and N\-E\-W it (instantiate, or create it in other words) as type='harmonicbath', then when you call S\-A\-V\-E(my\-G\-S,file='my\-\_\-save\-\_\-file') you will not only generate your save file 'my\-\_\-save\-\_\-file' but also the program will create a file titled 'my\-\_\-save\-\_\-file.\-harmonicbath'. What is happening here is that your save file 'my\-\_\-save\-\_\-file' is mearly a file that tells the N\-E\-W command that you want to build a generic classical subsystem of type 'harmonicbath' and points the program to a set of internal files that actually hold all the relevant information. The idea is that the casual user doesn't need to concern themselves with all those gory details but a more advanced user may wish to pick and pull from these internal save files to create some new derived type or more likely to satisfy some deep rooted masochistic tendancy either way we really don't need to get into that here. It does however bring us to our next point.\par
+ \hypertarget{_interface_KILL}{}\section{K\-I\-L\-L}\label{_interface_KILL}
+Destroys the G\-S and cleans up any memory allocated. Typically the user will want to K\-I\-L\-L the G\-S once they are done using it with the following syntax\-:\par
+ \par
+ call Kill(\-G\-S)\par
+ \par
+ No big whoop there, nevertheless, it is neccessary. Actually... This command isn't strictly necessary as N\-E\-Wing the G\-S again will (try it's best to) clean up as much of the memory as it can. However, as a good practice regularly K\-I\-L\-Ling any unused G\-S will help prevent memory leaks and/or free up memory that could otherwise be used by the program to do other things.\par
+ \hypertarget{_interface_UPDATE}{}\section{U\-P\-D\-A\-T\-E}\label{_interface_UPDATE}
+Causes the G\-S to recompute various internal properties such as the classical force field or adiabatic eigen states based on dynamic things such as the current nuclear configuration. Usage\-:\par
+ \par
+ call Update(\-G\-S) \par
+ \hypertarget{_interface_RESAMPLE}{}\section{R\-E\-S\-A\-M\-P\-L\-E}\label{_interface_RESAMPLE}
+Causes the G\-S to re-\/initiate itself often resetting any stochastic properties such as sampling nuclear phase-\/space variables from a thermal distribution. Usage\-:\par
+ \par
+ call Resample(\-G\-S)\par
+ \hypertarget{_interface_DISPLAY}{}\section{D\-I\-S\-P\-L\-A\-Y}\label{_interface_DISPLAY}
+Outputs (often directly to screen) the current state of the G\-S. Usage\-:\par
+ \par
+ call Display(\-G\-S)\par
+ \hypertarget{_interface_CHECK}{}\section{C\-H\-E\-C\-K}\label{_interface_CHECK}
+This command is used to ensure that the current state of the G\-S is within an acceptable range of values. The C\-H\-E\-C\-K command systematically reviews all of the G\-S attributes and will W\-A\-R\-N of the first, if any, problem it encounters. C\-H\-E\-C\-K is not a subroutine that must be C\-A\-L\-Led like the previous commands. Rather, C\-H\-E\-C\-K is a function that returns the integer 0 if no problem is found or 1 if a problem is found. The C\-H\-E\-C\-K function will also log a warning message describing the type of problem, if any, found. Usage\-:\par
+ \par
+ an\-\_\-integer\-\_\-variable = Check(\-G\-S)\par
+ or\par
+ if(Check(\-G\-S).E\-Q.\-0)then\par
+  commands to do when no errors...\par
+ else\par
+  commands to do when errors present... \par
+ end if\par
+ \par
+ \hypertarget{_interface_Error_Handling}{}\section{Error Handling}\label{_interface_Error_Handling}
+Non\-Ad\-M\-D logs 4 types of information during run time they are\-: notes, warnings, errors, and prompts. The User can set a verbosity level to suppress some or all of this run time information. More on that later but first lest look at these 4 types.\par
+ \hypertarget{_interface_NOTES}{}\subsection{N\-O\-T\-E\-S}\label{_interface_NOTES}
+Notes are essentially run time comments usually displayed for debugging purposes. They typically do not announce a runtime problem that may possibly effect the quality of the calculation.\par
+ \hypertarget{_interface_WARNINGS}{}\subsection{W\-A\-R\-N\-I\-N\-G\-S}\label{_interface_WARNINGS}
+Warnings, on the other hand, do announce possible problems with the calculation quality. W\-A\-R\-N\-I\-N\-G\-S typically do not stop the program, unless dictated by the User, rather W\-A\-R\-N\-I\-N\-G\-S recover from run time issues as best they can (better said as best the Developer can). Usually the Developer will state how the program will recover from the W\-A\-R\-N\-I\-N\-G when recovery is possible.\par
+ \hypertarget{_interface_ERRORS}{}\subsection{E\-R\-R\-O\-R\-S}\label{_interface_ERRORS}
+Errors are irrecoverable run time issues and will stop the program. The Developer may suggest things the User can do to avoid the E\-R\-R\-O\-R in the error message -\/ but probably didn't.\par
+ \hypertarget{_interface_PROMPT}{}\subsection{P\-R\-O\-M\-P\-T}\label{_interface_PROMPT}
+Prompts are the 4th type of message, and should be rarely used. They were originally created to comunicate very important information to the user back when this application, ahem, {\itshape was} unstable. As a result P\-R\-O\-M\-P\-Ts always report, they cannot be turned off and will report both to the errorlog and to the screen. You can see how easily this function can be abused.\par
+ \hypertarget{_interface_ERRORLOG}{}\section{Error Log and Verbosity Level}\label{_interface_ERRORLOG}
+Where are these runtime messages recoreded anyway? Glad you asked! E\-R\-R\-O\-R\-S, W\-A\-R\-N\-I\-N\-G\-S, N\-O\-T\-E\-S and P\-R\-O\-M\-P\-T\-S are recorded by default in an output file titled 'runtime.\-log' with a default verbosity setting Level=1. The User can change the output file and verbosity setting using the 'setup\-Log' command like so\par
+ \par
+ call setup\-Log(file=filename,level=\mbox{[}0\-:4\mbox{]}).\par
+ \par
+ The verbosity level affects which type of messages will get recorded in the log file and also which type of messages will stop the program. Recall that P\-R\-O\-M\-P\-T\-S are always recorded. Use the table below to figure out which verbosity level is best for you.\par
+ \par
+ \begin{DoxyVerb}|=============================================================|
+|         V E R B O S I T Y   L E V E L   E F F E C T S       |
+|=============================================================|
+||       ||     ERRORS    ||     WARNINGS  ||      NOTES     ||
+|| Level || RECORD | STOP || RECORD | STOP || RECORD | STOP  ||
+||-------||--------|------||--------|------||--------|-------||
+||   0   ||   *    |  *   ||        |      ||        |       ||
+||   1   ||   *    |  *   ||   *    |      ||        |       ||
+||   2   ||   *    |  *   ||   *    |      ||   *    |       ||
+||   3   ||   *    |  *   ||   *    |  *   ||   *    |       ||
+||   4   ||   *    |  *   ||   *    |  *   ||   *    |   *   ||
+|=============================================================|
+\end{DoxyVerb}
+ For example, setting Level=2 will cause the program to record all notes, warnings and errors, while only errors will stop the program.\par
+ \hypertarget{_interface_Propagators}{}\section{Propagators}\label{_interface_Propagators}
+This Non\-Ad\-M\-D distribution comes standard with a P\-L\-D\-M propagator class. Future distribution will offer a more comprehensive suite of Density matrix propagation methods including but not limited to\-: L\-D\-M \mbox{[}1,2\mbox{]}, I\-L\-D\-M \mbox{[}3\mbox{]}, and P\-L\-D\-M \mbox{[}4\mbox{]}.\par
+ \par
+ L\-D\-M (Linearized Density Matrix), I\-L\-D\-M (Iterative L\-D\-M) and P\-L\-D\-M (Partial L\-D\-M) propagation methods all compute elements of the reduced density matrix as described in \mbox{[}1,2,3,4\mbox{]}. Operationally, they are all used in the same way so we will simply refer to these methods as the 'propagator'. By default the propagator will return the final state of the density matrix stored as an attribute of the quantum subsystem primitive. Optionally, a time history of the reduced density matrix can be saved to a file. The user must first initiate the propagator by N\-E\-Wing it like so\-:\par
+ \par
+ call New(prop,qs,cs,cp)\par
+ \par
+ where 'prop' is the name of the propagator and qs, cs, and cp are generic subsystems. Notice the total Hamiltonian in the form of 3 generic subsystems are necessary here. The propagator can also be N\-E\-Wed from a previous save file analogously to the way the coupling G\-S was\-:\par
+ \par
+ call New(prop,qs,cs,cp,file='prop\-\_\-savefile')\par
+ or in any order by explicity passing the parameters like in the case of the coupling G\-S.\par
+ K\-I\-L\-L, D\-I\-S\-P\-L\-A\-Y, and S\-A\-V\-E -\/ these commands behave just like they did for the G\-Ss i.\-e.\par
+ \par
+ call Kill(prop)\par
+ call Display(prop)\par
+ call Save(prop)\par
+ \par
+ \hypertarget{_interface_RUN}{}\subsection{R\-U\-N}\label{_interface_RUN}
+This command is unique to the propagator and is used to execute the propagation scheme on the Hamiltonian. The propagation is executed like so\-:\par
+ \par
+ call Run(prop,qs,cs,cp,\mbox{[}file='matrix.\-out'\mbox{]})\par
+ \par
+ Here 'matrix.\-out' is the name of a file to store the time history of the reduced density matrix (square brackets indicate optional parameter). These propagators will update the qs density matrix at the completion of the R\-U\-N to the evolved density matrix so only the latest snapshot of the density matrix is stored in qs. The output file is used to store the whole time history\par
+ \par
+
+\begin{DoxyEnumerate}
+\item L\-A\-N\-D-\/map, a linearized approach to nonadiabatic dynamics using the mapping formalism, S. Bonnella and D. F. Coker, J. Chem. Phys. 122, 194102 (2005)\par
+
+\item Linearized path integral approach for calculating nonadiabatic time correlation functions, S. Bonella, D. Montemayor, and D. F. Coker, P\-N\-A\-S, 102, 19, 6715 (2005)\par
+
+\item Iterative linearized approach to nonadiabatic dynamics, E.\-R. Dunkel, S. Bonella, and D. F. Coker, J. Chem. Phys. 129, 114106 (2008)\par
+
+\item A linearized classical mapping Hamiltonian path integral approach for density matrix dynamics\-: Coherent excitation energy transfer and equilibration in general dissipative models of light harvesting complexes, P. Huo and D. F. Coker, Phys. Rev. Lett. (submitted June 2011)\par
+ \par
+ 
+\end{DoxyEnumerate}\hypertarget{_interface_Observables}{}\section{Observables}\label{_interface_Observables}
+In addition, this distribution offers a diagnostic tool in the form of a spectrometer. The spectrometer is a work in progress of course, but in its current form it offers the user a way to compute the absorption spectrum of the generic quantum subsystem or the total 3-\/part Hamiltonian. The absorption spectrum (A\-Bspec) is a special kind of object with only one command O\-B\-S\-E\-R\-V\-E. O\-B\-S\-E\-R\-V\-Eing the A\-Bspec will return a spectrum stored as an attribute of A\-Bspec. Optionally, the result absorption spectrum can be saved to a file for later analysis. Usage\-:\par
+ \par
+ call Observe(A\-Bspec,qs,\mbox{[}cs\mbox{]},\mbox{[}cp\mbox{]},Emin,Emax,\mbox{[}N\mbox{]},\mbox{[}tol\mbox{]},\mbox{[}samples\mbox{]},\mbox{[}file='A\-Bspec.\-out'\mbox{]})\par
+ \par
+ where 'qs', 'cs', and 'cp' are the G\-Ss; 'Emin' and 'Emax' are real numbers determining the energy domain over which the spectrum is observed; 'N' is the number of discrete spectral points the spectrum will compute; the integer 'samples' determines the maximum number of times the spectrometer will R\-E\-S\-A\-M\-P\-L\-E the G\-Ss before exiting should the spectrum have trouble converging; 'tol' is the greatest root mean squared deviation between subsequent R\-E\-S\-A\-M\-P\-L\-Es allowed before the spectrum is considered converged; and 'A\-Bspec.\-out' is name of the output file (square brackets indicate optional parameters). Keep in mind that the spectrometer is still being hashed out so to speak and subsequent versions may differ greatly and will likely not be backwards compatable.\par
+ \hypertarget{_interface_Global_Methods_Chart}{}\section{Global Methods Chart}\label{_interface_Global_Methods_Chart}
+\begin{DoxyVerb}|=================================================================================|
+|                           G L O B A L   M E T H O D S                           |
+|=================================================================================|
+| OBJ || NEW | KILL | UPDATE | DISPLAY | SAVE | CHECK | RESAMPLE | RUN | OBSERVE ||
+|-----||-----|------|--------|---------|------|-------|----------|-----|---------||
+| qs  ||  *  |  *   |   *    |   *     |  *   |   *   |    *     |     |         ||
+| cs  ||  *  |  *   |   *    |   *     |  *   |   *   |    *     |     |         ||
+| cp  ||  *  |  *   |   *    |   *     |  *   |   *   |    *     |     |         ||
+| prop||  *  |  *   |        |   *     |  *   |   *   |          |  *  |         ||
+| spec||     |      |        |         |      |       |          |     |    *    ||
+|=================================================================================|
+\end{DoxyVerb}
+ 

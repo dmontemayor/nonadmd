@@ -1,0 +1,7 @@
+    case default
+       call stop('subsys_update: unknown subsys type: '//trim(this%type))
+       subsys_check=1
+       return
+    end select
+  end function subsys_check
+end module subsys_class

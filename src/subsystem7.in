@@ -1,0 +1,19 @@
+    case default
+       call stop('subsys_update: unknown subsys type.')
+    end select
+  end subroutine subsys_resample
+  subroutine subsys_display(this,msg)
+    type(subsys),intent(in)::this    
+    character*(*),intent(in),optional::msg    
+    logical::withmsg
+    call Note('Begin subsys_display.')
+    if(check(this))then
+       call warn('subsys_display, failed object check','displaying nothing.')
+       return
+    end if
+    withmsg=.false.
+    if(present(msg))withmsg=.true.
+    select case(trim(this%type))
+    case('hprim')
+       if(withmsg)call display(this%hprim,msg)
+       if(.not.withmsg)call display(this%hprim)

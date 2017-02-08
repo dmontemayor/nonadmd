@@ -1,0 +1,42 @@
+2 Please enter the number of quantum states.
+0. Please enter an energy origin.
+f Use default diabatic energy settings [zero engergy for all states]? (T/F)
+0. Enter diabatic state            1 energy.
+0. -.4 Enter diabatic state coupling energy for states           1           2
+0. Enter diabatic state            2 energy.
+t Use default initial density settings [only state 1 populated]? (T/F)
+1000 npt
+1.0 De
+1.0 alpha
+1.0 q0
+1.0 Mu
+0.0 qmin
+10.0 qmax
+
+
+'lambda.31741.jw' Please enter a specden file.
+100 Please enter the number of bath particles.
+t Use default particle mass settings [all unit masses]? (T/F)
+t Use default particle charge settings [no charged particles]? (T/F)
+1 Please enter the number of phase-space dimensions.
+t Use default phase-space domain and boundary condition settings [Qmin=-1.0, Qmax=1.0, no PBC]? (T/F)
+t Use default phase-space settings [obsolete just enter T]? (T/F)
+.315774661E6 Enter bath temperature in Kelvin.
+t Would you prefer an initial canonical nuclear distribution [default assumes classical subsystem is initially in thermal equilibrium]?(T/F)
+t Would you prefer a Wigner transormed forcefield phase-space distribution [default distribution is classical]?(T/F)
+1 Enter the number of isolated baths.
+
+1 Please enter the number of independent baths.
+.31741  Please enter reorganization energy for bath 1.
+f Use default state-bath interaction? [T/F] (Bath n associated only to population state |n><n|. Nbath must = nstate!)
+0. 1. Enter state-bath interaction terms Enter state 1 to bath 1 relative coupling strength.
+0. -1. Enter state 2 to bath 1 relative coupling strength.
+
+15.0    Enter total runtime.
+1E-2    Enter nuclear time step.
+
+#1000   Enter total number of trajectories.
+#5E-4    Enter electronic time step.
+#1E-1  Enter output time step.
+#10 Enter time interval in wallclock seconds between Restart files.
+#0. Coupling threashold(Off-diagonal elements with absolute energy less than will not be propagated).

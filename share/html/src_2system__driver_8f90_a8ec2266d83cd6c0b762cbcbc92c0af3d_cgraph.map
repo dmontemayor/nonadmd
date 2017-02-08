@@ -1,0 +1,18 @@
+<map id="main" name="main">
+<area shape="rect" id="node3" href="$classerrorlog.html#a32bbf87dd265de25bd10ea31d95b751d" title="errorlog::openlog" alt="" coords="106,6,228,34"/>
+<area shape="rect" id="node9" href="$subroutines_8f90.html#a66d629a9efd7144f6d03009c5cae7c0d" title="praxisfit" alt="" coords="133,110,200,138"/>
+<area shape="rect" id="node44" href="$classerrorlog.html#af9219c790b58905faca7f5695515325d" title="errorlog::closelog" alt="" coords="105,58,228,86"/>
+<area shape="rect" id="node5" href="$classfilemanager.html#aa389048ef7c9eb9afdac7ce1dcc691b2" title="filemanager::newunit" alt="" coords="944,162,1088,190"/>
+<area shape="rect" id="node7" href="$classwallclock.html#ac691a026a7b92c6cd971e86d0449d42b" title="wallclock::timearray" alt="" coords="278,58,415,86"/>
+<area shape="rect" id="node11" href="$src_2system__driver_8f90.html#aa2135d8f316dac80d3d2ba872771b95b" title="f" alt="" coords="857,317,895,345"/>
+<area shape="rect" id="node14" href="$praxis_8f.html#af91941b7f0c3ddb787c772ca565e1855" title="PRAXIS RETURNS THE MINIMUM OF THE FUNCTION F(X,N) OF N VARIABLES USING THE PRINCIPAL AXIS METHOD..." alt="" coords="318,343,375,371"/>
+<area shape="rect" id="node17" href="$praxis_8f.html#ad17dd523e058957564e309fed67cfa20" title="min" alt="" coords="677,421,720,449"/>
+<area shape="rect" id="node23" href="$praxis_8f.html#a08308a29605c2abb57b179777553e9e1" title="Praxis&#39; random number generator." alt="" coords="467,162,515,190"/>
+<area shape="rect" id="node25" href="$praxis_8f.html#ac10ca39b9214d2a1ff4701ab237bf2a9" title="print" alt="" coords="574,473,621,501"/>
+<area shape="rect" id="node28" href="$praxis_8f.html#a45854e864f31f82eb39cae6a2882c883" title="vcprnt" alt="" coords="569,525,626,553"/>
+<area shape="rect" id="node31" href="$praxis_8f.html#a0527d011f50eb026ac3ceea522e0ca5a" title="QUAD LOOKS FOR THE MINIMUM OF F ALONG A CURVE DEFINED BY Q0,Q1,X." alt="" coords="572,577,623,605"/>
+<area shape="rect" id="node35" href="$praxis_8f.html#ac6663bade5f6b02f5bc8c05767d38027" title="maprnt" alt="" coords="566,369,629,397"/>
+<area shape="rect" id="node38" href="$praxis_8f.html#a4deca9e8eeda59dc7ea99e26c38d4a6d" title="AN IMPROVED VERSION OF MINFIT (SEE GOLUB AND REINSCH, 1969) RESTRICTED TO SQUARE AB." alt="" coords="464,318,517,346"/>
+<area shape="rect" id="node42" href="$praxis_8f.html#a462bf29e7634caebf340f472d7b13bd0" title="sort" alt="" coords="469,214,512,242"/>
+<area shape="rect" id="node20" href="$praxis_8f.html#a8e1d4a20be8141e78ebb31fd1dc876dd" title="FLIN IS THE FUNCTION OF ONE REAL VARIABLE L THAT IS MINIMIZED BY THE SUBROUTINE MIN." alt="" coords="769,369,807,397"/>
+</map>

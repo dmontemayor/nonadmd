@@ -1,0 +1,65 @@
+  end type subsys
+  interface new
+     module procedure subsys_new
+  end interface
+  interface kill
+     module procedure subsys_kill
+  end interface
+  interface update
+     module procedure subsys_update
+  end interface
+  interface resample
+     module procedure subsys_resample
+  end interface
+  interface display
+     module procedure subsys_display
+  end interface
+  interface save
+     module procedure subsys_save
+  end interface
+  interface check
+     module procedure subsys_check
+  end interface
+contains
+  subroutine subsys_new(this,qs,cs,type,file)
+    type(subsys),intent(inout),target::this    
+    type(quantum),intent(inout),target::qs    
+    type(classical),intent(inout),target::cs    
+    character*(*),intent(in),optional::type
+    character*(*),intent(in),optional::file
+    character(len=title)::filetype
+    character(len=path)::infile
+    integer(short)::unit
+    call Note('Begin subsys_new.')
+    filetype='unknown'
+    infile='unknown'
+    if (present(type))call note('input type= '//type)
+    if (present(file))call note('input file= '//file)
+    call subsys_kill(this)
+    if(.not.(present(file).or.present(type)))&
+         call stop('subsys_new: niether subsys input type nor input file was found.')
+    if(present(type))this%type=type
+    if(present(file))then
+       if(present(type))then
+          infile=file
+          if(check(trim(infile)))call stop('subsys_new: input file not found.')
+       else
+          if(check(file))call stop('subsys_new: input file not found.')
+          unit=newunit()
+          open(unit,file=file)
+          read(unit,*)filetype
+          filetype=adjustl(filetype)
+          if(trim(filetype).NE.'subsys')call stop('subsys_new: input file is not valid.')
+          read(unit,*)this%type
+          this%type=adjustl(this%type)
+          call Note('type found in input file= '//trim(this%type))
+          read(unit,*)infile
+          infile=adjustl(infile)
+          if(check(trim(infile)))call stop('subsys_new: input file not found.')
+          close(unit)
+       end if
+    end if
+    select case(trim(this%type))
+    case('hprim')
+       if(trim(infile).NE.'unknown')then;call new(this%primitive,qs,cs,trim(infile));else;call new(this%primitive,qs,cs);end if
+       this%hprim => this%primitive

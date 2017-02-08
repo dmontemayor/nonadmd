@@ -1,0 +1,10 @@
+    case default
+       call stop('subsys_new: unknown subsys type.')
+    end select
+    this%initialized=.true.    
+  end subroutine subsys_new
+  subroutine subsys_kill(this)
+    type(subsys),intent(inout)::this
+    call Note('Begin subsys_kill.')
+    nullify(this%hprim)
+    call kill(this%primitive)

@@ -1,0 +1,238 @@
+\hypertarget{classerrorlog}{\section{errorlog Module Reference}
+\label{classerrorlog}\index{errorlog@{errorlog}}
+}
+
+
+Error Handleing.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfaceerrorlog_1_1note}{note}
+\item 
+interface \hyperlink{interfaceerrorlog_1_1prompt}{prompt}
+\item 
+interface \hyperlink{interfaceerrorlog_1_1stop}{stop}
+\item 
+interface \hyperlink{interfaceerrorlog_1_1warn}{warn}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classerrorlog_a05d233f410ba88bf3e2929528b1bb91e}{displaylog}
+\item 
+subroutine, public \hyperlink{classerrorlog_a32bbf87dd265de25bd10ea31d95b751d}{openlog} (file, level, Program\-Name, Bug\-Report)
+\item 
+subroutine, public \hyperlink{classerrorlog_af9219c790b58905faca7f5695515325d}{closelog}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classerrorlog_abcaf87ab55e0634007cc7177aa53469c}{log\-\_\-note} (msg)
+\item 
+subroutine \hyperlink{classerrorlog_ac0a3d2c2bcdb3af8e91b4a27d2ac5ac0}{log\-\_\-warn} (msg, recover)
+\item 
+subroutine \hyperlink{classerrorlog_afe1872ea4ca114ccb25faaa2f2d60e2e}{log\-\_\-stop} (msg, suggest)
+\item 
+subroutine \hyperlink{classerrorlog_ac6531d63b5a5d4939c3d510dd7fbbb25}{log\-\_\-prompt} (msg)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer(short) \hyperlink{classerrorlog_a3ab7fc512e499660dcb9a9542aab02b5}{loglevel}
+\item 
+integer(long) \hyperlink{classerrorlog_adb26bb2d10f764e895c9745c3fb5dd1d}{logunit}
+\item 
+character(len=path) \hyperlink{classerrorlog_a42e82497abf38d3e1683b51b48a5e4c0}{logfile}
+\item 
+logical \hyperlink{classerrorlog_af9add736038cc71b13ee19df6544f3e5}{logclosed}
+\item 
+logical \hyperlink{classerrorlog_a3a12f9c3cbb079a8cbb7b5790ea2c827}{logopen}
+\item 
+integer(long) \hyperlink{classerrorlog_a056ccc9457985050fb6391dd4abf1f2c}{logcount}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Error Handleing. 
+
+Enables Error, Warning, Note, and Prompt messages by setting a log level. Also allows user to save Error\-Log messages to a file. 
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classerrorlog_af9219c790b58905faca7f5695515325d}{\index{errorlog@{errorlog}!closelog@{closelog}}
+\index{closelog@{closelog}!errorlog@{errorlog}}
+\subsubsection[{closelog}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public errorlog\-::closelog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classerrorlog_af9219c790b58905faca7f5695515325d}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classerrorlog_af9219c790b58905faca7f5695515325d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classerrorlog_af9219c790b58905faca7f5695515325d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classerrorlog_a05d233f410ba88bf3e2929528b1bb91e}{\index{errorlog@{errorlog}!displaylog@{displaylog}}
+\index{displaylog@{displaylog}!errorlog@{errorlog}}
+\subsubsection[{displaylog}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public errorlog\-::displaylog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classerrorlog_a05d233f410ba88bf3e2929528b1bb91e}
+\hypertarget{classerrorlog_abcaf87ab55e0634007cc7177aa53469c}{\index{errorlog@{errorlog}!log\-\_\-note@{log\-\_\-note}}
+\index{log\-\_\-note@{log\-\_\-note}!errorlog@{errorlog}}
+\subsubsection[{log\-\_\-note}]{\setlength{\rightskip}{0pt plus 5cm}subroutine errorlog\-::log\-\_\-note (
+\begin{DoxyParamCaption}
+\item[{character$\ast$($\ast$), intent(in)}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classerrorlog_abcaf87ab55e0634007cc7177aa53469c}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classerrorlog_abcaf87ab55e0634007cc7177aa53469c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classerrorlog_ac6531d63b5a5d4939c3d510dd7fbbb25}{\index{errorlog@{errorlog}!log\-\_\-prompt@{log\-\_\-prompt}}
+\index{log\-\_\-prompt@{log\-\_\-prompt}!errorlog@{errorlog}}
+\subsubsection[{log\-\_\-prompt}]{\setlength{\rightskip}{0pt plus 5cm}subroutine errorlog\-::log\-\_\-prompt (
+\begin{DoxyParamCaption}
+\item[{character$\ast$($\ast$), intent(in)}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classerrorlog_ac6531d63b5a5d4939c3d510dd7fbbb25}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classerrorlog_ac6531d63b5a5d4939c3d510dd7fbbb25_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classerrorlog_afe1872ea4ca114ccb25faaa2f2d60e2e}{\index{errorlog@{errorlog}!log\-\_\-stop@{log\-\_\-stop}}
+\index{log\-\_\-stop@{log\-\_\-stop}!errorlog@{errorlog}}
+\subsubsection[{log\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}subroutine errorlog\-::log\-\_\-stop (
+\begin{DoxyParamCaption}
+\item[{character$\ast$($\ast$), intent(in)}]{msg, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{suggest}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classerrorlog_afe1872ea4ca114ccb25faaa2f2d60e2e}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classerrorlog_afe1872ea4ca114ccb25faaa2f2d60e2e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classerrorlog_ac0a3d2c2bcdb3af8e91b4a27d2ac5ac0}{\index{errorlog@{errorlog}!log\-\_\-warn@{log\-\_\-warn}}
+\index{log\-\_\-warn@{log\-\_\-warn}!errorlog@{errorlog}}
+\subsubsection[{log\-\_\-warn}]{\setlength{\rightskip}{0pt plus 5cm}subroutine errorlog\-::log\-\_\-warn (
+\begin{DoxyParamCaption}
+\item[{character$\ast$($\ast$), intent(in)}]{msg, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{recover}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classerrorlog_ac0a3d2c2bcdb3af8e91b4a27d2ac5ac0}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classerrorlog_ac0a3d2c2bcdb3af8e91b4a27d2ac5ac0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classerrorlog_a32bbf87dd265de25bd10ea31d95b751d}{\index{errorlog@{errorlog}!openlog@{openlog}}
+\index{openlog@{openlog}!errorlog@{errorlog}}
+\subsubsection[{openlog}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public errorlog\-::openlog (
+\begin{DoxyParamCaption}
+\item[{character$\ast$($\ast$), intent(in), optional}]{file, }
+\item[{integer(short), intent(in), optional}]{level, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{Program\-Name, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{Bug\-Report}
+\end{DoxyParamCaption}
+)}}\label{classerrorlog_a32bbf87dd265de25bd10ea31d95b751d}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classerrorlog_a32bbf87dd265de25bd10ea31d95b751d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classerrorlog_a32bbf87dd265de25bd10ea31d95b751d_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classerrorlog_af9add736038cc71b13ee19df6544f3e5}{\index{errorlog@{errorlog}!logclosed@{logclosed}}
+\index{logclosed@{logclosed}!errorlog@{errorlog}}
+\subsubsection[{logclosed}]{\setlength{\rightskip}{0pt plus 5cm}logical errorlog\-::logclosed\hspace{0.3cm}{\ttfamily [private]}}}\label{classerrorlog_af9add736038cc71b13ee19df6544f3e5}
+\hypertarget{classerrorlog_a056ccc9457985050fb6391dd4abf1f2c}{\index{errorlog@{errorlog}!logcount@{logcount}}
+\index{logcount@{logcount}!errorlog@{errorlog}}
+\subsubsection[{logcount}]{\setlength{\rightskip}{0pt plus 5cm}integer(long) errorlog\-::logcount\hspace{0.3cm}{\ttfamily [private]}}}\label{classerrorlog_a056ccc9457985050fb6391dd4abf1f2c}
+\hypertarget{classerrorlog_a42e82497abf38d3e1683b51b48a5e4c0}{\index{errorlog@{errorlog}!logfile@{logfile}}
+\index{logfile@{logfile}!errorlog@{errorlog}}
+\subsubsection[{logfile}]{\setlength{\rightskip}{0pt plus 5cm}character(len=path) errorlog\-::logfile\hspace{0.3cm}{\ttfamily [private]}}}\label{classerrorlog_a42e82497abf38d3e1683b51b48a5e4c0}
+\hypertarget{classerrorlog_a3ab7fc512e499660dcb9a9542aab02b5}{\index{errorlog@{errorlog}!loglevel@{loglevel}}
+\index{loglevel@{loglevel}!errorlog@{errorlog}}
+\subsubsection[{loglevel}]{\setlength{\rightskip}{0pt plus 5cm}integer(short) errorlog\-::loglevel\hspace{0.3cm}{\ttfamily [private]}}}\label{classerrorlog_a3ab7fc512e499660dcb9a9542aab02b5}
+\hypertarget{classerrorlog_a3a12f9c3cbb079a8cbb7b5790ea2c827}{\index{errorlog@{errorlog}!logopen@{logopen}}
+\index{logopen@{logopen}!errorlog@{errorlog}}
+\subsubsection[{logopen}]{\setlength{\rightskip}{0pt plus 5cm}logical errorlog\-::logopen\hspace{0.3cm}{\ttfamily [private]}}}\label{classerrorlog_a3a12f9c3cbb079a8cbb7b5790ea2c827}
+\hypertarget{classerrorlog_adb26bb2d10f764e895c9745c3fb5dd1d}{\index{errorlog@{errorlog}!logunit@{logunit}}
+\index{logunit@{logunit}!errorlog@{errorlog}}
+\subsubsection[{logunit}]{\setlength{\rightskip}{0pt plus 5cm}integer(long) errorlog\-::logunit\hspace{0.3cm}{\ttfamily [private]}}}\label{classerrorlog_adb26bb2d10f764e895c9745c3fb5dd1d}
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{utils_8f90}{utils.\-f90}\end{DoxyCompactItemize}
