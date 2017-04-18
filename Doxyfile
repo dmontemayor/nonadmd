@@ -52,7 +52,7 @@ PROJECT_LOGO           = share/figs/logo.gif
 # If a relative path is entered, it will be relative to the location 
 # where doxygen was started. If left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = share/
+OUTPUT_DIRECTORY       = docs/
 
 # If the CREATE_SUBDIRS tag is set to YES, then doxygen will create 
 # 4096 sub-directories (in 2 levels) under the output directory of each output 
@@ -677,7 +677,9 @@ WARN_LOGFILE           =
 
 INPUT                  = src/ \
                          share/ \
-			 ChangeLog
+			 ChangeLog \
+			 NEWS \
+			 THANKS
 
 # This tag can be used to specify the character encoding of the source files 
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is 
