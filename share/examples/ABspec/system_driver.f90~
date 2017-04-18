@@ -1,0 +1,919 @@
+!-----------------------------------------------------------------------------
+!> \brief
+!! Build Nfold-LH2 Hamiltonian from pre-compiled symmetry data. 
+!<----------------------------------------------------------------------------
+!> \details
+!! Analyze coorelation data - diagonalize correlation matrix.
+!! Compute density of states and absorption spectrum by Fermi Golden Rule.
+!<----------------------------------------------------------------------------
+!>\authors
+!! Daniel Montemayor
+!!
+!!\date
+!! 20 May 2014
+!<----------------------------------------------------------------------------
+program main
+  use type_kinds
+  use atomicunits
+  use math
+  use rand
+  use string
+  use MPIframework
+  use filemanager
+  use ErrorLog
+  use molreader
+  use wallclock
+  use outputdisplay
+
+  !hamiltonian  
+  use quantum_class
+  use classical_class
+  use coupling_class
+  
+  !spectrometer
+  use spectrometer_class
+
+  !propagators
+  use PLDM_class  
+
+  implicit none
+# include "config.h"
+
+  type(quantum),target::qs
+  type(classical),target::cs
+  type(coupling),target::cp
+  type(spectrum)::spec
+  type(PLDM)::prop
+  !type(SH)::prop
+
+  integer(long)::ierr
+
+  !parameters used for fitting
+  real(double)::param(2),t,pop
+  real(double),external::f
+
+  !-----variable pertinent to this experiment-----
+
+  !output
+  integer(long)::unit
+  character(len=path)::outfile
+  character(len=3)::index
+
+  !input MD file(s)
+  integer,parameter::nlabel=3,ndim=3,N0=5,ntatom=61
+  integer,parameter::nfile=1,maxframe=500
+  integer,parameter::nstate=N0*nlabel
+
+  !input
+
+  !BChl centers (unit, mean, and variance) in cylindrical coordinates (lab frame)
+  Real(double),dimension(ndim,nlabel,0:N0)::RMg,R2Mg !last index3 =N0 is for symm unit average
+
+  !BChl orientation (unit, mean, variance, and ref) in spherical coordinates (molecular frame)
+  Real(double),dimension(ndim,nlabel,0:N0,0:ntatom)::Mu,Mu2,Mu0
+
+  !BChl coupling (unit, mean, variance)
+  Real(double),dimension(nlabel,0:N0-1,nlabel,0:N0-1)::Delta,Delta2
+  Real(double),dimension(0:N0-1,0:N0-1)::CovDelta !(alpha_n, beta_n-1)coupling covariance 
+  Real(double),dimension(0:N0-1,0:N0-1)::CovDelta2 !(alpha_n, beta_n)coupling covariance 
+  complex(double),dimension(0:N0-1,0:N0-1)::DeltaVec 
+  real(double),dimension(0:N0-1)::DeltaVal
+
+  !BChl symm averaged coupling (unit, mean, variance )
+  Real(double),dimension(nlabel,nlabel,0:N0-1)::Eps,Eps2
+
+  !Model type (0=Ideal, 1=MD explicit, 2=MD symmetric, 3=symmetric w/HBonding disorder)
+  integer(long),parameter::Mtype=2
+  integer(long),parameter::Cn=N0
+  integer(long),parameter::Cnstate=Cn*nlabel
+  real(double) ,parameter::Cnfac=(Cn/real(N0)-1.0_double)
+
+
+  !Geometric variables
+  real(double)::radius,R,dR,theta,nu,phi,phiN,X,Y,Z
+  real(double)::MuCn(ndim,Cnstate),RCn(ndim,Cnstate),Muhat(ndim,Cnstate),Rhat(ndim)!,CnXYZ(ndim,ntatom,Cnstate)
+
+  !Hamiltonian
+  real(double)   ::H0(Cnstate,Cnstate)     !realization of disorder
+  real(double)   ::H(Cnstate,Cnstate)      !average
+  real(double)   ::H2(Cnstate,Cnstate)     !variance
+
+  !Transition dipole
+  real(double)::MM0(Cnstate,Cnstate)
+  real(double)::MM(Cnstate,Cnstate)
+  real(double)::MM2(Cnstate,Cnstate)
+
+  !hydrogen bonding disorder
+  integer,parameter::ncase=8
+  integer(long)::HBcase(0:Cn-1)
+  real(double)::Vexp(ncase),Vnorm(ncase)
+
+  !Site Energies
+  real(double),parameter::Eg=0._double,shift=2380_double*invcm !(2430/cm)
+  real(double),parameter::ED=1.835_double*eV-shift  !(1.8478)
+  real(double),parameter::EA=1.80_double*eV-shift  !(1.8210)
+  real(double),parameter::EB=1.80_double*eV-shift  !(1.7980)
+  real(double),parameter::EHB=0.06_double*eV        !shift in excitation energy due to Hbond breaking
+
+  !internal (intra-complex) disorder
+  real(double),parameter::sigG=0._double*invcm
+  real(double),parameter::sigD=46._double*invcm
+  real(double),parameter::sigA=216._double*invcm
+  real(double),parameter::sigB=216._double*invcm
+
+  !external (inter-complex) disorder
+  real(double),parameter::BigsigG=0._double*invcm
+  real(double),parameter::BigsigD=43._double*invcm
+  real(double),parameter::BigsigA=13._double*invcm
+  real(double),parameter::BigsigB=13._double*invcm
+  real(double)::BigG,BigD,BigA,BigB
+
+  !coupling
+  real(double),parameter::factor=.55_double,Bfac0=1.895E5*invcm*(angstrom**3)
+  !real(double),parameter::subfactor(nlabel)=1.0_double
+  real(double)::Bfac,orientfac
+
+  !real(double),dimension(Cnstate,Cnstate)::dielectric
+
+  !spectrum
+  integer(long),parameter::nrealiz=500,nsample=10
+  integer(long),parameter::nomega=200
+  real(double),parameter::Emin=11000*invcm,Emax=13500*invcm,dw=(Emax-Emin)/real(nomega)
+  real(double)::w,dos(nomega),abspec(nomega)
+  complex(double)::FC(Cnstate,Cnstate)
+  complex(double)::Evec(Cnstate,Cnstate)
+  real(double)   ::Eval(Cnstate)
+
+  !control switches
+  logical::comply=.false.,withkreuger=.false.,genH=.false.
+
+  !book keeping
+  character(len=path)::file
+  integer(long)::iatom,jatom
+  integer(long)::istate,jstate
+  integer(long)::idim,ilabel,isymm,jlabel,jsymm,ksymm
+  integer(long)::irealiz,iomega,isample
+  integer(long)::icase
+
+!------------------------------------------
+
+
+!!$# ifdef MPI
+!!$  call MPI_INIT(ierr)
+!!$  call MPI_COMM_rank(MPI_COMM_World,myid,ierr)
+!!$  call MPI_COMM_size(MPI_COMM_World,nproc,ierr)
+!!$# endif
+
+  !Developers can run system tests here
+  !call tests
+
+  call openLog(level=1_short,file='./runtime.log')
+!!$  call openLog(level=1,file=EXEDIR//'/runtime.log'&
+!!$       ,ProgramName=PACKAGE_STRING,BugReport=PACKAGE_BUGREPORT)
+  call display('display.out')
+
+  !--------------------   Body of experiment   ----------------------
+
+  !initiate values
+  RMg=0_double
+  R2Mg=0_double
+  Mu=0_double
+  Mu2=0_double
+  CovDelta=0._double
+  CovDelta2=0._double
+  
+  unit=newunit()
+  open(unit,file='RMg.dat')
+  read(unit,*)(((RMg(idim,ilabel,isymm),isymm=0,N0),ilabel=1,nlabel),idim=1,ndim)
+  close(unit)
+  open(unit,file='R2Mg.dat')
+  read(unit,*)(((R2Mg(idim,ilabel,isymm),isymm=0,N0),ilabel=1,nlabel),idim=1,ndim)
+  close(unit)
+  open(unit,file='Mu.dat')
+  read(unit,*)((((Mu(idim,ilabel,isymm,jatom),jatom=0,ntatom),isymm=0,N0),ilabel=1,nlabel),idim=1,ndim)
+  close(unit)
+  open(unit,file='Mu2.dat')
+  read(unit,*)((((Mu2(idim,ilabel,isymm,jatom),jatom=0,ntatom),isymm=0,N0),ilabel=1,nlabel),idim=1,ndim)
+  close(unit)
+  open(unit,file='Delta.dat')
+  read(unit,*)((((Delta(ilabel,isymm,jlabel,jsymm),jsymm=0,N0-1),jlabel=0,nlabel),isymm=0,N0-1),ilabel=1,nlabel)
+  close(unit)
+  open(unit,file='Delta2.dat')
+  read(unit,*)((((Delta2(ilabel,isymm,jlabel,jsymm),jsymm=0,N0-1),jlabel=0,nlabel),isymm=0,N0-1),ilabel=1,nlabel)
+  close(unit)
+  open(unit,file='Eps.dat')
+  read(unit,*)(((Eps(ilabel,jlabel,jsymm),jsymm=0,N0-1),jlabel=0,nlabel),ilabel=1,nlabel)
+  close(unit)
+  open(unit,file='Eps2.dat')
+  read(unit,*)(((Eps2(ilabel,jlabel,jsymm),jsymm=0,N0-1),jlabel=0,nlabel),ilabel=1,nlabel)
+  close(unit)
+  open(unit,file='CovDelta.dat')
+  read(unit,*)((CovDelta(isymm,jsymm),jsymm=0,N0-1),isymm=0,N0-1)
+  close(unit)
+  open(unit,file='CovDelta2.dat')
+  read(unit,*)((CovDelta2(isymm,jsymm),jsymm=0,N0-1),isymm=0,N0-1)
+  close(unit)
+  open(unit,file='Vexp.dat')
+  read(unit,*)!<V(alpha_n+1,beta_n)>native (cm^-1)
+  do isymm=0,N0
+     read(unit,*)!symm
+     do icase=1,ncase
+        read(unit,*)Vexp(icase),Vnorm(icase)
+     end do
+     read(unit,*)!'-----'
+  end do
+  Vexp=Vexp*invcm
+  Vnorm=Vnorm/sum(Vnorm)
+  close(unit)
+  
+  !output file prefix
+  select case(Mtype)
+  case (0)
+     if(N0.NE.9)call stop('N0 must equal 9 for Ideal Model!')
+     !comply=.true.
+     !withkreuger=.true.
+     Write(*,*)'Constructing Id-LH2 Cn= ',Cn
+     file=EXEDIR//'/Cn'//trim(int2str(Cn))//'/Id-LH2'
+  case (1)
+     if(N0.NE.Cn)call stop('N0 must equal Cn for Explicit MD Model!')
+     Write(*,*)'Constructing Ex-LH2 Cn= ',Cn
+     file=EXEDIR//'/Cn'//trim(int2str(Cn))//'/Ex-LH2'
+  case(2)
+     if(N0.NE.Cn)call stop('N0 must equal Cn for Symmeteric MD Model!')
+     Write(*,*)'Constructing Sm-LH2 Cn= ',Cn
+     file=EXEDIR//'/Cn'//trim(int2str(Cn))//'/Sm-LH2'
+  case(3)
+     if(N0.NE.Cn)call stop('N0 must equal Cn for Hbonding disordered Model!')
+     Write(*,*)'Constructing Hb-LH2 Cn= ',Cn
+     file=EXEDIR//'/Cn'//trim(int2str(Cn))//'/Hb-LH2'
+  end select
+
+  !comply with Jang model 
+  if(comply)then
+
+     if(N0.NE.9)call stop('N0 must equal 9 for comply=.true. option')
+
+     RMg(1,1,N0)=31.0*angstrom !r b800 (31.89))
+     RMg(1,2,N0)=26.0*angstrom !r alpha (26.18)
+     RMg(1,3,N0)=27.2*angstrom !r beta  (27.55)
+     RMg(2,1,N0)= 244.57*deg !nu b800    (242.76)
+     RMg(2,2,N0)=-10.3*deg !nu alpha    
+     RMg(2,3,N0)= 10.3*deg !nu beta     
+     RMg(3,1,N0)= 16.6*angstrom !z b800
+     RMg(3,2,N0)=  0.0*angstrom !z alpha
+     RMg(3,3,N0)=  0.0*angstrom !z beta
+     Mu(1,1,N0,0)=   5.3*Debye    !mu b800
+     Mu(1,2,N0,0)=   5.3*Debye    !mu alpha
+     Mu(1,3,N0,0)=   5.3*Debye    !mu beta
+     Mu(2,1,N0,0)=  90.0*deg  !theta b800
+     Mu(2,2,N0,0)=  84.9*deg  !theta alpha
+     Mu(2,3,N0,0)=  84.9*deg  !theta beta
+     Mu(3,1,N0,0)= 244.57*deg !phi b800
+     Mu(3,2,N0,0)=-112.5*deg  !phi alpha
+     Mu(3,3,N0,0)=  63.2*deg  !phi beta
+  end if
+  
+  write(*,*)'----------------------- BChl Mg centers ----------------------------'
+  write(*,*)'--------------------------------------------------------------------'
+  write(*,*)
+  write(*,*)'      R(Angstrom) symmetry unit averaged'
+  write(*,*)'RD*= '//trim(float2str(RMg(1,1,N0)/angstrom))//' +/- '//trim(float2str(sqrt(R2Mg(1,1,N0))/angstrom))
+  write(*,*)'RA*= '//trim(float2str(RMg(1,2,N0)/angstrom))//' +/- '//trim(float2str(sqrt(R2Mg(1,2,N0))/angstrom))
+  write(*,*)'RB*= '//trim(float2str(RMg(1,3,N0)/angstrom))//' +/- '//trim(float2str(sqrt(R2Mg(1,3,N0))/angstrom))
+  write(*,*)'      per symmetry unit'
+  do isymm=0,N0-1
+     write(*,*)'RD'//trim(int2str(isymm))//'= '//trim(float2str(RMg(1,1,isymm)/angstrom))&
+          //' +/- '//trim(float2str(sqrt(R2Mg(1,1,isymm))/angstrom))
+     write(*,*)'RA'//trim(int2str(isymm))//'= '//trim(float2str(RMg(1,2,isymm)/angstrom))&
+          //' +/- '//trim(float2str(sqrt(R2Mg(1,2,isymm))/angstrom))
+     write(*,*)'RB'//trim(int2str(isymm))//'= '//trim(float2str(RMg(1,3,isymm)/angstrom))&
+          //' +/- '//trim(float2str(sqrt(R2Mg(1,3,isymm))/angstrom))
+     write(*,*)
+  end do
+  write(*,*)' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+  write(*,*)
+  write(*,*)'      nu(degrees) symmetry unit averaged'
+  write(*,*)'RD*= '//trim(float2str(RMg(2,1,N0)/deg))//' +/- '//trim(float2str(sqrt(R2Mg(2,1,N0))/deg))
+  write(*,*)'RA*= '//trim(float2str(RMg(2,2,N0)/deg))//' +/- '//trim(float2str(sqrt(R2Mg(2,2,N0))/deg))
+  write(*,*)'RB*= '//trim(float2str(RMg(2,3,N0)/deg))//' +/- '//trim(float2str(sqrt(R2Mg(2,3,N0))/deg))
+  write(*,*)'      per symmetry unit'
+  do isymm=0,N0-1
+     write(*,*)'RD'//trim(int2str(isymm))//'= '//trim(float2str(RMg(2,1,isymm)/deg))&
+          //' +/- '//trim(float2str(sqrt(R2Mg(2,1,isymm))/deg))
+     write(*,*)'RA'//trim(int2str(isymm))//'= '//trim(float2str(RMg(2,2,isymm)/deg))&
+          //' +/- '//trim(float2str(sqrt(R2Mg(2,2,isymm))/deg))
+     write(*,*)'RB'//trim(int2str(isymm))//'= '//trim(float2str(RMg(2,3,isymm)/deg))&
+          //' +/- '//trim(float2str(sqrt(R2Mg(2,3,isymm))/deg))
+     write(*,*)
+  end do
+  write(*,*)' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+  write(*,*)
+  write(*,*)'      Z(Angstrom) symmetry unit averaged'
+  write(*,*)'RD*= '//trim(float2str(RMg(3,1,N0)/angstrom))//' +/- '//trim(float2str(sqrt(R2Mg(3,1,N0))/angstrom))
+  write(*,*)'RA*= '//trim(float2str(RMg(3,2,N0)/angstrom))//' +/- '//trim(float2str(sqrt(R2Mg(3,2,N0))/angstrom))
+  write(*,*)'RB*= '//trim(float2str(RMg(3,3,N0)/angstrom))//' +/- '//trim(float2str(sqrt(R2Mg(3,3,N0))/angstrom))
+  write(*,*)'      per symmetry unit'
+  do isymm=0,N0-1
+     write(*,*)'RD'//trim(int2str(isymm))//'= '//trim(float2str(RMg(3,1,isymm)/angstrom))&
+          //' +/- '//trim(float2str(sqrt(R2Mg(3,1,isymm))/angstrom))
+     write(*,*)'RA'//trim(int2str(isymm))//'= '//trim(float2str(RMg(3,2,isymm)/angstrom))&
+          //' +/- '//trim(float2str(sqrt(R2Mg(3,2,isymm))/angstrom))
+     write(*,*)'RB'//trim(int2str(isymm))//'= '//trim(float2str(RMg(3,3,isymm)/angstrom))&
+          //' +/- '//trim(float2str(sqrt(R2Mg(3,3,isymm))/angstrom))
+     write(*,*)
+  end do
+  write(*,*)' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+  write(*,*)
+  write(*,*)'------------------- BChl transiton dipole  -------------------------'
+  write(*,*)'--------------------------------------------------------------------'
+  write(*,*)
+  write(*,*)'      Mu(debye) symmetry unit averaged'
+  write(*,*)'MD*= '//trim(float2str(Mu(1,1,N0,0)/debye))//' +/- '//trim(float2str(sqrt(Mu2(1,1,N0,0))/debye))
+  write(*,*)'MA*= '//trim(float2str(Mu(1,2,N0,0)/debye))//' +/- '//trim(float2str(sqrt(Mu2(1,2,N0,0))/debye))
+  write(*,*)'MB*= '//trim(float2str(Mu(1,3,N0,0)/debye))//' +/- '//trim(float2str(sqrt(Mu2(1,3,N0,0))/debye))
+  write(*,*)'      per symmetry unit'
+  do isymm=0,N0-1
+     write(*,*)'MD'//trim(int2str(isymm))//'= '//trim(float2str(Mu(1,1,isymm,0)/debye))&
+          //' +/- '//trim(float2str(sqrt(Mu2(1,1,isymm,0))/debye))
+     write(*,*)'MA'//trim(int2str(isymm))//'= '//trim(float2str(Mu(1,2,isymm,0)/debye))&
+          //' +/- '//trim(float2str(sqrt(Mu2(1,2,isymm,0))/debye))
+     write(*,*)'MB'//trim(int2str(isymm))//'= '//trim(float2str(Mu(1,3,isymm,0)/debye))&
+          //' +/- '//trim(float2str(sqrt(Mu2(1,3,isymm,0))/debye))
+     write(*,*)
+  end do
+  write(*,*)' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+  write(*,*)
+  write(*,*)'      Theta(degrees) symmetry unit averaged'
+  write(*,*)'MD*= '//trim(float2str(Mu(2,1,N0,0)/deg))//' +/- '//trim(float2str(sqrt(Mu2(2,1,N0,0))/deg))
+  write(*,*)'MA*= '//trim(float2str(Mu(2,2,N0,0)/deg))//' +/- '//trim(float2str(sqrt(Mu2(2,2,N0,0))/deg))
+  write(*,*)'MB*= '//trim(float2str(Mu(2,3,N0,0)/deg))//' +/- '//trim(float2str(sqrt(Mu2(2,3,N0,0))/deg))
+  write(*,*)'      per symmetry unit'
+  do isymm=0,N0-1
+     write(*,*)'MD'//trim(int2str(isymm))//'= '//trim(float2str(Mu(2,1,isymm,0)/deg))&
+          //' +/- '//trim(float2str(sqrt(Mu2(2,1,isymm,0))/deg))
+     write(*,*)'MA'//trim(int2str(isymm))//'= '//trim(float2str(Mu(2,2,isymm,0)/deg))&
+          //' +/- '//trim(float2str(sqrt(Mu2(2,2,isymm,0))/deg))
+     write(*,*)'MB'//trim(int2str(isymm))//'= '//trim(float2str(Mu(2,3,isymm,0)/deg))&
+          //' +/- '//trim(float2str(sqrt(Mu2(2,3,isymm,0))/deg))
+     write(*,*)
+  end do
+  write(*,*)' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+  write(*,*)
+  write(*,*)'      Phi(degrees) symmetry unit averaged'
+  write(*,*)'MD*= '//trim(float2str(Mu(3,1,N0,0)/deg))//' +/- '//trim(float2str(sqrt(Mu2(3,1,N0,0))/deg))
+  write(*,*)'MA*= '//trim(float2str(Mu(3,2,N0,0)/deg))//' +/- '//trim(float2str(sqrt(Mu2(3,2,N0,0))/deg))
+  write(*,*)'MB*= '//trim(float2str(Mu(3,3,N0,0)/deg))//' +/- '//trim(float2str(sqrt(Mu2(3,3,N0,0))/deg))
+  write(*,*)'      per symmetry unit'
+  do isymm=0,N0-1
+     write(*,*)'MD'//trim(int2str(isymm))//'= '//trim(float2str(Mu(3,1,isymm,0)/deg))&
+          //' +/- '//trim(float2str(sqrt(Mu2(3,1,isymm,0))/deg))
+     write(*,*)'MA'//trim(int2str(isymm))//'= '//trim(float2str(Mu(3,2,isymm,0)/deg))&
+          //' +/- '//trim(float2str(sqrt(Mu2(3,2,isymm,0))/deg))
+     write(*,*)'MB'//trim(int2str(isymm))//'= '//trim(float2str(Mu(3,3,isymm,0)/deg))&
+          //' +/- '//trim(float2str(sqrt(Mu2(3,3,isymm,0))/deg))
+     write(*,*)
+  end do
+  write(*,*)' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+  write(*,*)
+  write(*,*)'-------------------     BChl Coupling      -------------------------'
+  write(*,*)'--------------------------------------------------------------------'
+  write(*,*)
+  write(*,*)'                      ALPHA_n - BETA_n+k (1/cm)'
+  write(*,*)'          k         symmetry unit averaged'
+  do isymm=0,N0-1
+     write(*,*)isymm,trim(float2str(Eps(2,3,isymm)/invcm))//' +/- '//trim(float2str(sqrt(Eps2(2,3,isymm))/invcm))
+  end do
+  write(*,*)
+  write(*,*)'                      ALPHA_n - BETA_m (1/cm)'
+  write(*,*)'          n           m    per units'
+  do isymm=0,N0-1
+     do jsymm=0,N0-1
+        write(*,*)isymm,jsymm,trim(float2str(Delta(2,isymm,3,jsymm)/invcm))&
+             //' +/- '//trim(float2str(sqrt(Delta2(2,isymm,3,jsymm))/invcm))
+     end do
+     write(*,*)
+  end do
+  write(*,*)' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+  write(*,*)
+  write(*,*)'                      ALPHA_n - ALPHA_n+k'
+  write(*,*)'          k         symmetry unit averaged'
+  write(*,*)0,trim(float2str(Eps(2,2,0)/debye**2))&
+       //' +/- '//trim(float2str(sqrt(Eps2(2,2,0))/debye**2))//' D^2'
+  do isymm=1,N0-1
+     write(*,*)isymm,trim(float2str(Eps(2,2,isymm)/invcm))&
+          //' +/- '//trim(float2str(sqrt(Eps2(2,2,isymm))/invcm))//' cm^-1'
+  end do
+  write(*,*)
+  write(*,*)'                      ALPHA_n - ALPHA_m'
+  write(*,*)'          n           m    per units'
+  do isymm=0,N0-1
+     do jsymm=0,N0-1
+        if(isymm.EQ.jsymm)then
+           write(*,*)isymm,jsymm,trim(float2str(Delta(2,isymm,2,jsymm)/debye**2))&
+                //' +/- '//trim(float2str(sqrt(Delta2(2,isymm,2,jsymm))/debye**2))//' D^2'
+        else
+           write(*,*)isymm,jsymm,trim(float2str(Delta(2,isymm,2,jsymm)/invcm))&
+                //' +/- '//trim(float2str(sqrt(Delta2(2,isymm,2,jsymm))/invcm))//' cm^-1'
+        end if
+     end do
+     write(*,*)
+  end do
+  write(*,*)' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+  write(*,*)
+
+  write(*,*)'              ALPHA_n - BETA_n-1 (cm^-2)'
+  write(*,*)'i,j      Covariance(i,j), Cov(i,i), Cov(j,j)  '
+  do isymm=0,N0-1
+     write(*,*)
+     do jsymm=0,N0-1
+        write(*,'(2(I5,1X),3(F16.8,1X))')isymm,jsymm,CovDelta(isymm,jsymm)/invcm**2,CovDelta(isymm,isymm)/invcm**2&
+             ,CovDelta(jsymm,jsymm)/invcm**2
+     end do
+  end do
+  
+  write(*,*)
+  write(*,*)'              ALPHA_n - BETA_n (cm^-2)'
+  write(*,*)'i,j      Covariance(i,j), Cov(i,i), Cov(j,j)  '
+  do isymm=0,N0-1
+     write(*,*)
+     do jsymm=0,N0-1
+        write(*,'(2(I5,1X),3(F16.8,1X))')isymm,jsymm,CovDelta2(isymm,jsymm)/invcm**2,CovDelta2(isymm,isymm)/invcm**2&
+             ,CovDelta2(jsymm,jsymm)/invcm**2
+     end do
+  end do
+
+  write(*,*)
+  write(*,*)'       Covariance ALPHA_n - BETA_n-1 Eigenvectors (cm^-2)'
+  DeltaVec=CovDelta
+  call diagonalize(N0,DeltaVec(0:N0-1,0:N0-1),DeltaVal(0:N0-1))
+  write(*,*) DeltaVal/invcm**2
+  do isymm=0,N0-1
+     write(*,*) isymm, real(DeltaVec(0,isymm)),real(DeltaVec(isymm,0))
+  end do
+
+  write(*,*)
+  write(*,*)'       Covariance ALPHA_n - BETA_n Eigenvectors (cm^-2)'
+  DeltaVec=CovDelta2
+  call diagonalize(N0,DeltaVec(0:N0-1,0:N0-1),DeltaVal(0:N0-1))
+  write(*,*) DeltaVal/invcm**2
+  do isymm=0,N0-1
+     write(*,*) isymm, real(DeltaVec(0,isymm)),real(DeltaVec(isymm,0))
+  end do
+
+  write(*,*)' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+  write(*,*)'<V(alpha_n+1,beta_n)> (cm^-1), probability'
+  do icase=1,ncase
+     write(*,*)'case '//trim(int2str(icase))//' ',Vexp(icase)/invcm,Vnorm(icase)
+  end do
+  write(*,*)
+
+  write(*,*)' - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+  write(*,*)'--------------------------------------------------------------------'
+  !stop
+  
+  !write quantum subsystem
+  unit=newunit()
+  open(unit,file=trim(file)//'.qs')
+  write(unit,*)'quantum'
+  write(unit,*)'hs'
+  write(unit,*)quote(trim(file)//'.hs')
+  close(unit)
+  
+  !write hs
+  unit=newunit()
+  open(unit,file=trim(file)//'.hs')
+  write(unit,*)'hs'
+  write(unit,*)Cnstate
+  write(unit,*)Eg
+  write(unit,*)((0._double,0._double,jstate=1,Cnstate),istate=1,Cnstate)
+  write(unit,*)((0._double,0._double,jstate=1,Cnstate),istate=1,Cnstate)
+  close(unit)
+
+  !create qs using hs primitive
+  call new(qs,file=trim(file)//'.qs')
+  call resample(qs)
+  !call display(qs)          
+
+  !classical subsystem
+  call NEW(cs,type='harmonicbath')
+  !call display(cs)
+  call save(cs,file=trim(file)//'.cs')
+
+  !couple qs to cs
+  call NEW(cp,qs=qs,cs=cs,type='bilinear')
+  !call display(cp)
+  call save(cp,file=trim(file)//'.cp')
+  
+  !setup propagator
+  call NEW(prop,qs,cs,cp)
+  !call display(prop)
+  call save(prop,file=trim(file)//'.prop')
+  !stop
+  
+
+  !---------------------------------------------------------!
+  !-----------    Compute DOS and ABS spectra    -----------!
+  !---------------------------------------------------------!
+  dos=0._double
+  abspec=0._double
+  H=0._double
+  H2=0._double
+  MM=0._double
+  MM2=0._double
+
+  !convert coupling matricies from variance to stdev for efficiency
+  Delta2=sqrt(Delta2)
+  Eps2=sqrt(Eps2)
+
+
+!!$  !transition dipole in cartesian coordinates
+!!$  do isymm=0,Cn-1
+!!$     phiN=twopi*isymm/real(Cn,double)
+!!$     do ilabel=1,nlabel
+!!$        radius=RMg(1,ilabel,isymm)
+!!$        nu=RMg(2,ilabel,isymm)+phiN
+!!$        Z=RMg(3,ilabel,isymm)
+!!$        X=radius*cos(nu)
+!!$        Y=radius*sin(nu)
+!!$
+!!$        do iatom=0,ntatom
+!!$           R=Mu(1,ilabel,isymm,iatom)
+!!$           theta=Mu(2,ilabel,isymm,iatom)
+!!$           phi=Mu(3,ilabel,isymm,iatom)
+!!$           Mu(1,ilabel,isymm,iatom)=R*sin(theta)*cos(phi+nu)+X
+!!$           Mu(2,ilabel,isymm,iatom)=R*sin(theta)*sin(phi+nu)+Y
+!!$           Mu(3,ilabel,isymm,iatom)=R*cos(theta)+Z
+!!$        end do
+!!$     end do
+!!$  end do
+
+
+  !loop over realizations of disorder
+  do irealiz=1,nrealiz
+     if(mod(irealiz,1).EQ.0)write(*,*)irealiz
+
+     !initialize Hamiltonian ,Transtion Dipole Product
+     H0=0._double
+     MM0=0._double
+
+     !external (inter-complex) disorder
+     BigG=BigSigG*gran()
+     BigD=BigSigD*gran()
+     BigA=BigSigA*gran()
+     BigB=BigSigB*gran()
+
+     Mu0=0._double
+     !transition dipole random matrix
+     do idim=1,ndim
+        do ilabel=1,nlabel
+           do isymm=0,N0
+              do iatom=0,ntatom
+                 Mu0(idim,ilabel,isymm,iatom)=gran()
+              end do
+           end do
+        end do
+     end do   
+     Mu0=sqrt(Mu2)*Mu0
+     
+     dr=RMg(1,2,N0)*Cnfac
+     
+     MuCn=0._double
+     RCn=0._double
+     !CnXYZ=0._double
+     
+     !loop over Cn symmetry units
+     do isymm=0,Cn-1
+        !symmetry rotation angle
+        phiN=twopi*isymm/real(Cn,double)
+        
+        do ilabel=1,nlabel 
+           if(ilabel.EQ.1)istate=isymm+1
+           if(ilabel.EQ.2)istate=Cn+(isymm*2)+1
+           if(ilabel.EQ.3)istate=Cn+(isymm*2)+2
+           
+           !compute MG coordinates
+           radius=(RMg(1,ilabel,N0)+R2Mg(1,ilabel,N0)*gran())+dr
+           nu=(RMg(2,ilabel,N0)+R2Mg(2,ilabel,N0)*gran())/(Cnfac+1._double)+phiN 
+           Z=(RMg(3,ilabel,N0)+R2Mg(3,ilabel,N0)*gran())
+           X=radius*cos(nu)
+           Y=radius*sin(nu)
+           
+           !save Mg coordinates
+           RCn(1,istate)=X
+           RCn(2,istate)=Y
+           RCn(3,istate)=Z
+           
+           jsymm=N0 !for symmeterized models (ideal, Symmeterized, and HB disordered)
+           if(Mtype.EQ.1)jsymm=isymm ! for explicit model
+
+           !find molecular transition dipole
+           R=Mu(1,ilabel,jsymm,0)+Mu0(1,ilabel,jsymm,0)
+           theta=Mu(2,ilabel,jsymm,0)+Mu0(2,ilabel,jsymm,0)
+           phi=Mu(3,ilabel,jsymm,0)+Mu0(3,ilabel,jsymm,0)
+           Muhat(1,istate)=sin(theta)*cos(phi+nu)
+           Muhat(2,istate)=sin(theta)*sin(phi+nu)
+           Muhat(3,istate)=cos(theta)
+           MuCn(:,istate)=Muhat(:,istate)*R
+       
+        end do
+     end do
+
+
+
+
+     !sample Hbonding disorder
+     do isymm=0,Cn-1
+        X=ran0()
+        do icase=ncase,1,-1
+           if(X.LE.sum(Vnorm(1:icase)))HBcase(isymm)=icase
+        end do
+        !write(*,*)HBcase(isymm),X
+     end do
+
+
+     !compute Hamiltonian and transition dipole scalar product 
+     do isymm=0,Cn-1
+
+        do ilabel=1,nlabel 
+           if(ilabel.EQ.1)istate=isymm+1
+           if(ilabel.EQ.2)istate=Cn+(isymm*2)+1
+           if(ilabel.EQ.3)istate=Cn+(isymm*2)+2
+           
+           !internal (intra-complex) disorder
+           if(ilabel.EQ.1)H0(istate,istate)=ED+(sigD*gran())+BigD
+           if(ilabel.EQ.2)H0(istate,istate)=EA+(sigA*gran())+BigA
+           if(ilabel.EQ.3)H0(istate,istate)=EB+(sigB*gran())+BigB
+
+           !add Hbonding disorder to site energy
+           if((Mtype.EQ.3).and. ilabel.EQ.3)then
+              jstate=Cn+(mod(isymm+1,Cn)*2)+1  !jstate=alpha state
+
+              select case(HBcase(isymm))
+              case(1)! notYB, notWb, notWa
+                 H0(istate,istate)=H0(istate,istate)+EHB
+                 H0(jstate,jstate)=H0(jstate,jstate)+EHB
+             
+              case(2)! notYB, notWb,    Wa
+                 H0(istate,istate)=H0(istate,istate)+EHB
+              
+              case(3)! notYB,    Wb, notWa
+                 H0(jstate,jstate)=H0(jstate,jstate)+EHB
+              
+              case(4)! notYB,    Wb,    Wa
+              
+              case(5)!    YB, notWb, notWa
+                 H0(jstate,jstate)=H0(jstate,jstate)+EHB
+              
+              case(6)!    YB, notWb,    Wa
+              
+              case(7)!    YB,    Wb, notWa
+                 H0(jstate,jstate)=H0(jstate,jstate)+EHB
+              
+              case(8)!    YB,    Wb,    Wa
+              end select
+             
+           end if
+
+           do jsymm=0,Cn-1
+              do jlabel=1,nlabel 
+                 if(jlabel.EQ.1)jstate=jsymm+1
+                 if(jlabel.EQ.2)jstate=Cn+(jsymm*2)+1
+                 if(jlabel.EQ.3)jstate=Cn+(jsymm*2)+2
+                 
+                 !calculate dipole scalar product
+                 MM0(istate,jstate)=sum(MuCn(:,istate)*MuCn(:,jstate))
+                 
+                 if(istate.NE.jstate)then
+                    
+                    !Select Model for coupling deginition
+                    select case(Mtype)
+                    case(0)  !Ideal model - no off-diagonal disorder
+                       
+                       !Compute dipole-dipole interaction
+                       R=sqrt(sum((RCn(:,istate)-RCn(:,jstate))**2)) !get distance
+                       Rhat=(RCn(:,istate)-RCn(:,jstate))/R
+                       orientfac=sum(Muhat(:,istate)*Muhat(:,jstate))&
+                            -3._double*(sum(Muhat(:,istate)*Rhat)*sum(Muhat(:,jstate)*Rhat))
+                       
+                       Bfac=sqrt(sum(MuCn(:,istate)**2)*sum(MuCn(:,jstate)**2))
+                       !Bfac if complying with Jang model
+                       if(comply)Bfac=Bfac0
+                       
+                       H0(istate,jstate)=Bfac*orientfac/(R*R*R)
+                       
+                       if(withkreuger.and. ilabel.NE.1 .and. jlabel.NE.1)then
+                          
+                          !check for krueuger exceptions
+                          !same symmetry unit
+                          if(isymm.EQ.jsymm)&
+                               H0(istate,jstate)=238._double*invcm!Jab(0)
+                          
+                          !-1 adjacent symmetry units
+                          if(isymm.EQ.mod(jsymm+1,Cn))then  
+                             if(ilabel.EQ.2 .and. jlabel.EQ.3)&
+                                  H0(istate,jstate)=213._double*invcm!Jab(-1)
+                             if(ilabel.EQ.2 .and. jlabel.EQ.2)&
+                                  H0(istate,jstate)=-46._double*invcm!Jaa(1)
+                             if(ilabel.EQ.3 .and. jlabel.EQ.3)&
+                                  H0(istate,jstate)=-37._double*invcm!Jbb(1)
+                          end if
+                          
+                          !+1 adjacent symmetry units
+                          if(isymm.EQ.mod(jsymm-1,Cn))then  
+                             if(ilabel.EQ.3 .and. jlabel.EQ.2)&
+                                  H0(istate,jstate)=213._double*invcm!Jba(1)
+                             if(ilabel.EQ.2 .and. jlabel.EQ.2)&
+                                  H0(istate,jstate)=-46._double*invcm!Jaa(1)
+                             if(ilabel.EQ.3 .and. jlabel.EQ.3)&
+                                  H0(istate,jstate)=-37._double*invcm!Jbb(1)
+                          end if
+                          
+                       end if
+                       
+                       
+                    case(1)  !MD explicit - with off-diagonal disorder
+                       H0(istate,jstate)=Delta(ilabel,isymm,jlabel,jsymm)+Delta2(ilabel,isymm,jlabel,jsymm)*gran()
+                       
+                    case(2)  !MD symmetric - with off-diagonal disorder
+                       do ksymm=0,Cn-1
+                          if(isymm.EQ.mod(jsymm+ksymm,Cn))&
+                               H0(istate,jstate)=Eps(ilabel,jlabel,ksymm)+Eps2(ilabel,jlabel,ksymm)*gran()
+                       end do
+                       
+                    case(3)  !MD symmetric with Hbonding disorder
+                       do ksymm=0,Cn-1
+                          if(isymm.EQ.mod(jsymm+ksymm,Cn))then
+                             if((ksymm.EQ.1).and.(ilabel.EQ.2.and.jlabel.EQ.3))then
+                                !expected J(alpha_n+1,beta_n)coupling for given beta hbonding
+                                H0(istate,jstate)=Vexp(HBcase(jsymm))
+                             else
+                                !MD symmetric off-diagonal coupling
+                                H0(istate,jstate)=Eps(ilabel,jlabel,ksymm)
+                             end if
+                             !MD symmetric off-diagonal disorder
+                             H0(istate,jstate)=H0(istate,jstate)+Eps2(ilabel,jlabel,ksymm)*gran()
+                          end if
+                       end do
+                       
+                    end select
+                    
+                    !symmeterize
+                    H0(jstate,istate)=H0(istate,jstate)
+                 end if
+                 
+              end do
+           end do
+           
+        end do
+     end do
+     H=H+H0
+     H2=H2+H0*H0
+     MM=MM+MM0
+     MM2=MM2+MM0*MM0
+
+     qs%hs%Eg=Eg*(sigG*gran())+BigG
+     do istate=1,qs%hs%nstate
+        do jstate=1,qs%hs%nstate
+           qs%hs%diabat(istate,jstate)=H0(istate,jstate)
+        end do
+     end do
+     call resample(qs)
+
+
+     !program will only create a realization of disorder and save
+     if(genH)then
+        call save(qs,file=trim(file)//'.qs')
+        stop
+     end if
+
+
+     !Sample thermal bath fluctuation
+     do isample=1,nsample
+        call resample(cs)
+        call resample(cp)
+        
+        !Compute excitonic states for realization of disorder
+        Evec=qs%hs%diabat+cp%hc%V
+        call diagonalize(qs%hs%nstate,Evec,Eval)
+        FC=matmul(transpose(Evec),matmul(MM0,Evec))
+        
+        !accumulate spectrum
+        do iomega=1,nomega
+           w=(iomega*dw)+Emin
+           do istate=1,qs%hs%nstate
+              if(Eval(istate).GT.w-dw/2._double.and.Eval(istate).LE.w+dw/2.0_double)then
+                 dos(iomega)=dos(iomega)+1.0
+                 abspec(iomega)=abspec(iomega)+FC(istate,istate)
+              end if
+           end do
+        end do
+        
+     end do
+
+  end do
+  dos=dos/sum(dos)!real(nrealiz,double)
+  abspec=abspec/sum(abspec)!real(nrealiz,double)
+  H=H/real(nrealiz,double)
+  H2=H2/real(nrealiz,double)-(H*H)
+  MM=MM/real(nrealiz,double)
+  MM2=MM2/real(nrealiz,double)-(MM*MM)
+
+  !write Cn spectrum
+  open(unit,file=trim(file)//'.spec')
+  do iomega=1,nomega
+     w=(iomega*dw)+Emin
+     write(unit,*)w/invcm,dos(iomega),abspec(iomega)
+  end do
+  close(unit)
+
+  !write Hamiltonian gaussian disorder width
+  open(unit,file=trim(file)//'.H')
+  do istate=1,Cnstate
+     do jstate=istate,Cnstate
+        write(unit,*)H(istate,jstate)/invcm,sqrt(H2(istate,jstate))/invcm,trim(int2str(istate))//' '//trim(int2str(jstate))
+     end do
+     write(unit,*)
+  end do
+  close(unit)
+  
+  !write MM
+  open(unit,file=trim(file)//'.MM')
+  do istate=1,Cnstate
+     do jstate=istate,Cnstate
+        write(unit,*)MM(istate,jstate)/(Debye*Debye),sqrt(MM2(istate,jstate))/(Debye*Debye),trim(int2str(istate))//' '//trim(int2str(jstate))
+     end do
+     write(unit,*)
+  end do
+  close(unit)
+
+!!$
+!!$
+!!$     !write dipoles
+!!$     Gvar=0._double
+!!$     dielectric=1._double/factor
+!!$     Evar=0._double
+!!$     Gdisorder=0._double
+!!$     Disorder=0._double
+!!$     unit=newunit()
+!!$     open(unit,file=trim(file)//'.dipoles')
+!!$     write(unit,*)'dipoles'
+!!$     write(unit,*)trim(file)//'.hs'
+!!$     write(unit,*)Gvar
+!!$     write(unit,*)((dielectric(istate,jstate),jstate=Cn+1,Cnstate),istate=Cn+1,Cnstate)
+!!$     write(unit,*)ndim
+!!$     write(unit,*)((MuCn(idim,istate),idim=1,ndim),istate=Cn+1,Cnstate)
+!!$     write(unit,*)((RCn(idim,istate),idim=1,ndim),istate=Cn+1,Cnstate)
+!!$     write(unit,*)((Evar(istate,jstate),jstate=Cn+1,Cnstate),istate=Cn+1,Cnstate)
+!!$     write(unit,*)Gdisorder
+!!$     write(unit,*)((Disorder(istate,jstate),jstate=Cn+1,Cnstate),istate=Cn+1,Cnstate)
+!!$     close(unit)
+!!$     !write qs
+!!$     unit=newunit()
+!!$     open(unit,file=trim(file)//'dipoles.qs')
+!!$     write(unit,*)'quantum'
+!!$     write(unit,*)'dipoles'
+!!$     write(unit,*)trim(file)//'.dipoles'
+!!$     close(unit)
+!!$     call new(qs2,file=trim(file)//'dipoles.qs')
+!!$     call display(qs2)
+!!$
+  
+  !deallocate arrays
+
+  call closeLog
+  !-----------------------------------------------------------------
+
+!!$# ifdef MPI
+!!$  call MPI_Finalize(ierr)
+!!$# endif
+
+end program main
+!cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+!function to fit
+FUNCTION F(param,n)
+  use type_kinds
+  use filemanager
+  use errorlog
+  
+  INTEGER(long),intent(in)::n
+  REAL(double),intent(inout):: param(n)
+  INTEGER(long):: i,ierr,unit
+  REAL(double):: F,xobs,yobs,ycal
+  character(len=path)::file='./praxis.in'
+  F=0.0
+
+  if(check(trim(file)).NE.0)call stop('cannot find file '//trim(file))
+  unit=newunit()
+  open(unit,file=trim(file))
+  ierr=0
+  DO while(ierr.eq.0)
+     read(unit,*,iostat=ierr)xobs,yobs
+     if(ierr.EQ.0)then
+        ycal=(1._double-param(2))*exp(-param(1)*xobs)+param(2) !example fit to exponetial decay param(1)=rate, param(2)=eq value
+        F=F+(ycal-yobs)**2         !minimize error calulated as sum of the diference squared
+     end if
+  END DO
+  close(unit)  
+  
+
+END FUNCTION F

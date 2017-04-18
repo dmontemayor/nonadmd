@@ -1,0 +1,19 @@
+Hi,
+
+Build this example using the MPIbuild.sh script.
+
+To compile this program on stokes.ichec.ie you'll need to add some modules
+
+$ moudle load intel-fc intel-cc intel-mkl mpt
+
+Next make the program
+
+$ make install
+
+USE  the PBS script 'fmoMPI.pbs' to submit your job to stokes. Edit the script by entering your build directory after the -d flag. Also enter your email address to get status info. Submit the job like this:
+
+$ qsub fmoMPI.pbs
+
+You will get emails when the job starts and ends. The job ended email will tell you the walltime and cputime. You can use this information to scale up your job for a big production run. Enjoy!
+
+Daniel Montemayor

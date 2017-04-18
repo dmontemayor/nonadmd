@@ -1,0 +1,21 @@
+/**
+
+@mainpage Welcome
+
+Hi Everybody,
+
+
+NonAdMD is a software package designed to treat non-adiabatic quantum dynamics in condensed phase systems. NonAdMD is really a collection of quantum mechanical propagation methods, model Hamiltonians and spectroscopic functions all created by independent computational scientists. The goal is to crowd source a comprehensive library of plug-and-play quantum/classical subsystem models. This modularity enables the users to use a standard set of primitive systems and create more complex derived systems from them. These derived systems will then be compatable with the established propagators and spectrocopic functionality.
+
+
+Sincerely,
+Daniel Montemayor
+
+<center>
+@link Overview NonAdMD Overview @endlink |
+@link Interface Using NonAdMD @endlink |
+@link Tags Download NonAdMD @endlink
+</center>
+
+*/
+

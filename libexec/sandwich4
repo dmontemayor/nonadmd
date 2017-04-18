@@ -1,0 +1,12 @@
+#!/bin/bash
+# Usage: sandwich.sh str1 list str2 str3 str4 str5
+#        where str1-str5 are a character strings and list is a text file
+# Returns str1//1st  line of list file//str2//1st  line...//str5 /newline
+#         str1//2nd  line of list file//str2//2nd  line...//str5 /newline
+#         ...
+#         str1//last line of list file//str2//last line...//str5 /newline
+
+while read line
+do
+    echo -e "$1$line$3$line$4$line$5$line$6"
+done < $2

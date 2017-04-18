@@ -1,0 +1,92 @@
+PSF CMAP
+
+      25 !NTITLE
+ REMARKS original generated structure x-plor psf file
+ REMARKS topology top_alt5_popg_bph.rtf 
+ REMARKS topology /home/tina/work/revtop3/top_alt5_popg.rtf 
+ REMARKS topology /home/tina/lib/vmd/plugins/noarch/tcl/solvate1.3/wat.top 
+ REMARKS segment RSRH { first ; last ; auto none  }
+ REMARKS segment RSRL { first ; last ; auto none  }
+ REMARKS segment RSRM { first ; last ; auto none  }
+ REMARKS segment CHLO { first ; last ; auto none  }
+ REMARKS segment PHYT { first ; last ; auto none  }
+ REMARKS segment A { first NONE; last NONE; auto angles dihedrals }
+ REMARKS segment B { first NONE; last NONE; auto angles dihedrals }
+ REMARKS segment C { first NONE; last NONE; auto angles dihedrals }
+ REMARKS segment D { first NONE; last NONE; auto angles dihedrals }
+ REMARKS segment E { first NONE; last NONE; auto angles dihedrals }
+ REMARKS segment F { first NONE; last NONE; auto angles dihedrals }
+ REMARKS segment G { first NONE; last NONE; auto angles dihedrals }
+ REMARKS segment H { first NONE; last NONE; auto angles dihedrals }
+ REMARKS segment WT1 { first NONE; last NONE; auto none  }
+ REMARKS segment WT2 { first NONE; last NONE; auto none  }
+ REMARKS segment WT3 { first NONE; last NONE; auto none  }
+ REMARKS segment WT4 { first NONE; last NONE; auto none  }
+ REMARKS segment WT5 { first NONE; last NONE; auto none  }
+ REMARKS segment WT6 { first NONE; last NONE; auto none  }
+ REMARKS segment WT7 { first NONE; last NONE; auto none  }
+ REMARKS segment WT8 { first NONE; last NONE; auto none  }
+
+      61 !NATOM
+   13178 CHLO 1    BCL  MG   MG    -0.017000       24.3050           0  
+   13179 CHLO 1    BCL  CHA  CPM2  -0.027000       12.0110           0
+   13180 CHLO 1    BCL  CHB  CPMN  -0.021000       12.0110           0
+   13181 CHLO 1    BCL  HB   HAN    0.000000        1.0080           0
+   13182 CHLO 1    BCL  CHC  CPM3  -0.053000       12.0110           0
+   13183 CHLO 1    BCL  HC   HAN    0.000000        1.0080           0
+   13184 CHLO 1    BCL  CHD  CPMN  -0.030000       12.0110           0
+   13185 CHLO 1    BCL  HD   HAN    0.000000        1.0080           0
+   13186 CHLO 1    BCL  NA   NPH1  -0.028000       14.0070           0
+   13187 CHLO 1    BCL  C1A  CPAN   0.020000       12.0110           0
+   13188 CHLO 1    BCL  C4A  CPAN   0.031000       12.0110           0
+   13189 CHLO 1    BCL  C2A  CT2N   0.009000       12.0110           0
+   13190 CHLO 1    BCL  H2A  HAN    0.000000        1.0080           0
+   13191 CHLO 1    BCL  C3A  CT2N   0.003000       12.0110           0
+   13192 CHLO 1    BCL  H3A  HAN    0.000000        1.0080           0
+   13193 CHLO 1    BCL  CMA  CTN3   0.004000       12.0110           0
+   13197 CHLO 1    BCL  CAA  CTN2   0.004000       12.0110           0
+   13200 CHLO 1    BCL  CBA  CTN2  -0.001000       12.0110           0
+   13203 CHLO 1    BCL  CGA  CES    0.003000       12.0110           0
+   13204 CHLO 1    BCL  O1A  ON    -0.001000       15.9990           0
+   13205 CHLO 1    BCL  O2A  OSN   -0.001000       15.9994           0
+   13206 CHLO 1    BCL  NB   NPH2  -0.014000       14.0070           0
+   13207 CHLO 1    BCL  C1B  CPAN   0.023000       12.0110           0
+   13208 CHLO 1    BCL  C4B  CPAN   0.070000       12.0110           0
+   13209 CHLO 1    BCL  C2B  CPBN  -0.027000       12.0110           0
+   13210 CHLO 1    BCL  C3B  CPBN  -0.027000       12.0110           0
+   13211 CHLO 1    BCL  CMB  CTR   -0.001000       12.0110           0
+   13215 CHLO 1    BCL  CAB  CNN   -0.023000       12.0110           0
+   13216 CHLO 1    BCL  OBB  OK    -0.013000       15.9994           0
+   13217 CHLO 1    BCL  CBB  CTN3   0.000000       12.0110           0
+   13218 CHLO 1    BCL  HBB1 HAN    0.000000        1.0080           0
+   13219 CHLO 1    BCL  HBB2 HAN    0.000000        1.0080           0
+   13220 CHLO 1    BCL  HBB3 HAN    0.000000        1.0080           0
+   13221 CHLO 1    BCL  NC   NPH3  -0.039000       14.0070           0
+   13222 CHLO 1    BCL  C1C  CPAN   0.041000       12.0110           0
+   13223 CHLO 1    BCL  C4C  CPAN   0.060000       12.0110           0
+   13224 CHLO 1    BCL  C2C  CT2N   0.005000       12.0110           0
+   13225 CHLO 1    BCL  H2C  HAN    0.000000        1.0080           0
+   13226 CHLO 1    BCL  C3C  CT2N   0.003000       12.0110           0
+   13227 CHLO 1    BCL  H3C  HAN    0.000000        1.0080           0
+   13228 CHLO 1    BCL  CMC  CTN3   0.003000       12.0110           0
+   13232 CHLO 1    BCL  CAC  CTN2   0.004000       12.0110           0
+   13235 CHLO 1    BCL  CBC  CTN3   0.001000       12.0110           0
+   13239 CHLO 1    BCL  ND   NPH4  -0.012000       14.0070           0
+   13240 CHLO 1    BCL  C1D  CPA2   0.053000       12.0110           0
+   13241 CHLO 1    BCL  C4D  CPA3   0.047000       12.0110           0
+   13242 CHLO 1    BCL  C2D  CPBN  -0.018000       12.0110           0
+   13243 CHLO 1    BCL  C3D  CPBN   0.004000       12.0110           0
+   13244 CHLO 1    BCL  CMD  CTR    0.002000       12.0110           0
+   13248 CHLO 1    BCL  CAD  C2    -0.027000       12.0110           0
+   13249 CHLO 1    BCL  OBD  OK    -0.009000       15.9994           0
+   13250 CHLO 1    BCL  CBD  CTN1   0.002000       12.0110           0
+   13251 CHLO 1    BCL  HBD  HAN    0.000000        1.0080           0
+   13252 CHLO 1    BCL  CGD  CES    0.002000       12.0110           0
+   13253 CHLO 1    BCL  O1D  ON    -0.002000       15.9990           0
+   13254 CHLO 1    BCL  O2D  OSN   -0.003000       15.9994           0
+   13255 CHLO 1    BCL  CED  CTN3   0.000000       12.0110           0
+   13256 CHLO 1    BCL  HED1 HAN    0.000000        1.0080           0
+   13257 CHLO 1    BCL  HED2 HAN    0.000000        1.0080           0
+   13258 CHLO 1    BCL  HED3 HAN    0.000000        1.0080           0
+   13259 CHLO 1    BCL  C1   CTN2   0.000000       12.0110           0
+

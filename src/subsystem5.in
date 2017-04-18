@@ -1,0 +1,9 @@
+    this%type=''
+    this%initialized=.false.
+  end subroutine subsys_kill
+  subroutine subsys_update(this)
+    type(subsys),intent(inout)::this
+    call Note('Begin subsys_update.')
+    !if(check(this).EQ.1)call stop('subsys_update: failed object check.')
+    select case(trim(this%type))
+    case('hprim');call update(this%primitive)

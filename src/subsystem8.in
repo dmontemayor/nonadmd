@@ -1,0 +1,18 @@
+    case default
+       call stop('subsys_display: unknown subsys type.')
+    end select
+  end subroutine subsys_display
+  subroutine subsys_save(this,file)
+    type(subsys),intent(in)::this
+    character*(*),intent(in)::file    
+    integer(long)::unit
+    call Note('Begin subsys_save.')
+    call Note('input file= '//file)
+    if(check(this).EQ.1)call stop('subsys_save: failed object check.')
+    unit=newunit()
+    open(unit,file=file)
+    write(unit,*)'subsys'
+    write(unit,*)trim(this%type)
+    write(unit,*)quote(file//'.suffix')
+    select case(trim(this%type))
+    case('hprim');call save(this%primitive,file//'.suffix')
