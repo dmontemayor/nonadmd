@@ -1,0 +1,215 @@
+\hypertarget{classtextgraphs}{\section{textgraphs Module Reference}
+\label{classtextgraphs}\index{textgraphs@{textgraphs}}
+}
+
+
+Text based plotting.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacetextgraphs_1_1display}{display}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classtextgraphs_a34e0dbcefa5d7f20393912bea281116e}{displaycmplxmatrix} (Z, tol, msg)
+\begin{DoxyCompactList}\small\item\em Plot Complex Matrix. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classtextgraphs_aec95adcc32b77f95f0a3625ca97cc374}{displayrealmatrix} (A, tol, msg)
+\begin{DoxyCompactList}\small\item\em Plot Real Matrix. \end{DoxyCompactList}\item 
+character function \hyperlink{classtextgraphs_accad584018d6cbbc199cc77b34ef2db5}{textgraphschar} (X, tol, alt)
+\begin{DoxyCompactList}\small\item\em Scaled Value character. \end{DoxyCompactList}\item 
+character function \hyperlink{classtextgraphs_a3ce903686e3a69e50f07b7f1461c53c6}{textgraphsvect} (X, tol)
+\begin{DoxyCompactList}\small\item\em Vector character. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classtextgraphs_ae7171ed6f50b5b8b77aabd136316a6b8}{displayvectfield} (Q, Mu, tol, nptx, npty, labelvect, msg)
+\begin{DoxyCompactList}\small\item\em Plot Vector Field. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classtextgraphs_a7f733ce4082530e8bfeb1750d4870575}{displayvalues} (Q, npt, msg)
+\begin{DoxyCompactList}\small\item\em Display Array Vaules. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classtextgraphs_a857fceafb9446a13966f54fbbce35773}{displayxy} (Xset, Yset, nptx, npty, mask, msg)
+\begin{DoxyCompactList}\small\item\em Scatter plot details/ displays xy data as nptx x npty char text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Text based plotting. 
+
+A set of procedures accessed with the D\+I\+S\+P\+L\+A\+Y call that return text based graphs of real or complex matrix data and 2\+D vector fields. 
+
+\subsection{Member Function/\+Subroutine Documentation}
+\hypertarget{classtextgraphs_a34e0dbcefa5d7f20393912bea281116e}{\index{textgraphs@{textgraphs}!displaycmplxmatrix@{displaycmplxmatrix}}
+\index{displaycmplxmatrix@{displaycmplxmatrix}!textgraphs@{textgraphs}}
+\subsubsection[{displaycmplxmatrix}]{\setlength{\rightskip}{0pt plus 5cm}subroutine textgraphs\+::displaycmplxmatrix (
+\begin{DoxyParamCaption}
+\item[{complex(double), dimension(\+:,\+:), intent(in), target}]{Z, }
+\item[{real(double), intent(in), optional}]{tol, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtextgraphs_a34e0dbcefa5d7f20393912bea281116e}
+
+
+Plot Complex Matrix. 
+
+Displays a 2\+D complex matrix elements as 2 char text in Nx\+M table, where N and M are the dimensions of the input matrix. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtextgraphs_a34e0dbcefa5d7f20393912bea281116e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classtextgraphs_aec95adcc32b77f95f0a3625ca97cc374}{\index{textgraphs@{textgraphs}!displayrealmatrix@{displayrealmatrix}}
+\index{displayrealmatrix@{displayrealmatrix}!textgraphs@{textgraphs}}
+\subsubsection[{displayrealmatrix}]{\setlength{\rightskip}{0pt plus 5cm}subroutine textgraphs\+::displayrealmatrix (
+\begin{DoxyParamCaption}
+\item[{real(double), dimension(\+:,\+:), intent(in), target}]{A, }
+\item[{real(double), intent(in), optional}]{tol, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtextgraphs_aec95adcc32b77f95f0a3625ca97cc374}
+
+
+Plot Real Matrix. 
+
+Displays a 2\+D real matrix elements as 1 char text in Nx\+M table, where N and M are the dimensions of the input matrix. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtextgraphs_aec95adcc32b77f95f0a3625ca97cc374_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classtextgraphs_a7f733ce4082530e8bfeb1750d4870575}{\index{textgraphs@{textgraphs}!displayvalues@{displayvalues}}
+\index{displayvalues@{displayvalues}!textgraphs@{textgraphs}}
+\subsubsection[{displayvalues}]{\setlength{\rightskip}{0pt plus 5cm}subroutine textgraphs\+::displayvalues (
+\begin{DoxyParamCaption}
+\item[{real(double), dimension(\+:), intent(in), target}]{Q, }
+\item[{integer(long), intent(in), optional}]{npt, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtextgraphs_a7f733ce4082530e8bfeb1750d4870575}
+
+
+Display Array Vaules. 
+
+Plots a function contained in Q with text each element of Q gets a character on a the record with npt represents the range of values \hypertarget{classtextgraphs_ae7171ed6f50b5b8b77aabd136316a6b8}{\index{textgraphs@{textgraphs}!displayvectfield@{displayvectfield}}
+\index{displayvectfield@{displayvectfield}!textgraphs@{textgraphs}}
+\subsubsection[{displayvectfield}]{\setlength{\rightskip}{0pt plus 5cm}subroutine textgraphs\+::displayvectfield (
+\begin{DoxyParamCaption}
+\item[{real(double), dimension(\+:,\+:), intent(in), target}]{Q, }
+\item[{real(double), dimension(\+:,\+:), intent(in), target}]{Mu, }
+\item[{real(double), intent(in), optional}]{tol, }
+\item[{integer(long), intent(in), optional}]{nptx, }
+\item[{integer(long), intent(in), optional}]{npty, }
+\item[{logical, intent(in), optional}]{labelvect, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtextgraphs_ae7171ed6f50b5b8b77aabd136316a6b8}
+
+
+Plot Vector Field. 
+
+Displays a 2\+D vector field elements as nptx x npty char text. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtextgraphs_ae7171ed6f50b5b8b77aabd136316a6b8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classtextgraphs_a857fceafb9446a13966f54fbbce35773}{\index{textgraphs@{textgraphs}!displayxy@{displayxy}}
+\index{displayxy@{displayxy}!textgraphs@{textgraphs}}
+\subsubsection[{displayxy}]{\setlength{\rightskip}{0pt plus 5cm}subroutine textgraphs\+::displayxy (
+\begin{DoxyParamCaption}
+\item[{real(double), dimension(\+:), intent(in), target}]{Xset, }
+\item[{real(double), dimension(\+:), intent(in), target}]{Yset, }
+\item[{integer(long), intent(in), optional}]{nptx, }
+\item[{integer(long), intent(in), optional}]{npty, }
+\item[{logical, dimension(\+:), intent(in), optional}]{mask, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtextgraphs_a857fceafb9446a13966f54fbbce35773}
+
+
+Scatter plot details/ displays xy data as nptx x npty char text. 
+
+\hypertarget{classtextgraphs_accad584018d6cbbc199cc77b34ef2db5}{\index{textgraphs@{textgraphs}!textgraphschar@{textgraphschar}}
+\index{textgraphschar@{textgraphschar}!textgraphs@{textgraphs}}
+\subsubsection[{textgraphschar}]{\setlength{\rightskip}{0pt plus 5cm}character function textgraphs\+::textgraphschar (
+\begin{DoxyParamCaption}
+\item[{real(double), intent(in)}]{X, }
+\item[{real(double), intent(in), optional}]{tol, }
+\item[{logical, intent(in), optional}]{alt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtextgraphs_accad584018d6cbbc199cc77b34ef2db5}
+
+
+Scaled Value character. 
+
+Returns a character based double precision input. ~\newline
+-\/-\/---character key-\/-\/-\/---~\newline
+ \%+ \+: significant real positive value~\newline
+ \%-\/ \+: significant real negative value~\newline
+ p \+: significant imag positive value~\newline
+ n \+: significant imag negative value~\newline
+ \%. \+: insignificant value~\newline
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---~\newline
+ 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtextgraphs_accad584018d6cbbc199cc77b34ef2db5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classtextgraphs_a3ce903686e3a69e50f07b7f1461c53c6}{\index{textgraphs@{textgraphs}!textgraphsvect@{textgraphsvect}}
+\index{textgraphsvect@{textgraphsvect}!textgraphs@{textgraphs}}
+\subsubsection[{textgraphsvect}]{\setlength{\rightskip}{0pt plus 5cm}character function textgraphs\+::textgraphsvect (
+\begin{DoxyParamCaption}
+\item[{real(double), dimension(2), intent(in)}]{X, }
+\item[{real(double), intent(in), optional}]{tol}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classtextgraphs_a3ce903686e3a69e50f07b7f1461c53c6}
+
+
+Vector character. 
+
+Returns a character representing the orientation of an input 2\+D vector. ~\newline
+-\/-\/---character key-\/-\/-\/---~\newline
+ \%. \+: insignificant magnitute~\newline
+ \%-\/ \+: pi15/8 $<$ angle $<$ pi/8 achar(45)~\newline
+ \%/ \+: pi/8 $<$ angle $<$ pi3/8 achar(47)~\newline
+ \%$\vert$ \+: pi3/8 $<$ angle $<$ pi5/8 achar(124)~\newline
+ \%\textbackslash{} \+: pi5/8 $<$ angle $<$ pi7/8 achar(92)~\newline
+ \%-\/ \+: pi7/8 $<$ angle $<$ pi9/8~\newline
+ \%/ \+: pi9/8 $<$ angle $<$ pi11/8~\newline
+ \%$\vert$ \+: pi11/8 $<$ angle $<$ pi13/8~\newline
+ \%\textbackslash{} \+: pi13/8 $<$ angle $<$ pi15/8~\newline
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---~\newline
+ 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtextgraphs_a3ce903686e3a69e50f07b7f1461c53c6_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this module was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{utils_8f90}{utils.\+f90}\end{DoxyCompactItemize}

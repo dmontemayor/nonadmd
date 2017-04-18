@@ -1,0 +1,429 @@
+\hypertarget{classldm__class}{\section{ldm\+\_\+class Module Reference}
+\label{classldm__class}\index{ldm\+\_\+class@{ldm\+\_\+class}}
+}
+
+
+Lineraized Path Integral Propagators.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfaceldm__class_1_1check}{check}
+\item 
+interface \hyperlink{interfaceldm__class_1_1display}{display}
+\item 
+type \hyperlink{structldm__class_1_1ildm}{ildm}
+\item 
+interface \hyperlink{interfaceldm__class_1_1kill}{kill}
+\item 
+type \hyperlink{structldm__class_1_1mappingh}{mappingh}
+\item 
+interface \hyperlink{interfaceldm__class_1_1new}{new}
+\item 
+type \hyperlink{structldm__class_1_1pldm}{pldm}
+\item 
+type \hyperlink{structldm__class_1_1redmat}{redmat}
+\item 
+interface \hyperlink{interfaceldm__class_1_1run}{run}
+\item 
+interface \hyperlink{interfaceldm__class_1_1save}{save}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classldm__class_a233670656d355fd777ff6399acec2acb}{mappingh\+\_\+new} (this, nstate)
+\item 
+subroutine \hyperlink{classldm__class_a89385a3fecce8aa3ae8d0c7b594fb7a9}{mappingh\+\_\+kill} (this)
+\item 
+subroutine \hyperlink{classldm__class_af7987796af490df2f7c321ee09b87646}{mappingh\+\_\+display} (this)
+\item 
+subroutine \hyperlink{classldm__class_a54e57f7f053b49d8447417972553a8ce}{mappingh\+\_\+save} (this, file)
+\item 
+integer(short) function \hyperlink{classldm__class_af7175f5e209844633be1e9d9df5982cc}{mappingh\+\_\+check} (this)
+\item 
+subroutine \hyperlink{classldm__class_a74b06c9591f904a42ea82b7218984a0c}{mapverlet} (this, dt, nlstep, qs, cs, cp)
+\item 
+subroutine \hyperlink{classldm__class_a73f19e5e8dc0db7f711060d15f0758ee}{redmat\+\_\+new} (this, nstate, file)
+\item 
+subroutine \hyperlink{classldm__class_a2460f4ad2ec98bda3dce8b992ed88a44}{redmat\+\_\+kill} (this)
+\item 
+subroutine \hyperlink{classldm__class_aaef8a36368869d879e247ea5abd39dab}{redmat\+\_\+display} (this)
+\item 
+subroutine \hyperlink{classldm__class_a52cd911f4bfe5cf3fb751791b1590e92}{redmat\+\_\+save} (this, file)
+\item 
+integer(short) function \hyperlink{classldm__class_acc6a237673894a2d0a1d926477d2ebea}{redmat\+\_\+check} (this)
+\item 
+subroutine \hyperlink{classldm__class_a95d2afa2bf84dc065a5f805376546732}{pldm\+\_\+new} (this, qs, cs, cp, file)
+\item 
+subroutine \hyperlink{classldm__class_a5c5f910b4eef4a860fe6df8c144ab46e}{pldm\+\_\+kill} (this)
+\item 
+subroutine \hyperlink{classldm__class_aa6b4c80dc13e056ed9b37d3607b670d5}{pldm\+\_\+display} (this)
+\item 
+subroutine \hyperlink{classldm__class_a95c733ee81b1cbc8b21a0b6201227ee0}{pldm\+\_\+save} (this, file)
+\item 
+integer(short) function \hyperlink{classldm__class_a35a0e843d8b83782d1e93f1f462a3978}{pldm\+\_\+check} (this)
+\item 
+subroutine \hyperlink{classldm__class_ad6c2cdf2a1fc1ddc1a94ee73f582a929}{pldm\+\_\+run} (this, file, normalize)
+\item 
+subroutine \hyperlink{classldm__class_a9b6ca5c010fa93cc292b7e634c47390e}{ildm\+\_\+new} (this, qs, cs, cp, file)
+\item 
+subroutine \hyperlink{classldm__class_a38994931ab5b024908f6be0bbc407f21}{ildm\+\_\+kill} (this)
+\item 
+subroutine \hyperlink{classldm__class_a2b81be8043a83daecd5527aeaf531316}{ildm\+\_\+display} (this)
+\item 
+subroutine \hyperlink{classldm__class_a9c350e2bc9489d33ebb97d3d2ab21460}{ildm\+\_\+save} (this, file)
+\item 
+integer(short) function \hyperlink{classldm__class_a7dae43042bdbc076bbaa40f7de3cf0eb}{ildm\+\_\+check} (this)
+\item 
+subroutine \hyperlink{classldm__class_ae9e0c36eb828b55fad8914430db360fc}{ildm\+\_\+run} (this, file, tol, normalize)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Lineraized Path Integral Propagators. 
+
+Supplies iterative and partial linearized density matrix propagators ,I\+L\+D\+M and P\+L\+D\+M respectively. \begin{DoxyAuthor}{Authors}
+Daniel Montemayor  August 2011  No population relaxation is observed. 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000004}{Todo}]Reverse changes to qsdiabat made during R\+U\+N at the end of subroutine \end{DoxyRefDesc}
+
+
+\subsection{Member Function/\+Subroutine Documentation}
+\hypertarget{classldm__class_a7dae43042bdbc076bbaa40f7de3cf0eb}{\index{ldm\+\_\+class@{ldm\+\_\+class}!ildm\+\_\+check@{ildm\+\_\+check}}
+\index{ildm\+\_\+check@{ildm\+\_\+check}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{ildm\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}integer(short) function ldm\+\_\+class\+::ildm\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{type({\bf ildm}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a7dae43042bdbc076bbaa40f7de3cf0eb}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classldm__class_a7dae43042bdbc076bbaa40f7de3cf0eb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classldm__class_a2b81be8043a83daecd5527aeaf531316}{\index{ldm\+\_\+class@{ldm\+\_\+class}!ildm\+\_\+display@{ildm\+\_\+display}}
+\index{ildm\+\_\+display@{ildm\+\_\+display}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{ildm\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::ildm\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{type({\bf ildm}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a2b81be8043a83daecd5527aeaf531316}
+\hypertarget{classldm__class_a38994931ab5b024908f6be0bbc407f21}{\index{ldm\+\_\+class@{ldm\+\_\+class}!ildm\+\_\+kill@{ildm\+\_\+kill}}
+\index{ildm\+\_\+kill@{ildm\+\_\+kill}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{ildm\+\_\+kill}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::ildm\+\_\+kill (
+\begin{DoxyParamCaption}
+\item[{type({\bf ildm}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a38994931ab5b024908f6be0bbc407f21}
+\hypertarget{classldm__class_a9b6ca5c010fa93cc292b7e634c47390e}{\index{ldm\+\_\+class@{ldm\+\_\+class}!ildm\+\_\+new@{ildm\+\_\+new}}
+\index{ildm\+\_\+new@{ildm\+\_\+new}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{ildm\+\_\+new}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::ildm\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{type({\bf ildm}), intent(inout)}]{this, }
+\item[{type(quantum), intent(in), target}]{qs, }
+\item[{type(classical), intent(in), target}]{cs, }
+\item[{type(coupling), intent(in), target}]{cp, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a9b6ca5c010fa93cc292b7e634c47390e}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{classldm__class_a9b6ca5c010fa93cc292b7e634c47390e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classldm__class_ae9e0c36eb828b55fad8914430db360fc}{\index{ldm\+\_\+class@{ldm\+\_\+class}!ildm\+\_\+run@{ildm\+\_\+run}}
+\index{ildm\+\_\+run@{ildm\+\_\+run}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{ildm\+\_\+run}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::ildm\+\_\+run (
+\begin{DoxyParamCaption}
+\item[{type({\bf ildm}), intent(inout)}]{this, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file, }
+\item[{real(double), intent(in), optional}]{tol, }
+\item[{logical, intent(in), optional}]{normalize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_ae9e0c36eb828b55fad8914430db360fc}
+Initialize trajectory M\+C weight
+
+Initialize trajectory Phase weight 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classldm__class_ae9e0c36eb828b55fad8914430db360fc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classldm__class_a9c350e2bc9489d33ebb97d3d2ab21460}{\index{ldm\+\_\+class@{ldm\+\_\+class}!ildm\+\_\+save@{ildm\+\_\+save}}
+\index{ildm\+\_\+save@{ildm\+\_\+save}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{ildm\+\_\+save}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::ildm\+\_\+save (
+\begin{DoxyParamCaption}
+\item[{type({\bf ildm}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in)}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a9c350e2bc9489d33ebb97d3d2ab21460}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classldm__class_a9c350e2bc9489d33ebb97d3d2ab21460_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classldm__class_af7175f5e209844633be1e9d9df5982cc}{\index{ldm\+\_\+class@{ldm\+\_\+class}!mappingh\+\_\+check@{mappingh\+\_\+check}}
+\index{mappingh\+\_\+check@{mappingh\+\_\+check}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{mappingh\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}integer(short) function ldm\+\_\+class\+::mappingh\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{type({\bf mappingh}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_af7175f5e209844633be1e9d9df5982cc}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classldm__class_af7175f5e209844633be1e9d9df5982cc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classldm__class_af7987796af490df2f7c321ee09b87646}{\index{ldm\+\_\+class@{ldm\+\_\+class}!mappingh\+\_\+display@{mappingh\+\_\+display}}
+\index{mappingh\+\_\+display@{mappingh\+\_\+display}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{mappingh\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::mappingh\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{type({\bf mappingh}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_af7987796af490df2f7c321ee09b87646}
+\hypertarget{classldm__class_a89385a3fecce8aa3ae8d0c7b594fb7a9}{\index{ldm\+\_\+class@{ldm\+\_\+class}!mappingh\+\_\+kill@{mappingh\+\_\+kill}}
+\index{mappingh\+\_\+kill@{mappingh\+\_\+kill}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{mappingh\+\_\+kill}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::mappingh\+\_\+kill (
+\begin{DoxyParamCaption}
+\item[{type({\bf mappingh}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a89385a3fecce8aa3ae8d0c7b594fb7a9}
+\hypertarget{classldm__class_a233670656d355fd777ff6399acec2acb}{\index{ldm\+\_\+class@{ldm\+\_\+class}!mappingh\+\_\+new@{mappingh\+\_\+new}}
+\index{mappingh\+\_\+new@{mappingh\+\_\+new}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{mappingh\+\_\+new}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::mappingh\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{type({\bf mappingh}), intent(inout)}]{this, }
+\item[{integer(long), intent(in), optional}]{nstate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a233670656d355fd777ff6399acec2acb}
+\hypertarget{classldm__class_a54e57f7f053b49d8447417972553a8ce}{\index{ldm\+\_\+class@{ldm\+\_\+class}!mappingh\+\_\+save@{mappingh\+\_\+save}}
+\index{mappingh\+\_\+save@{mappingh\+\_\+save}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{mappingh\+\_\+save}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::mappingh\+\_\+save (
+\begin{DoxyParamCaption}
+\item[{type({\bf mappingh}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in)}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a54e57f7f053b49d8447417972553a8ce}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classldm__class_a54e57f7f053b49d8447417972553a8ce_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classldm__class_a74b06c9591f904a42ea82b7218984a0c}{\index{ldm\+\_\+class@{ldm\+\_\+class}!mapverlet@{mapverlet}}
+\index{mapverlet@{mapverlet}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{mapverlet}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::mapverlet (
+\begin{DoxyParamCaption}
+\item[{type({\bf mappingh}), intent(inout)}]{this, }
+\item[{real(double), intent(in)}]{dt, }
+\item[{integer(long), intent(in)}]{nlstep, }
+\item[{type(quantum), intent(in)}]{qs, }
+\item[{type(classical), intent(in)}]{cs, }
+\item[{type(coupling), intent(in)}]{cp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a74b06c9591f904a42ea82b7218984a0c}
+\hypertarget{classldm__class_a35a0e843d8b83782d1e93f1f462a3978}{\index{ldm\+\_\+class@{ldm\+\_\+class}!pldm\+\_\+check@{pldm\+\_\+check}}
+\index{pldm\+\_\+check@{pldm\+\_\+check}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{pldm\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}integer(short) function ldm\+\_\+class\+::pldm\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{type({\bf pldm}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a35a0e843d8b83782d1e93f1f462a3978}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classldm__class_a35a0e843d8b83782d1e93f1f462a3978_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classldm__class_aa6b4c80dc13e056ed9b37d3607b670d5}{\index{ldm\+\_\+class@{ldm\+\_\+class}!pldm\+\_\+display@{pldm\+\_\+display}}
+\index{pldm\+\_\+display@{pldm\+\_\+display}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{pldm\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::pldm\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{type({\bf pldm}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_aa6b4c80dc13e056ed9b37d3607b670d5}
+\hypertarget{classldm__class_a5c5f910b4eef4a860fe6df8c144ab46e}{\index{ldm\+\_\+class@{ldm\+\_\+class}!pldm\+\_\+kill@{pldm\+\_\+kill}}
+\index{pldm\+\_\+kill@{pldm\+\_\+kill}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{pldm\+\_\+kill}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::pldm\+\_\+kill (
+\begin{DoxyParamCaption}
+\item[{type({\bf pldm}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a5c5f910b4eef4a860fe6df8c144ab46e}
+\hypertarget{classldm__class_a95d2afa2bf84dc065a5f805376546732}{\index{ldm\+\_\+class@{ldm\+\_\+class}!pldm\+\_\+new@{pldm\+\_\+new}}
+\index{pldm\+\_\+new@{pldm\+\_\+new}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{pldm\+\_\+new}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::pldm\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{type({\bf pldm}), intent(inout)}]{this, }
+\item[{type(quantum), intent(in), target}]{qs, }
+\item[{type(classical), intent(in), target}]{cs, }
+\item[{type(coupling), intent(in), target}]{cp, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a95d2afa2bf84dc065a5f805376546732}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classldm__class_a95d2afa2bf84dc065a5f805376546732_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classldm__class_ad6c2cdf2a1fc1ddc1a94ee73f582a929}{\index{ldm\+\_\+class@{ldm\+\_\+class}!pldm\+\_\+run@{pldm\+\_\+run}}
+\index{pldm\+\_\+run@{pldm\+\_\+run}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{pldm\+\_\+run}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::pldm\+\_\+run (
+\begin{DoxyParamCaption}
+\item[{type({\bf pldm}), intent(inout)}]{this, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file, }
+\item[{logical, intent(in), optional}]{normalize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_ad6c2cdf2a1fc1ddc1a94ee73f582a929}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classldm__class_ad6c2cdf2a1fc1ddc1a94ee73f582a929_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classldm__class_a95c733ee81b1cbc8b21a0b6201227ee0}{\index{ldm\+\_\+class@{ldm\+\_\+class}!pldm\+\_\+save@{pldm\+\_\+save}}
+\index{pldm\+\_\+save@{pldm\+\_\+save}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{pldm\+\_\+save}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::pldm\+\_\+save (
+\begin{DoxyParamCaption}
+\item[{type({\bf pldm}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in)}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a95c733ee81b1cbc8b21a0b6201227ee0}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{classldm__class_a95c733ee81b1cbc8b21a0b6201227ee0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classldm__class_acc6a237673894a2d0a1d926477d2ebea}{\index{ldm\+\_\+class@{ldm\+\_\+class}!redmat\+\_\+check@{redmat\+\_\+check}}
+\index{redmat\+\_\+check@{redmat\+\_\+check}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{redmat\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}integer(short) function ldm\+\_\+class\+::redmat\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{type({\bf redmat}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_acc6a237673894a2d0a1d926477d2ebea}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classldm__class_acc6a237673894a2d0a1d926477d2ebea_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classldm__class_aaef8a36368869d879e247ea5abd39dab}{\index{ldm\+\_\+class@{ldm\+\_\+class}!redmat\+\_\+display@{redmat\+\_\+display}}
+\index{redmat\+\_\+display@{redmat\+\_\+display}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{redmat\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::redmat\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{type({\bf redmat}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_aaef8a36368869d879e247ea5abd39dab}
+\hypertarget{classldm__class_a2460f4ad2ec98bda3dce8b992ed88a44}{\index{ldm\+\_\+class@{ldm\+\_\+class}!redmat\+\_\+kill@{redmat\+\_\+kill}}
+\index{redmat\+\_\+kill@{redmat\+\_\+kill}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{redmat\+\_\+kill}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::redmat\+\_\+kill (
+\begin{DoxyParamCaption}
+\item[{type({\bf redmat}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a2460f4ad2ec98bda3dce8b992ed88a44}
+\hypertarget{classldm__class_a73f19e5e8dc0db7f711060d15f0758ee}{\index{ldm\+\_\+class@{ldm\+\_\+class}!redmat\+\_\+new@{redmat\+\_\+new}}
+\index{redmat\+\_\+new@{redmat\+\_\+new}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{redmat\+\_\+new}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::redmat\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{type({\bf redmat}), intent(inout)}]{this, }
+\item[{integer(long), intent(in), optional}]{nstate, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a73f19e5e8dc0db7f711060d15f0758ee}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classldm__class_a73f19e5e8dc0db7f711060d15f0758ee_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classldm__class_a52cd911f4bfe5cf3fb751791b1590e92}{\index{ldm\+\_\+class@{ldm\+\_\+class}!redmat\+\_\+save@{redmat\+\_\+save}}
+\index{redmat\+\_\+save@{redmat\+\_\+save}!ldm\+\_\+class@{ldm\+\_\+class}}
+\subsubsection[{redmat\+\_\+save}]{\setlength{\rightskip}{0pt plus 5cm}subroutine ldm\+\_\+class\+::redmat\+\_\+save (
+\begin{DoxyParamCaption}
+\item[{type({\bf redmat}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in)}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classldm__class_a52cd911f4bfe5cf3fb751791b1590e92}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classldm__class_a52cd911f4bfe5cf3fb751791b1590e92_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this module was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_l_d_m_8f90}{L\+D\+M.\+f90}\end{DoxyCompactItemize}

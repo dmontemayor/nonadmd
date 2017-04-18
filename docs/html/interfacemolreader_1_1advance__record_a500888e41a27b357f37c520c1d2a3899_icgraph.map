@@ -1,0 +1,5 @@
+<map id="molreader::advance_record::advance_buffer" name="molreader::advance_record::advance_buffer">
+<area shape="rect" id="node2" href="$classmolreader.html#af85c1b386f0dc78ebf55e003b4f8c83a" title="molreader::read_cryst1" alt="" coords="216,5,371,32"/>
+<area shape="rect" id="node3" href="$classmolreader.html#a64ff990dc05c01debc1138dd012f4bcb" title="Reads and returns MODEL Record type. " alt="" coords="216,56,371,83"/>
+<area shape="rect" id="node4" href="$classmolreader.html#a49ccaf345b633e27f69ad7a5a8637a2a" title="Reads and returns ATOM/HETATM/TER Record types. " alt="" coords="219,107,367,133"/>
+</map>

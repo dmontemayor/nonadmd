@@ -1,0 +1,6 @@
+<map id="spectrometer_class::get_spectrum" name="spectrometer_class::get_spectrum">
+<area shape="rect" id="node2" href="$classspectrometer__class.html#ad2c4936524c8702e1c4e53a54a043f31" title="Computes absorption spectrum using groundstate to adiabatic state transition dipole. " alt="" coords="193,23,329,65"/>
+<area shape="rect" id="node5" href="$classspectrometer__class.html#af1fc802879075c7e5e42ef4baac69445" title="Computes Absorption spectrum using a pdb trajectory and a defined transition dipole. " alt="" coords="189,89,333,130"/>
+<area shape="rect" id="node3" href="$subroutines_8f90.html#a50a3911748dbb5647bf6be5043e905e1" title="diagonalize" alt="" coords="409,5,496,32"/>
+<area shape="rect" id="node4" href="$classfilemanager.html#aa389048ef7c9eb9afdac7ce1dcc691b2" title="filemanager::newunit" alt="" coords="381,56,524,83"/>
+</map>

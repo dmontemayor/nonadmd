@@ -1,0 +1,88 @@
+\hypertarget{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett}{\section{diagonalcaldeiraleggett\+\_\+class\+:\+:diagonalcaldeiraleggett Type Reference}
+\label{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett}\index{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}}
+}
+
+
+Derived quantum-\/classical coupling term.  
+
+
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+logical \hyperlink{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a2d82d59f44c03c02828f6e8a98143d10}{initialized}
+\begin{DoxyCompactList}\small\item\em True if coupling term has been properly initialized. \end{DoxyCompactList}\item 
+type(hc) \hyperlink{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_ac3c92c8b85d575c978c65148bd3a85b0}{hc}
+\begin{DoxyCompactList}\small\item\em Inherited coupling primitive type. \end{DoxyCompactList}\item 
+real(double), dimension(\+:), pointer \hyperlink{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a7a47834c87e167dbdc0dae14bff60980}{lambda}
+\begin{DoxyCompactList}\small\item\em Reorganization energy. \end{DoxyCompactList}\item 
+integer(long), dimension(\+:), \\*
+pointer \hyperlink{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a0cab6aa9f54eaf72a27628ed28f94746}{bdof}
+\begin{DoxyCompactList}\small\item\em Number of dissipative modes associated to each state. \end{DoxyCompactList}\item 
+real(double), dimension(\+:,\+:), \\*
+pointer \hyperlink{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_aa1f4900dfeb9c70fd6eb3220bed703a5}{g}
+\begin{DoxyCompactList}\small\item\em Coupling coefficient coupling quantum state to classical mode. \end{DoxyCompactList}\item 
+real(double), dimension(\+:), pointer \hyperlink{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a6c6fdff53cbf8de731e09cd56ed90657}{f}
+\begin{DoxyCompactList}\small\item\em Eigen values of the $ \hat q $ operator. \end{DoxyCompactList}\item 
+logical, dimension(\+:,\+:), pointer \hyperlink{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a4f11e78baf84d1f5a25a9aa3e48a7c01}{gmap}
+\item 
+logical \hyperlink{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a4e7aa9a04ab3b734534a3ca40ecf0192}{wbasis}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Derived quantum-\/classical coupling term. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a0cab6aa9f54eaf72a27628ed28f94746}{\index{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}!bdof@{bdof}}
+\index{bdof@{bdof}!diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}}
+\subsubsection[{bdof}]{\setlength{\rightskip}{0pt plus 5cm}integer(long), dimension(\+:), pointer diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+::bdof\hspace{0.3cm}{\ttfamily [private]}}}\label{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a0cab6aa9f54eaf72a27628ed28f94746}
+
+
+Number of dissipative modes associated to each state. 
+
+\hypertarget{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a6c6fdff53cbf8de731e09cd56ed90657}{\index{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}!f@{f}}
+\index{f@{f}!diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}}
+\subsubsection[{f}]{\setlength{\rightskip}{0pt plus 5cm}real(double), dimension(\+:), pointer diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+::f\hspace{0.3cm}{\ttfamily [private]}}}\label{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a6c6fdff53cbf8de731e09cd56ed90657}
+
+
+Eigen values of the $ \hat q $ operator. 
+
+The native diabatic basis states are assumed eigen states of the $ \hat q $ operator with eigen values stored in the array f of dimension nstate. \hypertarget{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_aa1f4900dfeb9c70fd6eb3220bed703a5}{\index{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}!g@{g}}
+\index{g@{g}!diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}}
+\subsubsection[{g}]{\setlength{\rightskip}{0pt plus 5cm}real(double), dimension(\+:,\+:), pointer diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+::g\hspace{0.3cm}{\ttfamily [private]}}}\label{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_aa1f4900dfeb9c70fd6eb3220bed703a5}
+
+
+Coupling coefficient coupling quantum state to classical mode. 
+
+The matrix g couples the native diabatic basis states of the quantum subsystem with the normal modes of the classical subsystem and has dimensions of ndofs by nstate. \hypertarget{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a4f11e78baf84d1f5a25a9aa3e48a7c01}{\index{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}!gmap@{gmap}}
+\index{gmap@{gmap}!diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}}
+\subsubsection[{gmap}]{\setlength{\rightskip}{0pt plus 5cm}logical, dimension(\+:,\+:), pointer diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+::gmap\hspace{0.3cm}{\ttfamily [private]}}}\label{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a4f11e78baf84d1f5a25a9aa3e48a7c01}
+\hypertarget{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_ac3c92c8b85d575c978c65148bd3a85b0}{\index{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}!hc@{hc}}
+\index{hc@{hc}!diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}}
+\subsubsection[{hc}]{\setlength{\rightskip}{0pt plus 5cm}type(hc) diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+::hc\hspace{0.3cm}{\ttfamily [private]}}}\label{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_ac3c92c8b85d575c978c65148bd3a85b0}
+
+
+Inherited coupling primitive type. 
+
+\hypertarget{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a2d82d59f44c03c02828f6e8a98143d10}{\index{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}!initialized@{initialized}}
+\index{initialized@{initialized}!diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}}
+\subsubsection[{initialized}]{\setlength{\rightskip}{0pt plus 5cm}logical diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+::initialized\hspace{0.3cm}{\ttfamily [private]}}}\label{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a2d82d59f44c03c02828f6e8a98143d10}
+
+
+True if coupling term has been properly initialized. 
+
+\hypertarget{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a7a47834c87e167dbdc0dae14bff60980}{\index{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}!lambda@{lambda}}
+\index{lambda@{lambda}!diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}}
+\subsubsection[{lambda}]{\setlength{\rightskip}{0pt plus 5cm}real(double), dimension(\+:), pointer diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+::lambda\hspace{0.3cm}{\ttfamily [private]}}}\label{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a7a47834c87e167dbdc0dae14bff60980}
+
+
+Reorganization energy. 
+
+nstate long array containing the vaules of the reorganization energy of each states dissipative bath. \hypertarget{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a4e7aa9a04ab3b734534a3ca40ecf0192}{\index{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}!wbasis@{wbasis}}
+\index{wbasis@{wbasis}!diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett@{diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett}}
+\subsubsection[{wbasis}]{\setlength{\rightskip}{0pt plus 5cm}logical diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+::wbasis\hspace{0.3cm}{\ttfamily [private]}}}\label{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett_a4e7aa9a04ab3b734534a3ca40ecf0192}
+
+
+The documentation for this type was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_diagonal_caldeira_leggett_8f90}{Diagonal\+Caldeira\+Leggett.\+f90}\end{DoxyCompactItemize}

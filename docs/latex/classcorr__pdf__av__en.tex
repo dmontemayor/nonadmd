@@ -1,0 +1,657 @@
+\hypertarget{classcorr__pdf__av__en}{\section{corr\+\_\+pdf\+\_\+av\+\_\+en Module Reference}
+\label{classcorr__pdf__av__en}\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classcorr__pdf__av__en_aae48c727239a24c0522162733ae7c3b4}{init}
+\item 
+subroutine \hyperlink{classcorr__pdf__av__en_a03bb605d5daea624b42c2465a54cfe8b}{read\+\_\+data}
+\item 
+subroutine \hyperlink{classcorr__pdf__av__en_a80e8f9f05fa1fee2f0eca9f220ff655b}{compute\+\_\+cf\+\_\+pdf}
+\item 
+subroutine \hyperlink{classcorr__pdf__av__en_ab5b43747a8b12db73be600aab368061a}{wrt\+\_\+acf}
+\item 
+subroutine \hyperlink{classcorr__pdf__av__en_adbb98e5e952288212f4c55ebb87d4ea4}{wrt\+\_\+ccf}
+\item 
+subroutine \hyperlink{classcorr__pdf__av__en_aae7dec838b1dda492940cc092a4f230d}{wrt\+\_\+pdf}
+\item 
+subroutine \hyperlink{classcorr__pdf__av__en_a2a4a88ee12f03fd4cd6cbc6bc6a1891f}{wrt\+\_\+av}
+\item 
+subroutine \hyperlink{classcorr__pdf__av__en_ad3f51531aaf874bf7988d0912018a77e}{sd}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}) function \hyperlink{classcorr__pdf__av__en_aaf6c819052274b26076d2711a36b419d}{fourtr} (y, x, c, n)
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}) function \hyperlink{classcorr__pdf__av__en_a78476adcf46c53c16bf61ed1de16d827}{foursi} (y, x, c, n)
+\item 
+subroutine \hyperlink{classcorr__pdf__av__en_ab6d6b1ed7e04e4e8f4645324d10bb351}{polrea} (x, yr, xa, yyr, ndim)
+\item 
+subroutine \hyperlink{classcorr__pdf__av__en_add09b1cb121d67fa34b9011889d965a8}{locate1} (xx, n, x, \hyperlink{classcorr__pdf__av__en_a005d609e5703c09a8cf674cc770f729c}{j})
+\item 
+subroutine \hyperlink{classcorr__pdf__av__en_ad94d0769087b248f45a3fa966b6104b8}{polint1} (xa, ya, n, x, y, dy)
+\item 
+subroutine \hyperlink{classcorr__pdf__av__en_aec79d698dedcef263a352e7df8acbed2}{finish}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \hyperlink{classcorr__pdf__av__en_a5ec9ccef939e9ee720d5f36f9c6da620}{sgl}
+\item 
+integer, parameter \hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_a6becc690d925f29e3c0cadb6ec351d46}{i}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_a005d609e5703c09a8cf674cc770f729c}{j}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_ae30ef2e38f96217cc2423e3f66c7dbeb}{k}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_a68995e0fe94c4ff613dd3d6c7f380896}{norigin}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_ad262d96329c39ad79417bef176593697}{it}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_a771bb95a6cf163c8cb1b84da5656f9d9}{it0}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_acf731df4af6c01560652a65159e0f7f7}{nstored}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_af28ea8fd0108e9b3676437ca596761f3}{istat}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_a9c24f80f50e32ff3685d3afa3e42685d}{nconfs}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_a5ff4624931de7b618bacc90944908133}{npoint}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_aa6754e8e9bfdd9a2cbc03364843ce557}{lcor}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_ae8807b4964dcdef98e16911d1d3a2ca0}{ntorig}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_a7f5343d880e5cc9e13e270c324fb139e}{nsites}
+\item 
+integer \hyperlink{classcorr__pdf__av__en_acd2cbcc639b184a368f0bcaa537f8c8c}{nhist}
+\item 
+integer, parameter \hyperlink{classcorr__pdf__av__en_abcec8d4e060ae85240b86b572037a0cd}{ndata}
+\item 
+integer, parameter \hyperlink{classcorr__pdf__av__en_a74c790891424d457e8fe3a6274dbe1a6}{newtorig}
+\item 
+integer, parameter \hyperlink{classcorr__pdf__av__en_a51026130a32731ece6eca89b5fe0a069}{nmxpow}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}) \hyperlink{classcorr__pdf__av__en_a26fd2560f4c18ba8768cb7998b773f14}{pi}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}) \hyperlink{classcorr__pdf__av__en_aa797ffdf9a23dd9d5bef056d40836afc}{ide}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}) \hyperlink{classcorr__pdf__av__en_a961b93efb48c6edd35126b89b2a17673}{integral}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}) \hyperlink{classcorr__pdf__av__en_a2b4a3e0059d00b4361b9080ed20bf2d9}{diff}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}) \hyperlink{classcorr__pdf__av__en_a88a55ad1c3cae9c9628071b76b317988}{tcor}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}) \hyperlink{classcorr__pdf__av__en_a91764d368760db242051446a5f8974ab}{tstep}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}) \hyperlink{classcorr__pdf__av__en_a46b995ce85642726046e7d078c2d7d31}{de}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}) \hyperlink{classcorr__pdf__av__en_a3cd4b5a742e1c9ef5ac18030ebcc306f}{temp}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}) \hyperlink{classcorr__pdf__av__en_a26df89b0aa7d44e44aa8451d0343f6f9}{cnv}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), parameter \hyperlink{classcorr__pdf__av__en_a6837f559a03430c24e3fcfaeb3cfab6b}{ev2wvn}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), parameter \hyperlink{classcorr__pdf__av__en_ad852fb314fcb49c5ff8336f6a883871b}{wvn2ev}
+\item 
+integer, dimension(\+:,\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_a56baf9925a93ff5a4baf60def769733d}{ntime0}
+\item 
+integer, dimension(\+:,\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_af7228710cff0435d673df814f2730bc6}{step}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_a61ffc857d0af4035f445b991729edbb4}{ener}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_a8b0559d7361208f6f73d4bfca51bbafc}{av\+\_\+en}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_ad6852462582e935a9b01ca0b6929a235}{sd\+\_\+en}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_a6bfe60f479474ca924c3d7a26a30725b}{freq}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_a103eb830c35d0f4221a6b1f9ef5f9e76}{re\+\_\+fft}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_aa146e151c4b487b62759edfe51a71d9b}{im\+\_\+fft}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:,\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_a7f6a1a47a3c3d9839341a7cf3f7e43d4}{ccf0}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:,\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_ad7740ba8e54476232cb2633bb401fa5a}{en}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:,\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_aa800bbd510ba2115e28b65cc94fb2229}{en0}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:,\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_ad0a83d5fd5ca5145b33c5e6c0e3d83eb}{en\+\_\+pdf}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:,\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_a1f2e0a10f6ede3390f0f961a43e2b95f}{acf}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:,\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_a60af17407fad1ee58ffe7fea9be7493e}{power}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:,\+:,\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_acbadbb02006eb3d6f9d9c6faecc8370f}{ccf}
+\item 
+real(kind=\hyperlink{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{dbl}), dimension(\+:,\+:,\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_a25097c83cec542769bb71b103aceb30c}{cnorm}
+\item 
+character(len=2) \hyperlink{classcorr__pdf__av__en_a14520a9d0c9cd50f2231fa3a0a8920b6}{input\+\_\+units}
+\item 
+character(len=2) \hyperlink{classcorr__pdf__av__en_aefae69a49caaea37801a27e457746d69}{output\+\_\+units}
+\item 
+character(len=5), dimension(\+:,\+:), \\*
+allocatable \hyperlink{classcorr__pdf__av__en_acf8f009c3fe731aebe4c0adec4f26171}{corr\+\_\+type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function/\+Subroutine Documentation}
+\hypertarget{classcorr__pdf__av__en_a80e8f9f05fa1fee2f0eca9f220ff655b}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!compute\+\_\+cf\+\_\+pdf@{compute\+\_\+cf\+\_\+pdf}}
+\index{compute\+\_\+cf\+\_\+pdf@{compute\+\_\+cf\+\_\+pdf}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{compute\+\_\+cf\+\_\+pdf}]{\setlength{\rightskip}{0pt plus 5cm}subroutine corr\+\_\+pdf\+\_\+av\+\_\+en\+::compute\+\_\+cf\+\_\+pdf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_a80e8f9f05fa1fee2f0eca9f220ff655b}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classcorr__pdf__av__en_a80e8f9f05fa1fee2f0eca9f220ff655b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classcorr__pdf__av__en_a80e8f9f05fa1fee2f0eca9f220ff655b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_aec79d698dedcef263a352e7df8acbed2}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!finish@{finish}}
+\index{finish@{finish}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{finish}]{\setlength{\rightskip}{0pt plus 5cm}subroutine corr\+\_\+pdf\+\_\+av\+\_\+en\+::finish (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_aec79d698dedcef263a352e7df8acbed2}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classcorr__pdf__av__en_aec79d698dedcef263a352e7df8acbed2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classcorr__pdf__av__en_aec79d698dedcef263a352e7df8acbed2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_a78476adcf46c53c16bf61ed1de16d827}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!foursi@{foursi}}
+\index{foursi@{foursi}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{foursi}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}) function corr\+\_\+pdf\+\_\+av\+\_\+en\+::foursi (
+\begin{DoxyParamCaption}
+\item[{real(kind={\bf dbl}), dimension(n), intent(in)}]{y, }
+\item[{real(kind={\bf dbl}), dimension(n), intent(in)}]{x, }
+\item[{real(kind={\bf dbl}), intent(in)}]{c, }
+\item[{integer, intent(in)}]{n}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_a78476adcf46c53c16bf61ed1de16d827}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcorr__pdf__av__en_a78476adcf46c53c16bf61ed1de16d827_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_aaf6c819052274b26076d2711a36b419d}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!fourtr@{fourtr}}
+\index{fourtr@{fourtr}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{fourtr}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}) function corr\+\_\+pdf\+\_\+av\+\_\+en\+::fourtr (
+\begin{DoxyParamCaption}
+\item[{real(kind={\bf dbl}), dimension(n), intent(in)}]{y, }
+\item[{real(kind={\bf dbl}), dimension(n), intent(in)}]{x, }
+\item[{real(kind={\bf dbl}), intent(in)}]{c, }
+\item[{integer, intent(in)}]{n}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_aaf6c819052274b26076d2711a36b419d}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcorr__pdf__av__en_aaf6c819052274b26076d2711a36b419d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_aae48c727239a24c0522162733ae7c3b4}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!init@{init}}
+\index{init@{init}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine corr\+\_\+pdf\+\_\+av\+\_\+en\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_aae48c727239a24c0522162733ae7c3b4}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classcorr__pdf__av__en_aae48c727239a24c0522162733ae7c3b4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{classcorr__pdf__av__en_aae48c727239a24c0522162733ae7c3b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_add09b1cb121d67fa34b9011889d965a8}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!locate1@{locate1}}
+\index{locate1@{locate1}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{locate1}]{\setlength{\rightskip}{0pt plus 5cm}subroutine corr\+\_\+pdf\+\_\+av\+\_\+en\+::locate1 (
+\begin{DoxyParamCaption}
+\item[{real(kind={\bf dbl}), dimension(n), intent(in)}]{xx, }
+\item[{integer, intent(in)}]{n, }
+\item[{real(kind={\bf dbl}), intent(in)}]{x, }
+\item[{integer, intent(out)}]{j}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_add09b1cb121d67fa34b9011889d965a8}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcorr__pdf__av__en_add09b1cb121d67fa34b9011889d965a8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_ad94d0769087b248f45a3fa966b6104b8}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!polint1@{polint1}}
+\index{polint1@{polint1}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{polint1}]{\setlength{\rightskip}{0pt plus 5cm}subroutine corr\+\_\+pdf\+\_\+av\+\_\+en\+::polint1 (
+\begin{DoxyParamCaption}
+\item[{real(kind={\bf dbl}), dimension(n), intent(in)}]{xa, }
+\item[{real(kind={\bf dbl}), dimension(n), intent(in)}]{ya, }
+\item[{integer, intent(in)}]{n, }
+\item[{real(kind={\bf dbl}), intent(in)}]{x, }
+\item[{real(kind={\bf dbl}), intent(out)}]{y, }
+\item[{real(kind={\bf dbl}), intent(out)}]{dy}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_ad94d0769087b248f45a3fa966b6104b8}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcorr__pdf__av__en_ad94d0769087b248f45a3fa966b6104b8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_ab6d6b1ed7e04e4e8f4645324d10bb351}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!polrea@{polrea}}
+\index{polrea@{polrea}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{polrea}]{\setlength{\rightskip}{0pt plus 5cm}subroutine corr\+\_\+pdf\+\_\+av\+\_\+en\+::polrea (
+\begin{DoxyParamCaption}
+\item[{real(kind={\bf dbl}), dimension(ndim), intent(in)}]{x, }
+\item[{real(kind={\bf dbl}), dimension(ndim), intent(in)}]{yr, }
+\item[{real(kind={\bf dbl}), intent(in)}]{xa, }
+\item[{real(kind={\bf dbl}), intent(out)}]{yyr, }
+\item[{integer, intent(in)}]{ndim}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_ab6d6b1ed7e04e4e8f4645324d10bb351}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcorr__pdf__av__en_ab6d6b1ed7e04e4e8f4645324d10bb351_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcorr__pdf__av__en_ab6d6b1ed7e04e4e8f4645324d10bb351_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_a03bb605d5daea624b42c2465a54cfe8b}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!read\+\_\+data@{read\+\_\+data}}
+\index{read\+\_\+data@{read\+\_\+data}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{read\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}subroutine corr\+\_\+pdf\+\_\+av\+\_\+en\+::read\+\_\+data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_a03bb605d5daea624b42c2465a54cfe8b}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{classcorr__pdf__av__en_a03bb605d5daea624b42c2465a54cfe8b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_ad3f51531aaf874bf7988d0912018a77e}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!sd@{sd}}
+\index{sd@{sd}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{sd}]{\setlength{\rightskip}{0pt plus 5cm}subroutine corr\+\_\+pdf\+\_\+av\+\_\+en\+::sd (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_ad3f51531aaf874bf7988d0912018a77e}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcorr__pdf__av__en_ad3f51531aaf874bf7988d0912018a77e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{classcorr__pdf__av__en_ad3f51531aaf874bf7988d0912018a77e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_ab5b43747a8b12db73be600aab368061a}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!wrt\+\_\+acf@{wrt\+\_\+acf}}
+\index{wrt\+\_\+acf@{wrt\+\_\+acf}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{wrt\+\_\+acf}]{\setlength{\rightskip}{0pt plus 5cm}subroutine corr\+\_\+pdf\+\_\+av\+\_\+en\+::wrt\+\_\+acf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_ab5b43747a8b12db73be600aab368061a}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{classcorr__pdf__av__en_ab5b43747a8b12db73be600aab368061a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classcorr__pdf__av__en_ab5b43747a8b12db73be600aab368061a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_a2a4a88ee12f03fd4cd6cbc6bc6a1891f}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!wrt\+\_\+av@{wrt\+\_\+av}}
+\index{wrt\+\_\+av@{wrt\+\_\+av}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{wrt\+\_\+av}]{\setlength{\rightskip}{0pt plus 5cm}subroutine corr\+\_\+pdf\+\_\+av\+\_\+en\+::wrt\+\_\+av (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_a2a4a88ee12f03fd4cd6cbc6bc6a1891f}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classcorr__pdf__av__en_a2a4a88ee12f03fd4cd6cbc6bc6a1891f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_adbb98e5e952288212f4c55ebb87d4ea4}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!wrt\+\_\+ccf@{wrt\+\_\+ccf}}
+\index{wrt\+\_\+ccf@{wrt\+\_\+ccf}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{wrt\+\_\+ccf}]{\setlength{\rightskip}{0pt plus 5cm}subroutine corr\+\_\+pdf\+\_\+av\+\_\+en\+::wrt\+\_\+ccf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_adbb98e5e952288212f4c55ebb87d4ea4}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{classcorr__pdf__av__en_adbb98e5e952288212f4c55ebb87d4ea4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classcorr__pdf__av__en_adbb98e5e952288212f4c55ebb87d4ea4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcorr__pdf__av__en_aae7dec838b1dda492940cc092a4f230d}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!wrt\+\_\+pdf@{wrt\+\_\+pdf}}
+\index{wrt\+\_\+pdf@{wrt\+\_\+pdf}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{wrt\+\_\+pdf}]{\setlength{\rightskip}{0pt plus 5cm}subroutine corr\+\_\+pdf\+\_\+av\+\_\+en\+::wrt\+\_\+pdf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcorr__pdf__av__en_aae7dec838b1dda492940cc092a4f230d}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classcorr__pdf__av__en_aae7dec838b1dda492940cc092a4f230d_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcorr__pdf__av__en_a1f2e0a10f6ede3390f0f961a43e2b95f}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!acf@{acf}}
+\index{acf@{acf}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{acf}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:,\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::acf}}\label{classcorr__pdf__av__en_a1f2e0a10f6ede3390f0f961a43e2b95f}
+\hypertarget{classcorr__pdf__av__en_a8b0559d7361208f6f73d4bfca51bbafc}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!av\+\_\+en@{av\+\_\+en}}
+\index{av\+\_\+en@{av\+\_\+en}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{av\+\_\+en}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::av\+\_\+en}}\label{classcorr__pdf__av__en_a8b0559d7361208f6f73d4bfca51bbafc}
+\hypertarget{classcorr__pdf__av__en_acbadbb02006eb3d6f9d9c6faecc8370f}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!ccf@{ccf}}
+\index{ccf@{ccf}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{ccf}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:,\+:,\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::ccf}}\label{classcorr__pdf__av__en_acbadbb02006eb3d6f9d9c6faecc8370f}
+\hypertarget{classcorr__pdf__av__en_a7f6a1a47a3c3d9839341a7cf3f7e43d4}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!ccf0@{ccf0}}
+\index{ccf0@{ccf0}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{ccf0}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:,\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::ccf0}}\label{classcorr__pdf__av__en_a7f6a1a47a3c3d9839341a7cf3f7e43d4}
+\hypertarget{classcorr__pdf__av__en_a25097c83cec542769bb71b103aceb30c}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!cnorm@{cnorm}}
+\index{cnorm@{cnorm}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{cnorm}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:,\+:,\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::cnorm}}\label{classcorr__pdf__av__en_a25097c83cec542769bb71b103aceb30c}
+\hypertarget{classcorr__pdf__av__en_a26df89b0aa7d44e44aa8451d0343f6f9}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!cnv@{cnv}}
+\index{cnv@{cnv}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{cnv}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}) corr\+\_\+pdf\+\_\+av\+\_\+en\+::cnv}}\label{classcorr__pdf__av__en_a26df89b0aa7d44e44aa8451d0343f6f9}
+\hypertarget{classcorr__pdf__av__en_acf8f009c3fe731aebe4c0adec4f26171}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!corr\+\_\+type@{corr\+\_\+type}}
+\index{corr\+\_\+type@{corr\+\_\+type}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{corr\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}character(len=5), dimension(\+:,\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::corr\+\_\+type}}\label{classcorr__pdf__av__en_acf8f009c3fe731aebe4c0adec4f26171}
+\hypertarget{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!dbl@{dbl}}
+\index{dbl@{dbl}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{dbl}]{\setlength{\rightskip}{0pt plus 5cm}integer, parameter corr\+\_\+pdf\+\_\+av\+\_\+en\+::dbl}}\label{classcorr__pdf__av__en_a411e74f2fd514aedb12054b21e1d7c58}
+\hypertarget{classcorr__pdf__av__en_a46b995ce85642726046e7d078c2d7d31}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!de@{de}}
+\index{de@{de}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{de}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}) corr\+\_\+pdf\+\_\+av\+\_\+en\+::de}}\label{classcorr__pdf__av__en_a46b995ce85642726046e7d078c2d7d31}
+\hypertarget{classcorr__pdf__av__en_a2b4a3e0059d00b4361b9080ed20bf2d9}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!diff@{diff}}
+\index{diff@{diff}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{diff}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}) corr\+\_\+pdf\+\_\+av\+\_\+en\+::diff}}\label{classcorr__pdf__av__en_a2b4a3e0059d00b4361b9080ed20bf2d9}
+\hypertarget{classcorr__pdf__av__en_ad7740ba8e54476232cb2633bb401fa5a}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!en@{en}}
+\index{en@{en}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{en}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:,\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::en}}\label{classcorr__pdf__av__en_ad7740ba8e54476232cb2633bb401fa5a}
+\hypertarget{classcorr__pdf__av__en_aa800bbd510ba2115e28b65cc94fb2229}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!en0@{en0}}
+\index{en0@{en0}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{en0}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:,\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::en0}}\label{classcorr__pdf__av__en_aa800bbd510ba2115e28b65cc94fb2229}
+\hypertarget{classcorr__pdf__av__en_ad0a83d5fd5ca5145b33c5e6c0e3d83eb}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!en\+\_\+pdf@{en\+\_\+pdf}}
+\index{en\+\_\+pdf@{en\+\_\+pdf}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{en\+\_\+pdf}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:,\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::en\+\_\+pdf}}\label{classcorr__pdf__av__en_ad0a83d5fd5ca5145b33c5e6c0e3d83eb}
+\hypertarget{classcorr__pdf__av__en_a61ffc857d0af4035f445b991729edbb4}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!ener@{ener}}
+\index{ener@{ener}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{ener}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::ener}}\label{classcorr__pdf__av__en_a61ffc857d0af4035f445b991729edbb4}
+\hypertarget{classcorr__pdf__av__en_a6837f559a03430c24e3fcfaeb3cfab6b}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!ev2wvn@{ev2wvn}}
+\index{ev2wvn@{ev2wvn}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{ev2wvn}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), parameter corr\+\_\+pdf\+\_\+av\+\_\+en\+::ev2wvn}}\label{classcorr__pdf__av__en_a6837f559a03430c24e3fcfaeb3cfab6b}
+\hypertarget{classcorr__pdf__av__en_a6bfe60f479474ca924c3d7a26a30725b}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!freq@{freq}}
+\index{freq@{freq}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{freq}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::freq}}\label{classcorr__pdf__av__en_a6bfe60f479474ca924c3d7a26a30725b}
+\hypertarget{classcorr__pdf__av__en_a6becc690d925f29e3c0cadb6ec351d46}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!i@{i}}
+\index{i@{i}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{i}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::i}}\label{classcorr__pdf__av__en_a6becc690d925f29e3c0cadb6ec351d46}
+\hypertarget{classcorr__pdf__av__en_aa797ffdf9a23dd9d5bef056d40836afc}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!ide@{ide}}
+\index{ide@{ide}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{ide}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}) corr\+\_\+pdf\+\_\+av\+\_\+en\+::ide}}\label{classcorr__pdf__av__en_aa797ffdf9a23dd9d5bef056d40836afc}
+\hypertarget{classcorr__pdf__av__en_aa146e151c4b487b62759edfe51a71d9b}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!im\+\_\+fft@{im\+\_\+fft}}
+\index{im\+\_\+fft@{im\+\_\+fft}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{im\+\_\+fft}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::im\+\_\+fft}}\label{classcorr__pdf__av__en_aa146e151c4b487b62759edfe51a71d9b}
+\hypertarget{classcorr__pdf__av__en_a14520a9d0c9cd50f2231fa3a0a8920b6}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!input\+\_\+units@{input\+\_\+units}}
+\index{input\+\_\+units@{input\+\_\+units}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{input\+\_\+units}]{\setlength{\rightskip}{0pt plus 5cm}character(len=2) corr\+\_\+pdf\+\_\+av\+\_\+en\+::input\+\_\+units}}\label{classcorr__pdf__av__en_a14520a9d0c9cd50f2231fa3a0a8920b6}
+\hypertarget{classcorr__pdf__av__en_a961b93efb48c6edd35126b89b2a17673}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!integral@{integral}}
+\index{integral@{integral}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{integral}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}) corr\+\_\+pdf\+\_\+av\+\_\+en\+::integral}}\label{classcorr__pdf__av__en_a961b93efb48c6edd35126b89b2a17673}
+\hypertarget{classcorr__pdf__av__en_af28ea8fd0108e9b3676437ca596761f3}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!istat@{istat}}
+\index{istat@{istat}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{istat}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::istat}}\label{classcorr__pdf__av__en_af28ea8fd0108e9b3676437ca596761f3}
+\hypertarget{classcorr__pdf__av__en_ad262d96329c39ad79417bef176593697}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!it@{it}}
+\index{it@{it}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{it}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::it}}\label{classcorr__pdf__av__en_ad262d96329c39ad79417bef176593697}
+\hypertarget{classcorr__pdf__av__en_a771bb95a6cf163c8cb1b84da5656f9d9}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!it0@{it0}}
+\index{it0@{it0}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{it0}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::it0}}\label{classcorr__pdf__av__en_a771bb95a6cf163c8cb1b84da5656f9d9}
+\hypertarget{classcorr__pdf__av__en_a005d609e5703c09a8cf674cc770f729c}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!j@{j}}
+\index{j@{j}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{j}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::j}}\label{classcorr__pdf__av__en_a005d609e5703c09a8cf674cc770f729c}
+\hypertarget{classcorr__pdf__av__en_ae30ef2e38f96217cc2423e3f66c7dbeb}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!k@{k}}
+\index{k@{k}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{k}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::k}}\label{classcorr__pdf__av__en_ae30ef2e38f96217cc2423e3f66c7dbeb}
+\hypertarget{classcorr__pdf__av__en_aa6754e8e9bfdd9a2cbc03364843ce557}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!lcor@{lcor}}
+\index{lcor@{lcor}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{lcor}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::lcor}}\label{classcorr__pdf__av__en_aa6754e8e9bfdd9a2cbc03364843ce557}
+\hypertarget{classcorr__pdf__av__en_a9c24f80f50e32ff3685d3afa3e42685d}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!nconfs@{nconfs}}
+\index{nconfs@{nconfs}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{nconfs}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::nconfs}}\label{classcorr__pdf__av__en_a9c24f80f50e32ff3685d3afa3e42685d}
+\hypertarget{classcorr__pdf__av__en_abcec8d4e060ae85240b86b572037a0cd}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!ndata@{ndata}}
+\index{ndata@{ndata}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{ndata}]{\setlength{\rightskip}{0pt plus 5cm}integer, parameter corr\+\_\+pdf\+\_\+av\+\_\+en\+::ndata}}\label{classcorr__pdf__av__en_abcec8d4e060ae85240b86b572037a0cd}
+\hypertarget{classcorr__pdf__av__en_a74c790891424d457e8fe3a6274dbe1a6}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!newtorig@{newtorig}}
+\index{newtorig@{newtorig}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{newtorig}]{\setlength{\rightskip}{0pt plus 5cm}integer, parameter corr\+\_\+pdf\+\_\+av\+\_\+en\+::newtorig}}\label{classcorr__pdf__av__en_a74c790891424d457e8fe3a6274dbe1a6}
+\hypertarget{classcorr__pdf__av__en_acd2cbcc639b184a368f0bcaa537f8c8c}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!nhist@{nhist}}
+\index{nhist@{nhist}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{nhist}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::nhist}}\label{classcorr__pdf__av__en_acd2cbcc639b184a368f0bcaa537f8c8c}
+\hypertarget{classcorr__pdf__av__en_a51026130a32731ece6eca89b5fe0a069}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!nmxpow@{nmxpow}}
+\index{nmxpow@{nmxpow}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{nmxpow}]{\setlength{\rightskip}{0pt plus 5cm}integer, parameter corr\+\_\+pdf\+\_\+av\+\_\+en\+::nmxpow}}\label{classcorr__pdf__av__en_a51026130a32731ece6eca89b5fe0a069}
+\hypertarget{classcorr__pdf__av__en_a68995e0fe94c4ff613dd3d6c7f380896}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!norigin@{norigin}}
+\index{norigin@{norigin}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{norigin}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::norigin}}\label{classcorr__pdf__av__en_a68995e0fe94c4ff613dd3d6c7f380896}
+\hypertarget{classcorr__pdf__av__en_a5ff4624931de7b618bacc90944908133}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!npoint@{npoint}}
+\index{npoint@{npoint}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{npoint}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::npoint}}\label{classcorr__pdf__av__en_a5ff4624931de7b618bacc90944908133}
+\hypertarget{classcorr__pdf__av__en_a7f5343d880e5cc9e13e270c324fb139e}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!nsites@{nsites}}
+\index{nsites@{nsites}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{nsites}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::nsites}}\label{classcorr__pdf__av__en_a7f5343d880e5cc9e13e270c324fb139e}
+\hypertarget{classcorr__pdf__av__en_acf731df4af6c01560652a65159e0f7f7}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!nstored@{nstored}}
+\index{nstored@{nstored}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{nstored}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::nstored}}\label{classcorr__pdf__av__en_acf731df4af6c01560652a65159e0f7f7}
+\hypertarget{classcorr__pdf__av__en_a56baf9925a93ff5a4baf60def769733d}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!ntime0@{ntime0}}
+\index{ntime0@{ntime0}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{ntime0}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\+:,\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::ntime0}}\label{classcorr__pdf__av__en_a56baf9925a93ff5a4baf60def769733d}
+\hypertarget{classcorr__pdf__av__en_ae8807b4964dcdef98e16911d1d3a2ca0}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!ntorig@{ntorig}}
+\index{ntorig@{ntorig}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{ntorig}]{\setlength{\rightskip}{0pt plus 5cm}integer corr\+\_\+pdf\+\_\+av\+\_\+en\+::ntorig}}\label{classcorr__pdf__av__en_ae8807b4964dcdef98e16911d1d3a2ca0}
+\hypertarget{classcorr__pdf__av__en_aefae69a49caaea37801a27e457746d69}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!output\+\_\+units@{output\+\_\+units}}
+\index{output\+\_\+units@{output\+\_\+units}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{output\+\_\+units}]{\setlength{\rightskip}{0pt plus 5cm}character(len=2) corr\+\_\+pdf\+\_\+av\+\_\+en\+::output\+\_\+units}}\label{classcorr__pdf__av__en_aefae69a49caaea37801a27e457746d69}
+\hypertarget{classcorr__pdf__av__en_a26fd2560f4c18ba8768cb7998b773f14}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!pi@{pi}}
+\index{pi@{pi}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{pi}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}) corr\+\_\+pdf\+\_\+av\+\_\+en\+::pi}}\label{classcorr__pdf__av__en_a26fd2560f4c18ba8768cb7998b773f14}
+\hypertarget{classcorr__pdf__av__en_a60af17407fad1ee58ffe7fea9be7493e}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!power@{power}}
+\index{power@{power}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{power}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:,\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::power}}\label{classcorr__pdf__av__en_a60af17407fad1ee58ffe7fea9be7493e}
+\hypertarget{classcorr__pdf__av__en_a103eb830c35d0f4221a6b1f9ef5f9e76}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!re\+\_\+fft@{re\+\_\+fft}}
+\index{re\+\_\+fft@{re\+\_\+fft}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{re\+\_\+fft}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::re\+\_\+fft}}\label{classcorr__pdf__av__en_a103eb830c35d0f4221a6b1f9ef5f9e76}
+\hypertarget{classcorr__pdf__av__en_ad6852462582e935a9b01ca0b6929a235}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!sd\+\_\+en@{sd\+\_\+en}}
+\index{sd\+\_\+en@{sd\+\_\+en}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{sd\+\_\+en}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), dimension(\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::sd\+\_\+en}}\label{classcorr__pdf__av__en_ad6852462582e935a9b01ca0b6929a235}
+\hypertarget{classcorr__pdf__av__en_a5ec9ccef939e9ee720d5f36f9c6da620}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!sgl@{sgl}}
+\index{sgl@{sgl}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{sgl}]{\setlength{\rightskip}{0pt plus 5cm}integer, parameter corr\+\_\+pdf\+\_\+av\+\_\+en\+::sgl}}\label{classcorr__pdf__av__en_a5ec9ccef939e9ee720d5f36f9c6da620}
+\hypertarget{classcorr__pdf__av__en_af7228710cff0435d673df814f2730bc6}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!step@{step}}
+\index{step@{step}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{step}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\+:,\+:), allocatable corr\+\_\+pdf\+\_\+av\+\_\+en\+::step}}\label{classcorr__pdf__av__en_af7228710cff0435d673df814f2730bc6}
+\hypertarget{classcorr__pdf__av__en_a88a55ad1c3cae9c9628071b76b317988}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!tcor@{tcor}}
+\index{tcor@{tcor}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{tcor}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}) corr\+\_\+pdf\+\_\+av\+\_\+en\+::tcor}}\label{classcorr__pdf__av__en_a88a55ad1c3cae9c9628071b76b317988}
+\hypertarget{classcorr__pdf__av__en_a3cd4b5a742e1c9ef5ac18030ebcc306f}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!temp@{temp}}
+\index{temp@{temp}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{temp}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}) corr\+\_\+pdf\+\_\+av\+\_\+en\+::temp}}\label{classcorr__pdf__av__en_a3cd4b5a742e1c9ef5ac18030ebcc306f}
+\hypertarget{classcorr__pdf__av__en_a91764d368760db242051446a5f8974ab}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!tstep@{tstep}}
+\index{tstep@{tstep}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{tstep}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}) corr\+\_\+pdf\+\_\+av\+\_\+en\+::tstep}}\label{classcorr__pdf__av__en_a91764d368760db242051446a5f8974ab}
+\hypertarget{classcorr__pdf__av__en_ad852fb314fcb49c5ff8336f6a883871b}{\index{corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}!wvn2ev@{wvn2ev}}
+\index{wvn2ev@{wvn2ev}!corr\+\_\+pdf\+\_\+av\+\_\+en@{corr\+\_\+pdf\+\_\+av\+\_\+en}}
+\subsubsection[{wvn2ev}]{\setlength{\rightskip}{0pt plus 5cm}real(kind={\bf dbl}), parameter corr\+\_\+pdf\+\_\+av\+\_\+en\+::wvn2ev}}\label{classcorr__pdf__av__en_ad852fb314fcb49c5ff8336f6a883871b}
+
+
+The documentation for this module was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{analysis_8f90}{analysis.\+f90}\end{DoxyCompactItemize}

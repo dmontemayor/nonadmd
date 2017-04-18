@@ -1,0 +1,52 @@
+\hypertarget{interfacediagonalcaldeiraleggett__class_1_1new}{\section{diagonalcaldeiraleggett\+\_\+class\+:\+:new Interface Reference}
+\label{interfacediagonalcaldeiraleggett__class_1_1new}\index{diagonalcaldeiraleggett\+\_\+class\+::new@{diagonalcaldeiraleggett\+\_\+class\+::new}}
+}
+
+
+Derived coupling type creator.  
+
+
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{interfacediagonalcaldeiraleggett__class_1_1new_a20f4199e3504f59f3c9792cba1a038a8}{diagonalcaldeiraleggett\+\_\+init} (this, qs, cs, file)
+\begin{DoxyCompactList}\small\item\em Creates and initializes the Diagonal\+Caldeira\+Legget coupling type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Derived coupling type creator. 
+
+\subsection{Member Function/\+Subroutine Documentation}
+\hypertarget{interfacediagonalcaldeiraleggett__class_1_1new_a20f4199e3504f59f3c9792cba1a038a8}{\index{diagonalcaldeiraleggett\+\_\+class\+::new@{diagonalcaldeiraleggett\+\_\+class\+::new}!diagonalcaldeiraleggett\+\_\+init@{diagonalcaldeiraleggett\+\_\+init}}
+\index{diagonalcaldeiraleggett\+\_\+init@{diagonalcaldeiraleggett\+\_\+init}!diagonalcaldeiraleggett\+\_\+class\+::new@{diagonalcaldeiraleggett\+\_\+class\+::new}}
+\subsubsection[{diagonalcaldeiraleggett\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine diagonalcaldeiraleggett\+\_\+class\+::new\+::diagonalcaldeiraleggett\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{type({\bf diagonalcaldeiraleggett}), intent(inout)}]{this, }
+\item[{type(quantum), intent(inout), target}]{qs, }
+\item[{type(classical), intent(inout), target}]{cs, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacediagonalcaldeiraleggett__class_1_1new_a20f4199e3504f59f3c9792cba1a038a8}
+
+
+Creates and initializes the Diagonal\+Caldeira\+Legget coupling type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em this} & is the derived coupling type to be initialized. \\
+\hline
+\mbox{\tt in,out}  & {\em qs} & is a general quantum subsystem to be coupled to a classical subsystem. \\
+\hline
+\mbox{\tt in,out}  & {\em cs} & is a general classical subsysterm to be coupled to the quantum subsystem. \\
+\hline
+\mbox{\tt in}  & {\em file} & is a string containing the name of a previously saved Diagonal\+Caldeira\+Leggett used as an input file to initialize T\+H\+I\+S. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+If no input file provided the user must manually initialize T\+H\+I\+S using stout. $<$==================================================================== 
+\end{DoxyRemark}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_diagonal_caldeira_leggett_8f90}{Diagonal\+Caldeira\+Leggett.\+f90}\end{DoxyCompactItemize}

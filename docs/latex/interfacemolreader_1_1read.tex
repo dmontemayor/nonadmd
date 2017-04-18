@@ -1,0 +1,92 @@
+\hypertarget{interfacemolreader_1_1read}{\section{molreader\+:\+:read Interface Reference}
+\label{interfacemolreader_1_1read}\index{molreader\+::read@{molreader\+::read}}
+}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{interfacemolreader_1_1read_ace14cc5017fcc772377477cb86aebbbe}{read\+\_\+cryst1} (this)
+\item 
+subroutine \hyperlink{interfacemolreader_1_1read_a2548b1adf92b85ff6a09af908f1acd2a}{read\+\_\+model} (this)
+\begin{DoxyCompactList}\small\item\em Reads and returns M\+O\+D\+E\+L Record type. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemolreader_1_1read_a8ee447ae36f8cf0e3810fa23214e7a60}{read\+\_\+atom} (this)
+\begin{DoxyCompactList}\small\item\em Reads and returns A\+T\+O\+M/\+H\+E\+T\+A\+T\+M/\+T\+E\+R Record types. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemolreader_1_1read_aaf6cd04056b69eb6239580d134167c32}{read\+\_\+psfatom} (this)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function/\+Subroutine Documentation}
+\hypertarget{interfacemolreader_1_1read_a8ee447ae36f8cf0e3810fa23214e7a60}{\index{molreader\+::read@{molreader\+::read}!read\+\_\+atom@{read\+\_\+atom}}
+\index{read\+\_\+atom@{read\+\_\+atom}!molreader\+::read@{molreader\+::read}}
+\subsubsection[{read\+\_\+atom}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::read\+::read\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{type({\bf atom}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemolreader_1_1read_a8ee447ae36f8cf0e3810fa23214e7a60}
+
+
+Reads and returns A\+T\+O\+M/\+H\+E\+T\+A\+T\+M/\+T\+E\+R Record types. 
+
+The A\+T\+O\+M records present the atomic coordinates for standard amino acids and nucleotides. They also present the occupancy and temperature factor for each atom. Non-\/polymer chemical coordinates use the H\+E\+T\+A\+T\+M record type. The element symbol is always present on each A\+T\+O\+M record; charge is optional.
+
+Changes in A\+T\+O\+M/\+H\+E\+T\+A\+T\+M records result from the standardization atom and residue nomenclature. This nomenclature is described in the Chemical Component Dictionary (\href{ftp://ftp.wwpdb.org/pub/pdb/data/monomers}{\tt ftp\+://ftp.\+wwpdb.\+org/pub/pdb/data/monomers}).
+
+Record Format
+
+\subsubsection*{C\+O\+L\+U\+M\+N\+S D\+A\+T\+A T\+Y\+P\+E F\+I\+E\+L\+D D\+E\+F\+I\+N\+I\+T\+I\+O\+N }
+
+1 -\/ 6 Record name \char`\"{}\+A\+T\+O\+M  \char`\"{} 7 -\/ 11 Integer serial Atom serial number. 12 Character -\/ unused space. 13 -\/ 16 Atom name Atom name. 17 Character alt\+Loc Alternate location indicator. 18 -\/ 20 Residue name res\+Name Residue name. 21 Character -\/ unused space. 22 Character chain\+I\+D Chain identifier. 23 -\/ 26 Integer res\+Seq Residue sequence number. 27 A\+Char i\+Code Code for insertion of residues. 28 -\/ 30 L\+String(3) -\/ unused space. 31 -\/ 38 Real(8.\+3) x Orthogonal coordinates for X in Angstroms. 39 -\/ 46 Real(8.\+3) y Orthogonal coordinates for Y in Angstroms. 47 -\/ 54 Real(8.\+3) z Orthogonal coordinates for Z in Angstroms. 55 -\/ 60 Real(6.\+2) occupancy Occupancy. 61 -\/ 66 Real(6.\+2) temp\+Factor Temperature factor. 67 -\/ 72 L\+String(6) -\/ Unused section. 73 -\/ 76 L\+String(4) seg\+Name Segment Name. 77 -\/ 78 L\+String(2) element Element symbol, right-\/justified. \subsection*{79 -\/ 80 L\+String(2) charge Charge on the atom. }
+
+Non-\/polymer or other “non-\/standard” chemical coordinates, such as water molecules or atoms presented in H\+E\+T groups use the H\+E\+T\+A\+T\+M record type. They also present the occupancy and temperature factor for each atom. The A\+T\+O\+M records present the atomic coordinates for standard residues. The element symbol is always present on each H\+E\+T\+A\+T\+M record; charge is optional.
+
+Changes in A\+T\+O\+M/\+H\+E\+T\+A\+T\+M records will require standardization in atom and residue nomenclature. This nomenclature is described in the Chemical Component Dictionary, \href{ftp://ftp.wwpdb.org/pub/pdb/data/monomers}{\tt ftp\+://ftp.\+wwpdb.\+org/pub/pdb/data/monomers}.
+
+Record Format
+
+\subsubsection*{C\+O\+L\+U\+M\+N\+S D\+A\+T\+A T\+Y\+P\+E F\+I\+E\+L\+D D\+E\+F\+I\+N\+I\+T\+I\+O\+N }
+
+1 -\/ 6 Record name \char`\"{}\+H\+E\+T\+A\+T\+M\char`\"{} 7 -\/ 11 Integer serial Atom serial number. 13 -\/ 16 Atom name Atom name. 17 Character alt\+Loc Alternate location indicator. 18 -\/ 20 Residue name res\+Name Residue name. 22 Character chain\+I\+D Chain identifier. 23 -\/ 26 Integer res\+Seq Residue sequence number. 27 A\+Char i\+Code Code for insertion of residues. 31 -\/ 38 Real(8.\+3) x Orthogonal coordinates for X. 39 -\/ 46 Real(8.\+3) y Orthogonal coordinates for Y. 47 -\/ 54 Real(8.\+3) z Orthogonal coordinates for Z. 55 -\/ 60 Real(6.\+2) occupancy Occupancy. 61 -\/ 66 Real(6.\+2) temp\+Factor Temperature factor. 77 -\/ 78 L\+String(2) element Element symbol; right-\/justified. \subsection*{79 -\/ 80 L\+String(2) charge Charge on the atom. }
+
+The T\+E\+R record indicates the end of a list of A\+T\+O\+M/\+H\+E\+T\+A\+T\+M records for a chain.
+
+Record Format
+
+\subsubsection*{C\+O\+L\+U\+M\+N\+S D\+A\+T\+A T\+Y\+P\+E F\+I\+E\+L\+D D\+E\+F\+I\+N\+I\+T\+I\+O\+N }
+
+1 -\/ 6 Record name \char`\"{}\+T\+E\+R   \char`\"{} 7 -\/ 11 Integer serial Serial number. 12 Character -\/ unused space. 13 -\/ 16 L\+String(4) -\/ unused space. 17 Character -\/ unused space. 18 -\/ 20 Residue name res\+Name Residue name. 21 Character -\/ unused space. 22 Character chain\+I\+D Chain identifier. 23 -\/ 26 Integer res\+Seq Residue sequence number. 27 A\+Char i\+Code Insertion code.
+
+Notice A\+T\+O\+M, H\+E\+T\+A\+T\+M, and T\+E\+R can all be defined by the A\+T\+O\+M type \hypertarget{interfacemolreader_1_1read_ace14cc5017fcc772377477cb86aebbbe}{\index{molreader\+::read@{molreader\+::read}!read\+\_\+cryst1@{read\+\_\+cryst1}}
+\index{read\+\_\+cryst1@{read\+\_\+cryst1}!molreader\+::read@{molreader\+::read}}
+\subsubsection[{read\+\_\+cryst1}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::read\+::read\+\_\+cryst1 (
+\begin{DoxyParamCaption}
+\item[{type({\bf cryst1}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemolreader_1_1read_ace14cc5017fcc772377477cb86aebbbe}
+\hypertarget{interfacemolreader_1_1read_a2548b1adf92b85ff6a09af908f1acd2a}{\index{molreader\+::read@{molreader\+::read}!read\+\_\+model@{read\+\_\+model}}
+\index{read\+\_\+model@{read\+\_\+model}!molreader\+::read@{molreader\+::read}}
+\subsubsection[{read\+\_\+model}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::read\+::read\+\_\+model (
+\begin{DoxyParamCaption}
+\item[{type({\bf model}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemolreader_1_1read_a2548b1adf92b85ff6a09af908f1acd2a}
+
+
+Reads and returns M\+O\+D\+E\+L Record type. 
+
+The M\+O\+D\+E\+L record specifies the model serial number when multiple models of the same structure are presented in a single coordinate entry, as is often the case with structures determined by N\+M\+R.
+
+Record Format
+
+\subsubsection*{C\+O\+L\+U\+M\+N\+S D\+A\+T\+A T\+Y\+P\+E F\+I\+E\+L\+D D\+E\+F\+I\+N\+I\+T\+I\+O\+N }
+
+1 -\/ 6 Record name \char`\"{}\+M\+O\+D\+E\+L \char`\"{} 7 -\/ 10 L\+String(4) -\/ unused space. 11 -\/ 14 Integer serial Model serial number. \hypertarget{interfacemolreader_1_1read_aaf6cd04056b69eb6239580d134167c32}{\index{molreader\+::read@{molreader\+::read}!read\+\_\+psfatom@{read\+\_\+psfatom}}
+\index{read\+\_\+psfatom@{read\+\_\+psfatom}!molreader\+::read@{molreader\+::read}}
+\subsubsection[{read\+\_\+psfatom}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::read\+::read\+\_\+psfatom (
+\begin{DoxyParamCaption}
+\item[{type({\bf psfatom}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemolreader_1_1read_aaf6cd04056b69eb6239580d134167c32}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{molreader_8f90}{molreader.\+f90}\end{DoxyCompactItemize}

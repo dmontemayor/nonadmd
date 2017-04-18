@@ -1,0 +1,96 @@
+\hypertarget{interfacetextgraphs_1_1display}{\section{textgraphs\+:\+:display Interface Reference}
+\label{interfacetextgraphs_1_1display}\index{textgraphs\+::display@{textgraphs\+::display}}
+}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{interfacetextgraphs_1_1display_ad87a2b0b95d37672aac96a547592b374}{displaycmplxmatrix} (Z, tol, msg)
+\begin{DoxyCompactList}\small\item\em Plot Complex Matrix. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacetextgraphs_1_1display_a234a24e4326c818c2f2e274e8e3a1bee}{displayrealmatrix} (A, tol, msg)
+\begin{DoxyCompactList}\small\item\em Plot Real Matrix. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacetextgraphs_1_1display_a2c20d3e1fdb1272f9bf904e114c21313}{displayvectfield} (Q, Mu, tol, nptx, npty, labelvect, msg)
+\begin{DoxyCompactList}\small\item\em Plot Vector Field. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacetextgraphs_1_1display_ac47b1a55cfdca825dd26ca969ab5bf38}{displayvalues} (Q, npt, msg)
+\begin{DoxyCompactList}\small\item\em Display Array Vaules. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacetextgraphs_1_1display_a490c583611a481c4a4ee80a1d8bd2b36}{displayxy} (Xset, Yset, nptx, npty, mask, msg)
+\begin{DoxyCompactList}\small\item\em Scatter plot details/ displays xy data as nptx x npty char text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function/\+Subroutine Documentation}
+\hypertarget{interfacetextgraphs_1_1display_ad87a2b0b95d37672aac96a547592b374}{\index{textgraphs\+::display@{textgraphs\+::display}!displaycmplxmatrix@{displaycmplxmatrix}}
+\index{displaycmplxmatrix@{displaycmplxmatrix}!textgraphs\+::display@{textgraphs\+::display}}
+\subsubsection[{displaycmplxmatrix}]{\setlength{\rightskip}{0pt plus 5cm}subroutine textgraphs\+::display\+::displaycmplxmatrix (
+\begin{DoxyParamCaption}
+\item[{complex(double), dimension(\+:,\+:), intent(in), target}]{Z, }
+\item[{real(double), intent(in), optional}]{tol, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacetextgraphs_1_1display_ad87a2b0b95d37672aac96a547592b374}
+
+
+Plot Complex Matrix. 
+
+Displays a 2\+D complex matrix elements as 2 char text in Nx\+M table, where N and M are the dimensions of the input matrix. \hypertarget{interfacetextgraphs_1_1display_a234a24e4326c818c2f2e274e8e3a1bee}{\index{textgraphs\+::display@{textgraphs\+::display}!displayrealmatrix@{displayrealmatrix}}
+\index{displayrealmatrix@{displayrealmatrix}!textgraphs\+::display@{textgraphs\+::display}}
+\subsubsection[{displayrealmatrix}]{\setlength{\rightskip}{0pt plus 5cm}subroutine textgraphs\+::display\+::displayrealmatrix (
+\begin{DoxyParamCaption}
+\item[{real(double), dimension(\+:,\+:), intent(in), target}]{A, }
+\item[{real(double), intent(in), optional}]{tol, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacetextgraphs_1_1display_a234a24e4326c818c2f2e274e8e3a1bee}
+
+
+Plot Real Matrix. 
+
+Displays a 2\+D real matrix elements as 1 char text in Nx\+M table, where N and M are the dimensions of the input matrix. \hypertarget{interfacetextgraphs_1_1display_ac47b1a55cfdca825dd26ca969ab5bf38}{\index{textgraphs\+::display@{textgraphs\+::display}!displayvalues@{displayvalues}}
+\index{displayvalues@{displayvalues}!textgraphs\+::display@{textgraphs\+::display}}
+\subsubsection[{displayvalues}]{\setlength{\rightskip}{0pt plus 5cm}subroutine textgraphs\+::display\+::displayvalues (
+\begin{DoxyParamCaption}
+\item[{real(double), dimension(\+:), intent(in), target}]{Q, }
+\item[{integer(long), intent(in), optional}]{npt, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacetextgraphs_1_1display_ac47b1a55cfdca825dd26ca969ab5bf38}
+
+
+Display Array Vaules. 
+
+Plots a function contained in Q with text each element of Q gets a character on a the record with npt represents the range of values \hypertarget{interfacetextgraphs_1_1display_a2c20d3e1fdb1272f9bf904e114c21313}{\index{textgraphs\+::display@{textgraphs\+::display}!displayvectfield@{displayvectfield}}
+\index{displayvectfield@{displayvectfield}!textgraphs\+::display@{textgraphs\+::display}}
+\subsubsection[{displayvectfield}]{\setlength{\rightskip}{0pt plus 5cm}subroutine textgraphs\+::display\+::displayvectfield (
+\begin{DoxyParamCaption}
+\item[{real(double), dimension(\+:,\+:), intent(in), target}]{Q, }
+\item[{real(double), dimension(\+:,\+:), intent(in), target}]{Mu, }
+\item[{real(double), intent(in), optional}]{tol, }
+\item[{integer(long), intent(in), optional}]{nptx, }
+\item[{integer(long), intent(in), optional}]{npty, }
+\item[{logical, intent(in), optional}]{labelvect, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacetextgraphs_1_1display_a2c20d3e1fdb1272f9bf904e114c21313}
+
+
+Plot Vector Field. 
+
+Displays a 2\+D vector field elements as nptx x npty char text. \hypertarget{interfacetextgraphs_1_1display_a490c583611a481c4a4ee80a1d8bd2b36}{\index{textgraphs\+::display@{textgraphs\+::display}!displayxy@{displayxy}}
+\index{displayxy@{displayxy}!textgraphs\+::display@{textgraphs\+::display}}
+\subsubsection[{displayxy}]{\setlength{\rightskip}{0pt plus 5cm}subroutine textgraphs\+::display\+::displayxy (
+\begin{DoxyParamCaption}
+\item[{real(double), dimension(\+:), intent(in), target}]{Xset, }
+\item[{real(double), dimension(\+:), intent(in), target}]{Yset, }
+\item[{integer(long), intent(in), optional}]{nptx, }
+\item[{integer(long), intent(in), optional}]{npty, }
+\item[{logical, dimension(\+:), intent(in), optional}]{mask, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacetextgraphs_1_1display_a490c583611a481c4a4ee80a1d8bd2b36}
+
+
+Scatter plot details/ displays xy data as nptx x npty char text. 
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{utils_8f90}{utils.\+f90}\end{DoxyCompactItemize}

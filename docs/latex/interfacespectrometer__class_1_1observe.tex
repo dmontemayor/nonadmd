@@ -1,0 +1,91 @@
+\hypertarget{interfacespectrometer__class_1_1observe}{\section{spectrometer\+\_\+class\+:\+:observe Interface Reference}
+\label{interfacespectrometer__class_1_1observe}\index{spectrometer\+\_\+class\+::observe@{spectrometer\+\_\+class\+::observe}}
+}
+
+
+Measures the Hamiltonian.  
+
+
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{interfacespectrometer__class_1_1observe_ab17bdd571e63c8de9fb5029c8af31967}{get\+\_\+spectrum} (this, qs, cs, cp, Emin, Emax, npt, type, tol, samples, file, pdb, psf, psfx, atm\+\_\+select, dipole\+\_\+to, dipole\+\_\+from, dipole\+\_\+center)
+\begin{DoxyCompactList}\small\item\em General call to compute verious spectra. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Measures the Hamiltonian. 
+
+\subsection{Member Function/\+Subroutine Documentation}
+\hypertarget{interfacespectrometer__class_1_1observe_ab17bdd571e63c8de9fb5029c8af31967}{\index{spectrometer\+\_\+class\+::observe@{spectrometer\+\_\+class\+::observe}!get\+\_\+spectrum@{get\+\_\+spectrum}}
+\index{get\+\_\+spectrum@{get\+\_\+spectrum}!spectrometer\+\_\+class\+::observe@{spectrometer\+\_\+class\+::observe}}
+\subsubsection[{get\+\_\+spectrum}]{\setlength{\rightskip}{0pt plus 5cm}subroutine spectrometer\+\_\+class\+::observe\+::get\+\_\+spectrum (
+\begin{DoxyParamCaption}
+\item[{type({\bf spectrum}), intent(inout)}]{this, }
+\item[{type(quantum), intent(inout), target}]{qs, }
+\item[{type(classical), intent(inout), optional, target}]{cs, }
+\item[{type(coupling), intent(inout), optional, target}]{cp, }
+\item[{real(double), intent(in)}]{Emin, }
+\item[{real(double), intent(in)}]{Emax, }
+\item[{integer(long), intent(in)}]{npt, }
+\item[{character(len=$\ast$), intent(in)}]{type, }
+\item[{real(double), intent(in), optional}]{tol, }
+\item[{integer(long), intent(in), optional}]{samples, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{pdb, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{psf, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{psfx, }
+\item[{type(atom), dimension(\+:), intent(in), optional}]{atm\+\_\+select, }
+\item[{type(atom), dimension(\+:), intent(in), optional}]{dipole\+\_\+to, }
+\item[{type(atom), dimension(\+:), intent(in), optional}]{dipole\+\_\+from, }
+\item[{type(atom), dimension(\+:), intent(in), optional}]{dipole\+\_\+center}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacespectrometer__class_1_1observe_ab17bdd571e63c8de9fb5029c8af31967}
+
+
+General call to compute verious spectra. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em this} & spectrum type, it is overwritten with the spectroscopic measurement on return. \\
+\hline
+\mbox{\tt in,out}  & {\em qs} & general quantum subsystem to be measured. \\
+\hline
+\mbox{\tt in,out}  & {\em cs} & general classical subsystem to be measured. \\
+\hline
+\mbox{\tt in,out}  & {\em cp} & general coupling term to be measured. \\
+\hline
+\mbox{\tt in}  & {\em npt} & number of points in the frequency domain. \\
+\hline
+\mbox{\tt in}  & {\em Emin} & minimum value of frequncy domain. \\
+\hline
+\mbox{\tt in}  & {\em Emax} & maximum value of the frequency domain. \\
+\hline
+\mbox{\tt in}  & {\em type} & string containing the type of the spectroscopic measurement. Options are 'A\+B' and 'A\+B\+P\+D\+B'. \\
+\hline
+\mbox{\tt in}  & {\em samples} & minimum number of measurements to make before convergance protocols take effect. Guarantees good statistics. \\
+\hline
+\mbox{\tt in}  & {\em tol} & $ R^2 $ difference between successive measurements. Used to determine spectrum convergance. \\
+\hline
+\mbox{\tt in}  & {\em file} & name of file to output spectrum on return. \\
+\hline
+\mbox{\tt in}  & {\em pdb} & name of input pdb file. \\
+\hline
+\mbox{\tt in}  & {\em psf} & name of input psf file. \\
+\hline
+\mbox{\tt in}  & {\em psfx} & name of psf file containing excited state charges. \\
+\hline
+\mbox{\tt in}  & {\em atm\+\_\+select} & atom type used to determine a subset of atoms. \\
+\hline
+\mbox{\tt in}  & {\em dipole\+\_\+to} & atom type specifing direction a dipole points to. \\
+\hline
+\mbox{\tt in}  & {\em dipole\+\_\+from} & atom type specifing direction a dipole points from. \\
+\hline
+\mbox{\tt in}  & {\em dipole\+\_\+center} & atom type specifing the origin of a dipole. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{spectrometer_8f90}{spectrometer.\+f90}\end{DoxyCompactItemize}

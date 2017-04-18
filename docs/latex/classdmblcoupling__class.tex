@@ -1,0 +1,154 @@
+\hypertarget{classdmblcoupling__class}{\section{dmblcoupling\+\_\+class Module Reference}
+\label{classdmblcoupling__class}\index{dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}}
+}
+
+
+Diagonal Multi-\/\+Bath Linear Coupling.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacedmblcoupling__class_1_1check}{check}
+\item 
+interface \hyperlink{interfacedmblcoupling__class_1_1display}{display}
+\item 
+type \hyperlink{structdmblcoupling__class_1_1dmblcoupling}{dmblcoupling}
+\item 
+interface \hyperlink{interfacedmblcoupling__class_1_1kill}{kill}
+\item 
+interface \hyperlink{interfacedmblcoupling__class_1_1new}{new}
+\item 
+interface \hyperlink{interfacedmblcoupling__class_1_1resample}{resample}
+\item 
+interface \hyperlink{interfacedmblcoupling__class_1_1save}{save}
+\item 
+interface \hyperlink{interfacedmblcoupling__class_1_1update}{update}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classdmblcoupling__class_a4487405d5c1e31a9337bd7af6b7674e6}{dmblcoupling\+\_\+init} (this, qs, cs, file)
+\item 
+subroutine \hyperlink{classdmblcoupling__class_a313cde032dcbe2b6337777761e020699}{dmblcoupling\+\_\+kill} (this)
+\item 
+subroutine \hyperlink{classdmblcoupling__class_a08e27168f5a824e5177a7a5f0821c9cb}{dmblcoupling\+\_\+update} (this)
+\item 
+subroutine \hyperlink{classdmblcoupling__class_a8084e25865ced19866a492ee82f7ad96}{dmblcoupling\+\_\+resample} (this)
+\item 
+subroutine \hyperlink{classdmblcoupling__class_ab270fc6f682c8fcf3c654a937c4105d5}{dmblcoupling\+\_\+save} (this, file)
+\item 
+subroutine \hyperlink{classdmblcoupling__class_a204822b8993320449860c1240b46d5ad}{dmblcoupling\+\_\+display} (this, msg)
+\item 
+integer(short) function \hyperlink{classdmblcoupling__class_a59661dec6ece5671a02d74811864e710}{dmblcoupling\+\_\+check} (this)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Diagonal Multi-\/\+Bath Linear Coupling. 
+
+This coupling scheme is a Caldeira-\/\+Leggett model, coupling the normal modes of the classical subsystem linearly to the diagonal states of the quantum subsystem. Assumes the Hamiltonian \[ H=hs+hb+H_c+ct \] where \[ hs=\frac{\hat p^2}{2m}+V(\hat q) \] ,projected on to a diabatic basis of hs (ie diabats attribute of hs). \[ hb=V(Q) \] , projected onto the normal modes of hb (ie modes attribute of hb). Each mode is assigned to one of $ N $ dissipative baths with bath $ n $ having $ K_n $ modes. Each bath is coupled uniquely to the diagonal basis states which are assumed constant in $ \hat q $ such that, \[ \hat q_n=\sum_i f_{i,n} |i \rangle\langle i|. \] \[ \hat q_n^2=\sum_i f_{i,n}^2 |i \rangle\langle i|. \] The bilinear coupling term is written \[ H_c=-\sum_n^N \sum_k^{K_n} c_{k,n} Q_{k,n} \hat q_n \] with counter term \[ ct=\sum_n^N \sum_k^{K_n} \hat q_n^2 \frac{c_{k,n}^2}{2m_{k,n}\omega_{k,n}^2}. \] The spectral density of bath $ n $ is defined \[ J_n(\omega)=\frac{\pi}{\hbar}\sum_k^{K_n}\frac{c_{k,n}^2}{2m_{k,n}\omega_{k,n}}\delta_{\omega-\omega_{k,n}}.\] The re-\/organization energy of bath $ n $ is defined \[ \lambda_n=\frac{2}{\pi} \int_0^\infty \frac{J_n(\omega)}{\omega} d\omega \] such that, \[ c_{k,n}^2=\frac{\hbar \lambda_n m_{k,n} \omega_{k,n}^2}{K_n}\] and \[ ct=2 \hbar \sum_n^N \lambda_n \hat q_n^2 .\] \begin{DoxyAuthor}{Authors}
+Daniel Montemayor
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 2011, Sept 2011 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]Change from rmass (particle basis) to normal mode mass weighting. 
+
+Check that coupling and counter terms are treated as defined in details section. \end{DoxyRefDesc}
+
+
+\subsection{Member Function/\+Subroutine Documentation}
+\hypertarget{classdmblcoupling__class_a59661dec6ece5671a02d74811864e710}{\index{dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}!dmblcoupling\+\_\+check@{dmblcoupling\+\_\+check}}
+\index{dmblcoupling\+\_\+check@{dmblcoupling\+\_\+check}!dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}}
+\subsubsection[{dmblcoupling\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}integer(short) function dmblcoupling\+\_\+class\+::dmblcoupling\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{type({\bf dmblcoupling}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdmblcoupling__class_a59661dec6ece5671a02d74811864e710}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdmblcoupling__class_a59661dec6ece5671a02d74811864e710_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classdmblcoupling__class_a204822b8993320449860c1240b46d5ad}{\index{dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}!dmblcoupling\+\_\+display@{dmblcoupling\+\_\+display}}
+\index{dmblcoupling\+\_\+display@{dmblcoupling\+\_\+display}!dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}}
+\subsubsection[{dmblcoupling\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dmblcoupling\+\_\+class\+::dmblcoupling\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{type({\bf dmblcoupling}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdmblcoupling__class_a204822b8993320449860c1240b46d5ad}
+\hypertarget{classdmblcoupling__class_a4487405d5c1e31a9337bd7af6b7674e6}{\index{dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}!dmblcoupling\+\_\+init@{dmblcoupling\+\_\+init}}
+\index{dmblcoupling\+\_\+init@{dmblcoupling\+\_\+init}!dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}}
+\subsubsection[{dmblcoupling\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dmblcoupling\+\_\+class\+::dmblcoupling\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{type({\bf dmblcoupling}), intent(inout)}]{this, }
+\item[{type(quantum), intent(inout), target}]{qs, }
+\item[{type(classical), intent(inout), target}]{cs, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdmblcoupling__class_a4487405d5c1e31a9337bd7af6b7674e6}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{classdmblcoupling__class_a4487405d5c1e31a9337bd7af6b7674e6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classdmblcoupling__class_a313cde032dcbe2b6337777761e020699}{\index{dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}!dmblcoupling\+\_\+kill@{dmblcoupling\+\_\+kill}}
+\index{dmblcoupling\+\_\+kill@{dmblcoupling\+\_\+kill}!dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}}
+\subsubsection[{dmblcoupling\+\_\+kill}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dmblcoupling\+\_\+class\+::dmblcoupling\+\_\+kill (
+\begin{DoxyParamCaption}
+\item[{type({\bf dmblcoupling}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdmblcoupling__class_a313cde032dcbe2b6337777761e020699}
+\hypertarget{classdmblcoupling__class_a8084e25865ced19866a492ee82f7ad96}{\index{dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}!dmblcoupling\+\_\+resample@{dmblcoupling\+\_\+resample}}
+\index{dmblcoupling\+\_\+resample@{dmblcoupling\+\_\+resample}!dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}}
+\subsubsection[{dmblcoupling\+\_\+resample}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dmblcoupling\+\_\+class\+::dmblcoupling\+\_\+resample (
+\begin{DoxyParamCaption}
+\item[{type({\bf dmblcoupling}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdmblcoupling__class_a8084e25865ced19866a492ee82f7ad96}
+\hypertarget{classdmblcoupling__class_ab270fc6f682c8fcf3c654a937c4105d5}{\index{dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}!dmblcoupling\+\_\+save@{dmblcoupling\+\_\+save}}
+\index{dmblcoupling\+\_\+save@{dmblcoupling\+\_\+save}!dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}}
+\subsubsection[{dmblcoupling\+\_\+save}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dmblcoupling\+\_\+class\+::dmblcoupling\+\_\+save (
+\begin{DoxyParamCaption}
+\item[{type({\bf dmblcoupling}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in)}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdmblcoupling__class_ab270fc6f682c8fcf3c654a937c4105d5}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classdmblcoupling__class_ab270fc6f682c8fcf3c654a937c4105d5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classdmblcoupling__class_a08e27168f5a824e5177a7a5f0821c9cb}{\index{dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}!dmblcoupling\+\_\+update@{dmblcoupling\+\_\+update}}
+\index{dmblcoupling\+\_\+update@{dmblcoupling\+\_\+update}!dmblcoupling\+\_\+class@{dmblcoupling\+\_\+class}}
+\subsubsection[{dmblcoupling\+\_\+update}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dmblcoupling\+\_\+class\+::dmblcoupling\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{type({\bf dmblcoupling}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdmblcoupling__class_a08e27168f5a824e5177a7a5f0821c9cb}
+
+
+The documentation for this module was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_d_m_b_lcoupling_8f90}{D\+M\+B\+Lcoupling.\+f90}\end{DoxyCompactItemize}

@@ -1,0 +1,442 @@
+\hypertarget{classbilinear__class}{\section{bilinear\+\_\+class Module Reference}
+\label{classbilinear__class}\index{bilinear\+\_\+class@{bilinear\+\_\+class}}
+}
+
+
+Diagonal Bi-\/linear system-\/bath coupling.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \hyperlink{structbilinear__class_1_1bilinear}{bilinear}
+\begin{DoxyCompactList}\small\item\em Derived quantum-\/classical coupling term. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacebilinear__class_1_1check}{check}
+\begin{DoxyCompactList}\small\item\em Checks the bilinear object. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacebilinear__class_1_1display}{display}
+\begin{DoxyCompactList}\small\item\em Displays the current state of the bilinear object. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacebilinear__class_1_1kill}{kill}
+\begin{DoxyCompactList}\small\item\em Destroys the bilinear object. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacebilinear__class_1_1new}{new}
+\begin{DoxyCompactList}\small\item\em Creates the bilinear object. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacebilinear__class_1_1resample}{resample}
+\begin{DoxyCompactList}\small\item\em Reinitializes the bilinear object. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacebilinear__class_1_1save}{save}
+\begin{DoxyCompactList}\small\item\em Saves the current state of the bilinear object to file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacebilinear__class_1_1update}{update}
+\begin{DoxyCompactList}\small\item\em Recalculates bilinear object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classbilinear__class_a767f35cd3ebd5ef00f6a55fd775c3a27}{bilinear\+\_\+init} (this, qs, cs, file)
+\begin{DoxyCompactList}\small\item\em Creates and initializes the bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classbilinear__class_ae206ab58d224c9a0b7e25ac038e003ae}{bilinear\+\_\+kill} (this)
+\begin{DoxyCompactList}\small\item\em Destroys the bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classbilinear__class_a37ead815723c4c247c156200f5bf4721}{bilinear\+\_\+update} (this)
+\begin{DoxyCompactList}\small\item\em Computes the current state of bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classbilinear__class_aac587f5ea6d66ee89ff3210b10569777}{bilinear\+\_\+resample} (this)
+\begin{DoxyCompactList}\small\item\em Re-\/initiallizes the bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classbilinear__class_a5fe875f5d4db31ef7a7e721ba4a0146a}{bilinear\+\_\+save} (this, file)
+\begin{DoxyCompactList}\small\item\em Saves the current state of the bilinear coupling object to file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classbilinear__class_a4346246df7738e0d609716d961a3b94c}{bilinear\+\_\+display} (this, msg)
+\begin{DoxyCompactList}\small\item\em Displays the bilinear coupling object. \end{DoxyCompactList}\item 
+integer(short) function \hyperlink{classbilinear__class_ab2484d90163983597fb17b15e480e675}{bilinear\+\_\+check} (this)
+\begin{DoxyCompactList}\small\item\em Checks the bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classbilinear__class_a767f35cd3ebd5ef00f6a55fd775c3a27}{bilinear\+\_\+init} (this, qs, cs, file)
+\begin{DoxyCompactList}\small\item\em Creates and initializes the bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classbilinear__class_ae206ab58d224c9a0b7e25ac038e003ae}{bilinear\+\_\+kill} (this)
+\begin{DoxyCompactList}\small\item\em Destroys the bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classbilinear__class_a37ead815723c4c247c156200f5bf4721}{bilinear\+\_\+update} (this)
+\begin{DoxyCompactList}\small\item\em Computes the current state of bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classbilinear__class_aac587f5ea6d66ee89ff3210b10569777}{bilinear\+\_\+resample} (this)
+\begin{DoxyCompactList}\small\item\em Re-\/initiallizes the bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classbilinear__class_a5fe875f5d4db31ef7a7e721ba4a0146a}{bilinear\+\_\+save} (this, file)
+\begin{DoxyCompactList}\small\item\em Saves the current state of the bilinear coupling object to file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classbilinear__class_a4346246df7738e0d609716d961a3b94c}{bilinear\+\_\+display} (this, msg)
+\begin{DoxyCompactList}\small\item\em Displays the bilinear coupling object. \end{DoxyCompactList}\item 
+integer(short) function \hyperlink{classbilinear__class_ab2484d90163983597fb17b15e480e675}{bilinear\+\_\+check} (this)
+\begin{DoxyCompactList}\small\item\em Checks the bilinear coupling object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Diagonal Bi-\/linear system-\/bath coupling. 
+
+This coupling scheme follows the Caldeira-\/\+Leggett model, coupling the normal modes of the classical subsystem linearly to the diagonal states of the quantum subsystem. Assumes Hamiltonian of the form \[ H=h_s+h_b+h_c+ct \] where the quantum subsystem Hamiltonian matrix elements $ \langle\psi_i|hs|\psi_j\rangle $ are the matrix elements of $qs.hs.diabats$. The classical subsystem $ hb $ potential energy ,is written in terms of the normal modes of the classical subsystem $cs.hb.W$. Each one of the $ N$ states is coupled to one or more of the $ K $ normal modes. Here we assume that the diabatic basis states $ \psi $ are eigenstates of some quantum subsystem operator $ \hat q $ such that \[ \hat q |\psi_j\rangle =f_j|\psi_j\rangle \] and the eigenvalues $ f_j $ are supplied by the user. The bilinear coupling term is written \[ h_c=-\sum_n^N \sum_k^{K_n} g_{k,n} Q_{k} f_n |\psi_n\rangle\langle\psi_n|\] with counter term \[ ct=\sum_n^N \sum_k^{K_n} \frac{g_{k,n}^2}{2m_{k}\omega_{k}^2}f_n^2 |\psi_n\rangle\langle\psi_n|. \] The coefficients $ g_{k,n} $ are sampled from the spectral density $ J_n(\omega)$ describing the solvent response about the state $ n $. The spectral density is written \[ J_n(\omega)=\frac{\pi}{\hbar}\sum_k^{K_n}\frac{g_{k,n}^2}{2m_{k,n}\omega_{k,n}}\delta_{\omega-\omega_{k,n}}.\] The re-\/organization energy for each state is defined \[ \lambda_n=\frac{1}{\pi} \int_0^\infty \frac{J_n(\omega)}{\omega} d\omega \] such that, \[ g_{k,n}^2=\frac{2\lambda_n m_{k} \omega_{k}^2}{K_n}\] and \[ ct=\sum_n^N \lambda_n f_n^2|\psi_n\rangle\langle\psi_n| .\] N\+E\+E\+D T\+O U\+P\+D\+A\+T\+E counterterm now shifts classical normal modes on resample \begin{DoxyAuthor}{Authors}
+Daniel Montemayor
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 2011, Sept 2011, Oct 2012 ,Feb 2013 
+\end{DoxyDate}
+
+
+\subsection{Member Function/\+Subroutine Documentation}
+\hypertarget{classbilinear__class_ab2484d90163983597fb17b15e480e675}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+check@{bilinear\+\_\+check}}
+\index{bilinear\+\_\+check@{bilinear\+\_\+check}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}integer(short) function bilinear\+\_\+class\+::bilinear\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_ab2484d90163983597fb17b15e480e675}
+
+
+Checks the bilinear coupling object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em this} & is the bilinear coupling object to be updated. \\
+\hline
+\mbox{\tt in}  & {\em msg} & is an optional string message to preface the displayed object. \\
+\hline
+\mbox{\tt in}  & {\em file} & is an optional string containing the location of a file where the display output gets forwarded. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{classbilinear__class_ab2484d90163983597fb17b15e480e675_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classbilinear__class_ab2484d90163983597fb17b15e480e675}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+check@{bilinear\+\_\+check}}
+\index{bilinear\+\_\+check@{bilinear\+\_\+check}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}integer(short) function bilinear\+\_\+class\+::bilinear\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_ab2484d90163983597fb17b15e480e675}
+
+
+Checks the bilinear coupling object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em this} & is the bilinear coupling object to be updated. \\
+\hline
+\mbox{\tt in}  & {\em msg} & is an optional string message to preface the displayed object. \\
+\hline
+\mbox{\tt in}  & {\em file} & is an optional string containing the location of a file where the display output gets forwarded. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{classbilinear__class_ab2484d90163983597fb17b15e480e675_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classbilinear__class_a4346246df7738e0d609716d961a3b94c}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+display@{bilinear\+\_\+display}}
+\index{bilinear\+\_\+display@{bilinear\+\_\+display}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}subroutine bilinear\+\_\+class\+::bilinear\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_a4346246df7738e0d609716d961a3b94c}
+
+
+Displays the bilinear coupling object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em this} & is the bilinear coupling object to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing if all checks pass or 1 and a warn for the first failed check. 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+Will exit after first failed check. 
+\end{DoxyRemark}
+\hypertarget{classbilinear__class_a4346246df7738e0d609716d961a3b94c}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+display@{bilinear\+\_\+display}}
+\index{bilinear\+\_\+display@{bilinear\+\_\+display}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}subroutine bilinear\+\_\+class\+::bilinear\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_a4346246df7738e0d609716d961a3b94c}
+
+
+Displays the bilinear coupling object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em this} & is the bilinear coupling object to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing if all checks pass or 1 and a warn for the first failed check. 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+Will exit after first failed check. 
+\end{DoxyRemark}
+\hypertarget{classbilinear__class_a767f35cd3ebd5ef00f6a55fd775c3a27}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+init@{bilinear\+\_\+init}}
+\index{bilinear\+\_\+init@{bilinear\+\_\+init}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine bilinear\+\_\+class\+::bilinear\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(inout)}]{this, }
+\item[{type(quantum), intent(inout), target}]{qs, }
+\item[{type(classical), intent(inout), target}]{cs, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_a767f35cd3ebd5ef00f6a55fd775c3a27}
+
+
+Creates and initializes the bilinear coupling object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em this} & is the bilinear coupling object to be initialized. \\
+\hline
+ & {\em qs} & is a general quantum subsystem to be coupled to a classical subsystem. \\
+\hline
+ & {\em cs} & is a general classical subsysterm to be coupled to the quantum subsystem. \\
+\hline
+\mbox{\tt in}  & {\em file} & is an optional string containing the name of a previously saved bilinear file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+If no input file is provided the user must manually initialize T\+H\+I\+S using stout. 
+\end{DoxyRemark}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbilinear__class_a767f35cd3ebd5ef00f6a55fd775c3a27_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classbilinear__class_a767f35cd3ebd5ef00f6a55fd775c3a27}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+init@{bilinear\+\_\+init}}
+\index{bilinear\+\_\+init@{bilinear\+\_\+init}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine bilinear\+\_\+class\+::bilinear\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(inout)}]{this, }
+\item[{type(quantum), intent(inout), target}]{qs, }
+\item[{type(classical), intent(inout), target}]{cs, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_a767f35cd3ebd5ef00f6a55fd775c3a27}
+
+
+Creates and initializes the bilinear coupling object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em this} & is the bilinear coupling object to be initialized. \\
+\hline
+ & {\em qs} & is a general quantum subsystem to be coupled to a classical subsystem. \\
+\hline
+ & {\em cs} & is a general classical subsysterm to be coupled to the quantum subsystem. \\
+\hline
+\mbox{\tt in}  & {\em file} & is an optional string containing the name of a previously saved bilinear file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+If no input file is provided the user must manually initialize T\+H\+I\+S using stout. 
+\end{DoxyRemark}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbilinear__class_a767f35cd3ebd5ef00f6a55fd775c3a27_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classbilinear__class_ae206ab58d224c9a0b7e25ac038e003ae}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+kill@{bilinear\+\_\+kill}}
+\index{bilinear\+\_\+kill@{bilinear\+\_\+kill}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+kill}]{\setlength{\rightskip}{0pt plus 5cm}subroutine bilinear\+\_\+class\+::bilinear\+\_\+kill (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_ae206ab58d224c9a0b7e25ac038e003ae}
+
+
+Destroys the bilinear coupling object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em this} & is the bilinear coupling object to be destroyed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbilinear__class_ae206ab58d224c9a0b7e25ac038e003ae}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+kill@{bilinear\+\_\+kill}}
+\index{bilinear\+\_\+kill@{bilinear\+\_\+kill}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+kill}]{\setlength{\rightskip}{0pt plus 5cm}subroutine bilinear\+\_\+class\+::bilinear\+\_\+kill (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_ae206ab58d224c9a0b7e25ac038e003ae}
+
+
+Destroys the bilinear coupling object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em this} & is the bilinear coupling object to be destroyed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbilinear__class_aac587f5ea6d66ee89ff3210b10569777}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+resample@{bilinear\+\_\+resample}}
+\index{bilinear\+\_\+resample@{bilinear\+\_\+resample}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+resample}]{\setlength{\rightskip}{0pt plus 5cm}subroutine bilinear\+\_\+class\+::bilinear\+\_\+resample (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_aac587f5ea6d66ee89ff3210b10569777}
+
+
+Re-\/initiallizes the bilinear coupling object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em this} & is the bilinear coupling object to be re-\/initialized. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classbilinear__class_aac587f5ea6d66ee89ff3210b10569777_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classbilinear__class_aac587f5ea6d66ee89ff3210b10569777}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+resample@{bilinear\+\_\+resample}}
+\index{bilinear\+\_\+resample@{bilinear\+\_\+resample}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+resample}]{\setlength{\rightskip}{0pt plus 5cm}subroutine bilinear\+\_\+class\+::bilinear\+\_\+resample (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_aac587f5ea6d66ee89ff3210b10569777}
+
+
+Re-\/initiallizes the bilinear coupling object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em this} & is the bilinear coupling object to be re-\/initialized. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classbilinear__class_aac587f5ea6d66ee89ff3210b10569777_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classbilinear__class_a5fe875f5d4db31ef7a7e721ba4a0146a}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+save@{bilinear\+\_\+save}}
+\index{bilinear\+\_\+save@{bilinear\+\_\+save}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+save}]{\setlength{\rightskip}{0pt plus 5cm}subroutine bilinear\+\_\+class\+::bilinear\+\_\+save (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in)}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_a5fe875f5d4db31ef7a7e721ba4a0146a}
+
+
+Saves the current state of the bilinear coupling object to file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em this} & is the bilinear coupling object to be updated. \\
+\hline
+\mbox{\tt in}  & {\em file} & is a string containing the location of the save file. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbilinear__class_a5fe875f5d4db31ef7a7e721ba4a0146a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classbilinear__class_a5fe875f5d4db31ef7a7e721ba4a0146a}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+save@{bilinear\+\_\+save}}
+\index{bilinear\+\_\+save@{bilinear\+\_\+save}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+save}]{\setlength{\rightskip}{0pt plus 5cm}subroutine bilinear\+\_\+class\+::bilinear\+\_\+save (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in)}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_a5fe875f5d4db31ef7a7e721ba4a0146a}
+
+
+Saves the current state of the bilinear coupling object to file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em this} & is the bilinear coupling object to be updated. \\
+\hline
+\mbox{\tt in}  & {\em file} & is a string containing the location of the save file. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbilinear__class_a5fe875f5d4db31ef7a7e721ba4a0146a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classbilinear__class_a37ead815723c4c247c156200f5bf4721}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+update@{bilinear\+\_\+update}}
+\index{bilinear\+\_\+update@{bilinear\+\_\+update}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+update}]{\setlength{\rightskip}{0pt plus 5cm}subroutine bilinear\+\_\+class\+::bilinear\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_a37ead815723c4c247c156200f5bf4721}
+
+
+Computes the current state of bilinear coupling object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em this} & is the bilinear coupling object to be updated. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbilinear__class_a37ead815723c4c247c156200f5bf4721}{\index{bilinear\+\_\+class@{bilinear\+\_\+class}!bilinear\+\_\+update@{bilinear\+\_\+update}}
+\index{bilinear\+\_\+update@{bilinear\+\_\+update}!bilinear\+\_\+class@{bilinear\+\_\+class}}
+\subsubsection[{bilinear\+\_\+update}]{\setlength{\rightskip}{0pt plus 5cm}subroutine bilinear\+\_\+class\+::bilinear\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{type({\bf bilinear}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classbilinear__class_a37ead815723c4c247c156200f5bf4721}
+
+
+Computes the current state of bilinear coupling object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em this} & is the bilinear coupling object to be updated. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this module was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{bilinear_8f90}{bilinear.\+f90}\item 
+src/\hyperlink{bilinearcopy_8f90}{bilinearcopy.\+f90}\end{DoxyCompactItemize}

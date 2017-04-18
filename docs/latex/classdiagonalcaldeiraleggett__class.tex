@@ -1,0 +1,179 @@
+\hypertarget{classdiagonalcaldeiraleggett__class}{\section{diagonalcaldeiraleggett\+\_\+class Module Reference}
+\label{classdiagonalcaldeiraleggett__class}\index{diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}}
+}
+
+
+Diagonal Bi-\/linear Coupling.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacediagonalcaldeiraleggett__class_1_1check}{check}
+\begin{DoxyCompactList}\small\item\em Checks the derived coupling type. \end{DoxyCompactList}\item 
+type \hyperlink{structdiagonalcaldeiraleggett__class_1_1diagonalcaldeiraleggett}{diagonalcaldeiraleggett}
+\begin{DoxyCompactList}\small\item\em Derived quantum-\/classical coupling term. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacediagonalcaldeiraleggett__class_1_1display}{display}
+\begin{DoxyCompactList}\small\item\em Displays the current state of the derived coupling type. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacediagonalcaldeiraleggett__class_1_1kill}{kill}
+\begin{DoxyCompactList}\small\item\em Derived coupling type destroyer. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacediagonalcaldeiraleggett__class_1_1new}{new}
+\begin{DoxyCompactList}\small\item\em Derived coupling type creator. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacediagonalcaldeiraleggett__class_1_1resample}{resample}
+\begin{DoxyCompactList}\small\item\em Reinitializes the coupling primitive. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacediagonalcaldeiraleggett__class_1_1save}{save}
+\begin{DoxyCompactList}\small\item\em Saves the current state of the derived coupling type to file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacediagonalcaldeiraleggett__class_1_1update}{update}
+\begin{DoxyCompactList}\small\item\em Recalculates the coupling primitive's attributes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classdiagonalcaldeiraleggett__class_a77a4b59596281583000705c1aed66876}{diagonalcaldeiraleggett\+\_\+init} (this, qs, cs, file)
+\begin{DoxyCompactList}\small\item\em Creates and initializes the Diagonal\+Caldeira\+Legget coupling type. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classdiagonalcaldeiraleggett__class_a0d2ff90e3d5b6fe8f39efb94fbe8b69e}{diagonalcaldeiraleggett\+\_\+kill} (this)
+\item 
+subroutine \hyperlink{classdiagonalcaldeiraleggett__class_a7d2be81a6936c89b00a36e6ded7bd9a8}{diagonalcaldeiraleggett\+\_\+update} (this)
+\item 
+subroutine \hyperlink{classdiagonalcaldeiraleggett__class_a7247bcb797125177687611a7fb58a0ae}{diagonalcaldeiraleggett\+\_\+resample} (this)
+\item 
+subroutine \hyperlink{classdiagonalcaldeiraleggett__class_aa98c2c7a65adcda966ad7c8e9b7b0558}{diagonalcaldeiraleggett\+\_\+save} (this, file)
+\item 
+subroutine \hyperlink{classdiagonalcaldeiraleggett__class_acdd94a8e0e2bd6467a3e09fdeb3ce3bf}{diagonalcaldeiraleggett\+\_\+display} (this, msg)
+\item 
+integer(short) function \hyperlink{classdiagonalcaldeiraleggett__class_aafa02474c975bce12990f64ad6f9a89b}{diagonalcaldeiraleggett\+\_\+check} (this)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Diagonal Bi-\/linear Coupling. 
+
+This coupling scheme follows the Caldeira-\/\+Leggett model, coupling the normal modes of the classical subsystem linearly to the diagonal states of the quantum subsystem. Assumes Hamiltonian of the form \[ H=h_s+h_b+h_c+ct \] where the quantum subsystem Hamiltonian matrix elements $ \langle\psi_i|hs|\psi_j\rangle $ are the matrix elements of the diabats attribute of the hs type. The classical subsystem potential, here $ hb=V(Q) $ ,is written in terms of the normal modes of the classical subsystem $Q$. These normal mode coordinates can be found in the W attribute of the hb type. Each state is coupled to one of $ N $ normal modes. Here we assume that the diabatic basis states $ \psi $ are eigenstates of some quantum subsystem operator $ \hat q $ such that \[ \hat q |\psi_j\rangle =f_j|\psi_j\rangle \] and the eigenvalues $ f_j $ are supplied by the user. The bilinear coupling term is written \[ h_c=-\sum_n^N \sum_k^{K_n} g_{k,n} Q_{k} f_n |\psi_n\rangle\langle\psi_n|\] with counter term \[ ct=\sum_n^N \sum_k^{K_n} f_n^2 \frac{g_{k,n}^2}{2m_{k,n}\omega_{k,n}^2}|\psi_n\rangle\langle\psi_n|. \] The spectral density associated with state $ n $ is defined \[ J_n(\omega)=\frac{\pi}{\hbar}\sum_k^{K_n}\frac{g_{k,n}^2}{2m_{k,n}\omega_{k,n}}\delta_{\omega-\omega_{k,n}}.\] The re-\/organization energy for each state is defined \[ \lambda_n=\frac{1}{\pi} \int_0^\infty \frac{J_n(\omega)}{\omega} d\omega \] such that, \[ g_{k,n}^2=\frac{2m_{k,n} \lambda_n m_{k,n} \omega_{k,n}^2}{K_n}\] and \[ ct=2 \hbar \sum_n^N \lambda_n f_n^2|\psi_n\rangle\langle\psi_n| .\] \begin{DoxyAuthor}{Authors}
+Daniel Montemayor
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 2011, Sept 2011, Oct 2012 
+\end{DoxyDate}
+
+
+\subsection{Member Function/\+Subroutine Documentation}
+\hypertarget{classdiagonalcaldeiraleggett__class_aafa02474c975bce12990f64ad6f9a89b}{\index{diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}!diagonalcaldeiraleggett\+\_\+check@{diagonalcaldeiraleggett\+\_\+check}}
+\index{diagonalcaldeiraleggett\+\_\+check@{diagonalcaldeiraleggett\+\_\+check}!diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}}
+\subsubsection[{diagonalcaldeiraleggett\+\_\+check}]{\setlength{\rightskip}{0pt plus 5cm}integer(short) function diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+\_\+check (
+\begin{DoxyParamCaption}
+\item[{type({\bf diagonalcaldeiraleggett}), intent(in)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdiagonalcaldeiraleggett__class_aafa02474c975bce12990f64ad6f9a89b}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdiagonalcaldeiraleggett__class_aafa02474c975bce12990f64ad6f9a89b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classdiagonalcaldeiraleggett__class_acdd94a8e0e2bd6467a3e09fdeb3ce3bf}{\index{diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}!diagonalcaldeiraleggett\+\_\+display@{diagonalcaldeiraleggett\+\_\+display}}
+\index{diagonalcaldeiraleggett\+\_\+display@{diagonalcaldeiraleggett\+\_\+display}!diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}}
+\subsubsection[{diagonalcaldeiraleggett\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}subroutine diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{type({\bf diagonalcaldeiraleggett}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdiagonalcaldeiraleggett__class_acdd94a8e0e2bd6467a3e09fdeb3ce3bf}
+\hypertarget{classdiagonalcaldeiraleggett__class_a77a4b59596281583000705c1aed66876}{\index{diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}!diagonalcaldeiraleggett\+\_\+init@{diagonalcaldeiraleggett\+\_\+init}}
+\index{diagonalcaldeiraleggett\+\_\+init@{diagonalcaldeiraleggett\+\_\+init}!diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}}
+\subsubsection[{diagonalcaldeiraleggett\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{type({\bf diagonalcaldeiraleggett}), intent(inout)}]{this, }
+\item[{type(quantum), intent(inout), target}]{qs, }
+\item[{type(classical), intent(inout), target}]{cs, }
+\item[{character$\ast$($\ast$), intent(in), optional}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdiagonalcaldeiraleggett__class_a77a4b59596281583000705c1aed66876}
+
+
+Creates and initializes the Diagonal\+Caldeira\+Legget coupling type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em this} & is the derived coupling type to be initialized. \\
+\hline
+\mbox{\tt in,out}  & {\em qs} & is a general quantum subsystem to be coupled to a classical subsystem. \\
+\hline
+\mbox{\tt in,out}  & {\em cs} & is a general classical subsysterm to be coupled to the quantum subsystem. \\
+\hline
+\mbox{\tt in}  & {\em file} & is a string containing the name of a previously saved Diagonal\+Caldeira\+Leggett used as an input file to initialize T\+H\+I\+S. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+If no input file provided the user must manually initialize T\+H\+I\+S using stout. $<$==================================================================== 
+\end{DoxyRemark}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdiagonalcaldeiraleggett__class_a77a4b59596281583000705c1aed66876_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classdiagonalcaldeiraleggett__class_a0d2ff90e3d5b6fe8f39efb94fbe8b69e}{\index{diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}!diagonalcaldeiraleggett\+\_\+kill@{diagonalcaldeiraleggett\+\_\+kill}}
+\index{diagonalcaldeiraleggett\+\_\+kill@{diagonalcaldeiraleggett\+\_\+kill}!diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}}
+\subsubsection[{diagonalcaldeiraleggett\+\_\+kill}]{\setlength{\rightskip}{0pt plus 5cm}subroutine diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+\_\+kill (
+\begin{DoxyParamCaption}
+\item[{type({\bf diagonalcaldeiraleggett}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdiagonalcaldeiraleggett__class_a0d2ff90e3d5b6fe8f39efb94fbe8b69e}
+\hypertarget{classdiagonalcaldeiraleggett__class_a7247bcb797125177687611a7fb58a0ae}{\index{diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}!diagonalcaldeiraleggett\+\_\+resample@{diagonalcaldeiraleggett\+\_\+resample}}
+\index{diagonalcaldeiraleggett\+\_\+resample@{diagonalcaldeiraleggett\+\_\+resample}!diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}}
+\subsubsection[{diagonalcaldeiraleggett\+\_\+resample}]{\setlength{\rightskip}{0pt plus 5cm}subroutine diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+\_\+resample (
+\begin{DoxyParamCaption}
+\item[{type({\bf diagonalcaldeiraleggett}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdiagonalcaldeiraleggett__class_a7247bcb797125177687611a7fb58a0ae}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classdiagonalcaldeiraleggett__class_a7247bcb797125177687611a7fb58a0ae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classdiagonalcaldeiraleggett__class_aa98c2c7a65adcda966ad7c8e9b7b0558}{\index{diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}!diagonalcaldeiraleggett\+\_\+save@{diagonalcaldeiraleggett\+\_\+save}}
+\index{diagonalcaldeiraleggett\+\_\+save@{diagonalcaldeiraleggett\+\_\+save}!diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}}
+\subsubsection[{diagonalcaldeiraleggett\+\_\+save}]{\setlength{\rightskip}{0pt plus 5cm}subroutine diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+\_\+save (
+\begin{DoxyParamCaption}
+\item[{type({\bf diagonalcaldeiraleggett}), intent(in)}]{this, }
+\item[{character$\ast$($\ast$), intent(in)}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdiagonalcaldeiraleggett__class_aa98c2c7a65adcda966ad7c8e9b7b0558}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdiagonalcaldeiraleggett__class_aa98c2c7a65adcda966ad7c8e9b7b0558_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classdiagonalcaldeiraleggett__class_a7d2be81a6936c89b00a36e6ded7bd9a8}{\index{diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}!diagonalcaldeiraleggett\+\_\+update@{diagonalcaldeiraleggett\+\_\+update}}
+\index{diagonalcaldeiraleggett\+\_\+update@{diagonalcaldeiraleggett\+\_\+update}!diagonalcaldeiraleggett\+\_\+class@{diagonalcaldeiraleggett\+\_\+class}}
+\subsubsection[{diagonalcaldeiraleggett\+\_\+update}]{\setlength{\rightskip}{0pt plus 5cm}subroutine diagonalcaldeiraleggett\+\_\+class\+::diagonalcaldeiraleggett\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{type({\bf diagonalcaldeiraleggett}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classdiagonalcaldeiraleggett__class_a7d2be81a6936c89b00a36e6ded7bd9a8}
+
+
+The documentation for this module was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_diagonal_caldeira_leggett_8f90}{Diagonal\+Caldeira\+Leggett.\+f90}\end{DoxyCompactItemize}

@@ -1,0 +1,99 @@
+\hypertarget{structbilinear__class_1_1bilinear}{\section{bilinear\+\_\+class\+:\+:bilinear Type Reference}
+\label{structbilinear__class_1_1bilinear}\index{bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}}
+}
+
+
+Derived quantum-\/classical coupling term.  
+
+
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+logical \hyperlink{structbilinear__class_1_1bilinear_a97bca767cbc1ecae9489db5950da06bc}{initialized}
+\begin{DoxyCompactList}\small\item\em True if coupling term has been properly initialized. \end{DoxyCompactList}\item 
+type(hc) \hyperlink{structbilinear__class_1_1bilinear_aeb9f98e320b690f4bfef83caf407dfaa}{hc}
+\begin{DoxyCompactList}\small\item\em Inherited coupling primitive type. \end{DoxyCompactList}\item 
+real(double), dimension(\+:), pointer \hyperlink{structbilinear__class_1_1bilinear_aabd615d49d52220aac52707b2e2b1aa6}{lambda}
+\begin{DoxyCompactList}\small\item\em Array containing the vaules of the bath reorganization energy about each state and has dimensions (qs.\+hs.\+nstate). \end{DoxyCompactList}\item 
+real(double), dimension(\+:), pointer \hyperlink{structbilinear__class_1_1bilinear_a2ef21bf96002e18fe9aa3c9edfcca3ed}{cterm}
+\item 
+integer(long), dimension(\+:), \\*
+pointer \hyperlink{structbilinear__class_1_1bilinear_a78e65d82cd358d5dfa19b780ab877fa0}{bdof}
+\begin{DoxyCompactList}\small\item\em Number of dissipative bath modes associated to each state has dimensions (qs.\+hs.\+nstate). \end{DoxyCompactList}\item 
+real(double), dimension(\+:,\+:), \\*
+pointer \hyperlink{structbilinear__class_1_1bilinear_a910401429e7649dba49acbab872a1b75}{g}
+\begin{DoxyCompactList}\small\item\em Coefficient coupling each quantum state to the normal modes of the classical subsystem. \end{DoxyCompactList}\item 
+real(double), dimension(\+:), pointer \hyperlink{structbilinear__class_1_1bilinear_a809699845e36e344b7aeb51642c333ec}{f}
+\begin{DoxyCompactList}\small\item\em Eigen values of the $ \hat q $ operator. The native diabatic basis states are assumed eigen states of the $ \hat q $ operator with eigen values stored in the array f of dimension (qs.\+hs.\+nstate). \end{DoxyCompactList}\item 
+logical, dimension(\+:,\+:), pointer \hyperlink{structbilinear__class_1_1bilinear_aeb06e78f97c5cdac0c83422ec087e2e0}{gmap}
+\item 
+logical \hyperlink{structbilinear__class_1_1bilinear_a78eec2ff8a3e1de38eb02ceeb108ad15}{wbasis}
+\item 
+logical \hyperlink{structbilinear__class_1_1bilinear_aba7556e23595f003ffcf20327dc18f3e}{ctused}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Derived quantum-\/classical coupling term. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structbilinear__class_1_1bilinear_a78e65d82cd358d5dfa19b780ab877fa0}{\index{bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}!bdof@{bdof}}
+\index{bdof@{bdof}!bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}}
+\subsubsection[{bdof}]{\setlength{\rightskip}{0pt plus 5cm}integer(long), dimension(\+:), pointer bilinear\+\_\+class\+::bilinear\+::bdof\hspace{0.3cm}{\ttfamily [private]}}}\label{structbilinear__class_1_1bilinear_a78e65d82cd358d5dfa19b780ab877fa0}
+
+
+Number of dissipative bath modes associated to each state has dimensions (qs.\+hs.\+nstate). 
+
+\hypertarget{structbilinear__class_1_1bilinear_a2ef21bf96002e18fe9aa3c9edfcca3ed}{\index{bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}!cterm@{cterm}}
+\index{cterm@{cterm}!bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}}
+\subsubsection[{cterm}]{\setlength{\rightskip}{0pt plus 5cm}real(double), dimension(\+:), pointer bilinear\+\_\+class\+::bilinear\+::cterm\hspace{0.3cm}{\ttfamily [private]}}}\label{structbilinear__class_1_1bilinear_a2ef21bf96002e18fe9aa3c9edfcca3ed}
+\hypertarget{structbilinear__class_1_1bilinear_aba7556e23595f003ffcf20327dc18f3e}{\index{bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}!ctused@{ctused}}
+\index{ctused@{ctused}!bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}}
+\subsubsection[{ctused}]{\setlength{\rightskip}{0pt plus 5cm}logical bilinear\+\_\+class\+::bilinear\+::ctused\hspace{0.3cm}{\ttfamily [private]}}}\label{structbilinear__class_1_1bilinear_aba7556e23595f003ffcf20327dc18f3e}
+\hypertarget{structbilinear__class_1_1bilinear_a809699845e36e344b7aeb51642c333ec}{\index{bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}!f@{f}}
+\index{f@{f}!bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}}
+\subsubsection[{f}]{\setlength{\rightskip}{0pt plus 5cm}real(double), dimension(\+:), pointer bilinear\+\_\+class\+::bilinear\+::f\hspace{0.3cm}{\ttfamily [private]}}}\label{structbilinear__class_1_1bilinear_a809699845e36e344b7aeb51642c333ec}
+
+
+Eigen values of the $ \hat q $ operator. The native diabatic basis states are assumed eigen states of the $ \hat q $ operator with eigen values stored in the array f of dimension (qs.\+hs.\+nstate). 
+
+\hypertarget{structbilinear__class_1_1bilinear_a910401429e7649dba49acbab872a1b75}{\index{bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}!g@{g}}
+\index{g@{g}!bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}}
+\subsubsection[{g}]{\setlength{\rightskip}{0pt plus 5cm}real(double), dimension(\+:,\+:), pointer bilinear\+\_\+class\+::bilinear\+::g\hspace{0.3cm}{\ttfamily [private]}}}\label{structbilinear__class_1_1bilinear_a910401429e7649dba49acbab872a1b75}
+
+
+Coefficient coupling each quantum state to the normal modes of the classical subsystem. 
+
+\hypertarget{structbilinear__class_1_1bilinear_aeb06e78f97c5cdac0c83422ec087e2e0}{\index{bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}!gmap@{gmap}}
+\index{gmap@{gmap}!bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}}
+\subsubsection[{gmap}]{\setlength{\rightskip}{0pt plus 5cm}logical, dimension(\+:,\+:), pointer bilinear\+\_\+class\+::bilinear\+::gmap\hspace{0.3cm}{\ttfamily [private]}}}\label{structbilinear__class_1_1bilinear_aeb06e78f97c5cdac0c83422ec087e2e0}
+\hypertarget{structbilinear__class_1_1bilinear_aeb9f98e320b690f4bfef83caf407dfaa}{\index{bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}!hc@{hc}}
+\index{hc@{hc}!bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}}
+\subsubsection[{hc}]{\setlength{\rightskip}{0pt plus 5cm}type(hc) bilinear\+\_\+class\+::bilinear\+::hc\hspace{0.3cm}{\ttfamily [private]}}}\label{structbilinear__class_1_1bilinear_aeb9f98e320b690f4bfef83caf407dfaa}
+
+
+Inherited coupling primitive type. 
+
+\hypertarget{structbilinear__class_1_1bilinear_a97bca767cbc1ecae9489db5950da06bc}{\index{bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}!initialized@{initialized}}
+\index{initialized@{initialized}!bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}}
+\subsubsection[{initialized}]{\setlength{\rightskip}{0pt plus 5cm}logical bilinear\+\_\+class\+::bilinear\+::initialized\hspace{0.3cm}{\ttfamily [private]}}}\label{structbilinear__class_1_1bilinear_a97bca767cbc1ecae9489db5950da06bc}
+
+
+True if coupling term has been properly initialized. 
+
+\hypertarget{structbilinear__class_1_1bilinear_aabd615d49d52220aac52707b2e2b1aa6}{\index{bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}!lambda@{lambda}}
+\index{lambda@{lambda}!bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}}
+\subsubsection[{lambda}]{\setlength{\rightskip}{0pt plus 5cm}real(double), dimension(\+:), pointer bilinear\+\_\+class\+::bilinear\+::lambda\hspace{0.3cm}{\ttfamily [private]}}}\label{structbilinear__class_1_1bilinear_aabd615d49d52220aac52707b2e2b1aa6}
+
+
+Array containing the vaules of the bath reorganization energy about each state and has dimensions (qs.\+hs.\+nstate). 
+
+\hypertarget{structbilinear__class_1_1bilinear_a78eec2ff8a3e1de38eb02ceeb108ad15}{\index{bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}!wbasis@{wbasis}}
+\index{wbasis@{wbasis}!bilinear\+\_\+class\+::bilinear@{bilinear\+\_\+class\+::bilinear}}
+\subsubsection[{wbasis}]{\setlength{\rightskip}{0pt plus 5cm}logical bilinear\+\_\+class\+::bilinear\+::wbasis\hspace{0.3cm}{\ttfamily [private]}}}\label{structbilinear__class_1_1bilinear_a78eec2ff8a3e1de38eb02ceeb108ad15}
+
+
+The documentation for this type was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{bilinear_8f90}{bilinear.\+f90}\item 
+src/\hyperlink{bilinearcopy_8f90}{bilinearcopy.\+f90}\end{DoxyCompactItemize}

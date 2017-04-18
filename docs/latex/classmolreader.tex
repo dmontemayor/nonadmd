@@ -1,0 +1,748 @@
+\hypertarget{classmolreader}{\section{molreader Module Reference}
+\label{classmolreader}\index{molreader@{molreader}}
+}
+
+
+Molecule Building Utility.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacemolreader_1_1advance__record}{advance\+\_\+record}
+\item 
+type \hyperlink{structmolreader_1_1atom}{atom}
+\item 
+type \hyperlink{structmolreader_1_1cryst1}{cryst1}
+\item 
+interface \hyperlink{interfacemolreader_1_1display}{display}
+\item 
+type \hyperlink{structmolreader_1_1model}{model}
+\item 
+interface \hyperlink{interfacemolreader_1_1new}{new}
+\item 
+type \hyperlink{structmolreader_1_1psfatom}{psfatom}
+\item 
+interface \hyperlink{interfacemolreader_1_1read}{read}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+character(len=\hyperlink{classmolreader_a8f12be3272b946fd698c9fbaf2ba9d32}{reclen}) function, \\*
+public \hyperlink{classmolreader_af6c857ef51f99971a66b1c293d24906b}{next\+\_\+record} ()
+\item 
+subroutine, public \hyperlink{classmolreader_a38a3903d901bc5e0b318bcc0dfd1b3ff}{open\+\_\+pdb} (file)
+\begin{DoxyCompactList}\small\item\em Initialize P\+D\+B file for parsing. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmolreader_a5aafbdb9b4afbb96bdc20ae58d547699}{close\+\_\+pdb}
+\item 
+subroutine, public \hyperlink{classmolreader_af85c66302e278af03e0cc94dc42e662e}{rewind\+\_\+pdb}
+\begin{DoxyCompactList}\small\item\em Rewind an initialized P\+D\+B file for parsing. \end{DoxyCompactList}\item 
+character(len=\hyperlink{classmolreader_acd493d996a1fcd0ed77937e925c9b7fe}{linelen}) \\*
+function, public \hyperlink{classmolreader_ac6b85a406b7ebd0810f0d63beeeda783}{next\+\_\+psf} ()
+\item 
+subroutine, public \hyperlink{classmolreader_a3ebd81391f00e3279bf262b2879af97a}{open\+\_\+psf} (file)
+\begin{DoxyCompactList}\small\item\em Initialize P\+S\+F file for parsing. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmolreader_aac446b95d6c274d93e11e45286e60e4d}{close\+\_\+psf}
+\item 
+subroutine, public \hyperlink{classmolreader_a6d79c8d97fd91cfb25dec2b67320c77b}{rewind\+\_\+psf}
+\begin{DoxyCompactList}\small\item\em Rewind an initialized P\+S\+F file for parsing. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmolreader_a7a4cb6436916cd4b8ee0341d528e9c73}{advance\+\_\+psf} (section, nrecord)
+\begin{DoxyCompactList}\small\item\em Advances opened psf file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classmolreader_af85c1b386f0dc78ebf55e003b4f8c83a}{read\+\_\+cryst1} (this)
+\item 
+subroutine \hyperlink{classmolreader_ac9a2b0ff287faa780311cc432b866610}{display\+\_\+cryst1} (this, unit)
+\item 
+subroutine \hyperlink{classmolreader_ac284dc33f40874d6156c1cd36781002c}{new\+\_\+cryst1} (this)
+\item 
+subroutine \hyperlink{classmolreader_a64ff990dc05c01debc1138dd012f4bcb}{read\+\_\+model} (this)
+\begin{DoxyCompactList}\small\item\em Reads and returns M\+O\+D\+E\+L Record type. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmolreader_a462d061944b74f7145b8bf89fc3439fc}{display\+\_\+model} (this, unit)
+\item 
+subroutine \hyperlink{classmolreader_a8edb660b2e1b64a5d78593c734afbe95}{new\+\_\+model} (this)
+\item 
+subroutine \hyperlink{classmolreader_a49ccaf345b633e27f69ad7a5a8637a2a}{read\+\_\+atom} (this)
+\begin{DoxyCompactList}\small\item\em Reads and returns A\+T\+O\+M/\+H\+E\+T\+A\+T\+M/\+T\+E\+R Record types. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmolreader_ae1000e1ea4e46f858a3640c08563c3ff}{new\+\_\+atom} (this)
+\item 
+subroutine \hyperlink{classmolreader_adb757da4ec2256578422254dad5b262e}{display\+\_\+atom} (this, unit)
+\item 
+subroutine \hyperlink{classmolreader_a16d4776fded57cf8aa38f639610cad84}{refresh\+\_\+buffer}
+\item 
+subroutine \hyperlink{classmolreader_ac7b950f165e89b12ccc8fff1c0f3bae9}{advance\+\_\+buffer}
+\item 
+subroutine \hyperlink{classmolreader_a81fcc5a3f49380ccd10b02b229f5067d}{read\+\_\+psfatom} (this)
+\item 
+subroutine \hyperlink{classmolreader_a737dbe023a6cbecab8269981ffdfa31c}{display\+\_\+psfatom} (this, unit)
+\item 
+subroutine \hyperlink{classmolreader_a56968311293e3c68022fe3bbe3600306}{new\+\_\+psfatom} (this)
+\item 
+subroutine \hyperlink{classmolreader_abf243c87d2f9429f3ed94293d438c7c7}{advance\+\_\+psfbuffer}
+\item 
+subroutine \hyperlink{classmolreader_a13131c46b34d0385ba7eadd0b1b88df9}{refresh\+\_\+psfbuffer}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer(long) \hyperlink{classmolreader_a5b0570862e5318937ea68a01966ed56f}{pdbunit}
+\item 
+integer(long) \hyperlink{classmolreader_a2b57a032db6161c98961f5e8109c3b90}{psfunit}
+\item 
+integer(long) \hyperlink{classmolreader_ac41219b2f68591f315dded4488483263}{parsingunit}
+\item 
+character(len=path) \hyperlink{classmolreader_aa372f060e4e581b1c14e2b46a65d2df4}{pdbfile}
+\item 
+character(len=path) \hyperlink{classmolreader_a48ac5c969e35417342bb66a57adec842}{psffile}
+\item 
+logical \hyperlink{classmolreader_ad7636360c8e0ecb526000567dd32d2d0}{pdbisopen}
+\item 
+logical \hyperlink{classmolreader_ae5cd9063d12a39b0e8266e184439c808}{psfisopen}
+\item 
+integer(long), parameter \hyperlink{classmolreader_a8f12be3272b946fd698c9fbaf2ba9d32}{reclen}
+\item 
+integer(long), parameter \hyperlink{classmolreader_acd493d996a1fcd0ed77937e925c9b7fe}{linelen}
+\item 
+integer(long), parameter \hyperlink{classmolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}
+\item 
+character(len=5) \hyperlink{classmolreader_ac14650c697f68fd15530b93807e3f42f}{linefmt}
+\item 
+character(len=\hyperlink{classmolreader_acd493d996a1fcd0ed77937e925c9b7fe}{linelen}), \\*
+dimension(\hyperlink{classmolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}) \hyperlink{classmolreader_a06d78b69405420664607fb01b4d8e97a}{buffer}
+\item 
+character(len=\hyperlink{classmolreader_acd493d996a1fcd0ed77937e925c9b7fe}{linelen}), \\*
+dimension(\hyperlink{classmolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}) \hyperlink{classmolreader_aab845daa54f6803a37ceb91d7ad296a7}{psfbuffer}
+\item 
+integer(long) \hyperlink{classmolreader_a7b2e4f11efe55d80469efa3f7aeacbab}{buffer\+\_\+cursor}
+\item 
+integer(long) \hyperlink{classmolreader_ac7969154d301aab4a51cde89ec2f08ee}{buffer\+\_\+count}
+\item 
+integer(long) \hyperlink{classmolreader_ab080c636a2423beb139bdd65dcd884c3}{psfbuffer\+\_\+cursor}
+\item 
+integer(long) \hyperlink{classmolreader_af2dddaa7f6249a39287ffcdcbe2ce558}{psfbuffer\+\_\+count}
+\item 
+logical, dimension(\hyperlink{classmolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}) \hyperlink{classmolreader_a3368bfc7f2d07a7f472a8118220516a9}{buffermask}
+\item 
+logical, dimension(\hyperlink{classmolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}) \hyperlink{classmolreader_a747bd2c32990916c313506c805317e88}{psfbuffermask}
+\item 
+logical \hyperlink{classmolreader_a1f82d6f3302ab89b43d1fcbcba5d8fb2}{recording\+\_\+parsingdata}
+\item 
+logical \hyperlink{classmolreader_aec460f295b88cb8eb8dd58901edce0ba}{to}
+\item 
+logical \hyperlink{classmolreader_af3ae5caa4d00fa50c74d2f3154e8ea7c}{save}
+\item 
+logical \hyperlink{classmolreader_a151a8b8c33b86ab86d352aeaaf9ec84b}{parsing}
+\item 
+logical \hyperlink{classmolreader_a29899cd9778ac12af6bad404c1092518}{timing}
+\item 
+logical \hyperlink{classmolreader_ad29941441961d6bb225120cc88f93db7}{data}
+\item 
+real(double) \hyperlink{classmolreader_a5cf7dc5ccdeb068704a693ec6b248796}{parsing\+\_\+rate}
+\item 
+real(double) \hyperlink{classmolreader_ad5b1ed6898caa1c2161f0cdc6c10fc72}{time0}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Molecule Building Utility. 
+
+Supports P\+D\+B -\/ Atomic Coordinate Entry Format Version 3.\+3 plus some extra P\+D\+B entries typical of some M\+D packages. \begin{DoxyAuthor}{Authors}
+Daniel Montemayor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23 Feb 2012 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000001}{Bug}]psf file cannont have extra charaters in 'section' line. (go to advance\+\_\+psf subrtouine) \end{DoxyRefDesc}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]depreciate next\+\_\+record, and \hyperlink{interfacemolreader_1_1advance__record}{advance\+\_\+record} use instead next\+\_\+pdb and advance\+\_\+pdb \end{DoxyRefDesc}
+
+
+\subsection{Member Function/\+Subroutine Documentation}
+\hypertarget{classmolreader_ac7b950f165e89b12ccc8fff1c0f3bae9}{\index{molreader@{molreader}!advance\+\_\+buffer@{advance\+\_\+buffer}}
+\index{advance\+\_\+buffer@{advance\+\_\+buffer}!molreader@{molreader}}
+\subsubsection[{advance\+\_\+buffer}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::advance\+\_\+buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_ac7b950f165e89b12ccc8fff1c0f3bae9}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmolreader_ac7b950f165e89b12ccc8fff1c0f3bae9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_a7a4cb6436916cd4b8ee0341d528e9c73}{\index{molreader@{molreader}!advance\+\_\+psf@{advance\+\_\+psf}}
+\index{advance\+\_\+psf@{advance\+\_\+psf}!molreader@{molreader}}
+\subsubsection[{advance\+\_\+psf}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public molreader\+::advance\+\_\+psf (
+\begin{DoxyParamCaption}
+\item[{character$\ast$($\ast$), intent(in), optional}]{section, }
+\item[{integer(long), optional}]{nrecord}
+\end{DoxyParamCaption}
+)}}\label{classmolreader_a7a4cb6436916cd4b8ee0341d528e9c73}
+
+
+Advances opened psf file. 
+
+Advances one line or optionally to one of the following sections\+: title, atoms, bonds, angles, dihedrals, impropers, or cross-\/terms \begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000002}{Bug}]trim(str).ne.'section'\+: means that nothing else can be written on section line, the bug can be fixed by selecting the columns of the \hyperlink{classmolreader_ac6b85a406b7ebd0810f0d63beeeda783}{next\+\_\+psf()} string not the trim. \end{DoxyRefDesc}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmolreader_a7a4cb6436916cd4b8ee0341d528e9c73_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{classmolreader_a7a4cb6436916cd4b8ee0341d528e9c73_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_abf243c87d2f9429f3ed94293d438c7c7}{\index{molreader@{molreader}!advance\+\_\+psfbuffer@{advance\+\_\+psfbuffer}}
+\index{advance\+\_\+psfbuffer@{advance\+\_\+psfbuffer}!molreader@{molreader}}
+\subsubsection[{advance\+\_\+psfbuffer}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::advance\+\_\+psfbuffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_abf243c87d2f9429f3ed94293d438c7c7}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{classmolreader_abf243c87d2f9429f3ed94293d438c7c7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmolreader_abf243c87d2f9429f3ed94293d438c7c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_a5aafbdb9b4afbb96bdc20ae58d547699}{\index{molreader@{molreader}!close\+\_\+pdb@{close\+\_\+pdb}}
+\index{close\+\_\+pdb@{close\+\_\+pdb}!molreader@{molreader}}
+\subsubsection[{close\+\_\+pdb}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public molreader\+::close\+\_\+pdb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmolreader_a5aafbdb9b4afbb96bdc20ae58d547699}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classmolreader_a5aafbdb9b4afbb96bdc20ae58d547699_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_aac446b95d6c274d93e11e45286e60e4d}{\index{molreader@{molreader}!close\+\_\+psf@{close\+\_\+psf}}
+\index{close\+\_\+psf@{close\+\_\+psf}!molreader@{molreader}}
+\subsubsection[{close\+\_\+psf}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public molreader\+::close\+\_\+psf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmolreader_aac446b95d6c274d93e11e45286e60e4d}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmolreader_aac446b95d6c274d93e11e45286e60e4d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_adb757da4ec2256578422254dad5b262e}{\index{molreader@{molreader}!display\+\_\+atom@{display\+\_\+atom}}
+\index{display\+\_\+atom@{display\+\_\+atom}!molreader@{molreader}}
+\subsubsection[{display\+\_\+atom}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::display\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{type({\bf atom}), intent(inout)}]{this, }
+\item[{integer(long), optional}]{unit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_adb757da4ec2256578422254dad5b262e}
+\hypertarget{classmolreader_ac9a2b0ff287faa780311cc432b866610}{\index{molreader@{molreader}!display\+\_\+cryst1@{display\+\_\+cryst1}}
+\index{display\+\_\+cryst1@{display\+\_\+cryst1}!molreader@{molreader}}
+\subsubsection[{display\+\_\+cryst1}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::display\+\_\+cryst1 (
+\begin{DoxyParamCaption}
+\item[{type({\bf cryst1}), intent(inout)}]{this, }
+\item[{integer(long), optional}]{unit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_ac9a2b0ff287faa780311cc432b866610}
+\hypertarget{classmolreader_a462d061944b74f7145b8bf89fc3439fc}{\index{molreader@{molreader}!display\+\_\+model@{display\+\_\+model}}
+\index{display\+\_\+model@{display\+\_\+model}!molreader@{molreader}}
+\subsubsection[{display\+\_\+model}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::display\+\_\+model (
+\begin{DoxyParamCaption}
+\item[{type({\bf model}), intent(inout)}]{this, }
+\item[{integer(long), optional}]{unit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a462d061944b74f7145b8bf89fc3439fc}
+\hypertarget{classmolreader_a737dbe023a6cbecab8269981ffdfa31c}{\index{molreader@{molreader}!display\+\_\+psfatom@{display\+\_\+psfatom}}
+\index{display\+\_\+psfatom@{display\+\_\+psfatom}!molreader@{molreader}}
+\subsubsection[{display\+\_\+psfatom}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::display\+\_\+psfatom (
+\begin{DoxyParamCaption}
+\item[{type({\bf psfatom}), intent(in)}]{this, }
+\item[{integer(long), optional}]{unit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a737dbe023a6cbecab8269981ffdfa31c}
+\hypertarget{classmolreader_ae1000e1ea4e46f858a3640c08563c3ff}{\index{molreader@{molreader}!new\+\_\+atom@{new\+\_\+atom}}
+\index{new\+\_\+atom@{new\+\_\+atom}!molreader@{molreader}}
+\subsubsection[{new\+\_\+atom}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::new\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{type({\bf atom}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_ae1000e1ea4e46f858a3640c08563c3ff}
+\hypertarget{classmolreader_ac284dc33f40874d6156c1cd36781002c}{\index{molreader@{molreader}!new\+\_\+cryst1@{new\+\_\+cryst1}}
+\index{new\+\_\+cryst1@{new\+\_\+cryst1}!molreader@{molreader}}
+\subsubsection[{new\+\_\+cryst1}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::new\+\_\+cryst1 (
+\begin{DoxyParamCaption}
+\item[{type({\bf cryst1}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_ac284dc33f40874d6156c1cd36781002c}
+\hypertarget{classmolreader_a8edb660b2e1b64a5d78593c734afbe95}{\index{molreader@{molreader}!new\+\_\+model@{new\+\_\+model}}
+\index{new\+\_\+model@{new\+\_\+model}!molreader@{molreader}}
+\subsubsection[{new\+\_\+model}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::new\+\_\+model (
+\begin{DoxyParamCaption}
+\item[{type({\bf model}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a8edb660b2e1b64a5d78593c734afbe95}
+\hypertarget{classmolreader_a56968311293e3c68022fe3bbe3600306}{\index{molreader@{molreader}!new\+\_\+psfatom@{new\+\_\+psfatom}}
+\index{new\+\_\+psfatom@{new\+\_\+psfatom}!molreader@{molreader}}
+\subsubsection[{new\+\_\+psfatom}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::new\+\_\+psfatom (
+\begin{DoxyParamCaption}
+\item[{type({\bf psfatom}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a56968311293e3c68022fe3bbe3600306}
+\hypertarget{classmolreader_ac6b85a406b7ebd0810f0d63beeeda783}{\index{molreader@{molreader}!next\+\_\+psf@{next\+\_\+psf}}
+\index{next\+\_\+psf@{next\+\_\+psf}!molreader@{molreader}}
+\subsubsection[{next\+\_\+psf}]{\setlength{\rightskip}{0pt plus 5cm}character(len={\bf linelen}) function, public molreader\+::next\+\_\+psf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmolreader_ac6b85a406b7ebd0810f0d63beeeda783}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmolreader_ac6b85a406b7ebd0810f0d63beeeda783_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_af6c857ef51f99971a66b1c293d24906b}{\index{molreader@{molreader}!next\+\_\+record@{next\+\_\+record}}
+\index{next\+\_\+record@{next\+\_\+record}!molreader@{molreader}}
+\subsubsection[{next\+\_\+record}]{\setlength{\rightskip}{0pt plus 5cm}character(len={\bf reclen}) function, public molreader\+::next\+\_\+record (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmolreader_af6c857ef51f99971a66b1c293d24906b}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classmolreader_af6c857ef51f99971a66b1c293d24906b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_a38a3903d901bc5e0b318bcc0dfd1b3ff}{\index{molreader@{molreader}!open\+\_\+pdb@{open\+\_\+pdb}}
+\index{open\+\_\+pdb@{open\+\_\+pdb}!molreader@{molreader}}
+\subsubsection[{open\+\_\+pdb}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public molreader\+::open\+\_\+pdb (
+\begin{DoxyParamCaption}
+\item[{character$\ast$($\ast$), intent(in)}]{file}
+\end{DoxyParamCaption}
+)}}\label{classmolreader_a38a3903d901bc5e0b318bcc0dfd1b3ff}
+
+
+Initialize P\+D\+B file for parsing. 
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmolreader_a38a3903d901bc5e0b318bcc0dfd1b3ff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classmolreader_a38a3903d901bc5e0b318bcc0dfd1b3ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_a3ebd81391f00e3279bf262b2879af97a}{\index{molreader@{molreader}!open\+\_\+psf@{open\+\_\+psf}}
+\index{open\+\_\+psf@{open\+\_\+psf}!molreader@{molreader}}
+\subsubsection[{open\+\_\+psf}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public molreader\+::open\+\_\+psf (
+\begin{DoxyParamCaption}
+\item[{character$\ast$($\ast$), intent(in)}]{file}
+\end{DoxyParamCaption}
+)}}\label{classmolreader_a3ebd81391f00e3279bf262b2879af97a}
+
+
+Initialize P\+S\+F file for parsing. 
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classmolreader_a3ebd81391f00e3279bf262b2879af97a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classmolreader_a3ebd81391f00e3279bf262b2879af97a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_a49ccaf345b633e27f69ad7a5a8637a2a}{\index{molreader@{molreader}!read\+\_\+atom@{read\+\_\+atom}}
+\index{read\+\_\+atom@{read\+\_\+atom}!molreader@{molreader}}
+\subsubsection[{read\+\_\+atom}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::read\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{type({\bf atom}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a49ccaf345b633e27f69ad7a5a8637a2a}
+
+
+Reads and returns A\+T\+O\+M/\+H\+E\+T\+A\+T\+M/\+T\+E\+R Record types. 
+
+The A\+T\+O\+M records present the atomic coordinates for standard amino acids and nucleotides. They also present the occupancy and temperature factor for each atom. Non-\/polymer chemical coordinates use the H\+E\+T\+A\+T\+M record type. The element symbol is always present on each A\+T\+O\+M record; charge is optional.
+
+Changes in A\+T\+O\+M/\+H\+E\+T\+A\+T\+M records result from the standardization atom and residue nomenclature. This nomenclature is described in the Chemical Component Dictionary (\href{ftp://ftp.wwpdb.org/pub/pdb/data/monomers}{\tt ftp\+://ftp.\+wwpdb.\+org/pub/pdb/data/monomers}).
+
+Record Format
+
+\subsubsection*{C\+O\+L\+U\+M\+N\+S D\+A\+T\+A T\+Y\+P\+E F\+I\+E\+L\+D D\+E\+F\+I\+N\+I\+T\+I\+O\+N }
+
+1 -\/ 6 Record name \char`\"{}\+A\+T\+O\+M  \char`\"{} 7 -\/ 11 Integer serial Atom serial number. 12 Character -\/ unused space. 13 -\/ 16 Atom name Atom name. 17 Character alt\+Loc Alternate location indicator. 18 -\/ 20 Residue name res\+Name Residue name. 21 Character -\/ unused space. 22 Character chain\+I\+D Chain identifier. 23 -\/ 26 Integer res\+Seq Residue sequence number. 27 A\+Char i\+Code Code for insertion of residues. 28 -\/ 30 L\+String(3) -\/ unused space. 31 -\/ 38 Real(8.\+3) x Orthogonal coordinates for X in Angstroms. 39 -\/ 46 Real(8.\+3) y Orthogonal coordinates for Y in Angstroms. 47 -\/ 54 Real(8.\+3) z Orthogonal coordinates for Z in Angstroms. 55 -\/ 60 Real(6.\+2) occupancy Occupancy. 61 -\/ 66 Real(6.\+2) temp\+Factor Temperature factor. 67 -\/ 72 L\+String(6) -\/ Unused section. 73 -\/ 76 L\+String(4) seg\+Name Segment Name. 77 -\/ 78 L\+String(2) element Element symbol, right-\/justified. \subsection*{79 -\/ 80 L\+String(2) charge Charge on the atom. }
+
+Non-\/polymer or other “non-\/standard” chemical coordinates, such as water molecules or atoms presented in H\+E\+T groups use the H\+E\+T\+A\+T\+M record type. They also present the occupancy and temperature factor for each atom. The A\+T\+O\+M records present the atomic coordinates for standard residues. The element symbol is always present on each H\+E\+T\+A\+T\+M record; charge is optional.
+
+Changes in A\+T\+O\+M/\+H\+E\+T\+A\+T\+M records will require standardization in atom and residue nomenclature. This nomenclature is described in the Chemical Component Dictionary, \href{ftp://ftp.wwpdb.org/pub/pdb/data/monomers}{\tt ftp\+://ftp.\+wwpdb.\+org/pub/pdb/data/monomers}.
+
+Record Format
+
+\subsubsection*{C\+O\+L\+U\+M\+N\+S D\+A\+T\+A T\+Y\+P\+E F\+I\+E\+L\+D D\+E\+F\+I\+N\+I\+T\+I\+O\+N }
+
+1 -\/ 6 Record name \char`\"{}\+H\+E\+T\+A\+T\+M\char`\"{} 7 -\/ 11 Integer serial Atom serial number. 13 -\/ 16 Atom name Atom name. 17 Character alt\+Loc Alternate location indicator. 18 -\/ 20 Residue name res\+Name Residue name. 22 Character chain\+I\+D Chain identifier. 23 -\/ 26 Integer res\+Seq Residue sequence number. 27 A\+Char i\+Code Code for insertion of residues. 31 -\/ 38 Real(8.\+3) x Orthogonal coordinates for X. 39 -\/ 46 Real(8.\+3) y Orthogonal coordinates for Y. 47 -\/ 54 Real(8.\+3) z Orthogonal coordinates for Z. 55 -\/ 60 Real(6.\+2) occupancy Occupancy. 61 -\/ 66 Real(6.\+2) temp\+Factor Temperature factor. 77 -\/ 78 L\+String(2) element Element symbol; right-\/justified. \subsection*{79 -\/ 80 L\+String(2) charge Charge on the atom. }
+
+The T\+E\+R record indicates the end of a list of A\+T\+O\+M/\+H\+E\+T\+A\+T\+M records for a chain.
+
+Record Format
+
+\subsubsection*{C\+O\+L\+U\+M\+N\+S D\+A\+T\+A T\+Y\+P\+E F\+I\+E\+L\+D D\+E\+F\+I\+N\+I\+T\+I\+O\+N }
+
+1 -\/ 6 Record name \char`\"{}\+T\+E\+R   \char`\"{} 7 -\/ 11 Integer serial Serial number. 12 Character -\/ unused space. 13 -\/ 16 L\+String(4) -\/ unused space. 17 Character -\/ unused space. 18 -\/ 20 Residue name res\+Name Residue name. 21 Character -\/ unused space. 22 Character chain\+I\+D Chain identifier. 23 -\/ 26 Integer res\+Seq Residue sequence number. 27 A\+Char i\+Code Insertion code.
+
+Notice A\+T\+O\+M, H\+E\+T\+A\+T\+M, and T\+E\+R can all be defined by the A\+T\+O\+M type 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classmolreader_a49ccaf345b633e27f69ad7a5a8637a2a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_af85c1b386f0dc78ebf55e003b4f8c83a}{\index{molreader@{molreader}!read\+\_\+cryst1@{read\+\_\+cryst1}}
+\index{read\+\_\+cryst1@{read\+\_\+cryst1}!molreader@{molreader}}
+\subsubsection[{read\+\_\+cryst1}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::read\+\_\+cryst1 (
+\begin{DoxyParamCaption}
+\item[{type({\bf cryst1}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_af85c1b386f0dc78ebf55e003b4f8c83a}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmolreader_af85c1b386f0dc78ebf55e003b4f8c83a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_a64ff990dc05c01debc1138dd012f4bcb}{\index{molreader@{molreader}!read\+\_\+model@{read\+\_\+model}}
+\index{read\+\_\+model@{read\+\_\+model}!molreader@{molreader}}
+\subsubsection[{read\+\_\+model}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::read\+\_\+model (
+\begin{DoxyParamCaption}
+\item[{type({\bf model}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a64ff990dc05c01debc1138dd012f4bcb}
+
+
+Reads and returns M\+O\+D\+E\+L Record type. 
+
+The M\+O\+D\+E\+L record specifies the model serial number when multiple models of the same structure are presented in a single coordinate entry, as is often the case with structures determined by N\+M\+R.
+
+Record Format
+
+\subsubsection*{C\+O\+L\+U\+M\+N\+S D\+A\+T\+A T\+Y\+P\+E F\+I\+E\+L\+D D\+E\+F\+I\+N\+I\+T\+I\+O\+N }
+
+1 -\/ 6 Record name \char`\"{}\+M\+O\+D\+E\+L \char`\"{} 7 -\/ 10 L\+String(4) -\/ unused space. 11 -\/ 14 Integer serial Model serial number. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmolreader_a64ff990dc05c01debc1138dd012f4bcb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_a81fcc5a3f49380ccd10b02b229f5067d}{\index{molreader@{molreader}!read\+\_\+psfatom@{read\+\_\+psfatom}}
+\index{read\+\_\+psfatom@{read\+\_\+psfatom}!molreader@{molreader}}
+\subsubsection[{read\+\_\+psfatom}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::read\+\_\+psfatom (
+\begin{DoxyParamCaption}
+\item[{type({\bf psfatom}), intent(inout)}]{this}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a81fcc5a3f49380ccd10b02b229f5067d}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmolreader_a81fcc5a3f49380ccd10b02b229f5067d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_a16d4776fded57cf8aa38f639610cad84}{\index{molreader@{molreader}!refresh\+\_\+buffer@{refresh\+\_\+buffer}}
+\index{refresh\+\_\+buffer@{refresh\+\_\+buffer}!molreader@{molreader}}
+\subsubsection[{refresh\+\_\+buffer}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::refresh\+\_\+buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a16d4776fded57cf8aa38f639610cad84}
+reads the next chunk of the pdb file. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{classmolreader_a16d4776fded57cf8aa38f639610cad84_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmolreader_a16d4776fded57cf8aa38f639610cad84_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_a13131c46b34d0385ba7eadd0b1b88df9}{\index{molreader@{molreader}!refresh\+\_\+psfbuffer@{refresh\+\_\+psfbuffer}}
+\index{refresh\+\_\+psfbuffer@{refresh\+\_\+psfbuffer}!molreader@{molreader}}
+\subsubsection[{refresh\+\_\+psfbuffer}]{\setlength{\rightskip}{0pt plus 5cm}subroutine molreader\+::refresh\+\_\+psfbuffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a13131c46b34d0385ba7eadd0b1b88df9}
+reads the next chunk of the psf file. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmolreader_a13131c46b34d0385ba7eadd0b1b88df9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_af85c66302e278af03e0cc94dc42e662e}{\index{molreader@{molreader}!rewind\+\_\+pdb@{rewind\+\_\+pdb}}
+\index{rewind\+\_\+pdb@{rewind\+\_\+pdb}!molreader@{molreader}}
+\subsubsection[{rewind\+\_\+pdb}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public molreader\+::rewind\+\_\+pdb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmolreader_af85c66302e278af03e0cc94dc42e662e}
+
+
+Rewind an initialized P\+D\+B file for parsing. 
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmolreader_af85c66302e278af03e0cc94dc42e662e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{classmolreader_af85c66302e278af03e0cc94dc42e662e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmolreader_a6d79c8d97fd91cfb25dec2b67320c77b}{\index{molreader@{molreader}!rewind\+\_\+psf@{rewind\+\_\+psf}}
+\index{rewind\+\_\+psf@{rewind\+\_\+psf}!molreader@{molreader}}
+\subsubsection[{rewind\+\_\+psf}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public molreader\+::rewind\+\_\+psf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmolreader_a6d79c8d97fd91cfb25dec2b67320c77b}
+
+
+Rewind an initialized P\+S\+F file for parsing. 
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classmolreader_a6d79c8d97fd91cfb25dec2b67320c77b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmolreader_a06d78b69405420664607fb01b4d8e97a}{\index{molreader@{molreader}!buffer@{buffer}}
+\index{buffer@{buffer}!molreader@{molreader}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}character(len={\bf linelen}), dimension({\bf maxrecord}) molreader\+::buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a06d78b69405420664607fb01b4d8e97a}
+\hypertarget{classmolreader_ac7969154d301aab4a51cde89ec2f08ee}{\index{molreader@{molreader}!buffer\+\_\+count@{buffer\+\_\+count}}
+\index{buffer\+\_\+count@{buffer\+\_\+count}!molreader@{molreader}}
+\subsubsection[{buffer\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}integer(long) molreader\+::buffer\+\_\+count\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_ac7969154d301aab4a51cde89ec2f08ee}
+\hypertarget{classmolreader_a7b2e4f11efe55d80469efa3f7aeacbab}{\index{molreader@{molreader}!buffer\+\_\+cursor@{buffer\+\_\+cursor}}
+\index{buffer\+\_\+cursor@{buffer\+\_\+cursor}!molreader@{molreader}}
+\subsubsection[{buffer\+\_\+cursor}]{\setlength{\rightskip}{0pt plus 5cm}integer(long) molreader\+::buffer\+\_\+cursor\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a7b2e4f11efe55d80469efa3f7aeacbab}
+\hypertarget{classmolreader_a3368bfc7f2d07a7f472a8118220516a9}{\index{molreader@{molreader}!buffermask@{buffermask}}
+\index{buffermask@{buffermask}!molreader@{molreader}}
+\subsubsection[{buffermask}]{\setlength{\rightskip}{0pt plus 5cm}logical, dimension({\bf maxrecord}) molreader\+::buffermask\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a3368bfc7f2d07a7f472a8118220516a9}
+\hypertarget{classmolreader_ad29941441961d6bb225120cc88f93db7}{\index{molreader@{molreader}!data@{data}}
+\index{data@{data}!molreader@{molreader}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}logical molreader\+::data\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_ad29941441961d6bb225120cc88f93db7}
+\hypertarget{classmolreader_ac14650c697f68fd15530b93807e3f42f}{\index{molreader@{molreader}!linefmt@{linefmt}}
+\index{linefmt@{linefmt}!molreader@{molreader}}
+\subsubsection[{linefmt}]{\setlength{\rightskip}{0pt plus 5cm}character(len=5) molreader\+::linefmt\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_ac14650c697f68fd15530b93807e3f42f}
+\hypertarget{classmolreader_acd493d996a1fcd0ed77937e925c9b7fe}{\index{molreader@{molreader}!linelen@{linelen}}
+\index{linelen@{linelen}!molreader@{molreader}}
+\subsubsection[{linelen}]{\setlength{\rightskip}{0pt plus 5cm}integer(long), parameter molreader\+::linelen\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_acd493d996a1fcd0ed77937e925c9b7fe}
+\hypertarget{classmolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{\index{molreader@{molreader}!maxrecord@{maxrecord}}
+\index{maxrecord@{maxrecord}!molreader@{molreader}}
+\subsubsection[{maxrecord}]{\setlength{\rightskip}{0pt plus 5cm}integer(long), parameter molreader\+::maxrecord\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a7192fdfba4bcb0ee7504a9c6695c7106}
+\hypertarget{classmolreader_a151a8b8c33b86ab86d352aeaaf9ec84b}{\index{molreader@{molreader}!parsing@{parsing}}
+\index{parsing@{parsing}!molreader@{molreader}}
+\subsubsection[{parsing}]{\setlength{\rightskip}{0pt plus 5cm}logical molreader\+::parsing\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a151a8b8c33b86ab86d352aeaaf9ec84b}
+\hypertarget{classmolreader_a5cf7dc5ccdeb068704a693ec6b248796}{\index{molreader@{molreader}!parsing\+\_\+rate@{parsing\+\_\+rate}}
+\index{parsing\+\_\+rate@{parsing\+\_\+rate}!molreader@{molreader}}
+\subsubsection[{parsing\+\_\+rate}]{\setlength{\rightskip}{0pt plus 5cm}real(double) molreader\+::parsing\+\_\+rate\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a5cf7dc5ccdeb068704a693ec6b248796}
+\hypertarget{classmolreader_ac41219b2f68591f315dded4488483263}{\index{molreader@{molreader}!parsingunit@{parsingunit}}
+\index{parsingunit@{parsingunit}!molreader@{molreader}}
+\subsubsection[{parsingunit}]{\setlength{\rightskip}{0pt plus 5cm}integer(long) molreader\+::parsingunit\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_ac41219b2f68591f315dded4488483263}
+\hypertarget{classmolreader_aa372f060e4e581b1c14e2b46a65d2df4}{\index{molreader@{molreader}!pdbfile@{pdbfile}}
+\index{pdbfile@{pdbfile}!molreader@{molreader}}
+\subsubsection[{pdbfile}]{\setlength{\rightskip}{0pt plus 5cm}character(len=path) molreader\+::pdbfile\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_aa372f060e4e581b1c14e2b46a65d2df4}
+\hypertarget{classmolreader_ad7636360c8e0ecb526000567dd32d2d0}{\index{molreader@{molreader}!pdbisopen@{pdbisopen}}
+\index{pdbisopen@{pdbisopen}!molreader@{molreader}}
+\subsubsection[{pdbisopen}]{\setlength{\rightskip}{0pt plus 5cm}logical molreader\+::pdbisopen\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_ad7636360c8e0ecb526000567dd32d2d0}
+\hypertarget{classmolreader_a5b0570862e5318937ea68a01966ed56f}{\index{molreader@{molreader}!pdbunit@{pdbunit}}
+\index{pdbunit@{pdbunit}!molreader@{molreader}}
+\subsubsection[{pdbunit}]{\setlength{\rightskip}{0pt plus 5cm}integer(long) molreader\+::pdbunit\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a5b0570862e5318937ea68a01966ed56f}
+\hypertarget{classmolreader_aab845daa54f6803a37ceb91d7ad296a7}{\index{molreader@{molreader}!psfbuffer@{psfbuffer}}
+\index{psfbuffer@{psfbuffer}!molreader@{molreader}}
+\subsubsection[{psfbuffer}]{\setlength{\rightskip}{0pt plus 5cm}character(len={\bf linelen}), dimension({\bf maxrecord}) molreader\+::psfbuffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_aab845daa54f6803a37ceb91d7ad296a7}
+\hypertarget{classmolreader_af2dddaa7f6249a39287ffcdcbe2ce558}{\index{molreader@{molreader}!psfbuffer\+\_\+count@{psfbuffer\+\_\+count}}
+\index{psfbuffer\+\_\+count@{psfbuffer\+\_\+count}!molreader@{molreader}}
+\subsubsection[{psfbuffer\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}integer(long) molreader\+::psfbuffer\+\_\+count\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_af2dddaa7f6249a39287ffcdcbe2ce558}
+\hypertarget{classmolreader_ab080c636a2423beb139bdd65dcd884c3}{\index{molreader@{molreader}!psfbuffer\+\_\+cursor@{psfbuffer\+\_\+cursor}}
+\index{psfbuffer\+\_\+cursor@{psfbuffer\+\_\+cursor}!molreader@{molreader}}
+\subsubsection[{psfbuffer\+\_\+cursor}]{\setlength{\rightskip}{0pt plus 5cm}integer(long) molreader\+::psfbuffer\+\_\+cursor\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_ab080c636a2423beb139bdd65dcd884c3}
+\hypertarget{classmolreader_a747bd2c32990916c313506c805317e88}{\index{molreader@{molreader}!psfbuffermask@{psfbuffermask}}
+\index{psfbuffermask@{psfbuffermask}!molreader@{molreader}}
+\subsubsection[{psfbuffermask}]{\setlength{\rightskip}{0pt plus 5cm}logical, dimension({\bf maxrecord}) molreader\+::psfbuffermask\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a747bd2c32990916c313506c805317e88}
+\hypertarget{classmolreader_a48ac5c969e35417342bb66a57adec842}{\index{molreader@{molreader}!psffile@{psffile}}
+\index{psffile@{psffile}!molreader@{molreader}}
+\subsubsection[{psffile}]{\setlength{\rightskip}{0pt plus 5cm}character(len=path) molreader\+::psffile\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a48ac5c969e35417342bb66a57adec842}
+\hypertarget{classmolreader_ae5cd9063d12a39b0e8266e184439c808}{\index{molreader@{molreader}!psfisopen@{psfisopen}}
+\index{psfisopen@{psfisopen}!molreader@{molreader}}
+\subsubsection[{psfisopen}]{\setlength{\rightskip}{0pt plus 5cm}logical molreader\+::psfisopen\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_ae5cd9063d12a39b0e8266e184439c808}
+\hypertarget{classmolreader_a2b57a032db6161c98961f5e8109c3b90}{\index{molreader@{molreader}!psfunit@{psfunit}}
+\index{psfunit@{psfunit}!molreader@{molreader}}
+\subsubsection[{psfunit}]{\setlength{\rightskip}{0pt plus 5cm}integer(long) molreader\+::psfunit\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a2b57a032db6161c98961f5e8109c3b90}
+\hypertarget{classmolreader_a8f12be3272b946fd698c9fbaf2ba9d32}{\index{molreader@{molreader}!reclen@{reclen}}
+\index{reclen@{reclen}!molreader@{molreader}}
+\subsubsection[{reclen}]{\setlength{\rightskip}{0pt plus 5cm}integer(long), parameter molreader\+::reclen\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a8f12be3272b946fd698c9fbaf2ba9d32}
+\hypertarget{classmolreader_a1f82d6f3302ab89b43d1fcbcba5d8fb2}{\index{molreader@{molreader}!recording\+\_\+parsingdata@{recording\+\_\+parsingdata}}
+\index{recording\+\_\+parsingdata@{recording\+\_\+parsingdata}!molreader@{molreader}}
+\subsubsection[{recording\+\_\+parsingdata}]{\setlength{\rightskip}{0pt plus 5cm}logical molreader\+::recording\+\_\+parsingdata\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a1f82d6f3302ab89b43d1fcbcba5d8fb2}
+\hypertarget{classmolreader_af3ae5caa4d00fa50c74d2f3154e8ea7c}{\index{molreader@{molreader}!save@{save}}
+\index{save@{save}!molreader@{molreader}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}logical molreader\+::save\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_af3ae5caa4d00fa50c74d2f3154e8ea7c}
+\hypertarget{classmolreader_ad5b1ed6898caa1c2161f0cdc6c10fc72}{\index{molreader@{molreader}!time0@{time0}}
+\index{time0@{time0}!molreader@{molreader}}
+\subsubsection[{time0}]{\setlength{\rightskip}{0pt plus 5cm}real(double) molreader\+::time0\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_ad5b1ed6898caa1c2161f0cdc6c10fc72}
+\hypertarget{classmolreader_a29899cd9778ac12af6bad404c1092518}{\index{molreader@{molreader}!timing@{timing}}
+\index{timing@{timing}!molreader@{molreader}}
+\subsubsection[{timing}]{\setlength{\rightskip}{0pt plus 5cm}logical molreader\+::timing\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_a29899cd9778ac12af6bad404c1092518}
+\hypertarget{classmolreader_aec460f295b88cb8eb8dd58901edce0ba}{\index{molreader@{molreader}!to@{to}}
+\index{to@{to}!molreader@{molreader}}
+\subsubsection[{to}]{\setlength{\rightskip}{0pt plus 5cm}logical molreader\+::to\hspace{0.3cm}{\ttfamily [private]}}}\label{classmolreader_aec460f295b88cb8eb8dd58901edce0ba}
+
+
+The documentation for this module was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{molreader_8f90}{molreader.\+f90}\end{DoxyCompactItemize}

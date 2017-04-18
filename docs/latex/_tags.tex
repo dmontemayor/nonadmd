@@ -1,0 +1,170 @@
+\href{../../share/nonadmd-0.1.44-alpha.tar.gz}{\tt Download Non\+Ad\+M\+D Latest Version }\hypertarget{_tags_Wishlist}{}\section{Proposed Changes}\label{_tags_Wishlist}
+
+\begin{DoxyItemize}
+\item use '/dev/random' to seed random number generator. (minor)
+\item In P\+L\+D\+M Make output intermediate file optional. Use 0 for off. (minor)
+\item Add hamiltonian/propagator/spectrometer compatability tests (minor)
+\item Save records version number (major)
+\item Read has version number warning (major)
+\item Web Documentation
+\begin{DoxyItemize}
+\item Write install page
+\item Revise Interface (move from interface to overview)
+\begin{DoxyItemize}
+\item Add how-\/to \+: build a Hamiltonian
+\item Add how-\/to \+: Use spectrometer
+\item Add how-\/to \+: Use propagator -\/\+Add refs to bib
+\end{DoxyItemize}
+\item Add how-\/to \+: make derived subsytem
+\item encapsulate analysis and praxis files
+\item comment functions-\/variabels-\/fields
+\end{DoxyItemize}
+\item Update examples
+\item display option for output to file (minor)
+\item move Wigner sample to harmonicbath (major)
+\item remove depreciated input (major)
+\item allow check suppression (major)
+\item relax specden J(w) and w unit scaling (minor)
+\item update all comments to doxygen comments
+\item add band-\/gap observable to spectrometer
+\item add spin-\/boson examples to test module
+\item add a surface hopping propagator
+\item add a discussion and example on specden generation
+\item Ensure N,P,T,V,T are accesible on the primative level for N\+P\+T, N\+V\+T, and N\+V\+E dynamics
+\item P\+B\+C's are consitently treated
+\item Add Video Tutorials
+\item Add U\+I scripting
+\item Standardize how new and derived propagation methods are added
+\item Standardize how new and derived observation methods are added
+\item add Density of states (D\+O\+S) observable to spectrometer
+\item add Sepectral density (specden) observable to spectrometer
+\item add participation ratio (Pratio) observable to spectrometer
+\end{DoxyItemize}\hypertarget{_tags_v0_1_44a}{}\section{0.\+1.\+44 alpha}\label{_tags_v0_1_44a}
+
+\begin{DoxyItemize}
+\item counterm now shifts classical bath normal modes on resample instead of adding reorginzation energy
+\item fix bug\+: bilinearg not properly initialize from file -\/ init now resamples at end \begin{DoxyDate}{Date}
+Daniel Montemayor, Apr 2013
+\end{DoxyDate}
+
+\end{DoxyItemize}\hypertarget{_tags_v0_1_43a}{}\section{0.\+1.\+43 alpha}\label{_tags_v0_1_43a}
+
+\begin{DoxyItemize}
+\item fixed bug in harmonicbath\+: map array was not saving properly \begin{DoxyDate}{Date}
+Daniel Montemayor, Apr 2013
+\end{DoxyDate}
+
+\end{DoxyItemize}\hypertarget{_tags_v0_1_42a}{}\section{0.\+1.\+42 alpha}\label{_tags_v0_1_42a}
+
+\begin{DoxyItemize}
+\item allow zero bdof
+\item allow for zero lambda and restrict negative lambda \begin{DoxyDate}{Date}
+Daniel Montemayor, Apr 2013
+\end{DoxyDate}
+
+\end{DoxyItemize}\hypertarget{_tags_v0_1_41a}{}\section{0.\+1.\+41 alpha}\label{_tags_v0_1_41a}
+
+\begin{DoxyItemize}
+\item migrated reposistory to new server cara1
+\item minor changes to web docs \begin{DoxyDate}{Date}
+Daniel Montemayor, Apr 2013
+\end{DoxyDate}
+
+\end{DoxyItemize}\hypertarget{_tags_v0_1_4a}{}\section{0.\+1.\+4 alpha}\label{_tags_v0_1_4a}
+
+\begin{DoxyItemize}
+\item fix harmonicbath save bug \begin{DoxyDate}{Date}
+Daniel Montemayor, Mar 2013
+\end{DoxyDate}
+
+\end{DoxyItemize}\hypertarget{_tags_v0_1_3a}{}\section{0.\+1.\+3 alpha}\label{_tags_v0_1_3a}
+
+\begin{DoxyItemize}
+\item write Quick Start section in R\+E\+A\+D\+M\+E file (patch)
+\item added cnorm and pnorm function to math module
+\item remove canonical/thermal sampling from classical primative hb (major)
+\item make bilinear coupling class and depreciate diagonal\+Caldiera\+Leggett \begin{DoxyDate}{Date}
+Daniel Montemayor, Feb 2013
+\end{DoxyDate}
+
+\end{DoxyItemize}\hypertarget{_tags_v0_1_2a}{}\section{0.\+1.\+2 alpha}\label{_tags_v0_1_2a}
+
+\begin{DoxyItemize}
+\item Make canonical distribution default resample method (minor)
+\item Incorporate P\+R\+A\+X\+I\+S fitting
+\item check adiabat vs diabat initial setup dynamics \begin{DoxyDate}{Date}
+Daniel Montemayor, Jan 2013
+\end{DoxyDate}
+
+\end{DoxyItemize}\hypertarget{_tags_v0_1_1a}{}\section{0.\+1.\+1 alpha}\label{_tags_v0_1_1a}
+
+\begin{DoxyItemize}
+\item Hide unused files
+\item Write Welcome page
+\item Cleanup Overview page -\/ add system driver section
+\item P\+L\+D\+M uses general subsystem interface
+\item Reformat to semantic versioning 2.\+0.\+0-\/rc.\+1 \href{http://semver.org}{\tt http\+://semver.\+org} (major) \begin{DoxyDate}{Date}
+Daniel Montemayor, Dec 2012
+\end{DoxyDate}
+
+\end{DoxyItemize}\hypertarget{_tags_v0_0_5pa}{}\section{0.\+0.\+5 pre-\/alpha}\label{_tags_v0_0_5pa}
+
+\begin{DoxyItemize}
+\item P\+L\+D\+M now accepts cs=hb and cp=hc subsystems
+\item add T\+H\+A\+N\+K\+S section to documentation \begin{DoxyDate}{Date}
+Daniel Montemayor, Nov 2012
+\end{DoxyDate}
+
+\end{DoxyItemize}\hypertarget{_tags_v1_0_4pa}{}\section{1.\+0.\+4 pre-\/alpha}\label{_tags_v1_0_4pa}
+
+\begin{DoxyItemize}
+\item Relaxed P\+L\+D\+M initial pure-\/state restriction
+\item Disabled L\+D\+M class and replaced with P\+L\+D\+M class
+\item Added derived subsystem template
+\item Disabled L\+D\+M dynamics in L\+D\+M class
+\item Added Doxygen documenting \begin{DoxyDate}{Date}
+Daniel Montemayor, Sept 2012
+\end{DoxyDate}
+
+\end{DoxyItemize}\hypertarget{_tags_v1_0_1pa}{}\section{1.\+0.\+1 pre-\/alpha}\label{_tags_v1_0_1pa}
+
+\begin{DoxyItemize}
+\item Add version control
+\item Add bug tracking
+\item Enable updates and mods
+\item Enable Distributions
+\item make testing module for derived subsystems \begin{DoxyDate}{Date}
+Daniel Montemayor, Aug 2011 -\/ Sept 2011
+\end{DoxyDate}
+
+\end{DoxyItemize}\hypertarget{_tags_v1_0pa}{}\section{1.\+0 pre-\/alpha}\label{_tags_v1_0pa}
+
+\begin{DoxyItemize}
+\item Allow builds from a single source
+\item Automate M\+P\+I setup on compile
+\item Add Fortran preprocessing
+\item Add new and kill methods for quantum, classical,and coupling objects
+\item Automate derived subsystem class loading and unloading
+\item All objects are titled on first line of object save file.
+\item Add hs quantum primitive
+\item Add hb classical primitive
+\item Add hc coupling primitive
+\item Remove \char`\"{}g\char`\"{} coupling factors from hs and hb primatives
+\item Remove 'diabat0' from hs
+\item Remove 'psi0' and 'rhor' from hs and replace with 'den' density
+\item Add particle charge to hb primative
+\item Standardize Error handling
+\item Standardize variable Kind defs
+\item Add User's Manual
+\item Add Dev's Manual
+\item Add dipoles derived quantum subsystem
+\item Add harmonicbath derived classical subsystem
+\item Add D\+M\+B\+Lcoupling derived coupling subsystem
+\item Add L\+D\+M, I\+L\+D\+M, and P\+L\+D\+M dynamics under L\+D\+M class
+\item Add A\+Bspectrum observable under Spectrometer class
+\item move system\+\_\+driver source to build directory
+\end{DoxyItemize}
+
+\begin{DoxyDate}{Date}
+Daniel Montemayor, May 2011 -\/ Aug 2011 
+\end{DoxyDate}
