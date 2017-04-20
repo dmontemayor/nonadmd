@@ -1,13 +1,14 @@
 ===============================================================================
 --------------------    Application Requirements    ---------------------------
 
-         - Linux operating system
-F90      - Fortran compiler
-fpp      - Fortran preprocessing
-(suspended)MPI      - Parallel Computing library and location passed as flags into configure script
-(suspended)MKL      - Intel Linear Algebra package in particular, library and location passed as flags into configure script
-autoconf - GNU configuration tool (look up autotools)
-automake - Also part of autotools package
+                  - Linux operating system
+gfortran or F90   - Fortran compiler
+fpp or cpp        - Fortran preprocessing
+MPI               - Parallel Computing library and location passed as flags into configure script
+(suspended)MKL    - Intel Linear Algebra package in particular, library and location passed as flags into configure script
+autoconf          - GNU configuration tool (look up autotools)
+automake          - Also part of autotools package
+(optional)doxygen - To update documentation
 
 This application is distributed under the GNU Build System
 http://www.gnu.org/
