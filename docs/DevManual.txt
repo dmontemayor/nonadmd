@@ -1,3 +1,9 @@
+Documentation is maintained with doxygen.
+Remember to make appropriate doxygen comments in the source.
+Update the documentation using the Doxyfile and DoxygenLayout.xml files in the top directory.
+command is : doxygen Doxyfile
+An html documentation can be found in docs/html/index.html - view it using any browser.
+
 Standards
 1. When object is saved the first line of the save file contains the type of the object.
 2. Saved object files contain one attribute(variable,array,character,etc.) per line. Arrays and matricies are always saved with nested loop implicit write statements. Indeces of the matrix or array are incremented starting with the last index in the inner most loop. For example obj(i,j,k) would be saved like so write(unit,*)(((obj(i,j,k),k=1,nk),j=1,nj),i=1,ni).

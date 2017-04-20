@@ -25,6 +25,9 @@ In this project we develop a non-adiabtic quantum dynamics application 'NonAdMD'
 ===============================================================================
 ------------------------      Quick Start       -------------------------------
 Once downloaded and unpacked, checkout the distributed html documentation in docs/html/index.html
+Devs refer to docs/DevManual.txt
+
+For everyone else...
 
 Skip the INSTALL file!
 
