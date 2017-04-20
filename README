@@ -23,6 +23,8 @@ In this project we develop a non-adiabtic quantum dynamics application 'NonAdMD'
 
 ===============================================================================
 ------------------------      Quick Start       -------------------------------
+Once downloaded and unpacked, checkout the distributed html documentation in docs/html/index.html
+
 Skip the INSTALL file!
 
 The thing to keep in mind is that this project is arranged so that the user can create multiple 'experiments' or executables while having only one copy of the source code. All the source code can be found in the src/ directory while the executables are built separately (anywhere on your machine!). But, before we can build an experiment we're going to need to configure this software so that it runs on your machine. Usually this process is a nightmare and often machine specific. Fortunately, the GNU build system's autotools does it all for you. Make sure autotools is installed. If not type: (sudo apt-get install autotools). Autotools is usually installed on most Linux machines. To configure with autotools simply type:
