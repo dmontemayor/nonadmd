@@ -1,0 +1,6 @@
+<map id="errorlog::log_stop" name="errorlog::log_stop">
+<area shape="rect" id="node3" href="$namespaceerrorlog.html#a32bbf87dd265de25bd10ea31d95b751d" title="errorlog::openlog" alt="" coords="180,5,302,33"/>
+<area shape="rect" id="node9" href="$namespaceerrorlog.html#af9219c790b58905faca7f5695515325d" title="errorlog::closelog" alt="" coords="180,57,303,85"/>
+<area shape="rect" id="node5" href="$namespacefilemanager.html#aa389048ef7c9eb9afdac7ce1dcc691b2" title="filemanager::newunit" alt="" coords="352,5,496,33"/>
+<area shape="rect" id="node7" href="$namespacewallclock.html#ac691a026a7b92c6cd971e86d0449d42b" title="wallclock::timearray" alt="" coords="355,57,493,85"/>
+</map>

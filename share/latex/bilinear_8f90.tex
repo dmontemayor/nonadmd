@@ -1,24 +1,43 @@
-\hypertarget{bilinear_8f90}{\section{src/bilinear.f90 File Reference}
-\label{bilinear_8f90}\index{src/bilinear.\-f90@{src/bilinear.\-f90}}
-}
+\hypertarget{bilinear_8f90}{}\section{src/bilinear.f90 File Reference}
+\label{bilinear_8f90}\index{src/bilinear.\+f90@{src/bilinear.\+f90}}
 \subsection*{Data Types}
 \begin{DoxyCompactItemize}
 \item 
-module \hyperlink{classbilinear__class}{bilinear\-\_\-class}
-\begin{DoxyCompactList}\small\item\em Diagonal Bi-\/linear system-\/bath coupling. \end{DoxyCompactList}\item 
-type \hyperlink{structbilinear__class_1_1bilinear}{bilinear\-\_\-class\-::bilinear}
+type \hyperlink{structbilinear__class_1_1bilinear}{bilinear\+\_\+class\+::bilinear}
 \begin{DoxyCompactList}\small\item\em Derived quantum-\/classical coupling term. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacebilinear__class_1_1new}{bilinear\-\_\-class\-::new}
+interface \hyperlink{interfacebilinear__class_1_1new}{bilinear\+\_\+class\+::new}
 \begin{DoxyCompactList}\small\item\em Creates the bilinear object. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacebilinear__class_1_1kill}{bilinear\-\_\-class\-::kill}
+interface \hyperlink{interfacebilinear__class_1_1kill}{bilinear\+\_\+class\+::kill}
 \begin{DoxyCompactList}\small\item\em Destroys the bilinear object. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacebilinear__class_1_1update}{bilinear\-\_\-class\-::update}
+interface \hyperlink{interfacebilinear__class_1_1update}{bilinear\+\_\+class\+::update}
 \begin{DoxyCompactList}\small\item\em Recalculates bilinear object. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacebilinear__class_1_1resample}{bilinear\-\_\-class\-::resample}
+interface \hyperlink{interfacebilinear__class_1_1resample}{bilinear\+\_\+class\+::resample}
 \begin{DoxyCompactList}\small\item\em Reinitializes the bilinear object. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacebilinear__class_1_1display}{bilinear\-\_\-class\-::display}
+interface \hyperlink{interfacebilinear__class_1_1display}{bilinear\+\_\+class\+::display}
 \begin{DoxyCompactList}\small\item\em Displays the current state of the bilinear object. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacebilinear__class_1_1save}{bilinear\-\_\-class\-::save}
+interface \hyperlink{interfacebilinear__class_1_1save}{bilinear\+\_\+class\+::save}
 \begin{DoxyCompactList}\small\item\em Saves the current state of the bilinear object to file. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacebilinear__class_1_1check}{bilinear\-\_\-class\-::check}
+interface \hyperlink{interfacebilinear__class_1_1check}{bilinear\+\_\+class\+::check}
 \begin{DoxyCompactList}\small\item\em Checks the bilinear object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacebilinear__class}{bilinear\+\_\+class}
+\begin{DoxyCompactList}\small\item\em Diagonal Bi-\/linear system-\/bath coupling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacebilinear__class_a767f35cd3ebd5ef00f6a55fd775c3a27}{bilinear\+\_\+class\+::bilinear\+\_\+init} (this, qs, cs, file)
+\begin{DoxyCompactList}\small\item\em Creates and initializes the bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacebilinear__class_ae206ab58d224c9a0b7e25ac038e003ae}{bilinear\+\_\+class\+::bilinear\+\_\+kill} (this)
+\begin{DoxyCompactList}\small\item\em Destroys the bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacebilinear__class_a37ead815723c4c247c156200f5bf4721}{bilinear\+\_\+class\+::bilinear\+\_\+update} (this)
+\begin{DoxyCompactList}\small\item\em Computes the current state of bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacebilinear__class_aac587f5ea6d66ee89ff3210b10569777}{bilinear\+\_\+class\+::bilinear\+\_\+resample} (this)
+\begin{DoxyCompactList}\small\item\em Re-\/initiallizes the bilinear coupling object. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacebilinear__class_a5fe875f5d4db31ef7a7e721ba4a0146a}{bilinear\+\_\+class\+::bilinear\+\_\+save} (this, file)
+\begin{DoxyCompactList}\small\item\em Saves the current state of the bilinear coupling object to file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacebilinear__class_a4346246df7738e0d609716d961a3b94c}{bilinear\+\_\+class\+::bilinear\+\_\+display} (this, msg)
+\begin{DoxyCompactList}\small\item\em Displays the bilinear coupling object. \end{DoxyCompactList}\item 
+integer(short) function \hyperlink{namespacebilinear__class_ab2484d90163983597fb17b15e480e675}{bilinear\+\_\+class\+::bilinear\+\_\+check} (this)
+\begin{DoxyCompactList}\small\item\em Checks the bilinear coupling object. \end{DoxyCompactList}\end{DoxyCompactItemize}

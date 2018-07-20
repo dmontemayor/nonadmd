@@ -1,8 +1,8 @@
 <map id="main" name="main">
-<area shape="rect" id="node3" href="$classwallclock.html#ac691a026a7b92c6cd971e86d0449d42b" title="wallclock::timearray" alt="" coords="281,137,418,165"/>
-<area shape="rect" id="node5" href="$praxis_8f.html#a08308a29605c2abb57b179777553e9e1" title="Praxis&#39; random number generator." alt="" coords="143,33,191,61"/>
-<area shape="rect" id="node7" href="$classrand.html#a0bf2019d6e29304bea88b6dfc7277e96" title="rand::seed" alt="" coords="124,85,209,113"/>
-<area shape="rect" id="node9" href="$classerrorlog.html#a32bbf87dd265de25bd10ea31d95b751d" title="errorlog::openlog" alt="" coords="106,189,228,217"/>
-<area shape="rect" id="node14" href="$classerrorlog.html#af9219c790b58905faca7f5695515325d" title="errorlog::closelog" alt="" coords="105,137,228,165"/>
-<area shape="rect" id="node11" href="$classfilemanager.html#aa389048ef7c9eb9afdac7ce1dcc691b2" title="filemanager::newunit" alt="" coords="277,189,422,217"/>
+<area shape="rect" id="node3" href="$namespacewallclock.html#ac691a026a7b92c6cd971e86d0449d42b" title="wallclock::timearray" alt="" coords="281,137,418,165"/>
+<area shape="rect" id="node5" href="$praxis_8f.html#af54b43bfee4d4da9d35c12de385dd6cd" title="Praxis&#39; random number generator. " alt="" coords="143,33,191,61"/>
+<area shape="rect" id="node7" href="$namespacerand.html#a0bf2019d6e29304bea88b6dfc7277e96" title="rand::seed" alt="" coords="124,85,209,113"/>
+<area shape="rect" id="node9" href="$namespaceerrorlog.html#a32bbf87dd265de25bd10ea31d95b751d" title="errorlog::openlog" alt="" coords="106,189,228,217"/>
+<area shape="rect" id="node14" href="$namespaceerrorlog.html#af9219c790b58905faca7f5695515325d" title="errorlog::closelog" alt="" coords="105,137,228,165"/>
+<area shape="rect" id="node11" href="$namespacefilemanager.html#aa389048ef7c9eb9afdac7ce1dcc691b2" title="filemanager::newunit" alt="" coords="277,189,422,217"/>
 </map>

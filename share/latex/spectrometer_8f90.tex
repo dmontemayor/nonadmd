@@ -1,18 +1,40 @@
-\hypertarget{spectrometer_8f90}{\section{src/spectrometer.f90 File Reference}
-\label{spectrometer_8f90}\index{src/spectrometer.\-f90@{src/spectrometer.\-f90}}
-}
+\hypertarget{spectrometer_8f90}{}\section{src/spectrometer.f90 File Reference}
+\label{spectrometer_8f90}\index{src/spectrometer.\+f90@{src/spectrometer.\+f90}}
 \subsection*{Data Types}
 \begin{DoxyCompactItemize}
 \item 
-module \hyperlink{classspectrometer__class}{spectrometer\-\_\-class}
-\begin{DoxyCompactList}\small\item\em Spectrometric functionality. \end{DoxyCompactList}\item 
-type \hyperlink{structspectrometer__class_1_1spectrum}{spectrometer\-\_\-class\-::spectrum}
+type \hyperlink{structspectrometer__class_1_1spectrum}{spectrometer\+\_\+class\+::spectrum}
 \begin{DoxyCompactList}\small\item\em Standard spectrum type. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacespectrometer__class_1_1observe}{spectrometer\-\_\-class\-::observe}
+interface \hyperlink{interfacespectrometer__class_1_1observe}{spectrometer\+\_\+class\+::observe}
 \begin{DoxyCompactList}\small\item\em Measures the Hamiltonian. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacespectrometer__class_1_1display}{spectrometer\-\_\-class\-::display}
+interface \hyperlink{interfacespectrometer__class_1_1display}{spectrometer\+\_\+class\+::display}
 \begin{DoxyCompactList}\small\item\em Display the spectrum type. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacespectrometer__class_1_1check}{spectrometer\-\_\-class\-::check}
+interface \hyperlink{interfacespectrometer__class_1_1check}{spectrometer\+\_\+class\+::check}
 \begin{DoxyCompactList}\small\item\em Function that checks the spectrum type. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacespectrometer__class_1_1kill}{spectrometer\-\_\-class\-::kill}
+interface \hyperlink{interfacespectrometer__class_1_1kill}{spectrometer\+\_\+class\+::kill}
 \begin{DoxyCompactList}\small\item\em Destroys the spectrum type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacespectrometer__class}{spectrometer\+\_\+class}
+\begin{DoxyCompactList}\small\item\em Spectrometric functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacespectrometer__class_a068171434fa75613677e6357291df1fe}{spectrometer\+\_\+class\+::get\+\_\+spectrum} (this, qs, cs, cp, Emin, Emax, npt, type, tol, samples, file, pdb, psf, psfx, atm\+\_\+select, dipole\+\_\+to, dipole\+\_\+from, dipole\+\_\+center)
+\begin{DoxyCompactList}\small\item\em General call to compute verious spectra. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacespectrometer__class_aabaa46560b8ea49cd16b6c11a8a2fe65}{spectrometer\+\_\+class\+::spectrum\+\_\+kill} (this)
+\begin{DoxyCompactList}\small\item\em nullifies spectrum pointer \end{DoxyCompactList}\item 
+integer(short) function \hyperlink{namespacespectrometer__class_a94382eb7e533e6a74dd79200ca0e38ed}{spectrometer\+\_\+class\+::spectrum\+\_\+check} (this)
+\begin{DoxyCompactList}\small\item\em Checks spectrum type \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacespectrometer__class_a3f9fc6096d581c5a7094174b47898d10}{spectrometer\+\_\+class\+::display\+\_\+spectrum} (this)
+\item 
+subroutine \hyperlink{namespacespectrometer__class_ad2c4936524c8702e1c4e53a54a043f31}{spectrometer\+\_\+class\+::get\+\_\+abspectrum} (this, qs, cs, cp, tol, samples, file)
+\begin{DoxyCompactList}\small\item\em Computes absorption spectrum using groundstate to adiabatic state transition dipole. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacespectrometer__class_af1fc802879075c7e5e42ef4baac69445}{spectrometer\+\_\+class\+::get\+\_\+abpdbspectrum} (this, qs, file, pdb, psf, psfx, atm\+\_\+select, dipole\+\_\+to, dipole\+\_\+from, dipole\+\_\+center)
+\begin{DoxyCompactList}\small\item\em Computes Absorption spectrum using a pdb trajectory and a defined transition dipole. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(long), parameter \hyperlink{namespacespectrometer__class_a5564f6a94902c50fefd03dd3f5ec4e47}{spectrometer\+\_\+class\+::killint}
+\begin{DoxyCompactList}\small\item\em Machine limit of integer values. Used to exit out of non-\/converging loops. \end{DoxyCompactList}\end{DoxyCompactItemize}

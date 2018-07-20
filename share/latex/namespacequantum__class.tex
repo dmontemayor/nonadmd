@@ -1,0 +1,117 @@
+\hypertarget{namespacequantum__class}{}\section{quantum\+\_\+class Module Reference}
+\label{namespacequantum__class}\index{quantum\+\_\+class@{quantum\+\_\+class}}
+
+
+Generic quantum Class.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacequantum__class_1_1check}{check}
+\item 
+interface \hyperlink{interfacequantum__class_1_1display}{display}
+\item 
+interface \hyperlink{interfacequantum__class_1_1kill}{kill}
+\item 
+interface \hyperlink{interfacequantum__class_1_1new}{new}
+\item 
+type \hyperlink{structquantum__class_1_1quantum}{quantum}
+\item 
+interface \hyperlink{interfacequantum__class_1_1resample}{resample}
+\item 
+interface \hyperlink{interfacequantum__class_1_1save}{save}
+\item 
+interface \hyperlink{interfacequantum__class_1_1update}{update}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacequantum__class_a3170f42702712b16bcc152509752f18e}{quantum\+\_\+new} (this, type, file)
+\item 
+subroutine \hyperlink{namespacequantum__class_a1c73725245a04e63092d2152579c4bd9}{quantum\+\_\+kill} (this)
+\item 
+subroutine \hyperlink{namespacequantum__class_afef9cff48e6cd580f47a06f4adc4109b}{quantum\+\_\+update} (this)
+\item 
+subroutine \hyperlink{namespacequantum__class_a496266b0eb772dd0e7d8ce9d8439945a}{quantum\+\_\+resample} (this)
+\item 
+subroutine \hyperlink{namespacequantum__class_a163174aa7cc6ae0a03b2269c55ca05b8}{quantum\+\_\+display} (this, msg)
+\item 
+subroutine \hyperlink{namespacequantum__class_aa60138cf5e19494d1f29b63053b32f24}{quantum\+\_\+save} (this, file)
+\item 
+integer(short) function \hyperlink{namespacequantum__class_a7ed38fd0b1d221dd04ca645722602f7d}{quantum\+\_\+check} (this)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic quantum Class. 
+
+Can assume any derived quantum type \begin{DoxyAuthor}{Authors}
+Daniel Montemayor 
+\end{DoxyAuthor}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacequantum__class_a7ed38fd0b1d221dd04ca645722602f7d}\label{namespacequantum__class_a7ed38fd0b1d221dd04ca645722602f7d}} 
+\index{quantum\+\_\+class@{quantum\+\_\+class}!quantum\+\_\+check@{quantum\+\_\+check}}
+\index{quantum\+\_\+check@{quantum\+\_\+check}!quantum\+\_\+class@{quantum\+\_\+class}}
+\subsubsection{\texorpdfstring{quantum\+\_\+check()}{quantum\_check()}}
+{\footnotesize\ttfamily integer(short) function quantum\+\_\+class\+::quantum\+\_\+check (\begin{DoxyParamCaption}\item[{type(\hyperlink{structquantum__class_1_1quantum}{quantum}), intent(in)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacequantum__class_a163174aa7cc6ae0a03b2269c55ca05b8}\label{namespacequantum__class_a163174aa7cc6ae0a03b2269c55ca05b8}} 
+\index{quantum\+\_\+class@{quantum\+\_\+class}!quantum\+\_\+display@{quantum\+\_\+display}}
+\index{quantum\+\_\+display@{quantum\+\_\+display}!quantum\+\_\+class@{quantum\+\_\+class}}
+\subsubsection{\texorpdfstring{quantum\+\_\+display()}{quantum\_display()}}
+{\footnotesize\ttfamily subroutine quantum\+\_\+class\+::quantum\+\_\+display (\begin{DoxyParamCaption}\item[{type(\hyperlink{structquantum__class_1_1quantum}{quantum}), intent(in)}]{this,  }\item[{character$\ast$($\ast$), intent(in), optional}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacequantum__class_a1c73725245a04e63092d2152579c4bd9}\label{namespacequantum__class_a1c73725245a04e63092d2152579c4bd9}} 
+\index{quantum\+\_\+class@{quantum\+\_\+class}!quantum\+\_\+kill@{quantum\+\_\+kill}}
+\index{quantum\+\_\+kill@{quantum\+\_\+kill}!quantum\+\_\+class@{quantum\+\_\+class}}
+\subsubsection{\texorpdfstring{quantum\+\_\+kill()}{quantum\_kill()}}
+{\footnotesize\ttfamily subroutine quantum\+\_\+class\+::quantum\+\_\+kill (\begin{DoxyParamCaption}\item[{type(\hyperlink{structquantum__class_1_1quantum}{quantum}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequantum__class_a1c73725245a04e63092d2152579c4bd9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacequantum__class_a3170f42702712b16bcc152509752f18e}\label{namespacequantum__class_a3170f42702712b16bcc152509752f18e}} 
+\index{quantum\+\_\+class@{quantum\+\_\+class}!quantum\+\_\+new@{quantum\+\_\+new}}
+\index{quantum\+\_\+new@{quantum\+\_\+new}!quantum\+\_\+class@{quantum\+\_\+class}}
+\subsubsection{\texorpdfstring{quantum\+\_\+new()}{quantum\_new()}}
+{\footnotesize\ttfamily subroutine quantum\+\_\+class\+::quantum\+\_\+new (\begin{DoxyParamCaption}\item[{type(\hyperlink{structquantum__class_1_1quantum}{quantum}), intent(inout), target}]{this,  }\item[{character$\ast$($\ast$), intent(in), optional}]{type,  }\item[{character$\ast$($\ast$), intent(in), optional}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequantum__class_a3170f42702712b16bcc152509752f18e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacequantum__class_a496266b0eb772dd0e7d8ce9d8439945a}\label{namespacequantum__class_a496266b0eb772dd0e7d8ce9d8439945a}} 
+\index{quantum\+\_\+class@{quantum\+\_\+class}!quantum\+\_\+resample@{quantum\+\_\+resample}}
+\index{quantum\+\_\+resample@{quantum\+\_\+resample}!quantum\+\_\+class@{quantum\+\_\+class}}
+\subsubsection{\texorpdfstring{quantum\+\_\+resample()}{quantum\_resample()}}
+{\footnotesize\ttfamily subroutine quantum\+\_\+class\+::quantum\+\_\+resample (\begin{DoxyParamCaption}\item[{type(\hyperlink{structquantum__class_1_1quantum}{quantum}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacequantum__class_aa60138cf5e19494d1f29b63053b32f24}\label{namespacequantum__class_aa60138cf5e19494d1f29b63053b32f24}} 
+\index{quantum\+\_\+class@{quantum\+\_\+class}!quantum\+\_\+save@{quantum\+\_\+save}}
+\index{quantum\+\_\+save@{quantum\+\_\+save}!quantum\+\_\+class@{quantum\+\_\+class}}
+\subsubsection{\texorpdfstring{quantum\+\_\+save()}{quantum\_save()}}
+{\footnotesize\ttfamily subroutine quantum\+\_\+class\+::quantum\+\_\+save (\begin{DoxyParamCaption}\item[{type(\hyperlink{structquantum__class_1_1quantum}{quantum}), intent(in)}]{this,  }\item[{character$\ast$($\ast$), intent(in)}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequantum__class_aa60138cf5e19494d1f29b63053b32f24_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacequantum__class_afef9cff48e6cd580f47a06f4adc4109b}\label{namespacequantum__class_afef9cff48e6cd580f47a06f4adc4109b}} 
+\index{quantum\+\_\+class@{quantum\+\_\+class}!quantum\+\_\+update@{quantum\+\_\+update}}
+\index{quantum\+\_\+update@{quantum\+\_\+update}!quantum\+\_\+class@{quantum\+\_\+class}}
+\subsubsection{\texorpdfstring{quantum\+\_\+update()}{quantum\_update()}}
+{\footnotesize\ttfamily subroutine quantum\+\_\+class\+::quantum\+\_\+update (\begin{DoxyParamCaption}\item[{type(\hyperlink{structquantum__class_1_1quantum}{quantum}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+

@@ -1,22 +1,52 @@
-\hypertarget{_p_l_d_m_8f90}{\section{src/\-P\-L\-D\-M.f90 File Reference}
-\label{_p_l_d_m_8f90}\index{src/\-P\-L\-D\-M.\-f90@{src/\-P\-L\-D\-M.\-f90}}
-}
+\hypertarget{_p_l_d_m_8f90}{}\section{src/\+P\+L\+DM.f90 File Reference}
+\label{_p_l_d_m_8f90}\index{src/\+P\+L\+D\+M.\+f90@{src/\+P\+L\+D\+M.\+f90}}
 \subsection*{Data Types}
 \begin{DoxyCompactItemize}
 \item 
-module \hyperlink{classpldm__class}{pldm\-\_\-class}
-\begin{DoxyCompactList}\small\item\em Partial Lineraized Path Integral Propagators. \end{DoxyCompactList}\item 
-type \hyperlink{structpldm__class_1_1pldm}{pldm\-\_\-class\-::pldm}
+type \hyperlink{structpldm__class_1_1pldm}{pldm\+\_\+class\+::pldm}
 \item 
-interface \hyperlink{interfacepldm__class_1_1new}{pldm\-\_\-class\-::new}
+interface \hyperlink{interfacepldm__class_1_1new}{pldm\+\_\+class\+::new}
 \item 
-interface \hyperlink{interfacepldm__class_1_1kill}{pldm\-\_\-class\-::kill}
+interface \hyperlink{interfacepldm__class_1_1kill}{pldm\+\_\+class\+::kill}
 \item 
-interface \hyperlink{interfacepldm__class_1_1save}{pldm\-\_\-class\-::save}
+interface \hyperlink{interfacepldm__class_1_1save}{pldm\+\_\+class\+::save}
 \item 
-interface \hyperlink{interfacepldm__class_1_1display}{pldm\-\_\-class\-::display}
+interface \hyperlink{interfacepldm__class_1_1display}{pldm\+\_\+class\+::display}
 \item 
-interface \hyperlink{interfacepldm__class_1_1check}{pldm\-\_\-class\-::check}
+interface \hyperlink{interfacepldm__class_1_1check}{pldm\+\_\+class\+::check}
 \item 
-interface \hyperlink{interfacepldm__class_1_1run}{pldm\-\_\-class\-::run}
+interface \hyperlink{interfacepldm__class_1_1run}{pldm\+\_\+class\+::run}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacepldm__class}{pldm\+\_\+class}
+\begin{DoxyCompactList}\small\item\em Partial Lineraized Path Integral Propagators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacepldm__class_a56bc2a02f61ba7f0ef59c429a9f1e038}{pldm\+\_\+class\+::mapverlet} (this, nstate, nlit, dt, hel)
+\item 
+subroutine \hyperlink{namespacepldm__class_a12da2274f89c7978903a0e5de4c0a2a7}{pldm\+\_\+class\+::pldm\+\_\+new} (this, qs, cs, cp, file)
+\item 
+subroutine \hyperlink{namespacepldm__class_ae3cf3688fae95f3ab1729475a8fde0fd}{pldm\+\_\+class\+::pldm\+\_\+kill} (this)
+\item 
+subroutine \hyperlink{namespacepldm__class_a0b7b20ee63a6203b24c700190738338b}{pldm\+\_\+class\+::pldm\+\_\+display} (this)
+\item 
+subroutine \hyperlink{namespacepldm__class_aa71a81cb75e284923b6a6f8e4085c564}{pldm\+\_\+class\+::pldm\+\_\+save} (this, file)
+\item 
+integer(short) function \hyperlink{namespacepldm__class_a87937cd139205ea96672b513c5124b8f}{pldm\+\_\+class\+::pldm\+\_\+check} (this)
+\item 
+subroutine \hyperlink{namespacepldm__class_acb662f59407b2a0bd62fc36aab876482}{pldm\+\_\+class\+::pldm\+\_\+run} (this, file, poponly, normstyle, forcesnap)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real(double), dimension(\+:), allocatable \hyperlink{namespacepldm__class_a66ae11e24219b080698059a797561bb4}{pldm\+\_\+class\+::x0}
+\item 
+real(double), dimension(\+:), allocatable \hyperlink{namespacepldm__class_a4da9c01c7e463087a5f38764804dd0eb}{pldm\+\_\+class\+::p0}
+\item 
+real(double), dimension(\+:), allocatable \hyperlink{namespacepldm__class_a2f8d09296fcb6d486fb5a87e5a13276b}{pldm\+\_\+class\+::xt0}
+\item 
+real(double), dimension(\+:), allocatable \hyperlink{namespacepldm__class_a6f0729e807a28fab99053667439c375c}{pldm\+\_\+class\+::pt0}
 \end{DoxyCompactItemize}

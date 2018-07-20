@@ -10,9 +10,9 @@ AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE
 
 # Checks for programs.
-AC_CHECK_PROGS([FPP],[fpp],[:])
+AC_CHECK_PROGS([FPP],[fpp],[cpp],[:])
 if test "$FPP" = :; then
-   AC_MSG_ERROR([This package needs fpp.])
+   AC_MSG_ERROR([This package needs pre-processing.])
 fi
 AC_CHECK_PROGS([PWD],[pwd],[:])
 if test "$PWD" = :; then

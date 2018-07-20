@@ -1,0 +1,10 @@
+.DS_Store
+autom4te.cache
+build-aux
+*.f90#
+Makefile.in
+aclocal.m4
+config.h.in
+configure
+git.out
+*~

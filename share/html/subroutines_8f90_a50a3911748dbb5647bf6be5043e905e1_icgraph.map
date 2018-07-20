@@ -1,7 +1,7 @@
 <map id="diagonalize" name="diagonalize">
-<area shape="rect" id="node3" href="$classdipoles__class.html#a9157bf14add87f3f26edfbc88c0da6fe" title="dipoles_class::dipoles\l_update" alt="" coords="147,5,298,49"/>
-<area shape="rect" id="node5" href="$classhs__class.html#a7857d1f3d6a49cfbc7d397a084a9013f" title="hs_class::hs_init" alt="" coords="163,73,282,101"/>
-<area shape="rect" id="node7" href="$classhs__class.html#abf39e51fc1d47061279287a7e328d9d4" title="hs_class::hs_resample" alt="" coords="144,125,301,153"/>
-<area shape="rect" id="node9" href="$classspectrometer__class.html#ad2c4936524c8702e1c4e53a54a043f31" title="Computes absorption spectrum using groundstate to adiabatic state transition dipole." alt="" coords="154,177,291,221"/>
-<area shape="rect" id="node11" href="$classspectrometer__class.html#a068171434fa75613677e6357291df1fe" title="General call to compute verious spectra." alt="" coords="350,177,487,221"/>
+<area shape="rect" id="node3" href="$namespacedipoles__class.html#a9157bf14add87f3f26edfbc88c0da6fe" title="dipoles_class::dipoles\l_update" alt="" coords="147,5,298,49"/>
+<area shape="rect" id="node5" href="$namespacehs__class.html#a7857d1f3d6a49cfbc7d397a084a9013f" title="hs_class::hs_init" alt="" coords="163,73,282,101"/>
+<area shape="rect" id="node7" href="$namespacehs__class.html#abf39e51fc1d47061279287a7e328d9d4" title="hs_class::hs_resample" alt="" coords="144,125,301,153"/>
+<area shape="rect" id="node9" href="$namespacespectrometer__class.html#ad2c4936524c8702e1c4e53a54a043f31" title="Computes absorption spectrum using groundstate to adiabatic state transition dipole. " alt="" coords="154,177,291,221"/>
+<area shape="rect" id="node11" href="$namespacespectrometer__class.html#a068171434fa75613677e6357291df1fe" title="General call to compute verious spectra. " alt="" coords="350,177,487,221"/>
 </map>

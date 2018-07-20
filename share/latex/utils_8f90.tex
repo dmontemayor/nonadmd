@@ -1,58 +1,248 @@
-\hypertarget{utils_8f90}{\section{src/utils.f90 File Reference}
-\label{utils_8f90}\index{src/utils.\-f90@{src/utils.\-f90}}
-}
+\hypertarget{utils_8f90}{}\section{src/utils.f90 File Reference}
+\label{utils_8f90}\index{src/utils.\+f90@{src/utils.\+f90}}
 \subsection*{Data Types}
 \begin{DoxyCompactItemize}
 \item 
-module \hyperlink{classtype__kinds}{type\-\_\-kinds}
+interface \hyperlink{interfacefilemanager_1_1check}{filemanager\+::check}
+\item 
+interface \hyperlink{interfacestring_1_1int2str}{string\+::int2str}
+\item 
+interface \hyperlink{interfacestring_1_1float2str}{string\+::float2str}
+\item 
+interface \hyperlink{interfacestring_1_1str2int}{string\+::str2int}
+\item 
+interface \hyperlink{interfacestring_1_1str2float}{string\+::str2float}
+\item 
+interface \hyperlink{interfacestring_1_1hex2int}{string\+::hex2int}
+\item 
+interface \hyperlink{interfacestring_1_1int2hex}{string\+::int2hex}
+\item 
+interface \hyperlink{interfaceerrorlog_1_1note}{errorlog\+::note}
+\item 
+interface \hyperlink{interfaceerrorlog_1_1warn}{errorlog\+::warn}
+\item 
+interface \hyperlink{interfaceerrorlog_1_1stop}{errorlog\+::stop}
+\item 
+interface \hyperlink{interfaceerrorlog_1_1prompt}{errorlog\+::prompt}
+\item 
+interface \hyperlink{interfaceoutputdisplay_1_1display}{outputdisplay\+::display}
+\item 
+interface \hyperlink{interfacefitxydata_1_1fit2exp}{fitxydata\+::fit2exp}
+\item 
+interface \hyperlink{interfacetextgraphs_1_1display}{textgraphs\+::display}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacetype__kinds}{type\+\_\+kinds}
 \begin{DoxyCompactList}\small\item\em Definition of integer, floating point, and string kinds. \end{DoxyCompactList}\item 
-module \hyperlink{classmath}{math}
+module \hyperlink{namespacemath}{math}
 \begin{DoxyCompactList}\small\item\em Definition of mathematical constants and operators. \end{DoxyCompactList}\item 
-module \hyperlink{classatomicunits}{atomicunits}
+module \hyperlink{namespaceatomicunits}{atomicunits}
 \begin{DoxyCompactList}\small\item\em Definition of atomic units. \end{DoxyCompactList}\item 
-module \hyperlink{classwallclock}{wallclock}
+module \hyperlink{namespacewallclock}{wallclock}
 \begin{DoxyCompactList}\small\item\em Timming Module. \end{DoxyCompactList}\item 
-module \hyperlink{classmpiframework}{mpiframework}
-\begin{DoxyCompactList}\small\item\em Enables M\-P\-I. \end{DoxyCompactList}\item 
-module \hyperlink{classfilemanager}{filemanager}
+module \hyperlink{namespacempiframework}{mpiframework}
+\begin{DoxyCompactList}\small\item\em Enables M\+PI. \end{DoxyCompactList}\item 
+module \hyperlink{namespacefilemanager}{filemanager}
 \item 
-interface \hyperlink{interfacefilemanager_1_1check}{filemanager\-::check}
+module \hyperlink{namespacerand}{rand}
 \item 
-module \hyperlink{classrand}{rand}
-\item 
-module \hyperlink{classstring}{string}
+module \hyperlink{namespacestring}{string}
 \begin{DoxyCompactList}\small\item\em Get strings from numbers and other string operations. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacestring_1_1int2str}{string\-::int2str}
-\item 
-interface \hyperlink{interfacestring_1_1float2str}{string\-::float2str}
-\item 
-interface \hyperlink{interfacestring_1_1str2int}{string\-::str2int}
-\item 
-interface \hyperlink{interfacestring_1_1str2float}{string\-::str2float}
-\item 
-interface \hyperlink{interfacestring_1_1hex2int}{string\-::hex2int}
-\item 
-interface \hyperlink{interfacestring_1_1int2hex}{string\-::int2hex}
-\item 
-module \hyperlink{classerrorlog}{errorlog}
+module \hyperlink{namespaceerrorlog}{errorlog}
 \begin{DoxyCompactList}\small\item\em Error Handleing. \end{DoxyCompactList}\item 
-interface \hyperlink{interfaceerrorlog_1_1note}{errorlog\-::note}
-\item 
-interface \hyperlink{interfaceerrorlog_1_1warn}{errorlog\-::warn}
-\item 
-interface \hyperlink{interfaceerrorlog_1_1stop}{errorlog\-::stop}
-\item 
-interface \hyperlink{interfaceerrorlog_1_1prompt}{errorlog\-::prompt}
-\item 
-module \hyperlink{classoutputdisplay}{outputdisplay}
+module \hyperlink{namespaceoutputdisplay}{outputdisplay}
 \begin{DoxyCompactList}\small\item\em Enables Display to file. \end{DoxyCompactList}\item 
-interface \hyperlink{interfaceoutputdisplay_1_1display}{outputdisplay\-::display}
+module \hyperlink{namespacefitxydata}{fitxydata}
+\begin{DoxyCompactList}\small\item\em Procedures to Fit XY data to functional forms. \end{DoxyCompactList}\item 
+module \hyperlink{namespacetextgraphs}{textgraphs}
+\begin{DoxyCompactList}\small\item\em Text based plotting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
 \item 
-module \hyperlink{classfitxydata}{fitxydata}
-\begin{DoxyCompactList}\small\item\em Procedures to Fit X\-Y data to functional forms. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacefitxydata_1_1fit2exp}{fitxydata\-::fit2exp}
+real(double) function, dimension(n, n), public \hyperlink{namespacemath_a43efec08acf55747fa1e14085858aade}{math\+::iden} (N)
+\begin{DoxyCompactList}\small\item\em identity matrix \end{DoxyCompactList}\item 
+real(double) function, public \hyperlink{namespacemath_a9f8f22c01066f03fe5900edb63b56c89}{math\+::trace} (A)
+\begin{DoxyCompactList}\small\item\em trace of a complex matrix \end{DoxyCompactList}\item 
+real(double) function, public \hyperlink{namespacemath_a864984937cf0f3b7bdbc9b652b84445d}{math\+::cnorm} (A)
+\begin{DoxyCompactList}\small\item\em Entrywise p-\/norm of a complex square matrix with p=1. \end{DoxyCompactList}\item 
+real(double) function, public \hyperlink{namespacemath_a2830cb5393b6e6a8baa8d072c73ce8a9}{math\+::fnorm} (A, p)
+\begin{DoxyCompactList}\small\item\em Entrywise p-\/norm of a complex matrix. \end{DoxyCompactList}\item 
+character(len=8) function, public \hyperlink{namespacewallclock_aac2bc47e557d4981f481295bd687dd50}{wallclock\+::date} ()
 \item 
-module \hyperlink{classtextgraphs}{textgraphs}
-\begin{DoxyCompactList}\small\item\em Text based plotting. \end{DoxyCompactList}\item 
-interface \hyperlink{interfacetextgraphs_1_1display}{textgraphs\-::display}
+character(len=10) function, public \hyperlink{namespacewallclock_a3efb3d12447df7568e0b22b3cd4ed60d}{wallclock\+::time} ()
+\item 
+character(len=5) function, public \hyperlink{namespacewallclock_ac6bdcdd3cf7fc38f4c738862e2a82dac}{wallclock\+::zone} ()
+\item 
+integer(long) function, dimension(8), public \hyperlink{namespacewallclock_ac691a026a7b92c6cd971e86d0449d42b}{wallclock\+::timearray} ()
+\item 
+integer(long) function, public \hyperlink{namespacefilemanager_aa389048ef7c9eb9afdac7ce1dcc691b2}{filemanager\+::newunit} ()
+\item 
+integer(short) function \hyperlink{namespacefilemanager_a0c7a869ddf6cd3ea9fad5b6de4069cf3}{filemanager\+::checkfile} (file)
+\item 
+subroutine, public \hyperlink{namespacerand_a632224183164f720bd47baa916a5ab8b}{rand\+::setseed} (seedin)
+\item 
+integer(long) function, public \hyperlink{namespacerand_a0bf2019d6e29304bea88b6dfc7277e96}{rand\+::seed} ()
+\item 
+real(double) function, public \hyperlink{namespacerand_a750567ffa303a800f86ffc3bd5705137}{rand\+::ran0} (seedin)
+\item 
+real(double) function, public \hyperlink{namespacerand_a7bf88c16a64dbc594c0b21871f34e15c}{rand\+::gran} (seed)
+\item 
+character(len=len(str)+2) function, public \hyperlink{namespacestring_a43ac41bc9fa839e5e40ec725c029b5a4}{string\+::quote} (str)
+\item 
+character(len=title) function \hyperlink{namespacestring_a734300e2e50f76efa2730b5f1cc7cc21}{string\+::long2str} (I)
+\item 
+character(len=title) function \hyperlink{namespacestring_ac3e429fd86c78765b2408096ae132f8a}{string\+::short2str} (I)
+\item 
+integer(long) function \hyperlink{namespacestring_aefd9037a03dddf650cb9d0a18ed7de95}{string\+::str2long} (string)
+\item 
+character(len=title) function \hyperlink{namespacestring_a229fed3adef608ec305da7cbc54b24a8}{string\+::double2str} (X)
+\item 
+real(double) function \hyperlink{namespacestring_a73d6072e501eb7ed3d5aa9e4a5a47f6d}{string\+::str2double} (string)
+\item 
+character(len=title) function \hyperlink{namespacestring_a78ede8e0d165537ea978aeeb8227bc3f}{string\+::single2str} (X)
+\item 
+integer(long) function \hyperlink{namespacestring_a133490e9f060a404b52108895b255435}{string\+::hex2long} (string)
+\item 
+character(len=title) function \hyperlink{namespacestring_a58fb75f0ded0856267e7770d4b13b2f6}{string\+::long2hex} (I)
+\item 
+subroutine, public \hyperlink{namespaceerrorlog_a05d233f410ba88bf3e2929528b1bb91e}{errorlog\+::displaylog}
+\item 
+subroutine, public \hyperlink{namespaceerrorlog_a32bbf87dd265de25bd10ea31d95b751d}{errorlog\+::openlog} (file, level, Program\+Name, Bug\+Report)
+\item 
+subroutine, public \hyperlink{namespaceerrorlog_af9219c790b58905faca7f5695515325d}{errorlog\+::closelog}
+\item 
+subroutine \hyperlink{namespaceerrorlog_abcaf87ab55e0634007cc7177aa53469c}{errorlog\+::log\+\_\+note} (msg)
+\item 
+subroutine \hyperlink{namespaceerrorlog_ac0a3d2c2bcdb3af8e91b4a27d2ac5ac0}{errorlog\+::log\+\_\+warn} (msg, recover)
+\item 
+subroutine \hyperlink{namespaceerrorlog_afe1872ea4ca114ccb25faaa2f2d60e2e}{errorlog\+::log\+\_\+stop} (msg, suggest)
+\item 
+subroutine \hyperlink{namespaceerrorlog_ac6531d63b5a5d4939c3d510dd7fbbb25}{errorlog\+::log\+\_\+prompt} (msg)
+\item 
+subroutine \hyperlink{namespaceoutputdisplay_a9a8a15080a89f2947af09f8fb326a2e0}{outputdisplay\+::display\+\_\+init} (file)
+\begin{DoxyCompactList}\small\item\em redirects display output to newfile \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacefitxydata_a9f00dca017c2372da0c3c95cdf0ddb31}{fitxydata\+::fit2exp} (set, R, A, B)
+\begin{DoxyCompactList}\small\item\em Fit to exponential function. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacetextgraphs_a34e0dbcefa5d7f20393912bea281116e}{textgraphs\+::displaycmplxmatrix} (Z, tol, msg)
+\begin{DoxyCompactList}\small\item\em Plot Complex Matrix. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacetextgraphs_aec95adcc32b77f95f0a3625ca97cc374}{textgraphs\+::displayrealmatrix} (A, tol, msg)
+\begin{DoxyCompactList}\small\item\em Plot Real Matrix. \end{DoxyCompactList}\item 
+character function \hyperlink{namespacetextgraphs_accad584018d6cbbc199cc77b34ef2db5}{textgraphs\+::textgraphschar} (X, tol, alt)
+\begin{DoxyCompactList}\small\item\em Scaled Value character. \end{DoxyCompactList}\item 
+character function \hyperlink{namespacetextgraphs_a3ce903686e3a69e50f07b7f1461c53c6}{textgraphs\+::textgraphsvect} (X, tol)
+\begin{DoxyCompactList}\small\item\em Vector character. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacetextgraphs_ae7171ed6f50b5b8b77aabd136316a6b8}{textgraphs\+::displayvectfield} (Q, Mu, tol, nptx, npty, labelvect, msg)
+\begin{DoxyCompactList}\small\item\em Plot Vector Field. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacetextgraphs_a7f733ce4082530e8bfeb1750d4870575}{textgraphs\+::displayvalues} (Q, npt, msg)
+\begin{DoxyCompactList}\small\item\em Display Array Vaules. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacetextgraphs_a857fceafb9446a13966f54fbbce35773}{textgraphs\+::displayxy} (Xset, Yset, nptx, npty, mask, msg)
+\begin{DoxyCompactList}\small\item\em Scatter plot details/ displays xy data as nptx x npty char text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, public \hyperlink{namespacetype__kinds_aa2f577aea616d9b9bb91ce438bdf3c02}{type\+\_\+kinds\+::title}
+\begin{DoxyCompactList}\small\item\em string length for a name/title \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{namespacetype__kinds_a05ab6f6ff4279480c4fd6d8b04a3efbf}{type\+\_\+kinds\+::path}
+\begin{DoxyCompactList}\small\item\em string length for a directory path \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{namespacetype__kinds_af0560ef37c612847670ffbfba8a9bc33}{type\+\_\+kinds\+::line}
+\begin{DoxyCompactList}\small\item\em string length for a line in a file \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{namespacetype__kinds_abb1584a815b1c1b79301d6f922366eec}{type\+\_\+kinds\+::comment}
+\begin{DoxyCompactList}\small\item\em string length for a message/comment \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{namespacetype__kinds_a13366a08a0935a72c203e1b880b4d49e}{type\+\_\+kinds\+::byte}
+\begin{DoxyCompactList}\small\item\em byte integer size \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{namespacetype__kinds_ab4d7bfce672e6152e78f87f8aa5b2e04}{type\+\_\+kinds\+::short}
+\begin{DoxyCompactList}\small\item\em short integer size \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{namespacetype__kinds_a14af3c9d56db49c61252b056506a584a}{type\+\_\+kinds\+::long}
+\begin{DoxyCompactList}\small\item\em long integer size \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{namespacetype__kinds_a1752925d569776fd4a88872a620ed1d0}{type\+\_\+kinds\+::single}
+\begin{DoxyCompactList}\small\item\em single precision float size \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{namespacetype__kinds_a34b12277eb02d1bbaaaae83e033d9890}{type\+\_\+kinds\+::double}
+\begin{DoxyCompactList}\small\item\em double precision float size \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespacemath_aa2f838077707f6cdb0c8a0ec69719690}{math\+::pi}
+\item 
+real(double), parameter \hyperlink{namespacemath_aeb6d7ed6a20444e26f024b34eaa4c4f7}{math\+::twopi}
+\item 
+real(double), parameter \hyperlink{namespacemath_a83cddb754967ada1a15217d10ed9c24b}{math\+::fourpi}
+\item 
+real(double), parameter \hyperlink{namespacemath_a99d72d3bce2cadc8630d10ee09aaa3ea}{math\+::halfpi}
+\item 
+complex(double), parameter \hyperlink{namespacemath_ae0354610846d49064ea0336f19d5bf3f}{math\+::eye}
+\item 
+real(double), parameter \hyperlink{namespaceatomicunits_aa4859dbb9e7739ae603b78d9f2c58f93}{atomicunits\+::a0}
+\begin{DoxyCompactList}\small\item\em (Fundamental length) Bohr radius \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_a02f36d49c4a56d1cc84c8cda6c631a68}{atomicunits\+::me}
+\begin{DoxyCompactList}\small\item\em (Fundamental mass) electron mass \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_a7dffaade5d28d129a3726e8eff794447}{atomicunits\+::hbar}
+\begin{DoxyCompactList}\small\item\em (Fundamental action) reduced Planks const \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_af3650eaf423c8af5e887256a5e8023d6}{atomicunits\+::e}
+\begin{DoxyCompactList}\small\item\em (Fundamental charge) electron charge \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_a0b4d6ac453558bc86022587236f7d076}{atomicunits\+::kel}
+\begin{DoxyCompactList}\small\item\em (Fundamental temperature) Kelvin \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_af00d60f8fc301784d6e48a53e524a4c8}{atomicunits\+::mol}
+\begin{DoxyCompactList}\small\item\em (Fundamental amount) Avogadro\textquotesingle{}s number \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_a07ac069b1a5417fd61aa3954d6b66d83}{atomicunits\+::rad}
+\begin{DoxyCompactList}\small\item\em (Fundamental angle) radian \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_a39b85d20ed96ab0b9dfb86c7646a61a0}{atomicunits\+::eh}
+\begin{DoxyCompactList}\small\item\em Hartree (unit value) \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_aafc175708d34f52459448530cdec9aae}{atomicunits\+::kc}
+\begin{DoxyCompactList}\small\item\em Coulomb force (unit value) \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_a62f37608529c74a442a81baa515965d6}{atomicunits\+::mp}
+\begin{DoxyCompactList}\small\item\em proton rest mass \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_a001e0a01ab152644eb7df31ade44b290}{atomicunits\+::mn}
+\begin{DoxyCompactList}\small\item\em neutron rest mass \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_afe876defe82137d91908691c6765a5f1}{atomicunits\+::kb}
+\begin{DoxyCompactList}\small\item\em boltzman constant \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_a10a69964ce0d082d71ee5ae34a5a0d24}{atomicunits\+::ev}
+\begin{DoxyCompactList}\small\item\em Electon volt. \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_ae35b35bfa15b571da842371a32dcb2e6}{atomicunits\+::c0}
+\begin{DoxyCompactList}\small\item\em speed of light \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_a45821c6127c356d71ba94bf34b962653}{atomicunits\+::eps0}
+\begin{DoxyCompactList}\small\item\em vacuum permittivity \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_af82c72bfababde1e5da6ac04a43b8570}{atomicunits\+::debye}
+\begin{DoxyCompactList}\small\item\em Dipole moment. \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_af9552fc54f3050b11cce6152261c2bf2}{atomicunits\+::deg}
+\begin{DoxyCompactList}\small\item\em Degrees. \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_a618f9dcd7de9b9ddb53af5bd4f1095c6}{atomicunits\+::angstrom}
+\begin{DoxyCompactList}\small\item\em angstrom \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_a51f9c61f64f3aec674dd6dbb342e733d}{atomicunits\+::fs}
+\begin{DoxyCompactList}\small\item\em femtosecond \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_af5dac3bb123ac05a538d6ebd2373eb3b}{atomicunits\+::ps}
+\begin{DoxyCompactList}\small\item\em picosecond \end{DoxyCompactList}\item 
+real(double), parameter \hyperlink{namespaceatomicunits_a1741cd0f8cdd696033c1c18531740795}{atomicunits\+::invcm}
+\begin{DoxyCompactList}\small\item\em wavenumber(1/cm) \end{DoxyCompactList}\item 
+character(len=8) \hyperlink{namespacewallclock_a0922e57a4f1a99af864f31246c132d4c}{wallclock\+::d}
+\item 
+character(len=10) \hyperlink{namespacewallclock_a8a94eeecb39db73f1c36c9b00a95c9f7}{wallclock\+::t}
+\item 
+character(len=5) \hyperlink{namespacewallclock_a47a8e5d4efccd0142b0587c873dad88b}{wallclock\+::z}
+\item 
+integer(long), dimension(8) \hyperlink{namespacewallclock_a634d56ca30b98ea804c6d33a0a635ec0}{wallclock\+::a}
+\item 
+integer(long), dimension(mpi\+\_\+status\+\_\+size) \hyperlink{namespacempiframework_ab7c6b211b6d67a29e8b7e2cefe97d5b2}{mpiframework\+::status}
+\item 
+integer(long), parameter \hyperlink{namespacempiframework_ae3cf75bc4150b05cabe037cf7478d4a0}{mpiframework\+::master}
+\item 
+integer(long) \hyperlink{namespacempiframework_ae833a6cbdc45698ffa99a650f0e6bb2d}{mpiframework\+::myid}
+\item 
+integer(long) \hyperlink{namespacempiframework_af70b38210cb3bcccdc873618ffb3de35}{mpiframework\+::nproc}
+\item 
+integer(long) \hyperlink{namespacerand_a8271f5341966bf15edcabc95e23ffcec}{rand\+::idum}
+\item 
+integer(short) \hyperlink{namespaceerrorlog_a3ab7fc512e499660dcb9a9542aab02b5}{errorlog\+::loglevel}
+\item 
+integer(long) \hyperlink{namespaceerrorlog_adb26bb2d10f764e895c9745c3fb5dd1d}{errorlog\+::logunit}
+\item 
+character(len=path) \hyperlink{namespaceerrorlog_a42e82497abf38d3e1683b51b48a5e4c0}{errorlog\+::logfile}
+\item 
+logical \hyperlink{namespaceerrorlog_af9add736038cc71b13ee19df6544f3e5}{errorlog\+::logclosed}
+\item 
+logical \hyperlink{namespaceerrorlog_a3a12f9c3cbb079a8cbb7b5790ea2c827}{errorlog\+::logopen}
+\item 
+integer(long) \hyperlink{namespaceerrorlog_a056ccc9457985050fb6391dd4abf1f2c}{errorlog\+::logcount}
+\item 
+integer(long), public \hyperlink{namespaceoutputdisplay_a37a1610ae7e198bc24d119cea584a6f2}{outputdisplay\+::dunit}
+\item 
+real $\ast$8, dimension(\+:,\+:), allocatable \hyperlink{namespacefitxydata_ad69a6716eab16a1f8c170a0d0a7ed499}{fitxydata\+::xydata}
 \end{DoxyCompactItemize}

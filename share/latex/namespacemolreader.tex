@@ -1,0 +1,659 @@
+\hypertarget{namespacemolreader}{}\section{molreader Module Reference}
+\label{namespacemolreader}\index{molreader@{molreader}}
+
+
+Molecule Building Utility.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacemolreader_1_1advance__record}{advance\+\_\+record}
+\item 
+type \hyperlink{structmolreader_1_1atom}{atom}
+\item 
+type \hyperlink{structmolreader_1_1cryst1}{cryst1}
+\item 
+interface \hyperlink{interfacemolreader_1_1display}{display}
+\item 
+type \hyperlink{structmolreader_1_1model}{model}
+\item 
+interface \hyperlink{interfacemolreader_1_1new}{new}
+\item 
+type \hyperlink{structmolreader_1_1psfatom}{psfatom}
+\item 
+interface \hyperlink{interfacemolreader_1_1read}{read}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+character(len=\hyperlink{namespacemolreader_a8f12be3272b946fd698c9fbaf2ba9d32}{reclen}) function, public \hyperlink{namespacemolreader_af6c857ef51f99971a66b1c293d24906b}{next\+\_\+record} ()
+\item 
+subroutine \hyperlink{namespacemolreader_af85c1b386f0dc78ebf55e003b4f8c83a}{read\+\_\+cryst1} (this)
+\item 
+subroutine \hyperlink{namespacemolreader_ac9a2b0ff287faa780311cc432b866610}{display\+\_\+cryst1} (this, unit)
+\item 
+subroutine \hyperlink{namespacemolreader_ac284dc33f40874d6156c1cd36781002c}{new\+\_\+cryst1} (this)
+\item 
+subroutine \hyperlink{namespacemolreader_a64ff990dc05c01debc1138dd012f4bcb}{read\+\_\+model} (this)
+\begin{DoxyCompactList}\small\item\em Reads and returns M\+O\+D\+EL Record type. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemolreader_a462d061944b74f7145b8bf89fc3439fc}{display\+\_\+model} (this, unit)
+\item 
+subroutine \hyperlink{namespacemolreader_a8edb660b2e1b64a5d78593c734afbe95}{new\+\_\+model} (this)
+\item 
+subroutine \hyperlink{namespacemolreader_a49ccaf345b633e27f69ad7a5a8637a2a}{read\+\_\+atom} (this)
+\begin{DoxyCompactList}\small\item\em Reads and returns A\+T\+O\+M/\+H\+E\+T\+A\+T\+M/\+T\+ER Record types. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemolreader_ae1000e1ea4e46f858a3640c08563c3ff}{new\+\_\+atom} (this)
+\item 
+subroutine \hyperlink{namespacemolreader_adb757da4ec2256578422254dad5b262e}{display\+\_\+atom} (this, unit)
+\item 
+subroutine, public \hyperlink{namespacemolreader_a38a3903d901bc5e0b318bcc0dfd1b3ff}{open\+\_\+pdb} (file)
+\begin{DoxyCompactList}\small\item\em Initialize P\+DB file for parsing. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemolreader_a5aafbdb9b4afbb96bdc20ae58d547699}{close\+\_\+pdb}
+\item 
+subroutine, public \hyperlink{namespacemolreader_af85c66302e278af03e0cc94dc42e662e}{rewind\+\_\+pdb}
+\begin{DoxyCompactList}\small\item\em Rewind an initialized P\+DB file for parsing. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemolreader_a16d4776fded57cf8aa38f639610cad84}{refresh\+\_\+buffer}
+\item 
+subroutine \hyperlink{namespacemolreader_ac7b950f165e89b12ccc8fff1c0f3bae9}{advance\+\_\+buffer}
+\item 
+subroutine \hyperlink{namespacemolreader_a81fcc5a3f49380ccd10b02b229f5067d}{read\+\_\+psfatom} (this)
+\item 
+subroutine \hyperlink{namespacemolreader_a737dbe023a6cbecab8269981ffdfa31c}{display\+\_\+psfatom} (this, unit)
+\item 
+subroutine \hyperlink{namespacemolreader_a56968311293e3c68022fe3bbe3600306}{new\+\_\+psfatom} (this)
+\item 
+character(len=\hyperlink{namespacemolreader_acd493d996a1fcd0ed77937e925c9b7fe}{linelen}) function, public \hyperlink{namespacemolreader_ac6b85a406b7ebd0810f0d63beeeda783}{next\+\_\+psf} ()
+\item 
+subroutine \hyperlink{namespacemolreader_abf243c87d2f9429f3ed94293d438c7c7}{advance\+\_\+psfbuffer}
+\item 
+subroutine \hyperlink{namespacemolreader_a13131c46b34d0385ba7eadd0b1b88df9}{refresh\+\_\+psfbuffer}
+\item 
+subroutine, public \hyperlink{namespacemolreader_a3ebd81391f00e3279bf262b2879af97a}{open\+\_\+psf} (file)
+\begin{DoxyCompactList}\small\item\em Initialize P\+SF file for parsing. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemolreader_aac446b95d6c274d93e11e45286e60e4d}{close\+\_\+psf}
+\item 
+subroutine, public \hyperlink{namespacemolreader_a6d79c8d97fd91cfb25dec2b67320c77b}{rewind\+\_\+psf}
+\begin{DoxyCompactList}\small\item\em Rewind an initialized P\+SF file for parsing. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemolreader_a7a4cb6436916cd4b8ee0341d528e9c73}{advance\+\_\+psf} (section, nrecord)
+\begin{DoxyCompactList}\small\item\em Advances opened psf file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(long) \hyperlink{namespacemolreader_a5b0570862e5318937ea68a01966ed56f}{pdbunit}
+\item 
+integer(long) \hyperlink{namespacemolreader_a2b57a032db6161c98961f5e8109c3b90}{psfunit}
+\item 
+integer(long) \hyperlink{namespacemolreader_ac41219b2f68591f315dded4488483263}{parsingunit}
+\item 
+character(len=path) \hyperlink{namespacemolreader_aa372f060e4e581b1c14e2b46a65d2df4}{pdbfile}
+\item 
+character(len=path) \hyperlink{namespacemolreader_a48ac5c969e35417342bb66a57adec842}{psffile}
+\item 
+logical \hyperlink{namespacemolreader_ad7636360c8e0ecb526000567dd32d2d0}{pdbisopen}
+\item 
+logical \hyperlink{namespacemolreader_ae5cd9063d12a39b0e8266e184439c808}{psfisopen}
+\item 
+integer(long), parameter \hyperlink{namespacemolreader_a8f12be3272b946fd698c9fbaf2ba9d32}{reclen}
+\item 
+integer(long), parameter \hyperlink{namespacemolreader_acd493d996a1fcd0ed77937e925c9b7fe}{linelen}
+\item 
+integer(long), parameter \hyperlink{namespacemolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}
+\item 
+character(len=5) \hyperlink{namespacemolreader_ac14650c697f68fd15530b93807e3f42f}{linefmt}
+\item 
+character(len=\hyperlink{namespacemolreader_acd493d996a1fcd0ed77937e925c9b7fe}{linelen}), dimension(\hyperlink{namespacemolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}) \hyperlink{namespacemolreader_a06d78b69405420664607fb01b4d8e97a}{buffer}
+\item 
+character(len=\hyperlink{namespacemolreader_acd493d996a1fcd0ed77937e925c9b7fe}{linelen}), dimension(\hyperlink{namespacemolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}) \hyperlink{namespacemolreader_aab845daa54f6803a37ceb91d7ad296a7}{psfbuffer}
+\item 
+integer(long) \hyperlink{namespacemolreader_a7b2e4f11efe55d80469efa3f7aeacbab}{buffer\+\_\+cursor}
+\item 
+integer(long) \hyperlink{namespacemolreader_ac7969154d301aab4a51cde89ec2f08ee}{buffer\+\_\+count}
+\item 
+integer(long) \hyperlink{namespacemolreader_ab080c636a2423beb139bdd65dcd884c3}{psfbuffer\+\_\+cursor}
+\item 
+integer(long) \hyperlink{namespacemolreader_af2dddaa7f6249a39287ffcdcbe2ce558}{psfbuffer\+\_\+count}
+\item 
+logical, dimension(\hyperlink{namespacemolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}) \hyperlink{namespacemolreader_a3368bfc7f2d07a7f472a8118220516a9}{buffermask}
+\item 
+logical, dimension(\hyperlink{namespacemolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}) \hyperlink{namespacemolreader_a747bd2c32990916c313506c805317e88}{psfbuffermask}
+\item 
+logical \hyperlink{namespacemolreader_a1f82d6f3302ab89b43d1fcbcba5d8fb2}{recording\+\_\+parsingdata}
+\item 
+logical \hyperlink{namespacemolreader_aec460f295b88cb8eb8dd58901edce0ba}{to}
+\item 
+logical \hyperlink{namespacemolreader_af3ae5caa4d00fa50c74d2f3154e8ea7c}{save}
+\item 
+logical \hyperlink{namespacemolreader_a151a8b8c33b86ab86d352aeaaf9ec84b}{parsing}
+\item 
+logical \hyperlink{namespacemolreader_a29899cd9778ac12af6bad404c1092518}{timing}
+\item 
+logical \hyperlink{namespacemolreader_ad29941441961d6bb225120cc88f93db7}{data}
+\item 
+real(double) \hyperlink{namespacemolreader_a5cf7dc5ccdeb068704a693ec6b248796}{parsing\+\_\+rate}
+\item 
+real(double) \hyperlink{namespacemolreader_ad5b1ed6898caa1c2161f0cdc6c10fc72}{time0}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Molecule Building Utility. 
+
+Supports P\+DB -\/ Atomic Coordinate Entry Format Version 3.\+3 plus some extra P\+DB entries typical of some MD packages. \begin{DoxyAuthor}{Authors}
+Daniel Montemayor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23 Feb 2012 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000001}{Bug}]psf file cannont have extra charaters in \textquotesingle{}section\textquotesingle{} line. (go to advance\+\_\+psf subrtouine) \end{DoxyRefDesc}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]depreciate next\+\_\+record, and \hyperlink{interfacemolreader_1_1advance__record}{advance\+\_\+record} use instead next\+\_\+pdb and advance\+\_\+pdb \end{DoxyRefDesc}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacemolreader_ac7b950f165e89b12ccc8fff1c0f3bae9}\label{namespacemolreader_ac7b950f165e89b12ccc8fff1c0f3bae9}} 
+\index{molreader@{molreader}!advance\+\_\+buffer@{advance\+\_\+buffer}}
+\index{advance\+\_\+buffer@{advance\+\_\+buffer}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{advance\+\_\+buffer()}{advance\_buffer()}}
+{\footnotesize\ttfamily subroutine molreader\+::advance\+\_\+buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemolreader_ac7b950f165e89b12ccc8fff1c0f3bae9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{namespacemolreader_ac7b950f165e89b12ccc8fff1c0f3bae9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_a7a4cb6436916cd4b8ee0341d528e9c73}\label{namespacemolreader_a7a4cb6436916cd4b8ee0341d528e9c73}} 
+\index{molreader@{molreader}!advance\+\_\+psf@{advance\+\_\+psf}}
+\index{advance\+\_\+psf@{advance\+\_\+psf}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{advance\+\_\+psf()}{advance\_psf()}}
+{\footnotesize\ttfamily subroutine, public molreader\+::advance\+\_\+psf (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in), optional}]{section,  }\item[{integer(long), optional}]{nrecord }\end{DoxyParamCaption})}
+
+
+
+Advances opened psf file. 
+
+Advances one line or optionally to one of the following sections\+: title, atoms, bonds, angles, dihedrals, impropers, or cross-\/terms \begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000002}{Bug}]trim(str).ne.\textquotesingle{}section\textquotesingle{}\+: means that nothing else can be written on section line, the bug can be fixed by selecting the columns of the \hyperlink{namespacemolreader_ac6b85a406b7ebd0810f0d63beeeda783}{next\+\_\+psf()} string not the trim. \end{DoxyRefDesc}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemolreader_a7a4cb6436916cd4b8ee0341d528e9c73_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_abf243c87d2f9429f3ed94293d438c7c7}\label{namespacemolreader_abf243c87d2f9429f3ed94293d438c7c7}} 
+\index{molreader@{molreader}!advance\+\_\+psfbuffer@{advance\+\_\+psfbuffer}}
+\index{advance\+\_\+psfbuffer@{advance\+\_\+psfbuffer}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{advance\+\_\+psfbuffer()}{advance\_psfbuffer()}}
+{\footnotesize\ttfamily subroutine molreader\+::advance\+\_\+psfbuffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{namespacemolreader_abf243c87d2f9429f3ed94293d438c7c7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{namespacemolreader_abf243c87d2f9429f3ed94293d438c7c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_a5aafbdb9b4afbb96bdc20ae58d547699}\label{namespacemolreader_a5aafbdb9b4afbb96bdc20ae58d547699}} 
+\index{molreader@{molreader}!close\+\_\+pdb@{close\+\_\+pdb}}
+\index{close\+\_\+pdb@{close\+\_\+pdb}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{close\+\_\+pdb()}{close\_pdb()}}
+{\footnotesize\ttfamily subroutine, public molreader\+::close\+\_\+pdb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemolreader_aac446b95d6c274d93e11e45286e60e4d}\label{namespacemolreader_aac446b95d6c274d93e11e45286e60e4d}} 
+\index{molreader@{molreader}!close\+\_\+psf@{close\+\_\+psf}}
+\index{close\+\_\+psf@{close\+\_\+psf}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{close\+\_\+psf()}{close\_psf()}}
+{\footnotesize\ttfamily subroutine, public molreader\+::close\+\_\+psf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemolreader_aac446b95d6c274d93e11e45286e60e4d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_adb757da4ec2256578422254dad5b262e}\label{namespacemolreader_adb757da4ec2256578422254dad5b262e}} 
+\index{molreader@{molreader}!display\+\_\+atom@{display\+\_\+atom}}
+\index{display\+\_\+atom@{display\+\_\+atom}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{display\+\_\+atom()}{display\_atom()}}
+{\footnotesize\ttfamily subroutine molreader\+::display\+\_\+atom (\begin{DoxyParamCaption}\item[{type(\hyperlink{structmolreader_1_1atom}{atom}), intent(inout)}]{this,  }\item[{integer(long), optional}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_ac9a2b0ff287faa780311cc432b866610}\label{namespacemolreader_ac9a2b0ff287faa780311cc432b866610}} 
+\index{molreader@{molreader}!display\+\_\+cryst1@{display\+\_\+cryst1}}
+\index{display\+\_\+cryst1@{display\+\_\+cryst1}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{display\+\_\+cryst1()}{display\_cryst1()}}
+{\footnotesize\ttfamily subroutine molreader\+::display\+\_\+cryst1 (\begin{DoxyParamCaption}\item[{type(\hyperlink{structmolreader_1_1cryst1}{cryst1}), intent(inout)}]{this,  }\item[{integer(long), optional}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a462d061944b74f7145b8bf89fc3439fc}\label{namespacemolreader_a462d061944b74f7145b8bf89fc3439fc}} 
+\index{molreader@{molreader}!display\+\_\+model@{display\+\_\+model}}
+\index{display\+\_\+model@{display\+\_\+model}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{display\+\_\+model()}{display\_model()}}
+{\footnotesize\ttfamily subroutine molreader\+::display\+\_\+model (\begin{DoxyParamCaption}\item[{type(\hyperlink{structmolreader_1_1model}{model}), intent(inout)}]{this,  }\item[{integer(long), optional}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a737dbe023a6cbecab8269981ffdfa31c}\label{namespacemolreader_a737dbe023a6cbecab8269981ffdfa31c}} 
+\index{molreader@{molreader}!display\+\_\+psfatom@{display\+\_\+psfatom}}
+\index{display\+\_\+psfatom@{display\+\_\+psfatom}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{display\+\_\+psfatom()}{display\_psfatom()}}
+{\footnotesize\ttfamily subroutine molreader\+::display\+\_\+psfatom (\begin{DoxyParamCaption}\item[{type(\hyperlink{structmolreader_1_1psfatom}{psfatom}), intent(in)}]{this,  }\item[{integer(long), optional}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_ae1000e1ea4e46f858a3640c08563c3ff}\label{namespacemolreader_ae1000e1ea4e46f858a3640c08563c3ff}} 
+\index{molreader@{molreader}!new\+\_\+atom@{new\+\_\+atom}}
+\index{new\+\_\+atom@{new\+\_\+atom}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{new\+\_\+atom()}{new\_atom()}}
+{\footnotesize\ttfamily subroutine molreader\+::new\+\_\+atom (\begin{DoxyParamCaption}\item[{type(\hyperlink{structmolreader_1_1atom}{atom}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_ac284dc33f40874d6156c1cd36781002c}\label{namespacemolreader_ac284dc33f40874d6156c1cd36781002c}} 
+\index{molreader@{molreader}!new\+\_\+cryst1@{new\+\_\+cryst1}}
+\index{new\+\_\+cryst1@{new\+\_\+cryst1}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{new\+\_\+cryst1()}{new\_cryst1()}}
+{\footnotesize\ttfamily subroutine molreader\+::new\+\_\+cryst1 (\begin{DoxyParamCaption}\item[{type(\hyperlink{structmolreader_1_1cryst1}{cryst1}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a8edb660b2e1b64a5d78593c734afbe95}\label{namespacemolreader_a8edb660b2e1b64a5d78593c734afbe95}} 
+\index{molreader@{molreader}!new\+\_\+model@{new\+\_\+model}}
+\index{new\+\_\+model@{new\+\_\+model}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{new\+\_\+model()}{new\_model()}}
+{\footnotesize\ttfamily subroutine molreader\+::new\+\_\+model (\begin{DoxyParamCaption}\item[{type(\hyperlink{structmolreader_1_1model}{model}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a56968311293e3c68022fe3bbe3600306}\label{namespacemolreader_a56968311293e3c68022fe3bbe3600306}} 
+\index{molreader@{molreader}!new\+\_\+psfatom@{new\+\_\+psfatom}}
+\index{new\+\_\+psfatom@{new\+\_\+psfatom}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{new\+\_\+psfatom()}{new\_psfatom()}}
+{\footnotesize\ttfamily subroutine molreader\+::new\+\_\+psfatom (\begin{DoxyParamCaption}\item[{type(\hyperlink{structmolreader_1_1psfatom}{psfatom}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_ac6b85a406b7ebd0810f0d63beeeda783}\label{namespacemolreader_ac6b85a406b7ebd0810f0d63beeeda783}} 
+\index{molreader@{molreader}!next\+\_\+psf@{next\+\_\+psf}}
+\index{next\+\_\+psf@{next\+\_\+psf}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{next\+\_\+psf()}{next\_psf()}}
+{\footnotesize\ttfamily character(len=\hyperlink{namespacemolreader_acd493d996a1fcd0ed77937e925c9b7fe}{linelen}) function, public molreader\+::next\+\_\+psf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{namespacemolreader_ac6b85a406b7ebd0810f0d63beeeda783_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_af6c857ef51f99971a66b1c293d24906b}\label{namespacemolreader_af6c857ef51f99971a66b1c293d24906b}} 
+\index{molreader@{molreader}!next\+\_\+record@{next\+\_\+record}}
+\index{next\+\_\+record@{next\+\_\+record}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{next\+\_\+record()}{next\_record()}}
+{\footnotesize\ttfamily character(len=\hyperlink{namespacemolreader_a8f12be3272b946fd698c9fbaf2ba9d32}{reclen}) function, public molreader\+::next\+\_\+record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemolreader_a38a3903d901bc5e0b318bcc0dfd1b3ff}\label{namespacemolreader_a38a3903d901bc5e0b318bcc0dfd1b3ff}} 
+\index{molreader@{molreader}!open\+\_\+pdb@{open\+\_\+pdb}}
+\index{open\+\_\+pdb@{open\+\_\+pdb}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{open\+\_\+pdb()}{open\_pdb()}}
+{\footnotesize\ttfamily subroutine, public molreader\+::open\+\_\+pdb (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in)}]{file }\end{DoxyParamCaption})}
+
+
+
+Initialize P\+DB file for parsing. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemolreader_a38a3903d901bc5e0b318bcc0dfd1b3ff_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_a3ebd81391f00e3279bf262b2879af97a}\label{namespacemolreader_a3ebd81391f00e3279bf262b2879af97a}} 
+\index{molreader@{molreader}!open\+\_\+psf@{open\+\_\+psf}}
+\index{open\+\_\+psf@{open\+\_\+psf}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{open\+\_\+psf()}{open\_psf()}}
+{\footnotesize\ttfamily subroutine, public molreader\+::open\+\_\+psf (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in)}]{file }\end{DoxyParamCaption})}
+
+
+
+Initialize P\+SF file for parsing. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{namespacemolreader_a3ebd81391f00e3279bf262b2879af97a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_a49ccaf345b633e27f69ad7a5a8637a2a}\label{namespacemolreader_a49ccaf345b633e27f69ad7a5a8637a2a}} 
+\index{molreader@{molreader}!read\+\_\+atom@{read\+\_\+atom}}
+\index{read\+\_\+atom@{read\+\_\+atom}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{read\+\_\+atom()}{read\_atom()}}
+{\footnotesize\ttfamily subroutine molreader\+::read\+\_\+atom (\begin{DoxyParamCaption}\item[{type(\hyperlink{structmolreader_1_1atom}{atom}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reads and returns A\+T\+O\+M/\+H\+E\+T\+A\+T\+M/\+T\+ER Record types. 
+
+The A\+T\+OM records present the atomic coordinates for standard amino acids and nucleotides. They also present the occupancy and temperature factor for each atom. Non-\/polymer chemical coordinates use the H\+E\+T\+A\+TM record type. The element symbol is always present on each A\+T\+OM record; charge is optional.
+
+Changes in A\+T\+O\+M/\+H\+E\+T\+A\+TM records result from the standardization atom and residue nomenclature. This nomenclature is described in the Chemical Component Dictionary (\href{ftp://ftp.wwpdb.org/pub/pdb/data/monomers}{\tt ftp\+://ftp.\+wwpdb.\+org/pub/pdb/data/monomers}).
+
+Record Format
+
+\subsubsection*{C\+O\+L\+U\+M\+NS D\+A\+TA T\+Y\+PE F\+I\+E\+LD D\+E\+F\+I\+N\+I\+T\+I\+ON }
+
+1 -\/ 6 Record name \char`\"{}\+A\+T\+O\+M  \char`\"{} 7 -\/ 11 Integer serial Atom serial number. 12 Character -\/ unused space. 13 -\/ 16 Atom name Atom name. 17 Character alt\+Loc Alternate location indicator. 18 -\/ 20 Residue name res\+Name Residue name. 21 Character -\/ unused space. 22 Character chain\+ID Chain identifier. 23 -\/ 26 Integer res\+Seq Residue sequence number. 27 A\+Char i\+Code Code for insertion of residues. 28 -\/ 30 L\+String(3) -\/ unused space. 31 -\/ 38 Real(8.\+3) x Orthogonal coordinates for X in Angstroms. 39 -\/ 46 Real(8.\+3) y Orthogonal coordinates for Y in Angstroms. 47 -\/ 54 Real(8.\+3) z Orthogonal coordinates for Z in Angstroms. 55 -\/ 60 Real(6.\+2) occupancy Occupancy. 61 -\/ 66 Real(6.\+2) temp\+Factor Temperature factor. 67 -\/ 72 L\+String(6) -\/ Unused section. 73 -\/ 76 L\+String(4) seg\+Name Segment Name. 77 -\/ 78 L\+String(2) element Element symbol, right-\/justified. \subsection*{79 -\/ 80 L\+String(2) charge Charge on the atom. }
+
+Non-\/polymer or other “non-\/standard” chemical coordinates, such as water molecules or atoms presented in H\+ET groups use the H\+E\+T\+A\+TM record type. They also present the occupancy and temperature factor for each atom. The A\+T\+OM records present the atomic coordinates for standard residues. The element symbol is always present on each H\+E\+T\+A\+TM record; charge is optional.
+
+Changes in A\+T\+O\+M/\+H\+E\+T\+A\+TM records will require standardization in atom and residue nomenclature. This nomenclature is described in the Chemical Component Dictionary, \href{ftp://ftp.wwpdb.org/pub/pdb/data/monomers}{\tt ftp\+://ftp.\+wwpdb.\+org/pub/pdb/data/monomers}.
+
+Record Format
+
+\subsubsection*{C\+O\+L\+U\+M\+NS D\+A\+TA T\+Y\+PE F\+I\+E\+LD D\+E\+F\+I\+N\+I\+T\+I\+ON }
+
+1 -\/ 6 Record name \char`\"{}\+H\+E\+T\+A\+T\+M\char`\"{} 7 -\/ 11 Integer serial Atom serial number. 13 -\/ 16 Atom name Atom name. 17 Character alt\+Loc Alternate location indicator. 18 -\/ 20 Residue name res\+Name Residue name. 22 Character chain\+ID Chain identifier. 23 -\/ 26 Integer res\+Seq Residue sequence number. 27 A\+Char i\+Code Code for insertion of residues. 31 -\/ 38 Real(8.\+3) x Orthogonal coordinates for X. 39 -\/ 46 Real(8.\+3) y Orthogonal coordinates for Y. 47 -\/ 54 Real(8.\+3) z Orthogonal coordinates for Z. 55 -\/ 60 Real(6.\+2) occupancy Occupancy. 61 -\/ 66 Real(6.\+2) temp\+Factor Temperature factor. 77 -\/ 78 L\+String(2) element Element symbol; right-\/justified. \subsection*{79 -\/ 80 L\+String(2) charge Charge on the atom. }
+
+The T\+ER record indicates the end of a list of A\+T\+O\+M/\+H\+E\+T\+A\+TM records for a chain.
+
+Record Format
+
+\subsubsection*{C\+O\+L\+U\+M\+NS D\+A\+TA T\+Y\+PE F\+I\+E\+LD D\+E\+F\+I\+N\+I\+T\+I\+ON }
+
+1 -\/ 6 Record name \char`\"{}\+T\+E\+R   \char`\"{} 7 -\/ 11 Integer serial Serial number. 12 Character -\/ unused space. 13 -\/ 16 L\+String(4) -\/ unused space. 17 Character -\/ unused space. 18 -\/ 20 Residue name res\+Name Residue name. 21 Character -\/ unused space. 22 Character chain\+ID Chain identifier. 23 -\/ 26 Integer res\+Seq Residue sequence number. 27 A\+Char i\+Code Insertion code.
+
+Notice A\+T\+OM, H\+E\+T\+A\+TM, and T\+ER can all be defined by the A\+T\+OM type Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemolreader_a49ccaf345b633e27f69ad7a5a8637a2a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_af85c1b386f0dc78ebf55e003b4f8c83a}\label{namespacemolreader_af85c1b386f0dc78ebf55e003b4f8c83a}} 
+\index{molreader@{molreader}!read\+\_\+cryst1@{read\+\_\+cryst1}}
+\index{read\+\_\+cryst1@{read\+\_\+cryst1}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{read\+\_\+cryst1()}{read\_cryst1()}}
+{\footnotesize\ttfamily subroutine molreader\+::read\+\_\+cryst1 (\begin{DoxyParamCaption}\item[{type(\hyperlink{structmolreader_1_1cryst1}{cryst1}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemolreader_af85c1b386f0dc78ebf55e003b4f8c83a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_a64ff990dc05c01debc1138dd012f4bcb}\label{namespacemolreader_a64ff990dc05c01debc1138dd012f4bcb}} 
+\index{molreader@{molreader}!read\+\_\+model@{read\+\_\+model}}
+\index{read\+\_\+model@{read\+\_\+model}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{read\+\_\+model()}{read\_model()}}
+{\footnotesize\ttfamily subroutine molreader\+::read\+\_\+model (\begin{DoxyParamCaption}\item[{type(\hyperlink{structmolreader_1_1model}{model}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reads and returns M\+O\+D\+EL Record type. 
+
+The M\+O\+D\+EL record specifies the model serial number when multiple models of the same structure are presented in a single coordinate entry, as is often the case with structures determined by N\+MR.
+
+Record Format
+
+\subsubsection*{C\+O\+L\+U\+M\+NS D\+A\+TA T\+Y\+PE F\+I\+E\+LD D\+E\+F\+I\+N\+I\+T\+I\+ON }
+
+1 -\/ 6 Record name \char`\"{}\+M\+O\+D\+E\+L \char`\"{} 7 -\/ 10 L\+String(4) -\/ unused space. 11 -\/ 14 Integer serial Model serial number. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemolreader_a64ff990dc05c01debc1138dd012f4bcb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_a81fcc5a3f49380ccd10b02b229f5067d}\label{namespacemolreader_a81fcc5a3f49380ccd10b02b229f5067d}} 
+\index{molreader@{molreader}!read\+\_\+psfatom@{read\+\_\+psfatom}}
+\index{read\+\_\+psfatom@{read\+\_\+psfatom}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{read\+\_\+psfatom()}{read\_psfatom()}}
+{\footnotesize\ttfamily subroutine molreader\+::read\+\_\+psfatom (\begin{DoxyParamCaption}\item[{type(\hyperlink{structmolreader_1_1psfatom}{psfatom}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemolreader_a81fcc5a3f49380ccd10b02b229f5067d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_a16d4776fded57cf8aa38f639610cad84}\label{namespacemolreader_a16d4776fded57cf8aa38f639610cad84}} 
+\index{molreader@{molreader}!refresh\+\_\+buffer@{refresh\+\_\+buffer}}
+\index{refresh\+\_\+buffer@{refresh\+\_\+buffer}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{refresh\+\_\+buffer()}{refresh\_buffer()}}
+{\footnotesize\ttfamily subroutine molreader\+::refresh\+\_\+buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+reads the next chunk of the pdb file. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{namespacemolreader_a16d4776fded57cf8aa38f639610cad84_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemolreader_a16d4776fded57cf8aa38f639610cad84_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_a13131c46b34d0385ba7eadd0b1b88df9}\label{namespacemolreader_a13131c46b34d0385ba7eadd0b1b88df9}} 
+\index{molreader@{molreader}!refresh\+\_\+psfbuffer@{refresh\+\_\+psfbuffer}}
+\index{refresh\+\_\+psfbuffer@{refresh\+\_\+psfbuffer}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{refresh\+\_\+psfbuffer()}{refresh\_psfbuffer()}}
+{\footnotesize\ttfamily subroutine molreader\+::refresh\+\_\+psfbuffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+reads the next chunk of the psf file. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemolreader_a13131c46b34d0385ba7eadd0b1b88df9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_af85c66302e278af03e0cc94dc42e662e}\label{namespacemolreader_af85c66302e278af03e0cc94dc42e662e}} 
+\index{molreader@{molreader}!rewind\+\_\+pdb@{rewind\+\_\+pdb}}
+\index{rewind\+\_\+pdb@{rewind\+\_\+pdb}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{rewind\+\_\+pdb()}{rewind\_pdb()}}
+{\footnotesize\ttfamily subroutine, public molreader\+::rewind\+\_\+pdb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Rewind an initialized P\+DB file for parsing. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemolreader_af85c66302e278af03e0cc94dc42e662e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemolreader_a6d79c8d97fd91cfb25dec2b67320c77b}\label{namespacemolreader_a6d79c8d97fd91cfb25dec2b67320c77b}} 
+\index{molreader@{molreader}!rewind\+\_\+psf@{rewind\+\_\+psf}}
+\index{rewind\+\_\+psf@{rewind\+\_\+psf}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{rewind\+\_\+psf()}{rewind\_psf()}}
+{\footnotesize\ttfamily subroutine, public molreader\+::rewind\+\_\+psf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Rewind an initialized P\+SF file for parsing. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{namespacemolreader_a6d79c8d97fd91cfb25dec2b67320c77b_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemolreader_a06d78b69405420664607fb01b4d8e97a}\label{namespacemolreader_a06d78b69405420664607fb01b4d8e97a}} 
+\index{molreader@{molreader}!buffer@{buffer}}
+\index{buffer@{buffer}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily character(len=\hyperlink{namespacemolreader_acd493d996a1fcd0ed77937e925c9b7fe}{linelen}), dimension(\hyperlink{namespacemolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}) molreader\+::buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_ac7969154d301aab4a51cde89ec2f08ee}\label{namespacemolreader_ac7969154d301aab4a51cde89ec2f08ee}} 
+\index{molreader@{molreader}!buffer\+\_\+count@{buffer\+\_\+count}}
+\index{buffer\+\_\+count@{buffer\+\_\+count}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{buffer\+\_\+count}{buffer\_count}}
+{\footnotesize\ttfamily integer(long) molreader\+::buffer\+\_\+count\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a7b2e4f11efe55d80469efa3f7aeacbab}\label{namespacemolreader_a7b2e4f11efe55d80469efa3f7aeacbab}} 
+\index{molreader@{molreader}!buffer\+\_\+cursor@{buffer\+\_\+cursor}}
+\index{buffer\+\_\+cursor@{buffer\+\_\+cursor}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{buffer\+\_\+cursor}{buffer\_cursor}}
+{\footnotesize\ttfamily integer(long) molreader\+::buffer\+\_\+cursor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a3368bfc7f2d07a7f472a8118220516a9}\label{namespacemolreader_a3368bfc7f2d07a7f472a8118220516a9}} 
+\index{molreader@{molreader}!buffermask@{buffermask}}
+\index{buffermask@{buffermask}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{buffermask}{buffermask}}
+{\footnotesize\ttfamily logical, dimension(\hyperlink{namespacemolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}) molreader\+::buffermask\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_ad29941441961d6bb225120cc88f93db7}\label{namespacemolreader_ad29941441961d6bb225120cc88f93db7}} 
+\index{molreader@{molreader}!data@{data}}
+\index{data@{data}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily logical molreader\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_ac14650c697f68fd15530b93807e3f42f}\label{namespacemolreader_ac14650c697f68fd15530b93807e3f42f}} 
+\index{molreader@{molreader}!linefmt@{linefmt}}
+\index{linefmt@{linefmt}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{linefmt}{linefmt}}
+{\footnotesize\ttfamily character(len=5) molreader\+::linefmt\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_acd493d996a1fcd0ed77937e925c9b7fe}\label{namespacemolreader_acd493d996a1fcd0ed77937e925c9b7fe}} 
+\index{molreader@{molreader}!linelen@{linelen}}
+\index{linelen@{linelen}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{linelen}{linelen}}
+{\footnotesize\ttfamily integer(long), parameter molreader\+::linelen\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a7192fdfba4bcb0ee7504a9c6695c7106}\label{namespacemolreader_a7192fdfba4bcb0ee7504a9c6695c7106}} 
+\index{molreader@{molreader}!maxrecord@{maxrecord}}
+\index{maxrecord@{maxrecord}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{maxrecord}{maxrecord}}
+{\footnotesize\ttfamily integer(long), parameter molreader\+::maxrecord\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a151a8b8c33b86ab86d352aeaaf9ec84b}\label{namespacemolreader_a151a8b8c33b86ab86d352aeaaf9ec84b}} 
+\index{molreader@{molreader}!parsing@{parsing}}
+\index{parsing@{parsing}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{parsing}{parsing}}
+{\footnotesize\ttfamily logical molreader\+::parsing\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a5cf7dc5ccdeb068704a693ec6b248796}\label{namespacemolreader_a5cf7dc5ccdeb068704a693ec6b248796}} 
+\index{molreader@{molreader}!parsing\+\_\+rate@{parsing\+\_\+rate}}
+\index{parsing\+\_\+rate@{parsing\+\_\+rate}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{parsing\+\_\+rate}{parsing\_rate}}
+{\footnotesize\ttfamily real(double) molreader\+::parsing\+\_\+rate\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_ac41219b2f68591f315dded4488483263}\label{namespacemolreader_ac41219b2f68591f315dded4488483263}} 
+\index{molreader@{molreader}!parsingunit@{parsingunit}}
+\index{parsingunit@{parsingunit}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{parsingunit}{parsingunit}}
+{\footnotesize\ttfamily integer(long) molreader\+::parsingunit\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_aa372f060e4e581b1c14e2b46a65d2df4}\label{namespacemolreader_aa372f060e4e581b1c14e2b46a65d2df4}} 
+\index{molreader@{molreader}!pdbfile@{pdbfile}}
+\index{pdbfile@{pdbfile}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{pdbfile}{pdbfile}}
+{\footnotesize\ttfamily character(len=path) molreader\+::pdbfile\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_ad7636360c8e0ecb526000567dd32d2d0}\label{namespacemolreader_ad7636360c8e0ecb526000567dd32d2d0}} 
+\index{molreader@{molreader}!pdbisopen@{pdbisopen}}
+\index{pdbisopen@{pdbisopen}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{pdbisopen}{pdbisopen}}
+{\footnotesize\ttfamily logical molreader\+::pdbisopen\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a5b0570862e5318937ea68a01966ed56f}\label{namespacemolreader_a5b0570862e5318937ea68a01966ed56f}} 
+\index{molreader@{molreader}!pdbunit@{pdbunit}}
+\index{pdbunit@{pdbunit}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{pdbunit}{pdbunit}}
+{\footnotesize\ttfamily integer(long) molreader\+::pdbunit\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_aab845daa54f6803a37ceb91d7ad296a7}\label{namespacemolreader_aab845daa54f6803a37ceb91d7ad296a7}} 
+\index{molreader@{molreader}!psfbuffer@{psfbuffer}}
+\index{psfbuffer@{psfbuffer}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{psfbuffer}{psfbuffer}}
+{\footnotesize\ttfamily character(len=\hyperlink{namespacemolreader_acd493d996a1fcd0ed77937e925c9b7fe}{linelen}), dimension(\hyperlink{namespacemolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}) molreader\+::psfbuffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_af2dddaa7f6249a39287ffcdcbe2ce558}\label{namespacemolreader_af2dddaa7f6249a39287ffcdcbe2ce558}} 
+\index{molreader@{molreader}!psfbuffer\+\_\+count@{psfbuffer\+\_\+count}}
+\index{psfbuffer\+\_\+count@{psfbuffer\+\_\+count}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{psfbuffer\+\_\+count}{psfbuffer\_count}}
+{\footnotesize\ttfamily integer(long) molreader\+::psfbuffer\+\_\+count\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_ab080c636a2423beb139bdd65dcd884c3}\label{namespacemolreader_ab080c636a2423beb139bdd65dcd884c3}} 
+\index{molreader@{molreader}!psfbuffer\+\_\+cursor@{psfbuffer\+\_\+cursor}}
+\index{psfbuffer\+\_\+cursor@{psfbuffer\+\_\+cursor}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{psfbuffer\+\_\+cursor}{psfbuffer\_cursor}}
+{\footnotesize\ttfamily integer(long) molreader\+::psfbuffer\+\_\+cursor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a747bd2c32990916c313506c805317e88}\label{namespacemolreader_a747bd2c32990916c313506c805317e88}} 
+\index{molreader@{molreader}!psfbuffermask@{psfbuffermask}}
+\index{psfbuffermask@{psfbuffermask}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{psfbuffermask}{psfbuffermask}}
+{\footnotesize\ttfamily logical, dimension(\hyperlink{namespacemolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{maxrecord}) molreader\+::psfbuffermask\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a48ac5c969e35417342bb66a57adec842}\label{namespacemolreader_a48ac5c969e35417342bb66a57adec842}} 
+\index{molreader@{molreader}!psffile@{psffile}}
+\index{psffile@{psffile}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{psffile}{psffile}}
+{\footnotesize\ttfamily character(len=path) molreader\+::psffile\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_ae5cd9063d12a39b0e8266e184439c808}\label{namespacemolreader_ae5cd9063d12a39b0e8266e184439c808}} 
+\index{molreader@{molreader}!psfisopen@{psfisopen}}
+\index{psfisopen@{psfisopen}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{psfisopen}{psfisopen}}
+{\footnotesize\ttfamily logical molreader\+::psfisopen\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a2b57a032db6161c98961f5e8109c3b90}\label{namespacemolreader_a2b57a032db6161c98961f5e8109c3b90}} 
+\index{molreader@{molreader}!psfunit@{psfunit}}
+\index{psfunit@{psfunit}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{psfunit}{psfunit}}
+{\footnotesize\ttfamily integer(long) molreader\+::psfunit\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a8f12be3272b946fd698c9fbaf2ba9d32}\label{namespacemolreader_a8f12be3272b946fd698c9fbaf2ba9d32}} 
+\index{molreader@{molreader}!reclen@{reclen}}
+\index{reclen@{reclen}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{reclen}{reclen}}
+{\footnotesize\ttfamily integer(long), parameter molreader\+::reclen\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a1f82d6f3302ab89b43d1fcbcba5d8fb2}\label{namespacemolreader_a1f82d6f3302ab89b43d1fcbcba5d8fb2}} 
+\index{molreader@{molreader}!recording\+\_\+parsingdata@{recording\+\_\+parsingdata}}
+\index{recording\+\_\+parsingdata@{recording\+\_\+parsingdata}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{recording\+\_\+parsingdata}{recording\_parsingdata}}
+{\footnotesize\ttfamily logical molreader\+::recording\+\_\+parsingdata\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_af3ae5caa4d00fa50c74d2f3154e8ea7c}\label{namespacemolreader_af3ae5caa4d00fa50c74d2f3154e8ea7c}} 
+\index{molreader@{molreader}!save@{save}}
+\index{save@{save}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{save}{save}}
+{\footnotesize\ttfamily logical molreader\+::save\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_ad5b1ed6898caa1c2161f0cdc6c10fc72}\label{namespacemolreader_ad5b1ed6898caa1c2161f0cdc6c10fc72}} 
+\index{molreader@{molreader}!time0@{time0}}
+\index{time0@{time0}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{time0}{time0}}
+{\footnotesize\ttfamily real(double) molreader\+::time0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_a29899cd9778ac12af6bad404c1092518}\label{namespacemolreader_a29899cd9778ac12af6bad404c1092518}} 
+\index{molreader@{molreader}!timing@{timing}}
+\index{timing@{timing}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{timing}{timing}}
+{\footnotesize\ttfamily logical molreader\+::timing\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemolreader_aec460f295b88cb8eb8dd58901edce0ba}\label{namespacemolreader_aec460f295b88cb8eb8dd58901edce0ba}} 
+\index{molreader@{molreader}!to@{to}}
+\index{to@{to}!molreader@{molreader}}
+\subsubsection{\texorpdfstring{to}{to}}
+{\footnotesize\ttfamily logical molreader\+::to\hspace{0.3cm}{\ttfamily [private]}}
+

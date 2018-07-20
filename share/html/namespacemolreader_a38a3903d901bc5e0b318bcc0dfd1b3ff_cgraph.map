@@ -1,0 +1,5 @@
+<map id="molreader::open_pdb" name="molreader::open_pdb">
+<area shape="rect" id="node3" href="$namespacefilemanager.html#aa389048ef7c9eb9afdac7ce1dcc691b2" title="filemanager::newunit" alt="" coords="202,5,347,33"/>
+<area shape="rect" id="node5" href="$namespacewallclock.html#ac691a026a7b92c6cd971e86d0449d42b" title="wallclock::timearray" alt="" coords="395,87,533,115"/>
+<area shape="rect" id="node7" href="$namespacemolreader.html#a16d4776fded57cf8aa38f639610cad84" title="molreader::refresh\l_buffer" alt="" coords="210,109,340,153"/>
+</map>

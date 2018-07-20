@@ -1,0 +1,49 @@
+\hypertarget{namespacefitxydata}{}\section{fitxydata Module Reference}
+\label{namespacefitxydata}\index{fitxydata@{fitxydata}}
+
+
+Procedures to Fit XY data to functional forms.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacefitxydata_1_1fit2exp}{fit2exp}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{namespacefitxydata_a9f00dca017c2372da0c3c95cdf0ddb31}{fit2exp} (set, R, A, B)
+\begin{DoxyCompactList}\small\item\em Fit to exponential function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real $\ast$8, dimension(\+:,\+:), allocatable \hyperlink{namespacefitxydata_ad69a6716eab16a1f8c170a0d0a7ed499}{xydata}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Procedures to Fit XY data to functional forms. 
+
+Returns select function parameters 
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacefitxydata_a9f00dca017c2372da0c3c95cdf0ddb31}\label{namespacefitxydata_a9f00dca017c2372da0c3c95cdf0ddb31}} 
+\index{fitxydata@{fitxydata}!fit2exp@{fit2exp}}
+\index{fit2exp@{fit2exp}!fitxydata@{fitxydata}}
+\subsubsection{\texorpdfstring{fit2exp()}{fit2exp()}}
+{\footnotesize\ttfamily subroutine, public \hyperlink{interfacefitxydata_1_1fit2exp}{fitxydata\+::fit2exp} (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(\+:,\+:), intent(in)}]{set,  }\item[{real$\ast$8, intent(inout)}]{R,  }\item[{real$\ast$8, intent(inout)}]{A,  }\item[{real$\ast$8, intent(inout), optional}]{B }\end{DoxyParamCaption})}
+
+
+
+Fit to exponential function. 
+
+fits set to exp function (A-\/B)$\ast$exp(-\/\+R$\ast$t)+B 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacefitxydata_ad69a6716eab16a1f8c170a0d0a7ed499}\label{namespacefitxydata_ad69a6716eab16a1f8c170a0d0a7ed499}} 
+\index{fitxydata@{fitxydata}!xydata@{xydata}}
+\index{xydata@{xydata}!fitxydata@{fitxydata}}
+\subsubsection{\texorpdfstring{xydata}{xydata}}
+{\footnotesize\ttfamily real$\ast$8, dimension(\+:,\+:), allocatable fitxydata\+::xydata\hspace{0.3cm}{\ttfamily [private]}}
+

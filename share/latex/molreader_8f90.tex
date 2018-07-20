@@ -1,24 +1,136 @@
-\hypertarget{molreader_8f90}{\section{src/molreader.f90 File Reference}
-\label{molreader_8f90}\index{src/molreader.\-f90@{src/molreader.\-f90}}
-}
+\hypertarget{molreader_8f90}{}\section{src/molreader.f90 File Reference}
+\label{molreader_8f90}\index{src/molreader.\+f90@{src/molreader.\+f90}}
 \subsection*{Data Types}
 \begin{DoxyCompactItemize}
 \item 
-module \hyperlink{classmolreader}{molreader}
-\begin{DoxyCompactList}\small\item\em Molecule Building Utility. \end{DoxyCompactList}\item 
-type \hyperlink{structmolreader_1_1cryst1}{molreader\-::cryst1}
+type \hyperlink{structmolreader_1_1cryst1}{molreader\+::cryst1}
 \item 
-type \hyperlink{structmolreader_1_1model}{molreader\-::model}
+type \hyperlink{structmolreader_1_1model}{molreader\+::model}
 \item 
-type \hyperlink{structmolreader_1_1atom}{molreader\-::atom}
+type \hyperlink{structmolreader_1_1atom}{molreader\+::atom}
 \item 
-type \hyperlink{structmolreader_1_1psfatom}{molreader\-::psfatom}
+type \hyperlink{structmolreader_1_1psfatom}{molreader\+::psfatom}
 \item 
-interface \hyperlink{interfacemolreader_1_1advance__record}{molreader\-::advance\-\_\-record}
+interface \hyperlink{interfacemolreader_1_1advance__record}{molreader\+::advance\+\_\+record}
 \item 
-interface \hyperlink{interfacemolreader_1_1read}{molreader\-::read}
+interface \hyperlink{interfacemolreader_1_1read}{molreader\+::read}
 \item 
-interface \hyperlink{interfacemolreader_1_1display}{molreader\-::display}
+interface \hyperlink{interfacemolreader_1_1display}{molreader\+::display}
 \item 
-interface \hyperlink{interfacemolreader_1_1new}{molreader\-::new}
+interface \hyperlink{interfacemolreader_1_1new}{molreader\+::new}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemolreader}{molreader}
+\begin{DoxyCompactList}\small\item\em Molecule Building Utility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+character(len=reclen) function, public \hyperlink{namespacemolreader_af6c857ef51f99971a66b1c293d24906b}{molreader\+::next\+\_\+record} ()
+\item 
+subroutine \hyperlink{namespacemolreader_af85c1b386f0dc78ebf55e003b4f8c83a}{molreader\+::read\+\_\+cryst1} (this)
+\item 
+subroutine \hyperlink{namespacemolreader_ac9a2b0ff287faa780311cc432b866610}{molreader\+::display\+\_\+cryst1} (this, unit)
+\item 
+subroutine \hyperlink{namespacemolreader_ac284dc33f40874d6156c1cd36781002c}{molreader\+::new\+\_\+cryst1} (this)
+\item 
+subroutine \hyperlink{namespacemolreader_a64ff990dc05c01debc1138dd012f4bcb}{molreader\+::read\+\_\+model} (this)
+\begin{DoxyCompactList}\small\item\em Reads and returns M\+O\+D\+EL Record type. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemolreader_a462d061944b74f7145b8bf89fc3439fc}{molreader\+::display\+\_\+model} (this, unit)
+\item 
+subroutine \hyperlink{namespacemolreader_a8edb660b2e1b64a5d78593c734afbe95}{molreader\+::new\+\_\+model} (this)
+\item 
+subroutine \hyperlink{namespacemolreader_a49ccaf345b633e27f69ad7a5a8637a2a}{molreader\+::read\+\_\+atom} (this)
+\begin{DoxyCompactList}\small\item\em Reads and returns A\+T\+O\+M/\+H\+E\+T\+A\+T\+M/\+T\+ER Record types. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemolreader_ae1000e1ea4e46f858a3640c08563c3ff}{molreader\+::new\+\_\+atom} (this)
+\item 
+subroutine \hyperlink{namespacemolreader_adb757da4ec2256578422254dad5b262e}{molreader\+::display\+\_\+atom} (this, unit)
+\item 
+subroutine, public \hyperlink{namespacemolreader_a38a3903d901bc5e0b318bcc0dfd1b3ff}{molreader\+::open\+\_\+pdb} (file)
+\begin{DoxyCompactList}\small\item\em Initialize P\+DB file for parsing. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemolreader_a5aafbdb9b4afbb96bdc20ae58d547699}{molreader\+::close\+\_\+pdb}
+\item 
+subroutine, public \hyperlink{namespacemolreader_af85c66302e278af03e0cc94dc42e662e}{molreader\+::rewind\+\_\+pdb}
+\begin{DoxyCompactList}\small\item\em Rewind an initialized P\+DB file for parsing. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemolreader_a16d4776fded57cf8aa38f639610cad84}{molreader\+::refresh\+\_\+buffer}
+\item 
+subroutine \hyperlink{namespacemolreader_ac7b950f165e89b12ccc8fff1c0f3bae9}{molreader\+::advance\+\_\+buffer}
+\item 
+subroutine \hyperlink{namespacemolreader_a81fcc5a3f49380ccd10b02b229f5067d}{molreader\+::read\+\_\+psfatom} (this)
+\item 
+subroutine \hyperlink{namespacemolreader_a737dbe023a6cbecab8269981ffdfa31c}{molreader\+::display\+\_\+psfatom} (this, unit)
+\item 
+subroutine \hyperlink{namespacemolreader_a56968311293e3c68022fe3bbe3600306}{molreader\+::new\+\_\+psfatom} (this)
+\item 
+character(len=linelen) function, public \hyperlink{namespacemolreader_ac6b85a406b7ebd0810f0d63beeeda783}{molreader\+::next\+\_\+psf} ()
+\item 
+subroutine \hyperlink{namespacemolreader_abf243c87d2f9429f3ed94293d438c7c7}{molreader\+::advance\+\_\+psfbuffer}
+\item 
+subroutine \hyperlink{namespacemolreader_a13131c46b34d0385ba7eadd0b1b88df9}{molreader\+::refresh\+\_\+psfbuffer}
+\item 
+subroutine, public \hyperlink{namespacemolreader_a3ebd81391f00e3279bf262b2879af97a}{molreader\+::open\+\_\+psf} (file)
+\begin{DoxyCompactList}\small\item\em Initialize P\+SF file for parsing. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemolreader_aac446b95d6c274d93e11e45286e60e4d}{molreader\+::close\+\_\+psf}
+\item 
+subroutine, public \hyperlink{namespacemolreader_a6d79c8d97fd91cfb25dec2b67320c77b}{molreader\+::rewind\+\_\+psf}
+\begin{DoxyCompactList}\small\item\em Rewind an initialized P\+SF file for parsing. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemolreader_a7a4cb6436916cd4b8ee0341d528e9c73}{molreader\+::advance\+\_\+psf} (section, nrecord)
+\begin{DoxyCompactList}\small\item\em Advances opened psf file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(long) \hyperlink{namespacemolreader_a5b0570862e5318937ea68a01966ed56f}{molreader\+::pdbunit}
+\item 
+integer(long) \hyperlink{namespacemolreader_a2b57a032db6161c98961f5e8109c3b90}{molreader\+::psfunit}
+\item 
+integer(long) \hyperlink{namespacemolreader_ac41219b2f68591f315dded4488483263}{molreader\+::parsingunit}
+\item 
+character(len=path) \hyperlink{namespacemolreader_aa372f060e4e581b1c14e2b46a65d2df4}{molreader\+::pdbfile}
+\item 
+character(len=path) \hyperlink{namespacemolreader_a48ac5c969e35417342bb66a57adec842}{molreader\+::psffile}
+\item 
+logical \hyperlink{namespacemolreader_ad7636360c8e0ecb526000567dd32d2d0}{molreader\+::pdbisopen}
+\item 
+logical \hyperlink{namespacemolreader_ae5cd9063d12a39b0e8266e184439c808}{molreader\+::psfisopen}
+\item 
+integer(long), parameter \hyperlink{namespacemolreader_a8f12be3272b946fd698c9fbaf2ba9d32}{molreader\+::reclen}
+\item 
+integer(long), parameter \hyperlink{namespacemolreader_acd493d996a1fcd0ed77937e925c9b7fe}{molreader\+::linelen}
+\item 
+integer(long), parameter \hyperlink{namespacemolreader_a7192fdfba4bcb0ee7504a9c6695c7106}{molreader\+::maxrecord}
+\item 
+character(len=5) \hyperlink{namespacemolreader_ac14650c697f68fd15530b93807e3f42f}{molreader\+::linefmt}
+\item 
+character(len=linelen), dimension(maxrecord) \hyperlink{namespacemolreader_a06d78b69405420664607fb01b4d8e97a}{molreader\+::buffer}
+\item 
+character(len=linelen), dimension(maxrecord) \hyperlink{namespacemolreader_aab845daa54f6803a37ceb91d7ad296a7}{molreader\+::psfbuffer}
+\item 
+integer(long) \hyperlink{namespacemolreader_a7b2e4f11efe55d80469efa3f7aeacbab}{molreader\+::buffer\+\_\+cursor}
+\item 
+integer(long) \hyperlink{namespacemolreader_ac7969154d301aab4a51cde89ec2f08ee}{molreader\+::buffer\+\_\+count}
+\item 
+integer(long) \hyperlink{namespacemolreader_ab080c636a2423beb139bdd65dcd884c3}{molreader\+::psfbuffer\+\_\+cursor}
+\item 
+integer(long) \hyperlink{namespacemolreader_af2dddaa7f6249a39287ffcdcbe2ce558}{molreader\+::psfbuffer\+\_\+count}
+\item 
+logical, dimension(maxrecord) \hyperlink{namespacemolreader_a3368bfc7f2d07a7f472a8118220516a9}{molreader\+::buffermask}
+\item 
+logical, dimension(maxrecord) \hyperlink{namespacemolreader_a747bd2c32990916c313506c805317e88}{molreader\+::psfbuffermask}
+\item 
+logical \hyperlink{namespacemolreader_a1f82d6f3302ab89b43d1fcbcba5d8fb2}{molreader\+::recording\+\_\+parsingdata}
+\item 
+logical \hyperlink{namespacemolreader_aec460f295b88cb8eb8dd58901edce0ba}{molreader\+::to}
+\item 
+logical \hyperlink{namespacemolreader_af3ae5caa4d00fa50c74d2f3154e8ea7c}{molreader\+::save}
+\item 
+logical \hyperlink{namespacemolreader_a151a8b8c33b86ab86d352aeaaf9ec84b}{molreader\+::parsing}
+\item 
+logical \hyperlink{namespacemolreader_a29899cd9778ac12af6bad404c1092518}{molreader\+::timing}
+\item 
+logical \hyperlink{namespacemolreader_ad29941441961d6bb225120cc88f93db7}{molreader\+::data}
+\item 
+real(double) \hyperlink{namespacemolreader_a5cf7dc5ccdeb068704a693ec6b248796}{molreader\+::parsing\+\_\+rate}
+\item 
+real(double) \hyperlink{namespacemolreader_ad5b1ed6898caa1c2161f0cdc6c10fc72}{molreader\+::time0}
 \end{DoxyCompactItemize}

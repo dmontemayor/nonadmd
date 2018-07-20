@@ -1,0 +1,124 @@
+\hypertarget{namespaceharmonicbath__class}{}\section{harmonicbath\+\_\+class Module Reference}
+\label{namespaceharmonicbath__class}\index{harmonicbath\+\_\+class@{harmonicbath\+\_\+class}}
+
+
+Harmonic bath(s) of classical non-\/interacting particles.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfaceharmonicbath__class_1_1check}{check}
+\item 
+interface \hyperlink{interfaceharmonicbath__class_1_1display}{display}
+\item 
+type \hyperlink{structharmonicbath__class_1_1harmonicbath}{harmonicbath}
+\item 
+interface \hyperlink{interfaceharmonicbath__class_1_1kill}{kill}
+\item 
+interface \hyperlink{interfaceharmonicbath__class_1_1new}{new}
+\item 
+interface \hyperlink{interfaceharmonicbath__class_1_1resample}{resample}
+\item 
+interface \hyperlink{interfaceharmonicbath__class_1_1save}{save}
+\item 
+interface \hyperlink{interfaceharmonicbath__class_1_1update}{update}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespaceharmonicbath__class_a7d869bb99a49aa520fe606e808d5feb5}{harmonicbath\+\_\+init} (this, file)
+\item 
+subroutine \hyperlink{namespaceharmonicbath__class_ae4e0e1b027594bb77034f21e82f6ed63}{harmonicbath\+\_\+kill} (this)
+\item 
+subroutine \hyperlink{namespaceharmonicbath__class_af4ce5a2a61231e5612ff243262e9f993}{harmonicbath\+\_\+display} (this, msg)
+\item 
+subroutine \hyperlink{namespaceharmonicbath__class_a9dfb6e87e69957fcc4ec907135931ace}{harmonicbath\+\_\+save} (this, file)
+\item 
+subroutine \hyperlink{namespaceharmonicbath__class_ac930ca08461d767f4593374465c7229d}{harmonicbath\+\_\+update} (this)
+\item 
+subroutine \hyperlink{namespaceharmonicbath__class_a6b27afcc7c1f24fec82adf3177d0adb8}{harmonicbath\+\_\+resample} (this)
+\item 
+integer(short) function \hyperlink{namespaceharmonicbath__class_abde7a862edc5c843e0665c6a6705bd74}{harmonicbath\+\_\+check} (this)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Harmonic bath(s) of classical non-\/interacting particles. 
+
+Assumes Hamiltonian of the form \[ H=hs+H_b+hc \] with standard primative quantum and coupling subsystems hs and hc repsectively. The classical subsystem is composed of $ N $ independent baths each with $ K_n $ harmonic modes. The classical subsystem hamiltonian takes the form \[ H_b=\sum_n^N \sum_k^{K_n} \frac{P_{k,n}^2}{2m_{k,n}}+\frac{1}{2}m_{k,n} \omega_{k,n}^2 Q_{k,n}^2 .\] The spectral properties of these $ N $ independent baths are determined by $ M $ input spectral denisties $ J_m(\omega) $. More than one harmonic bath can be defined by the same input spectral density , hence $ N>M $. The oscillator frequencies $ \omega_{k,n} $ are sampled uniformly from the density of states of these input spectral densities. The density of states is written as follows \[ \rho_m(\omega)=\frac{J_m(\omega)}{\omega} .\] The re-\/organization energy associated with input spectral density $ m $ is calculated \[ \lambda_m=\frac{2}{\pi}\int_0^\infty\frac{J_m(\omega)}{\omega} d\omega \] and is computed at every N\+EW or R\+E\+S\+A\+M\+P\+LE call. Because $H_b$ is quadratic in $Q$, the natural frequencies $ \omega_{k,n} $ also define the normal modes of the classical subsystem primative hb.
+
+\begin{DoxyAuthor}{Authors}
+Daniel Montemayor
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 2011
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Make stochasitcsample attribute editable on creation of oject. \end{DoxyRefDesc}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceharmonicbath__class_abde7a862edc5c843e0665c6a6705bd74}\label{namespaceharmonicbath__class_abde7a862edc5c843e0665c6a6705bd74}} 
+\index{harmonicbath\+\_\+class@{harmonicbath\+\_\+class}!harmonicbath\+\_\+check@{harmonicbath\+\_\+check}}
+\index{harmonicbath\+\_\+check@{harmonicbath\+\_\+check}!harmonicbath\+\_\+class@{harmonicbath\+\_\+class}}
+\subsubsection{\texorpdfstring{harmonicbath\+\_\+check()}{harmonicbath\_check()}}
+{\footnotesize\ttfamily integer(short) function harmonicbath\+\_\+class\+::harmonicbath\+\_\+check (\begin{DoxyParamCaption}\item[{type(\hyperlink{structharmonicbath__class_1_1harmonicbath}{harmonicbath}), intent(in)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespaceharmonicbath__class_af4ce5a2a61231e5612ff243262e9f993}\label{namespaceharmonicbath__class_af4ce5a2a61231e5612ff243262e9f993}} 
+\index{harmonicbath\+\_\+class@{harmonicbath\+\_\+class}!harmonicbath\+\_\+display@{harmonicbath\+\_\+display}}
+\index{harmonicbath\+\_\+display@{harmonicbath\+\_\+display}!harmonicbath\+\_\+class@{harmonicbath\+\_\+class}}
+\subsubsection{\texorpdfstring{harmonicbath\+\_\+display()}{harmonicbath\_display()}}
+{\footnotesize\ttfamily subroutine harmonicbath\+\_\+class\+::harmonicbath\+\_\+display (\begin{DoxyParamCaption}\item[{type(\hyperlink{structharmonicbath__class_1_1harmonicbath}{harmonicbath}), intent(in)}]{this,  }\item[{character$\ast$($\ast$), intent(in), optional}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespaceharmonicbath__class_a7d869bb99a49aa520fe606e808d5feb5}\label{namespaceharmonicbath__class_a7d869bb99a49aa520fe606e808d5feb5}} 
+\index{harmonicbath\+\_\+class@{harmonicbath\+\_\+class}!harmonicbath\+\_\+init@{harmonicbath\+\_\+init}}
+\index{harmonicbath\+\_\+init@{harmonicbath\+\_\+init}!harmonicbath\+\_\+class@{harmonicbath\+\_\+class}}
+\subsubsection{\texorpdfstring{harmonicbath\+\_\+init()}{harmonicbath\_init()}}
+{\footnotesize\ttfamily subroutine harmonicbath\+\_\+class\+::harmonicbath\+\_\+init (\begin{DoxyParamCaption}\item[{type(\hyperlink{structharmonicbath__class_1_1harmonicbath}{harmonicbath}), intent(inout)}]{this,  }\item[{character$\ast$($\ast$), intent(in), optional}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{namespaceharmonicbath__class_a7d869bb99a49aa520fe606e808d5feb5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceharmonicbath__class_ae4e0e1b027594bb77034f21e82f6ed63}\label{namespaceharmonicbath__class_ae4e0e1b027594bb77034f21e82f6ed63}} 
+\index{harmonicbath\+\_\+class@{harmonicbath\+\_\+class}!harmonicbath\+\_\+kill@{harmonicbath\+\_\+kill}}
+\index{harmonicbath\+\_\+kill@{harmonicbath\+\_\+kill}!harmonicbath\+\_\+class@{harmonicbath\+\_\+class}}
+\subsubsection{\texorpdfstring{harmonicbath\+\_\+kill()}{harmonicbath\_kill()}}
+{\footnotesize\ttfamily subroutine harmonicbath\+\_\+class\+::harmonicbath\+\_\+kill (\begin{DoxyParamCaption}\item[{type(\hyperlink{structharmonicbath__class_1_1harmonicbath}{harmonicbath}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespaceharmonicbath__class_a6b27afcc7c1f24fec82adf3177d0adb8}\label{namespaceharmonicbath__class_a6b27afcc7c1f24fec82adf3177d0adb8}} 
+\index{harmonicbath\+\_\+class@{harmonicbath\+\_\+class}!harmonicbath\+\_\+resample@{harmonicbath\+\_\+resample}}
+\index{harmonicbath\+\_\+resample@{harmonicbath\+\_\+resample}!harmonicbath\+\_\+class@{harmonicbath\+\_\+class}}
+\subsubsection{\texorpdfstring{harmonicbath\+\_\+resample()}{harmonicbath\_resample()}}
+{\footnotesize\ttfamily subroutine harmonicbath\+\_\+class\+::harmonicbath\+\_\+resample (\begin{DoxyParamCaption}\item[{type(\hyperlink{structharmonicbath__class_1_1harmonicbath}{harmonicbath}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceharmonicbath__class_a6b27afcc7c1f24fec82adf3177d0adb8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceharmonicbath__class_a9dfb6e87e69957fcc4ec907135931ace}\label{namespaceharmonicbath__class_a9dfb6e87e69957fcc4ec907135931ace}} 
+\index{harmonicbath\+\_\+class@{harmonicbath\+\_\+class}!harmonicbath\+\_\+save@{harmonicbath\+\_\+save}}
+\index{harmonicbath\+\_\+save@{harmonicbath\+\_\+save}!harmonicbath\+\_\+class@{harmonicbath\+\_\+class}}
+\subsubsection{\texorpdfstring{harmonicbath\+\_\+save()}{harmonicbath\_save()}}
+{\footnotesize\ttfamily subroutine harmonicbath\+\_\+class\+::harmonicbath\+\_\+save (\begin{DoxyParamCaption}\item[{type(\hyperlink{structharmonicbath__class_1_1harmonicbath}{harmonicbath}), intent(in)}]{this,  }\item[{character$\ast$($\ast$), intent(in)}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{namespaceharmonicbath__class_a9dfb6e87e69957fcc4ec907135931ace_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceharmonicbath__class_ac930ca08461d767f4593374465c7229d}\label{namespaceharmonicbath__class_ac930ca08461d767f4593374465c7229d}} 
+\index{harmonicbath\+\_\+class@{harmonicbath\+\_\+class}!harmonicbath\+\_\+update@{harmonicbath\+\_\+update}}
+\index{harmonicbath\+\_\+update@{harmonicbath\+\_\+update}!harmonicbath\+\_\+class@{harmonicbath\+\_\+class}}
+\subsubsection{\texorpdfstring{harmonicbath\+\_\+update()}{harmonicbath\_update()}}
+{\footnotesize\ttfamily subroutine harmonicbath\+\_\+class\+::harmonicbath\+\_\+update (\begin{DoxyParamCaption}\item[{type(\hyperlink{structharmonicbath__class_1_1harmonicbath}{harmonicbath}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+

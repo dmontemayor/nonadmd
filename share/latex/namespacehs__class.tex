@@ -1,0 +1,114 @@
+\hypertarget{namespacehs__class}{}\section{hs\+\_\+class Module Reference}
+\label{namespacehs__class}\index{hs\+\_\+class@{hs\+\_\+class}}
+
+
+Quantum subsystem primitive class.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacehs__class_1_1check}{check}
+\begin{DoxyCompactList}\small\item\em Check is a function that checks if the attributes of the hs type are within acceptable values. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacehs__class_1_1display}{display}
+\begin{DoxyCompactList}\small\item\em Prints out current state of the hs type. \end{DoxyCompactList}\item 
+type \hyperlink{strucths__class_1_1hs}{hs}
+\begin{DoxyCompactList}\small\item\em Quantum subsystem primitive type. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacehs__class_1_1kill}{kill}
+\begin{DoxyCompactList}\small\item\em Destroys hs type. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacehs__class_1_1new}{new}
+\begin{DoxyCompactList}\small\item\em Creates hs type. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacehs__class_1_1resample}{resample}
+\begin{DoxyCompactList}\small\item\em Null method. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacehs__class_1_1save}{save}
+\begin{DoxyCompactList}\small\item\em Saves the current state of the hs type to file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacehs__class_1_1update}{update}
+\begin{DoxyCompactList}\small\item\em Null method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacehs__class_a7857d1f3d6a49cfbc7d397a084a9013f}{hs\+\_\+init} (this, file)
+\item 
+subroutine \hyperlink{namespacehs__class_a1d1b34bdecfb1004bd277bf53dbd3e92}{hs\+\_\+kill} (this)
+\item 
+subroutine \hyperlink{namespacehs__class_a8a479624da65dc4f4a5cae9826487bec}{hs\+\_\+update} (this)
+\item 
+subroutine \hyperlink{namespacehs__class_abf39e51fc1d47061279287a7e328d9d4}{hs\+\_\+resample} (this)
+\item 
+subroutine \hyperlink{namespacehs__class_af457ecc48ec3ffc1c107162e546155ce}{hs\+\_\+display} (this, msg)
+\item 
+subroutine \hyperlink{namespacehs__class_a3b78604825b27d4d06a70aac14b8c538}{hs\+\_\+save} (this, file)
+\item 
+integer(short) function \hyperlink{namespacehs__class_add814b6ed9b2a64f43ea34b91ce20894}{hs\+\_\+check} (this)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Quantum subsystem primitive class. 
+
+This class defines the quantum subsystem primitive type 
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacehs__class_add814b6ed9b2a64f43ea34b91ce20894}\label{namespacehs__class_add814b6ed9b2a64f43ea34b91ce20894}} 
+\index{hs\+\_\+class@{hs\+\_\+class}!hs\+\_\+check@{hs\+\_\+check}}
+\index{hs\+\_\+check@{hs\+\_\+check}!hs\+\_\+class@{hs\+\_\+class}}
+\subsubsection{\texorpdfstring{hs\+\_\+check()}{hs\_check()}}
+{\footnotesize\ttfamily integer(short) function hs\+\_\+class\+::hs\+\_\+check (\begin{DoxyParamCaption}\item[{type(\hyperlink{strucths__class_1_1hs}{hs}), intent(in)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacehs__class_af457ecc48ec3ffc1c107162e546155ce}\label{namespacehs__class_af457ecc48ec3ffc1c107162e546155ce}} 
+\index{hs\+\_\+class@{hs\+\_\+class}!hs\+\_\+display@{hs\+\_\+display}}
+\index{hs\+\_\+display@{hs\+\_\+display}!hs\+\_\+class@{hs\+\_\+class}}
+\subsubsection{\texorpdfstring{hs\+\_\+display()}{hs\_display()}}
+{\footnotesize\ttfamily subroutine hs\+\_\+class\+::hs\+\_\+display (\begin{DoxyParamCaption}\item[{type(\hyperlink{strucths__class_1_1hs}{hs}), intent(in)}]{this,  }\item[{character$\ast$($\ast$), intent(in), optional}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacehs__class_a7857d1f3d6a49cfbc7d397a084a9013f}\label{namespacehs__class_a7857d1f3d6a49cfbc7d397a084a9013f}} 
+\index{hs\+\_\+class@{hs\+\_\+class}!hs\+\_\+init@{hs\+\_\+init}}
+\index{hs\+\_\+init@{hs\+\_\+init}!hs\+\_\+class@{hs\+\_\+class}}
+\subsubsection{\texorpdfstring{hs\+\_\+init()}{hs\_init()}}
+{\footnotesize\ttfamily subroutine hs\+\_\+class\+::hs\+\_\+init (\begin{DoxyParamCaption}\item[{type(\hyperlink{strucths__class_1_1hs}{hs}), intent(inout)}]{this,  }\item[{character$\ast$($\ast$), intent(in), optional}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{namespacehs__class_a7857d1f3d6a49cfbc7d397a084a9013f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacehs__class_a1d1b34bdecfb1004bd277bf53dbd3e92}\label{namespacehs__class_a1d1b34bdecfb1004bd277bf53dbd3e92}} 
+\index{hs\+\_\+class@{hs\+\_\+class}!hs\+\_\+kill@{hs\+\_\+kill}}
+\index{hs\+\_\+kill@{hs\+\_\+kill}!hs\+\_\+class@{hs\+\_\+class}}
+\subsubsection{\texorpdfstring{hs\+\_\+kill()}{hs\_kill()}}
+{\footnotesize\ttfamily subroutine hs\+\_\+class\+::hs\+\_\+kill (\begin{DoxyParamCaption}\item[{type(\hyperlink{strucths__class_1_1hs}{hs}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacehs__class_abf39e51fc1d47061279287a7e328d9d4}\label{namespacehs__class_abf39e51fc1d47061279287a7e328d9d4}} 
+\index{hs\+\_\+class@{hs\+\_\+class}!hs\+\_\+resample@{hs\+\_\+resample}}
+\index{hs\+\_\+resample@{hs\+\_\+resample}!hs\+\_\+class@{hs\+\_\+class}}
+\subsubsection{\texorpdfstring{hs\+\_\+resample()}{hs\_resample()}}
+{\footnotesize\ttfamily subroutine hs\+\_\+class\+::hs\+\_\+resample (\begin{DoxyParamCaption}\item[{type(\hyperlink{strucths__class_1_1hs}{hs}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{namespacehs__class_abf39e51fc1d47061279287a7e328d9d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacehs__class_a3b78604825b27d4d06a70aac14b8c538}\label{namespacehs__class_a3b78604825b27d4d06a70aac14b8c538}} 
+\index{hs\+\_\+class@{hs\+\_\+class}!hs\+\_\+save@{hs\+\_\+save}}
+\index{hs\+\_\+save@{hs\+\_\+save}!hs\+\_\+class@{hs\+\_\+class}}
+\subsubsection{\texorpdfstring{hs\+\_\+save()}{hs\_save()}}
+{\footnotesize\ttfamily subroutine hs\+\_\+class\+::hs\+\_\+save (\begin{DoxyParamCaption}\item[{type(\hyperlink{strucths__class_1_1hs}{hs}), intent(in)}]{this,  }\item[{character$\ast$($\ast$), intent(in)}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{namespacehs__class_a3b78604825b27d4d06a70aac14b8c538_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacehs__class_a8a479624da65dc4f4a5cae9826487bec}\label{namespacehs__class_a8a479624da65dc4f4a5cae9826487bec}} 
+\index{hs\+\_\+class@{hs\+\_\+class}!hs\+\_\+update@{hs\+\_\+update}}
+\index{hs\+\_\+update@{hs\+\_\+update}!hs\+\_\+class@{hs\+\_\+class}}
+\subsubsection{\texorpdfstring{hs\+\_\+update()}{hs\_update()}}
+{\footnotesize\ttfamily subroutine hs\+\_\+class\+::hs\+\_\+update (\begin{DoxyParamCaption}\item[{type(\hyperlink{strucths__class_1_1hs}{hs}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+

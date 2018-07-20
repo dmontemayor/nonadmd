@@ -1,0 +1,67 @@
+7 nstate
+0. Eorg
+F Default Hs
+56670E-6 state 1 1
+-400.5E-6 state 1 2
+25.11E-6 state 1 3
+-26.94E-6 state 1 4
+30.59E-6 state 1 5
+-62.56E-6 state 1 6
+-45.21E-6 state 1 7
+57220E-6 state 2 2
+140.6E-6 state 2 3
+37.44E-6 state 2 4
+3.196E-6 state 2 5
+53.88E-6 state 2 6
+19.64E-6 state 2 7
+55750E-6 state 3 3
+-244.3E-6 state 3 4
+-10.05E-6 state 3 5
+-43.84E-6 state 3 6
+27.40E-6 state 3 7
+56260E-6 state 4 4
+-322.8E-6 state 4 5
+-77.63E-6 state 4 6
+-289.0E-6 state 4 7
+56990E-6 state 5 5
+370.3E-6 state 5 6
+-5.936E-6 state 5 7
+57670E-6 state 6 6
+181.3E-6 state 6 7
+56810E-6 state 7 7
+T int den = |1><1|
+'MK22.46.jw'
+420 npart (60 per state)
+T unit mass
+T unit charge
+1 ndim
+T default PBC
+T obsolete
+300 Kelvin
+F no counterterm
+T Wigner
+7 bath
+1 Associate bath 1 with density 1:8
+2 Associate bath 2 with density 1:8
+3 Associate bath 3 with density 1:8
+4 Associate bath 4 with density 1:8
+5 Associate bath 5 with density 1:8
+6 Associate bath 6 with density 1:8
+7 Associate bath 7 with density 1:8
+T Divide modes equally among states
+9.870316612469112E-005 Lambda 1  
+1.449946963621904E-004 Lambda 2
+1.059500352719033E-004 Lambda 3
+8.273614803091774E-005 Lambda 4
+7.100587510241604E-005 Lambda 5
+1.074478909555536E-004 Lambda 6
+1.154421369273432E-004 Lambda 7    (1.906050480704540E-004 Lambda 8)    
+T default qhat	       
+
+10000 ntraj
+42000 runtime
+20 nuclear timestep
+1 electronic timestep
+100 output timestep (not used)
+10 save resart files in wallclock seconds  
+

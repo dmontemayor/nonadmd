@@ -1,0 +1,138 @@
+\hypertarget{namespacestring}{}\section{string Module Reference}
+\label{namespacestring}\index{string@{string}}
+
+
+Get strings from numbers and other string operations.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacestring_1_1float2str}{float2str}
+\item 
+interface \hyperlink{interfacestring_1_1hex2int}{hex2int}
+\item 
+interface \hyperlink{interfacestring_1_1int2hex}{int2hex}
+\item 
+interface \hyperlink{interfacestring_1_1int2str}{int2str}
+\item 
+interface \hyperlink{interfacestring_1_1str2float}{str2float}
+\item 
+interface \hyperlink{interfacestring_1_1str2int}{str2int}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+character(len=len(str)+2) function, public \hyperlink{namespacestring_a43ac41bc9fa839e5e40ec725c029b5a4}{quote} (str)
+\item 
+character(len=title) function \hyperlink{namespacestring_a734300e2e50f76efa2730b5f1cc7cc21}{long2str} (I)
+\item 
+character(len=title) function \hyperlink{namespacestring_ac3e429fd86c78765b2408096ae132f8a}{short2str} (I)
+\item 
+integer(long) function \hyperlink{namespacestring_aefd9037a03dddf650cb9d0a18ed7de95}{str2long} (string)
+\item 
+character(len=title) function \hyperlink{namespacestring_a229fed3adef608ec305da7cbc54b24a8}{double2str} (X)
+\item 
+real(double) function \hyperlink{namespacestring_a73d6072e501eb7ed3d5aa9e4a5a47f6d}{str2double} (string)
+\item 
+character(len=title) function \hyperlink{namespacestring_a78ede8e0d165537ea978aeeb8227bc3f}{single2str} (X)
+\item 
+integer(long) function \hyperlink{namespacestring_a133490e9f060a404b52108895b255435}{hex2long} (string)
+\item 
+character(len=title) function \hyperlink{namespacestring_a58fb75f0ded0856267e7770d4b13b2f6}{long2hex} (I)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Get strings from numbers and other string operations. 
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacestring_a229fed3adef608ec305da7cbc54b24a8}\label{namespacestring_a229fed3adef608ec305da7cbc54b24a8}} 
+\index{string@{string}!double2str@{double2str}}
+\index{double2str@{double2str}!string@{string}}
+\subsubsection{\texorpdfstring{double2str()}{double2str()}}
+{\footnotesize\ttfamily character(len=title) function string\+::double2str (\begin{DoxyParamCaption}\item[{real(double), intent(in)}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{namespacestring_a229fed3adef608ec305da7cbc54b24a8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacestring_a133490e9f060a404b52108895b255435}\label{namespacestring_a133490e9f060a404b52108895b255435}} 
+\index{string@{string}!hex2long@{hex2long}}
+\index{hex2long@{hex2long}!string@{string}}
+\subsubsection{\texorpdfstring{hex2long()}{hex2long()}}
+{\footnotesize\ttfamily integer(long) function string\+::hex2long (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in)}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{namespacestring_a133490e9f060a404b52108895b255435_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacestring_a58fb75f0ded0856267e7770d4b13b2f6}\label{namespacestring_a58fb75f0ded0856267e7770d4b13b2f6}} 
+\index{string@{string}!long2hex@{long2hex}}
+\index{long2hex@{long2hex}!string@{string}}
+\subsubsection{\texorpdfstring{long2hex()}{long2hex()}}
+{\footnotesize\ttfamily character(len=title) function string\+::long2hex (\begin{DoxyParamCaption}\item[{integer(long), intent(in)}]{I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacestring_a734300e2e50f76efa2730b5f1cc7cc21}\label{namespacestring_a734300e2e50f76efa2730b5f1cc7cc21}} 
+\index{string@{string}!long2str@{long2str}}
+\index{long2str@{long2str}!string@{string}}
+\subsubsection{\texorpdfstring{long2str()}{long2str()}}
+{\footnotesize\ttfamily character(len=title) function string\+::long2str (\begin{DoxyParamCaption}\item[{integer(long), intent(in)}]{I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacestring_a43ac41bc9fa839e5e40ec725c029b5a4}\label{namespacestring_a43ac41bc9fa839e5e40ec725c029b5a4}} 
+\index{string@{string}!quote@{quote}}
+\index{quote@{quote}!string@{string}}
+\subsubsection{\texorpdfstring{quote()}{quote()}}
+{\footnotesize\ttfamily character(len=len(str)+2) function, public string\+::quote (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in)}]{str }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{namespacestring_a43ac41bc9fa839e5e40ec725c029b5a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacestring_ac3e429fd86c78765b2408096ae132f8a}\label{namespacestring_ac3e429fd86c78765b2408096ae132f8a}} 
+\index{string@{string}!short2str@{short2str}}
+\index{short2str@{short2str}!string@{string}}
+\subsubsection{\texorpdfstring{short2str()}{short2str()}}
+{\footnotesize\ttfamily character(len=title) function string\+::short2str (\begin{DoxyParamCaption}\item[{integer(short), intent(in)}]{I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacestring_a78ede8e0d165537ea978aeeb8227bc3f}\label{namespacestring_a78ede8e0d165537ea978aeeb8227bc3f}} 
+\index{string@{string}!single2str@{single2str}}
+\index{single2str@{single2str}!string@{string}}
+\subsubsection{\texorpdfstring{single2str()}{single2str()}}
+{\footnotesize\ttfamily character(len=title) function string\+::single2str (\begin{DoxyParamCaption}\item[{real(single), intent(in)}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{namespacestring_a78ede8e0d165537ea978aeeb8227bc3f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacestring_a73d6072e501eb7ed3d5aa9e4a5a47f6d}\label{namespacestring_a73d6072e501eb7ed3d5aa9e4a5a47f6d}} 
+\index{string@{string}!str2double@{str2double}}
+\index{str2double@{str2double}!string@{string}}
+\subsubsection{\texorpdfstring{str2double()}{str2double()}}
+{\footnotesize\ttfamily real(double) function string\+::str2double (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in)}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacestring_aefd9037a03dddf650cb9d0a18ed7de95}\label{namespacestring_aefd9037a03dddf650cb9d0a18ed7de95}} 
+\index{string@{string}!str2long@{str2long}}
+\index{str2long@{str2long}!string@{string}}
+\subsubsection{\texorpdfstring{str2long()}{str2long()}}
+{\footnotesize\ttfamily integer(long) function string\+::str2long (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in)}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{namespacestring_aefd9037a03dddf650cb9d0a18ed7de95_cgraph}
+\end{center}
+\end{figure}

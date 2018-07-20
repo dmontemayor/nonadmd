@@ -1,0 +1,195 @@
+\hypertarget{namespaceerrorlog}{}\section{errorlog Module Reference}
+\label{namespaceerrorlog}\index{errorlog@{errorlog}}
+
+
+Error Handleing.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfaceerrorlog_1_1note}{note}
+\item 
+interface \hyperlink{interfaceerrorlog_1_1prompt}{prompt}
+\item 
+interface \hyperlink{interfaceerrorlog_1_1stop}{stop}
+\item 
+interface \hyperlink{interfaceerrorlog_1_1warn}{warn}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{namespaceerrorlog_a05d233f410ba88bf3e2929528b1bb91e}{displaylog}
+\item 
+subroutine, public \hyperlink{namespaceerrorlog_a32bbf87dd265de25bd10ea31d95b751d}{openlog} (file, level, Program\+Name, Bug\+Report)
+\item 
+subroutine, public \hyperlink{namespaceerrorlog_af9219c790b58905faca7f5695515325d}{closelog}
+\item 
+subroutine \hyperlink{namespaceerrorlog_abcaf87ab55e0634007cc7177aa53469c}{log\+\_\+note} (msg)
+\item 
+subroutine \hyperlink{namespaceerrorlog_ac0a3d2c2bcdb3af8e91b4a27d2ac5ac0}{log\+\_\+warn} (msg, recover)
+\item 
+subroutine \hyperlink{namespaceerrorlog_afe1872ea4ca114ccb25faaa2f2d60e2e}{log\+\_\+stop} (msg, suggest)
+\item 
+subroutine \hyperlink{namespaceerrorlog_ac6531d63b5a5d4939c3d510dd7fbbb25}{log\+\_\+prompt} (msg)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(short) \hyperlink{namespaceerrorlog_a3ab7fc512e499660dcb9a9542aab02b5}{loglevel}
+\item 
+integer(long) \hyperlink{namespaceerrorlog_adb26bb2d10f764e895c9745c3fb5dd1d}{logunit}
+\item 
+character(len=path) \hyperlink{namespaceerrorlog_a42e82497abf38d3e1683b51b48a5e4c0}{logfile}
+\item 
+logical \hyperlink{namespaceerrorlog_af9add736038cc71b13ee19df6544f3e5}{logclosed}
+\item 
+logical \hyperlink{namespaceerrorlog_a3a12f9c3cbb079a8cbb7b5790ea2c827}{logopen}
+\item 
+integer(long) \hyperlink{namespaceerrorlog_a056ccc9457985050fb6391dd4abf1f2c}{logcount}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Error Handleing. 
+
+Enables Error, Warning, Note, and Prompt messages by setting a log level. Also allows user to save Error\+Log messages to a file. 
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceerrorlog_af9219c790b58905faca7f5695515325d}\label{namespaceerrorlog_af9219c790b58905faca7f5695515325d}} 
+\index{errorlog@{errorlog}!closelog@{closelog}}
+\index{closelog@{closelog}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{closelog()}{closelog()}}
+{\footnotesize\ttfamily subroutine, public errorlog\+::closelog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{namespaceerrorlog_af9219c790b58905faca7f5695515325d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{namespaceerrorlog_af9219c790b58905faca7f5695515325d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceerrorlog_a05d233f410ba88bf3e2929528b1bb91e}\label{namespaceerrorlog_a05d233f410ba88bf3e2929528b1bb91e}} 
+\index{errorlog@{errorlog}!displaylog@{displaylog}}
+\index{displaylog@{displaylog}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{displaylog()}{displaylog()}}
+{\footnotesize\ttfamily subroutine, public errorlog\+::displaylog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceerrorlog_abcaf87ab55e0634007cc7177aa53469c}\label{namespaceerrorlog_abcaf87ab55e0634007cc7177aa53469c}} 
+\index{errorlog@{errorlog}!log\+\_\+note@{log\+\_\+note}}
+\index{log\+\_\+note@{log\+\_\+note}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{log\+\_\+note()}{log\_note()}}
+{\footnotesize\ttfamily subroutine errorlog\+::log\+\_\+note (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in)}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceerrorlog_abcaf87ab55e0634007cc7177aa53469c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceerrorlog_ac6531d63b5a5d4939c3d510dd7fbbb25}\label{namespaceerrorlog_ac6531d63b5a5d4939c3d510dd7fbbb25}} 
+\index{errorlog@{errorlog}!log\+\_\+prompt@{log\+\_\+prompt}}
+\index{log\+\_\+prompt@{log\+\_\+prompt}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{log\+\_\+prompt()}{log\_prompt()}}
+{\footnotesize\ttfamily subroutine errorlog\+::log\+\_\+prompt (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in)}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceerrorlog_ac6531d63b5a5d4939c3d510dd7fbbb25_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceerrorlog_afe1872ea4ca114ccb25faaa2f2d60e2e}\label{namespaceerrorlog_afe1872ea4ca114ccb25faaa2f2d60e2e}} 
+\index{errorlog@{errorlog}!log\+\_\+stop@{log\+\_\+stop}}
+\index{log\+\_\+stop@{log\+\_\+stop}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{log\+\_\+stop()}{log\_stop()}}
+{\footnotesize\ttfamily subroutine errorlog\+::log\+\_\+stop (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in)}]{msg,  }\item[{character$\ast$($\ast$), intent(in), optional}]{suggest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceerrorlog_afe1872ea4ca114ccb25faaa2f2d60e2e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceerrorlog_ac0a3d2c2bcdb3af8e91b4a27d2ac5ac0}\label{namespaceerrorlog_ac0a3d2c2bcdb3af8e91b4a27d2ac5ac0}} 
+\index{errorlog@{errorlog}!log\+\_\+warn@{log\+\_\+warn}}
+\index{log\+\_\+warn@{log\+\_\+warn}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{log\+\_\+warn()}{log\_warn()}}
+{\footnotesize\ttfamily subroutine errorlog\+::log\+\_\+warn (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in)}]{msg,  }\item[{character$\ast$($\ast$), intent(in), optional}]{recover }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceerrorlog_ac0a3d2c2bcdb3af8e91b4a27d2ac5ac0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceerrorlog_a32bbf87dd265de25bd10ea31d95b751d}\label{namespaceerrorlog_a32bbf87dd265de25bd10ea31d95b751d}} 
+\index{errorlog@{errorlog}!openlog@{openlog}}
+\index{openlog@{openlog}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{openlog()}{openlog()}}
+{\footnotesize\ttfamily subroutine, public errorlog\+::openlog (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$), intent(in), optional}]{file,  }\item[{integer(short), intent(in), optional}]{level,  }\item[{character$\ast$($\ast$), intent(in), optional}]{Program\+Name,  }\item[{character$\ast$($\ast$), intent(in), optional}]{Bug\+Report }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{namespaceerrorlog_a32bbf87dd265de25bd10ea31d95b751d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{namespaceerrorlog_a32bbf87dd265de25bd10ea31d95b751d_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceerrorlog_af9add736038cc71b13ee19df6544f3e5}\label{namespaceerrorlog_af9add736038cc71b13ee19df6544f3e5}} 
+\index{errorlog@{errorlog}!logclosed@{logclosed}}
+\index{logclosed@{logclosed}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{logclosed}{logclosed}}
+{\footnotesize\ttfamily logical errorlog\+::logclosed\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespaceerrorlog_a056ccc9457985050fb6391dd4abf1f2c}\label{namespaceerrorlog_a056ccc9457985050fb6391dd4abf1f2c}} 
+\index{errorlog@{errorlog}!logcount@{logcount}}
+\index{logcount@{logcount}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{logcount}{logcount}}
+{\footnotesize\ttfamily integer(long) errorlog\+::logcount\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespaceerrorlog_a42e82497abf38d3e1683b51b48a5e4c0}\label{namespaceerrorlog_a42e82497abf38d3e1683b51b48a5e4c0}} 
+\index{errorlog@{errorlog}!logfile@{logfile}}
+\index{logfile@{logfile}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{logfile}{logfile}}
+{\footnotesize\ttfamily character(len=path) errorlog\+::logfile\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespaceerrorlog_a3ab7fc512e499660dcb9a9542aab02b5}\label{namespaceerrorlog_a3ab7fc512e499660dcb9a9542aab02b5}} 
+\index{errorlog@{errorlog}!loglevel@{loglevel}}
+\index{loglevel@{loglevel}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{loglevel}{loglevel}}
+{\footnotesize\ttfamily integer(short) errorlog\+::loglevel\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespaceerrorlog_a3a12f9c3cbb079a8cbb7b5790ea2c827}\label{namespaceerrorlog_a3a12f9c3cbb079a8cbb7b5790ea2c827}} 
+\index{errorlog@{errorlog}!logopen@{logopen}}
+\index{logopen@{logopen}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{logopen}{logopen}}
+{\footnotesize\ttfamily logical errorlog\+::logopen\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespaceerrorlog_adb26bb2d10f764e895c9745c3fb5dd1d}\label{namespaceerrorlog_adb26bb2d10f764e895c9745c3fb5dd1d}} 
+\index{errorlog@{errorlog}!logunit@{logunit}}
+\index{logunit@{logunit}!errorlog@{errorlog}}
+\subsubsection{\texorpdfstring{logunit}{logunit}}
+{\footnotesize\ttfamily integer(long) errorlog\+::logunit\hspace{0.3cm}{\ttfamily [private]}}
+

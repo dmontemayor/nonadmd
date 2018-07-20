@@ -1,0 +1,163 @@
+\hypertarget{namespacemath}{}\section{math Module Reference}
+\label{namespacemath}\index{math@{math}}
+
+
+Definition of mathematical constants and operators.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+real(double) function, dimension(n, n), public \hyperlink{namespacemath_a43efec08acf55747fa1e14085858aade}{iden} (N)
+\begin{DoxyCompactList}\small\item\em identity matrix \end{DoxyCompactList}\item 
+real(double) function, public \hyperlink{namespacemath_a9f8f22c01066f03fe5900edb63b56c89}{trace} (A)
+\begin{DoxyCompactList}\small\item\em trace of a complex matrix \end{DoxyCompactList}\item 
+real(double) function, public \hyperlink{namespacemath_a864984937cf0f3b7bdbc9b652b84445d}{cnorm} (A)
+\begin{DoxyCompactList}\small\item\em Entrywise p-\/norm of a complex square matrix with p=1. \end{DoxyCompactList}\item 
+real(double) function, public \hyperlink{namespacemath_a2830cb5393b6e6a8baa8d072c73ce8a9}{fnorm} (A, p)
+\begin{DoxyCompactList}\small\item\em Entrywise p-\/norm of a complex matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real(double), parameter \hyperlink{namespacemath_aa2f838077707f6cdb0c8a0ec69719690}{pi}
+\item 
+real(double), parameter \hyperlink{namespacemath_aeb6d7ed6a20444e26f024b34eaa4c4f7}{twopi}
+\item 
+real(double), parameter \hyperlink{namespacemath_a83cddb754967ada1a15217d10ed9c24b}{fourpi}
+\item 
+real(double), parameter \hyperlink{namespacemath_a99d72d3bce2cadc8630d10ee09aaa3ea}{halfpi}
+\item 
+complex(double), parameter \hyperlink{namespacemath_ae0354610846d49064ea0336f19d5bf3f}{eye}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition of mathematical constants and operators. 
+
+\begin{DoxyAuthor}{Authors}
+Author\+: Daniel Montemayor 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000008}{Todo}]
+\begin{DoxyItemize}
+\item Add cross and dot product operators 
+\end{DoxyItemize}\end{DoxyRefDesc}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacemath_a864984937cf0f3b7bdbc9b652b84445d}\label{namespacemath_a864984937cf0f3b7bdbc9b652b84445d}} 
+\index{math@{math}!cnorm@{cnorm}}
+\index{cnorm@{cnorm}!math@{math}}
+\subsubsection{\texorpdfstring{cnorm()}{cnorm()}}
+{\footnotesize\ttfamily real(double) function, public math\+::cnorm (\begin{DoxyParamCaption}\item[{complex(double), dimension(\+:,\+:), intent(in)}]{A }\end{DoxyParamCaption})}
+
+
+
+Entrywise p-\/norm of a complex square matrix with p=1. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em A} & matrix $<$ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{namespacemath_a864984937cf0f3b7bdbc9b652b84445d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemath_a2830cb5393b6e6a8baa8d072c73ce8a9}\label{namespacemath_a2830cb5393b6e6a8baa8d072c73ce8a9}} 
+\index{math@{math}!fnorm@{fnorm}}
+\index{fnorm@{fnorm}!math@{math}}
+\subsubsection{\texorpdfstring{fnorm()}{fnorm()}}
+{\footnotesize\ttfamily real(double) function, public math\+::fnorm (\begin{DoxyParamCaption}\item[{complex(double), dimension(\+:,\+:), intent(in)}]{A,  }\item[{integer(long), intent(in), optional}]{p }\end{DoxyParamCaption})}
+
+
+
+Entrywise p-\/norm of a complex matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em A} & matrix \\
+\hline
+\mbox{\tt in}  & {\em p} & optional p-\/norm integer default\+: p=2 Frobinius normalization $<$ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacemath_a43efec08acf55747fa1e14085858aade}\label{namespacemath_a43efec08acf55747fa1e14085858aade}} 
+\index{math@{math}!iden@{iden}}
+\index{iden@{iden}!math@{math}}
+\subsubsection{\texorpdfstring{iden()}{iden()}}
+{\footnotesize\ttfamily real(double) function, dimension(n,n), public math\+::iden (\begin{DoxyParamCaption}\item[{integer(long), intent(in)}]{N }\end{DoxyParamCaption})}
+
+
+
+identity matrix 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em N} & size of matrix $<$ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{namespacemath_a43efec08acf55747fa1e14085858aade_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemath_a9f8f22c01066f03fe5900edb63b56c89}\label{namespacemath_a9f8f22c01066f03fe5900edb63b56c89}} 
+\index{math@{math}!trace@{trace}}
+\index{trace@{trace}!math@{math}}
+\subsubsection{\texorpdfstring{trace()}{trace()}}
+{\footnotesize\ttfamily real(double) function, public math\+::trace (\begin{DoxyParamCaption}\item[{complex(double), dimension(\+:,\+:), intent(in)}]{A }\end{DoxyParamCaption})}
+
+
+
+trace of a complex matrix 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em A} & matrix $<$ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{namespacemath_a9f8f22c01066f03fe5900edb63b56c89_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemath_ae0354610846d49064ea0336f19d5bf3f}\label{namespacemath_ae0354610846d49064ea0336f19d5bf3f}} 
+\index{math@{math}!eye@{eye}}
+\index{eye@{eye}!math@{math}}
+\subsubsection{\texorpdfstring{eye}{eye}}
+{\footnotesize\ttfamily complex(double), parameter math\+::eye}
+
+\mbox{\Hypertarget{namespacemath_a83cddb754967ada1a15217d10ed9c24b}\label{namespacemath_a83cddb754967ada1a15217d10ed9c24b}} 
+\index{math@{math}!fourpi@{fourpi}}
+\index{fourpi@{fourpi}!math@{math}}
+\subsubsection{\texorpdfstring{fourpi}{fourpi}}
+{\footnotesize\ttfamily real(double), parameter math\+::fourpi}
+
+\mbox{\Hypertarget{namespacemath_a99d72d3bce2cadc8630d10ee09aaa3ea}\label{namespacemath_a99d72d3bce2cadc8630d10ee09aaa3ea}} 
+\index{math@{math}!halfpi@{halfpi}}
+\index{halfpi@{halfpi}!math@{math}}
+\subsubsection{\texorpdfstring{halfpi}{halfpi}}
+{\footnotesize\ttfamily real(double), parameter math\+::halfpi}
+
+\mbox{\Hypertarget{namespacemath_aa2f838077707f6cdb0c8a0ec69719690}\label{namespacemath_aa2f838077707f6cdb0c8a0ec69719690}} 
+\index{math@{math}!pi@{pi}}
+\index{pi@{pi}!math@{math}}
+\subsubsection{\texorpdfstring{pi}{pi}}
+{\footnotesize\ttfamily real(double), parameter math\+::pi}
+
+\mbox{\Hypertarget{namespacemath_aeb6d7ed6a20444e26f024b34eaa4c4f7}\label{namespacemath_aeb6d7ed6a20444e26f024b34eaa4c4f7}} 
+\index{math@{math}!twopi@{twopi}}
+\index{twopi@{twopi}!math@{math}}
+\subsubsection{\texorpdfstring{twopi}{twopi}}
+{\footnotesize\ttfamily real(double), parameter math\+::twopi}
+

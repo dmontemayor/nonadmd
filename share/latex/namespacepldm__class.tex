@@ -1,0 +1,168 @@
+\hypertarget{namespacepldm__class}{}\section{pldm\+\_\+class Module Reference}
+\label{namespacepldm__class}\index{pldm\+\_\+class@{pldm\+\_\+class}}
+
+
+Partial Lineraized Path Integral Propagators.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacepldm__class_1_1check}{check}
+\item 
+interface \hyperlink{interfacepldm__class_1_1display}{display}
+\item 
+interface \hyperlink{interfacepldm__class_1_1kill}{kill}
+\item 
+interface \hyperlink{interfacepldm__class_1_1new}{new}
+\item 
+type \hyperlink{structpldm__class_1_1pldm}{pldm}
+\item 
+interface \hyperlink{interfacepldm__class_1_1run}{run}
+\item 
+interface \hyperlink{interfacepldm__class_1_1save}{save}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacepldm__class_a56bc2a02f61ba7f0ef59c429a9f1e038}{mapverlet} (this, nstate, nlit, dt, hel)
+\item 
+subroutine \hyperlink{namespacepldm__class_a12da2274f89c7978903a0e5de4c0a2a7}{pldm\+\_\+new} (this, qs, cs, cp, file)
+\item 
+subroutine \hyperlink{namespacepldm__class_ae3cf3688fae95f3ab1729475a8fde0fd}{pldm\+\_\+kill} (this)
+\item 
+subroutine \hyperlink{namespacepldm__class_a0b7b20ee63a6203b24c700190738338b}{pldm\+\_\+display} (this)
+\item 
+subroutine \hyperlink{namespacepldm__class_aa71a81cb75e284923b6a6f8e4085c564}{pldm\+\_\+save} (this, file)
+\item 
+integer(short) function \hyperlink{namespacepldm__class_a87937cd139205ea96672b513c5124b8f}{pldm\+\_\+check} (this)
+\item 
+subroutine \hyperlink{namespacepldm__class_acb662f59407b2a0bd62fc36aab876482}{pldm\+\_\+run} (this, file, poponly, normstyle, forcesnap)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real(double), dimension(\+:), allocatable \hyperlink{namespacepldm__class_a66ae11e24219b080698059a797561bb4}{x0}
+\item 
+real(double), dimension(\+:), allocatable \hyperlink{namespacepldm__class_a4da9c01c7e463087a5f38764804dd0eb}{p0}
+\item 
+real(double), dimension(\+:), allocatable \hyperlink{namespacepldm__class_a2f8d09296fcb6d486fb5a87e5a13276b}{xt0}
+\item 
+real(double), dimension(\+:), allocatable \hyperlink{namespacepldm__class_a6f0729e807a28fab99053667439c375c}{pt0}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Partial Lineraized Path Integral Propagators. 
+
+\begin{DoxyAuthor}{Authors}
+Daniel Montemayor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2012 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]
+\begin{DoxyItemize}
+\item display output to file option 
+\end{DoxyItemize}\end{DoxyRefDesc}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacepldm__class_a56bc2a02f61ba7f0ef59c429a9f1e038}\label{namespacepldm__class_a56bc2a02f61ba7f0ef59c429a9f1e038}} 
+\index{pldm\+\_\+class@{pldm\+\_\+class}!mapverlet@{mapverlet}}
+\index{mapverlet@{mapverlet}!pldm\+\_\+class@{pldm\+\_\+class}}
+\subsubsection{\texorpdfstring{mapverlet()}{mapverlet()}}
+{\footnotesize\ttfamily subroutine pldm\+\_\+class\+::mapverlet (\begin{DoxyParamCaption}\item[{type(\hyperlink{structpldm__class_1_1pldm}{pldm}), intent(inout)}]{this,  }\item[{integer(long), intent(in)}]{nstate,  }\item[{integer(long), intent(in)}]{nlit,  }\item[{real(double), intent(in)}]{dt,  }\item[{real(double), dimension(nstate,nstate), intent(in)}]{hel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{namespacepldm__class_a56bc2a02f61ba7f0ef59c429a9f1e038_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacepldm__class_a87937cd139205ea96672b513c5124b8f}\label{namespacepldm__class_a87937cd139205ea96672b513c5124b8f}} 
+\index{pldm\+\_\+class@{pldm\+\_\+class}!pldm\+\_\+check@{pldm\+\_\+check}}
+\index{pldm\+\_\+check@{pldm\+\_\+check}!pldm\+\_\+class@{pldm\+\_\+class}}
+\subsubsection{\texorpdfstring{pldm\+\_\+check()}{pldm\_check()}}
+{\footnotesize\ttfamily integer(short) function pldm\+\_\+class\+::pldm\+\_\+check (\begin{DoxyParamCaption}\item[{type(\hyperlink{structpldm__class_1_1pldm}{pldm}), intent(in)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacepldm__class_a0b7b20ee63a6203b24c700190738338b}\label{namespacepldm__class_a0b7b20ee63a6203b24c700190738338b}} 
+\index{pldm\+\_\+class@{pldm\+\_\+class}!pldm\+\_\+display@{pldm\+\_\+display}}
+\index{pldm\+\_\+display@{pldm\+\_\+display}!pldm\+\_\+class@{pldm\+\_\+class}}
+\subsubsection{\texorpdfstring{pldm\+\_\+display()}{pldm\_display()}}
+{\footnotesize\ttfamily subroutine pldm\+\_\+class\+::pldm\+\_\+display (\begin{DoxyParamCaption}\item[{type(\hyperlink{structpldm__class_1_1pldm}{pldm}), intent(in)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacepldm__class_ae3cf3688fae95f3ab1729475a8fde0fd}\label{namespacepldm__class_ae3cf3688fae95f3ab1729475a8fde0fd}} 
+\index{pldm\+\_\+class@{pldm\+\_\+class}!pldm\+\_\+kill@{pldm\+\_\+kill}}
+\index{pldm\+\_\+kill@{pldm\+\_\+kill}!pldm\+\_\+class@{pldm\+\_\+class}}
+\subsubsection{\texorpdfstring{pldm\+\_\+kill()}{pldm\_kill()}}
+{\footnotesize\ttfamily subroutine pldm\+\_\+class\+::pldm\+\_\+kill (\begin{DoxyParamCaption}\item[{type(\hyperlink{structpldm__class_1_1pldm}{pldm}), intent(inout)}]{this }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacepldm__class_a12da2274f89c7978903a0e5de4c0a2a7}\label{namespacepldm__class_a12da2274f89c7978903a0e5de4c0a2a7}} 
+\index{pldm\+\_\+class@{pldm\+\_\+class}!pldm\+\_\+new@{pldm\+\_\+new}}
+\index{pldm\+\_\+new@{pldm\+\_\+new}!pldm\+\_\+class@{pldm\+\_\+class}}
+\subsubsection{\texorpdfstring{pldm\+\_\+new()}{pldm\_new()}}
+{\footnotesize\ttfamily subroutine pldm\+\_\+class\+::pldm\+\_\+new (\begin{DoxyParamCaption}\item[{type(\hyperlink{structpldm__class_1_1pldm}{pldm}), intent(inout)}]{this,  }\item[{type(\hyperlink{structquantum__class_1_1quantum}{quantum}), intent(in), target}]{qs,  }\item[{type(\hyperlink{structclassical__class_1_1classical}{classical}), intent(in), target}]{cs,  }\item[{type(\hyperlink{structcoupling__class_1_1coupling}{coupling}), intent(in), target}]{cp,  }\item[{character$\ast$($\ast$), intent(in), optional}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{namespacepldm__class_a12da2274f89c7978903a0e5de4c0a2a7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacepldm__class_acb662f59407b2a0bd62fc36aab876482}\label{namespacepldm__class_acb662f59407b2a0bd62fc36aab876482}} 
+\index{pldm\+\_\+class@{pldm\+\_\+class}!pldm\+\_\+run@{pldm\+\_\+run}}
+\index{pldm\+\_\+run@{pldm\+\_\+run}!pldm\+\_\+class@{pldm\+\_\+class}}
+\subsubsection{\texorpdfstring{pldm\+\_\+run()}{pldm\_run()}}
+{\footnotesize\ttfamily subroutine pldm\+\_\+class\+::pldm\+\_\+run (\begin{DoxyParamCaption}\item[{type(\hyperlink{structpldm__class_1_1pldm}{pldm}), intent(inout)}]{this,  }\item[{character$\ast$($\ast$), intent(in), optional}]{file,  }\item[{logical, intent(in), optional}]{poponly,  }\item[{character$\ast$($\ast$), intent(in), optional}]{normstyle,  }\item[{logical, intent(in), optional}]{forcesnap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacepldm__class_acb662f59407b2a0bd62fc36aab876482_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacepldm__class_aa71a81cb75e284923b6a6f8e4085c564}\label{namespacepldm__class_aa71a81cb75e284923b6a6f8e4085c564}} 
+\index{pldm\+\_\+class@{pldm\+\_\+class}!pldm\+\_\+save@{pldm\+\_\+save}}
+\index{pldm\+\_\+save@{pldm\+\_\+save}!pldm\+\_\+class@{pldm\+\_\+class}}
+\subsubsection{\texorpdfstring{pldm\+\_\+save()}{pldm\_save()}}
+{\footnotesize\ttfamily subroutine pldm\+\_\+class\+::pldm\+\_\+save (\begin{DoxyParamCaption}\item[{type(\hyperlink{structpldm__class_1_1pldm}{pldm}), intent(in)}]{this,  }\item[{character$\ast$($\ast$), intent(in)}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{namespacepldm__class_aa71a81cb75e284923b6a6f8e4085c564_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepldm__class_a4da9c01c7e463087a5f38764804dd0eb}\label{namespacepldm__class_a4da9c01c7e463087a5f38764804dd0eb}} 
+\index{pldm\+\_\+class@{pldm\+\_\+class}!p0@{p0}}
+\index{p0@{p0}!pldm\+\_\+class@{pldm\+\_\+class}}
+\subsubsection{\texorpdfstring{p0}{p0}}
+{\footnotesize\ttfamily real(double), dimension(\+:), allocatable pldm\+\_\+class\+::p0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacepldm__class_a6f0729e807a28fab99053667439c375c}\label{namespacepldm__class_a6f0729e807a28fab99053667439c375c}} 
+\index{pldm\+\_\+class@{pldm\+\_\+class}!pt0@{pt0}}
+\index{pt0@{pt0}!pldm\+\_\+class@{pldm\+\_\+class}}
+\subsubsection{\texorpdfstring{pt0}{pt0}}
+{\footnotesize\ttfamily real(double), dimension(\+:), allocatable pldm\+\_\+class\+::pt0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacepldm__class_a66ae11e24219b080698059a797561bb4}\label{namespacepldm__class_a66ae11e24219b080698059a797561bb4}} 
+\index{pldm\+\_\+class@{pldm\+\_\+class}!x0@{x0}}
+\index{x0@{x0}!pldm\+\_\+class@{pldm\+\_\+class}}
+\subsubsection{\texorpdfstring{x0}{x0}}
+{\footnotesize\ttfamily real(double), dimension(\+:), allocatable pldm\+\_\+class\+::x0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacepldm__class_a2f8d09296fcb6d486fb5a87e5a13276b}\label{namespacepldm__class_a2f8d09296fcb6d486fb5a87e5a13276b}} 
+\index{pldm\+\_\+class@{pldm\+\_\+class}!xt0@{xt0}}
+\index{xt0@{xt0}!pldm\+\_\+class@{pldm\+\_\+class}}
+\subsubsection{\texorpdfstring{xt0}{xt0}}
+{\footnotesize\ttfamily real(double), dimension(\+:), allocatable pldm\+\_\+class\+::xt0\hspace{0.3cm}{\ttfamily [private]}}
+

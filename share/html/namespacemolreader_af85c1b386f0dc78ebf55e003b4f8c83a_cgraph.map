@@ -1,0 +1,5 @@
+<map id="molreader::read_cryst1" name="molreader::read_cryst1">
+<area shape="rect" id="node3" href="$namespacemolreader.html#ac7b950f165e89b12ccc8fff1c0f3bae9" title="molreader::advance\l_buffer" alt="" coords="213,5,352,49"/>
+<area shape="rect" id="node5" href="$namespacemolreader.html#a16d4776fded57cf8aa38f639610cad84" title="molreader::refresh\l_buffer" alt="" coords="400,5,530,49"/>
+<area shape="rect" id="node7" href="$namespacewallclock.html#ac691a026a7b92c6cd971e86d0449d42b" title="wallclock::timearray" alt="" coords="579,13,717,41"/>
+</map>

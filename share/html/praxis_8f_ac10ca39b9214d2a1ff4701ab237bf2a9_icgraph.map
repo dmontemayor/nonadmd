@@ -1,5 +1,3 @@
 <map id="print" name="print">
-<area shape="rect" id="node3" href="$praxis_8f.html#af91941b7f0c3ddb787c772ca565e1855" title="PRAXIS RETURNS THE MINIMUM OF THE FUNCTION F(X,N) OF N VARIABLES USING THE PRINCIPAL AXIS METHOD..." alt="" coords="102,5,159,33"/>
-<area shape="rect" id="node5" href="$subroutines_8f90.html#a66d629a9efd7144f6d03009c5cae7c0d" title="praxisfit" alt="" coords="208,5,275,33"/>
-<area shape="rect" id="node7" href="$src_2system__driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Main loop of Program!" alt="" coords="323,5,373,33"/>
+<area shape="rect" id="node3" href="$praxis_8f.html#ad363b84325df8361d0bce4a2456bef23" title="PRAXIS RETURNS THE MINIMUM OF THE FUNCTION F(X,N) OF N VARIABLES USING THE PRINCIPAL AXIS METHOD..." alt="" coords="102,5,159,33"/>
 </map>

@@ -1,0 +1,269 @@
+!!PDB PDB Atomic Coordinate Entry Format Version 3.3
+!!\section PDB_OneTime_SingleLine One Time, Single Line RECORD
+!!There are records that may only appear one time and without continuations in a file. Listed alphabetically, these are:
+!!
+!!RECORD TYPE             DESCRIPTION
+!!-----------------------------------------------------------------------------------
+!!CRYST1                  Unit cell parameters, space group, and Z.
+!!END                     Last record in the file.
+!!HEADER                  First line of the entry, contains PDB ID code,
+!!                        classification, and date of deposition.
+!!NUMMDL                  Number of models.
+!!MASTER                  Control record for bookkeeping.
+!!ORIGXn                  Transformation from orthogonal  coordinates to the
+!!                        submitted coordinates (n = 1, 2, or 3).
+!!SCALEn                  Transformation from orthogonal coordinates to fractional
+!!                        crystallographic coordinates  (n = 1, 2, or 3).
+!!
+!!It is an error for a duplicate of any of these records to appear in an entry.
+!!-----------------------------------------------------------------------------------
+!!
+!!\section PDB_OneTime_MultiLine One Time, Multiple Line RECORD
+!!There are records that conceptually exist only once in an entry, but the information content may exceed the number of columns available. These records are therefore continued on subsequent lines. Listed alphabetically, these are:
+!!
+!!RECORD TYPE             DESCRIPTION
+!!-----------------------------------------------------------------------------------
+!!AUTHOR                  List of contributors.
+!!CAVEAT                  Severe error indicator.
+!!COMPND                  Description of macromolecular contents of the entry.
+!!EXPDTA                  Experimental technique used for the structure determination.
+!!MDLTYP                  Contains additional annotation  pertinent to the coordinates
+!!                        presented  in the entry. 
+!!KEYWDS                  List of keywords describing the macromolecule.
+!!OBSLTE                  Statement that the entry has been removed from distribution
+!!                        and list of the ID code(s) which replaced it.
+!!SOURCE                  Biological source of macromolecules in the entry.
+!!SPLIT                   List of PDB entries that compose a larger  macromolecular
+!!                        complexes.
+!!SPRSDE                  List of entries obsoleted from public release and replaced by
+!!                        current entry.
+!!TITLE                   Description of the experiment represented in the entry.
+!!
+!!  The second and subsequent lines contain a continuation field, which is a right-justified integer. This number increments by one for each additional line of the record, and is followed by a blank character.
+!!-----------------------------------------------------------------------------------
+!!  
+!!\section PDB_MultiTime_SingleLine Multiple Times, Single Line RECORD
+!!Most record types appear multiple times, often in groups where the information is not logically concatenated but is presented in the form of a list. Many of these record types have a custom serialization that may be used not only to order the records, but also to connect to other record types. Listed alphabetically, these are:
+!!
+!!RECORD TYPE             DESCRIPTION
+!!-----------------------------------------------------------------------------------
+!!ANISOU                  Anisotropic temperature factors.
+!!ATOM                    Atomic coordinate records for  standard groups.
+!!CISPEP                  Identification of peptide residues in cis conformation.
+!!CONECT                  Connectivity records.
+!!DBREF                   Reference  to the entry in the sequence database(s).
+!!HELIX                   Identification of helical substructures.
+!!HET                     Identification of non-standard groups heterogens).
+!!HETATM                  Atomic coordinate records for heterogens.
+!!LINK                    Identification of inter-residue bonds.
+!!MODRES                  Identification of modifications to standard residues.
+!!MTRIXn                  Transformations expressing non-crystallographic symmetry
+!!                        (n = 1, 2, or 3). There may be multiple sets of these records.
+!!REVDAT                  Revision date and related information.
+!!SEQADV                  Identification of conflicts between PDB and the named  
+!!                        sequence database.
+!!SHEET                   Identification of sheet substructures.
+!!SSBOND                  Identification of disulfide bonds.
+!!-----------------------------------------------------------------------------------
+!!  
+!!\section PDB_MultiTime_MultiLine Multiple Times, Multiple Line RECORD
+!!There are records that conceptually exist multiple times in an entry, but the information content may exceed the number of columns available. These records are therefore continued on subsequent lines. Listed alphabetically, these are:
+!!
+!!RECORD TYPE             DESCRIPTION
+!!-------------------------------------------------------------------------------
+!!FORMUL                  Chemical formula of non-standard groups.
+!!HETNAM                  Compound name of the heterogens.
+!!HETSYN                  Synonymous compound names for heterogens.
+!!SEQRES                  Primary sequence of backbone residues.
+!!SITE                    Identification of groups comprising important entity sites.
+!!
+!!The second and subsequent lines contain a continuation field which is a right-justified integer.
+!!This number increments by one for each additional line of the record, and is followed by a blank character.
+!!-----------------------------------------------------------------------------------
+!!  
+!!\section Grouping Grouping
+!!There are three record types used to group other records.
+!!Listed alphabetically, these are:
+!!
+!!RECORD TYPE             DESCRIPTION
+!!------------------------------------------------------------------------------------
+!!ENDMDL                  End-of-model record for multiple structures in a single
+!!                        coordinate entry.
+!!MODEL                   Specification of model number for multiple structures in a
+!!                        single coordinate entry.
+!!TER                     Chain terminator.
+!!
+!!The MODEL/ENDMDL records surround groups of ATOM, HETATM, ANISOU, and TER records. TER records indicate the end of a chain.
+!!-----------------------------------------------------------------------------------
+!!  
+!!\section Other Other
+!!Other:  The remaining record types have a detailed inner structure.
+!!Listed alphabetically, these are:
+!!
+!!RECORD TYPE             DESCRIPTION
+!!-----------------------------------------------------------------------------------
+!!JRNL                    Literature citation that defines the coordinate set.
+!!REMARK                  General remarks; they can be structured or free form.
+!!-----------------------------------------------------------------------------------
+!!  
+!!\section RecordOrder Record Order
+!!All records in a PDB coordinate entry must appear in a defined order. Mandatory record types are present in all entries. When mandatory data are not provided, the record name must appear in the entry with a NULL indicator. Optional items become mandatory when certain conditions exist. Old records that are not described here are deprecated. Record order and existence are described in the following table:
+!!
+!!RECORD TYPE             EXISTENCE           CONDITIONS IF  OPTIONAL
+!!--------------------------------------------------------------------------------------
+!!HEADER                  Mandatory
+!!OBSLTE                  Optional            Mandatory in  entries that have been 
+!!                                            replaced by a newer entry.
+!!TITLE                   Mandatory
+!!SPLIT                   Optional            Mandatory when  large macromolecular
+!!                                            complexes  are split into multiple PDB
+!!                                            entries.
+!!CAVEAT                  Optional            Mandatory when there are outstanding  errors
+!!                                            such  as chirality.
+!!COMPND                  Mandatory
+!!SOURCE                  Mandatory
+!!KEYWDS                  Mandatory
+!!EXPDTA                  Mandatory
+!!NUMMDL                  Optional            Mandatory for  NMR ensemble entries.
+!!MDLTYP                  Optional            Mandatory for  NMR minimized average
+!!                                            Structures or when the entire  polymer 
+!!                                            chain contains C alpha or P atoms only. 
+!!AUTHOR                  Mandatory
+!!REVDAT                  Mandatory
+!!SPRSDE                  Optional            Mandatory for a replacement entry.
+!!JRNL                    Optional            Mandatory for a publication describes
+!!                                            the experiment.
+!!REMARK 0                Optional            Mandatory for a re-refined structure
+!!REMARK 1                Optional
+!!REMARK 2                Mandatory
+!!REMARK 3                Mandatory
+!!REMARK N                Optional            Mandatory under certain conditions.
+!!DBREF                   Optional            Mandatory for all polymers.
+!!DBREF1/DBREF2           Optional            Mandatory when certain sequence  database
+!!                                            accession  and/or sequence numbering
+!!                                            does  not fit preceding DBREF format.
+!!SEQADV                  Optional            Mandatory if sequence  conflict exists.
+!!SEQRES                  Mandatory           Mandatory if ATOM records exist.
+!!MODRES                  Optional            Mandatory if modified group exists  in the
+!!                                            coordinates.
+!!HET                     Optional            Mandatory if a non-standard group other
+!!                                            than water appears in the coordinates. 
+!!HETNAM                  Optional            Mandatory if a non-standard group other
+!!                                            than  water appears in the coordinates.
+!!HETSYN                  Optional
+!!FORMUL                  Optional            Mandatory if a non-standard group or
+!!                                            water appears in the coordinates.
+!!HELIX                   Optional
+!!SHEET                   Optional
+!!SSBOND                  Optional            Mandatory if a  disulfide bond is present.
+!!LINK                    Optional            Mandatory if  non-standard residues appear
+!!                                            in a  polymer
+!!CISPEP                  Optional
+!!SITE                    Optional
+!!CRYST1                  Mandatory
+!!ORIGX1 ORIGX2 ORIGX3    Mandatory
+!!SCALE1 SCALE2 SCALE3    Mandatory
+!!MTRIX1 MTRIX2 MTRIX3    Optional            Mandatory if  the complete asymmetric unit
+!!                                            must  be generated from the given coordinates
+!!                                            using non-crystallographic symmetry.
+!!MODEL                   Optional            Mandatory if more than one model
+!!                                            is  present in the entry.
+!!ATOM                    Optional            Mandatory if standard residues exist.
+!!ANISOU                  Optional
+!!TER                     Optional            Mandatory if ATOM records exist.
+!!HETATM                  Optional            Mandatory if non-standard group exists. 
+!!ENDMDL                  Optional            Mandatory if MODEL appears.
+!!CONECT                  Optional            Mandatory if non-standard group appears
+!!                                            and  if LINK or SSBOND records exist.
+!!MASTER                  Mandatory
+!!END                     Mandatory
+!!-----------------------------------------------------------------------------------
+!!  
+!!\section Sections Sections
+!!The following table lists the various sections of a PDB entry and the records within it:
+!!
+!!SECTION                 DESCRIPTION                       RECORD TYPE
+!!-------------------------------------------------------------------------------------
+!!Title                   Summary descriptive remarks       HEADER,  OBSLTE, TITLE, SPLIT,
+!!                                                          CAVEAT, COMPND, SOURCE, KEYWDS,
+!!                                                          EXPDTA,  NUMMDL, MDLTYP, AUTHOR,
+!!                                                          REVDAT,  SPRSDE, JRNL
+!!Remark                  Various comments about entry      REMARKs  0-999
+!!Annotations             in more depth than standard
+!!                        records
+!!Primary structure       Peptide and/or nucleotide         DBREF, SEQADV, SEQRES MODRES
+!!                        sequence and the
+!!                        relationship between the PDB
+!!                        sequence and that found in
+!!                        the  sequence database(s)
+!!Heterogen               Description of non-standard       HET, HETNAM, HETSYN, FORMUL
+!!                        groups
+!!Secondary structure     Description of secondary          HELIX, SHEET 
+!!                        structure
+!!Connectivity            Chemical connectivity             SSBOND, LINK, CISPEP
+!!annotation
+!!Miscellaneous           Features within the               SITE
+!!features                macromolecule
+!!Crystallographic        Description of the                CRYST1
+!!                        crystallographic cell
+!!Coordinate              Coordinate transformation         ORIGXn,  SCALEn, MTRIXn,
+!!transformation          operators
+!!Coordinate              Atomic coordinate data            MODEL, ATOM, ANISOU,
+!!                                                          TER, HETATM, ENDMDL
+!!Connectivity            Chemical connectivity             CONECT
+!!Bookkeeping             Summary information,              MASTER, END
+!!                        end-of-file marker
+!!-----------------------------------------------------------------------------------
+!!  
+!!\section FieldTypes Field Types
+!!Each record type is presented in a table which contains the division of the records into fields by column number, defined data type, field name or a quoted string which must appear in the field, and field definition. Any column not specified must be left blank.
+!!
+!!Each field contains an identified data type that can be validated by a program. These are:
+!!DATA TYPE               DESCRIPTION
+!!----------------------------------------------------------------------------------
+!!AChar                   An alphabetic character (A-Z, a-z).
+!!Atom                    Atom name.
+!!Character               Any non-control character in the  ASCII character set or a
+!!                        space.
+!!Continuation            A two-character field that is either blank (for the first
+!!                        record of a set) or contains a two  digit number
+!!                        right-justified and blank-filled which counts continuation
+!!                        records starting with 2. The continuation number must be
+!!                        followed by a blank.
+!!Date                    A 9 character string in the form DD-MMM-YY  where DD is the
+!!                        day of the month, zero-filled on the left  (e.g., 04); MMM is
+!!                        the common English 3-letter  abbreviation of the month; and
+!!                        YY is the last two digits of the year.  This must represent
+!!                        a valid date.
+!!IDcode                  A PDB identification code which  consists of 4 characters,
+!!                        the first of which is a digit  in the range 0 - 9; the
+!!                        remaining 3 are  alpha-numeric, and letters are upper case
+!!                        only. Entries with a 0 as  the first character do not
+!!                        contain coordinate data.
+!!Integer                 Right-justified blank-filled integer  value.
+!!Token                   A sequence of non-space characters  followed by a colon and a
+!!                        space.
+!!List                    A String that is composed of text  separated with commas.
+!!LString                 A literal string of characters. All spacing  is significant
+!!                        and must be preserved.
+!!LString(n)              An LString with exactly n characters.
+!!Real(n,m)               Real (floating point) number in the  FORTRAN format Fn.m.
+!!Record name             The name of the record: 6 characters,  left-justified and
+!!                        blank-filled.
+!!Residue name            One of the standard amino acid or nucleic acids, as listed
+!!                        below, or the non-standard group  designation as defined in
+!!                        the HET dictionary. Field is  right-justified.
+!!SList                   A String that is composed of text  separated with semi-colons.
+!!Specification           A String composed of a token and its  associated value
+!!                        separated by a colon.
+!!Specification List      A sequence of Specifications, separated by semi-colons.
+!!String                  A sequence of characters. These  characters may have
+!!                        arbitrary spacing, but should be  interpreted as directed
+!!                        below.
+!!String(n)               A String with exactly n characters.
+!!SymOP                   An integer field of from 4 to 6  digits, right-justified, of
+!!                        the form nnnMMM where nnn is the symmetry operator number and
+!!                        MMM is the translation vector. 
+!!To interpret a String, concatenate the contents of all continued fields together, collapse all sequences of multiple blanks to a single blank, and remove any leading and trailing blanks. This permits very long strings to be properly reconstructed.
+!<----------------------------------------------------------------------------------
+

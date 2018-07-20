@@ -1,8 +1,8 @@
 var structdipoles__class_1_1dipoles =
 [
     [ "and", "structdipoles__class_1_1dipoles.html#a7009b45719053d38b8b082f1505127cd", null ],
-    [ "center", "structdipoles__class_1_1dipoles.html#ab7c31b6af230c4668d6fd24b359836bf", null ],
     [ "center", "structdipoles__class_1_1dipoles.html#a959e48d8726c84ad96695f27f5a324df", null ],
+    [ "center", "structdipoles__class_1_1dipoles.html#ab7c31b6af230c4668d6fd24b359836bf", null ],
     [ "current", "structdipoles__class_1_1dipoles.html#a1f7d8ab8bd71a85a74e56b5461023742", null ],
     [ "diabatic", "structdipoles__class_1_1dipoles.html#acb589f5c8c60337abc5da4b268ccd0e8", null ],
     [ "dielectric", "structdipoles__class_1_1dipoles.html#a669f75c4c95efa1ea721ba8aa7f785d3", null ],
@@ -34,11 +34,11 @@ var structdipoles__class_1_1dipoles =
     [ "quantum", "structdipoles__class_1_1dipoles.html#a7b6d2a8feca2c1198896fb10627d029b", null ],
     [ "realization", "structdipoles__class_1_1dipoles.html#a9f2ebcd22fb84b6121f41bb4b8935273", null ],
     [ "screening", "structdipoles__class_1_1dipoles.html#a353f22dda5068231a14e388b11f2c5cc", null ],
-    [ "site", "structdipoles__class_1_1dipoles.html#a195b04ed4976581c965eb24b155dee4b", null ],
     [ "site", "structdipoles__class_1_1dipoles.html#ae35c528d0361b9cd3c1825567339acff", null ],
+    [ "site", "structdipoles__class_1_1dipoles.html#a195b04ed4976581c965eb24b155dee4b", null ],
     [ "to", "structdipoles__class_1_1dipoles.html#aa236248648a049967f193ec7a2e721a3", null ],
-    [ "transition", "structdipoles__class_1_1dipoles.html#a89dfcd300426c525f92d7ca048dfbfdb", null ],
     [ "transition", "structdipoles__class_1_1dipoles.html#a0b9e590823522c87bb16a014777bc66e", null ],
+    [ "transition", "structdipoles__class_1_1dipoles.html#a89dfcd300426c525f92d7ca048dfbfdb", null ],
     [ "variance", "structdipoles__class_1_1dipoles.html#afd272228e55cd38a7215e18d5e4008c0", null ],
     [ "vector", "structdipoles__class_1_1dipoles.html#a658a483ea027a653fefdd02718773ea6", null ]
 ];
